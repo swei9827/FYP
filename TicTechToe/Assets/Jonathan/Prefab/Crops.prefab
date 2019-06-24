@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6051012642111349417}
   - component: {fileID: 7615954302633072665}
   m_Layer: 0
-  m_Name: Object
+  m_Name: Crops
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 12cd7ef47e332e34d8804df9124fb32d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 0.80096215, g: 0.8207547, b: 0.058072258, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6051012642111349417
@@ -93,6 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ea53cf22bd05f4a88eb911e86661f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dryPlant: {fileID: 21300000, guid: 71237255cb522f749bb44ceaf1ca6a48, type: 3}
+  waterPlant: {fileID: 21300000, guid: b304141da796a07408860048357adfc4, type: 3}
+  growPlant: {fileID: 21300000, guid: a7df5d3d6f47979498ca71ea1c5ee294, type: 3}
 --- !u!61 &7615954302633072665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110,7 +113,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.13, y: 1.09}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

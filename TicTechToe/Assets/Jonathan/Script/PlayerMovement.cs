@@ -6,11 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     private Vector2 direction;
-
+    Rigidbody2D rb;
+    RaycastHit2D hit;
     // Use this for initialization
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -21,29 +22,30 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        //before/after move
+        //Movement
         direction = Vector2.zero;
-
-        //movement
-        if (Input.GetKey(KeyCode.W))
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.y = Input.GetAxisRaw("Vertical");
+        // If Move
+        if (direction != Vector2.zero)
         {
-            direction += Vector2.up;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            direction += Vector2.down;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            direction += Vector2.left;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            direction += Vector2.right;
+            transform.Translate(direction * speed * Time.deltaTime);
         }
 
-        //make player move
-        transform.Translate(direction * speed * Time.deltaTime);
+        //raycastPosition
+        Vector2 raycastDir = new Vector2(direction.x, direction.y);
+        Vector2 previousDir = Vector2.zero;
+        if(raycastDir == Vector2.zero)
+        {
+            raycastDir = previousDir;
+        }
+        else
+        {
+            previousDir = raycastDir;
+        }
+
+        hit = Physics2D.Raycast(transform.position, direction, 1f);
+        Debug.DrawRay(transform.position, direction, Color.green);
     }
 
 }
