@@ -46,6 +46,19 @@ public class PlayerMovement : MonoBehaviour
 
         hit = Physics2D.Raycast(transform.position, direction, 1f);
         Debug.DrawRay(transform.position, direction, Color.green);
+
+        //Flip the character
+        Vector2 characterScale = transform.localScale;
+        if(Input.GetAxisRaw("Horizontal") < 0)
+        {
+            characterScale.x = -1.5f;
+        }
+        if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            characterScale.x = 1.5f;
+        }
+        transform.localScale = characterScale;
+        
     }
 
 }
