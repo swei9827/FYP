@@ -10,4 +10,12 @@ public class CropAsset : ScriptableObject
 	public Sprite doneSprite;
 
 	public bool seedIsOnGround = false;
+    public CropsType cropsType;
+}
+
+public enum CropsType
+{
+    Potatoes,
+    Strawberries,
+    Pumpkins,
 }

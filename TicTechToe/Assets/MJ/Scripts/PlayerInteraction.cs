@@ -34,12 +34,19 @@ public class PlayerInteraction : MonoBehaviour
 				table.Interact(crop, tool, this);
 			}
 
-
 			SeedBarrel barrel = target.GetComponent<SeedBarrel>();
 			if (barrel != null)
 			{
 				barrel.Interact(crop, tool, this);
 			}
+
+            TrashCan trashcan = target.GetComponent<TrashCan>();
+            {
+                if(trashcan)
+                {
+                    trashcan.Interact(crop,tool, this);
+                }
+            }
 		}
 	}
 

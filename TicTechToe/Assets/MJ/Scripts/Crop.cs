@@ -17,8 +17,22 @@ public class Crop
 	{
 		if (GetWaterState() == WaterState.Watered)
 		{
-			growthLevel += amount / 20f;
-		}
+            // 23 seconds
+            if (asset.cropsType == CropsType.Potatoes)
+            {
+                growthLevel += amount / 20f;
+            }
+            // 13 seconds
+            else if (asset.cropsType == CropsType.Strawberries)
+            {
+                growthLevel += amount / 10f;
+            }
+            // 33 seconds
+            else if (asset.cropsType == CropsType.Pumpkins)
+            {
+                growthLevel += amount / 30f;
+            }
+        }
 
 		if (growthLevel >= 1f)
 		{

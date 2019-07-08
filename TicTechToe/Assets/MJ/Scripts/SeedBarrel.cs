@@ -15,6 +15,19 @@ public class SeedBarrel : MonoBehaviour
 			Debug.Log("Taking " + crop.GetName());
 			player.SetCrop(new Crop(crop.asset));
 		}
+
+        if(c.HasCrop())
+        {
+            if(c.state != CropState.Seed)
+            {
+                Debug.Log("It is not a seed, go find trach can");
+            }
+            else
+            {
+                Debug.Log("Put back " + crop.GetName());
+                player.SetCrop(new Crop(null));
+            }         
+        }
 	}
 
 	public void Select()
