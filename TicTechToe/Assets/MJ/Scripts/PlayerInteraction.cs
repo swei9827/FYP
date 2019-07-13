@@ -15,7 +15,7 @@ public class PlayerInteraction : MonoBehaviour
 	[SerializeField]
 	private Tool tool;
 
-	private void Update()
+    private void Update()
 	{
 		if (Input.GetKeyDown(interactKey))
 		{
@@ -31,14 +31,15 @@ public class PlayerInteraction : MonoBehaviour
 			TableTile table = target.GetComponent<TableTile>();
 			if (table != null)
 			{
-				table.Interact(crop, tool, this);
-			}
+                table.Interact(crop, tool, this);
+                GameObject.FindGameObjectWithTag("DataRecorder").GetComponent<DataRecord>().AddEvents(0, tool.ToString());
+            }
 
 			SeedBarrel barrel = target.GetComponent<SeedBarrel>();
 			if (barrel != null)
 			{
 				barrel.Interact(crop, tool, this);
-			}
+            }
 
             TrashCan trashcan = target.GetComponent<TrashCan>();
             {
@@ -59,8 +60,8 @@ public class PlayerInteraction : MonoBehaviour
 	public void SetTool(Tool t)
 	{
 		tool = t;
-		DisplayInventory();
-	}
+        DisplayInventory();
+    }
 
 	void DisplayInventory ()
 	{
@@ -70,10 +71,10 @@ public class PlayerInteraction : MonoBehaviour
 		} else if (tool != null)
 		{
 			iconBox.SetIcon(tool.sprite);
-		} else
+        } else
 		{
 			iconBox.Close();
-		}
+        }
 	}
 
 	private void OnTriggerEnter2D(Collider2D col)

@@ -21,15 +21,18 @@ public class TableTile : MonoBehaviour
 	{
 		player.SetCrop(crop);
 		crop = c;
-		player.SetTool(tool);
-		tool = t;
+		player.SetTool(tool);     
+        tool = t;
 
-		if (tool != null)
-			overlay.sprite = tool.sprite;
-		else if (crop != null)
-			overlay.sprite = crop.GetCropSprite();
-		else
-			overlay.sprite = null;
-	}
+        if (tool != null)
+        {
+            overlay.sprite = tool.sprite;
+            GameObject.FindGameObjectWithTag("DataRecorder").GetComponent<DataRecord>().AddEvents(1, tool.ToString());
+        }
+        else if (crop != null)
+            overlay.sprite = crop.GetCropSprite();
+        else
+            overlay.sprite = null;
+    }
 
 }

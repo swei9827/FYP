@@ -29,10 +29,13 @@ public class DirtTile : MonoBehaviour
 	{
 		if (c.HasCrop())
 		{
-			if (!needsPlowing)
-				PlantSeed(c, player);
-			else
-				Debug.Log("Ground needs plowing!");
+            if (!needsPlowing)
+            {
+                PlantSeed(c, player);
+                GameObject.FindGameObjectWithTag("DataRecorder").GetComponent<DataRecord>().AddEvents(3, c.GetName());
+            }
+            else
+                Debug.Log("Ground needs plowing!");
 
 			return;
 		}
@@ -53,7 +56,7 @@ public class DirtTile : MonoBehaviour
 		if (crop.HasCrop())
 		{
 			HarvestCrop(player);
-		}
+        }
 	}
 
 	void PlantSeed (Crop c, PlayerInteraction player)
@@ -64,10 +67,10 @@ public class DirtTile : MonoBehaviour
 			return;
 		}
 		Debug.Log("Planting " + c.GetName());
-		crop = c;
-		crop.state = CropState.Planted;
+        crop = c;
+		crop.state = CropState.Planted; 
 
-		UpdateSprite();
+        UpdateSprite();
 
 		player.SetCrop(new Crop(null));
 	}
@@ -77,7 +80,8 @@ public class DirtTile : MonoBehaviour
 		if (crop.state == CropState.Done || crop.state == CropState.Dead)
 		{
 			player.SetCrop(crop);
-			crop = new Crop(null);
+            GameObject.FindGameObjectWithTag("DataRecorder").GetComponent<DataRecord>().AddEvents(5, crop.GetName());
+            crop = new Crop(null);
 			needsPlowing = true;
 			AddDirt();
 		}
@@ -99,7 +103,8 @@ public class DirtTile : MonoBehaviour
 	void Plow ()
 	{
 		Debug.Log("Plowing...");
-		overlay.sprite = null;
+        GameObject.FindGameObjectWithTag("DataRecorder").GetComponent<DataRecord>().AddEvents(2, this.name);
+        overlay.sprite = null;
 		needsPlowing = false;
 	}
 
@@ -110,7 +115,8 @@ public class DirtTile : MonoBehaviour
 			crop.Water();
 			UpdateSprite();
 			waterIndicator.SetActive(false);
-		}
+            GameObject.FindGameObjectWithTag("DataRecorder").GetComponent<DataRecord>().AddEvents(4, this.name);
+        }
 	}
 
 	void UpdateSprite ()
