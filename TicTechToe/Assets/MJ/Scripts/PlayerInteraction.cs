@@ -9,6 +9,7 @@ public class PlayerInteraction : MonoBehaviour
 	public KeyCode interactKey;
 
 	public IconBox iconBox;
+    public InventoryUI itemBox;
 
 	[SerializeField]
 	private Crop crop;
@@ -47,6 +48,14 @@ public class PlayerInteraction : MonoBehaviour
                     trashcan.Interact(crop,tool, this);
                 }
             }
+
+            Fishing fishing = target.GetComponent<Fishing>();
+            {
+                if(fishing)
+                {
+                    fishing.Interact(tool,this);
+                }
+            }
 		}
 	}
 
@@ -65,8 +74,8 @@ public class PlayerInteraction : MonoBehaviour
 	void DisplayInventory ()
 	{
 		if (crop.HasCrop())
-		{
-			iconBox.SetIcon(crop.GetCropSprite());
+		{			
+            iconBox.SetIcon(crop.GetCropSprite());
 		} else if (tool != null)
 		{
 			iconBox.SetIcon(tool.sprite);
@@ -76,7 +85,7 @@ public class PlayerInteraction : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter2D(Collider2D col)
+	private void OnTriggerStay2D(Collider2D col)
 	{
 		if (target != col.gameObject && target != null)
 		{

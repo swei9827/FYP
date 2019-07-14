@@ -97,11 +97,11 @@ public class Crop
 			case CropState.Seed:
 				return asset.seedSprite;
 			case CropState.Planted:
-				return asset.seedSprite;
+                return asset.seedSprite;
 			case CropState.Dead:
-				return asset.deadSprite;
+                return asset.deadSprite;
 			case CropState.Done:
-				return asset.doneSprite;
+                return asset.doneSprite;
 		}
 
 		Debug.LogError("WHAT?!");

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class IconBox : MonoBehaviour
 {
-
 	public Image icon;
 	public GameObject iconBox;
 	public Animator iconBoxAnim;

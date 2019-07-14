@@ -5,9 +5,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+    public List<Sprite> sp_Fish = new List<Sprite>();
+
+    /* GetComponent<SpriteComponent>().Sprite = sp_Fish[Enum];
+     * 
+     * 
+     * */
+
+    public static bool canMove = true;
     private Vector2 direction;
     Rigidbody2D rb;
     RaycastHit2D hit;
+
     // Use this for initialization
     void Start()
     {
@@ -17,7 +26,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if(canMove)
+        {
+            Move();
+        }     
     }
 
     void Move()

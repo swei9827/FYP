@@ -7,6 +7,7 @@ public class DirtTile : MonoBehaviour
 	public Crop crop;
 
 	public SpriteRenderer overlay;
+    public InventoryUI itemBox;
 
 	public bool needsPlowing = true;
 	public Sprite extraDirt;
@@ -77,7 +78,7 @@ public class DirtTile : MonoBehaviour
 		if (crop.state == CropState.Done || crop.state == CropState.Dead)
 		{
 			player.SetCrop(crop);
-			crop = new Crop(null);
+            crop = new Crop(null);
 			needsPlowing = true;
 			AddDirt();
 		}
