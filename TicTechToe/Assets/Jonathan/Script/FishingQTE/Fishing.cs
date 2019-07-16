@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Fishing : MonoBehaviour
 {
-
     public GameObject fishingGame;
 
     public GameObject inventory;
@@ -107,6 +106,7 @@ public class Fishing : MonoBehaviour
         {
             Debug.Log("Success!");           
             bucketHit = 0;
+            waterHit = 0;
             fishImg.rectTransform.localPosition = spawnPos;
             fishingGame.SetActive(false);
             inventory.SetActive(true);
@@ -116,6 +116,7 @@ public class Fishing : MonoBehaviour
         {
             Debug.Log("Fail");
             waterHit = 0;
+            bucketHit = 0;
             fishImg.rectTransform.localPosition = spawnPos;
             fishingGame.SetActive(false);
             inventory.SetActive(true);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TableTile : MonoBehaviour
 {
@@ -12,9 +13,13 @@ public class TableTile : MonoBehaviour
 	private void Start()
 	{
 		if (crop.HasCrop())
-			overlay.sprite = crop.GetCropSprite();
+        {
+            overlay.sprite = crop.GetCropSprite();        
+        }	
 		else if (tool != null)
-			overlay.sprite = tool.sprite;
+        {         
+            overlay.sprite = tool.sprite;         
+        }	      
 	}
 
 	public void Interact(Crop c, Tool t, PlayerInteraction player)
@@ -25,11 +30,18 @@ public class TableTile : MonoBehaviour
 		tool = t;
 
 		if (tool != null)
-			overlay.sprite = tool.sprite;
+        { 
+            overlay.sprite = tool.sprite;
+        }	
 		else if (crop != null)
-			overlay.sprite = crop.GetCropSprite();
+        {
+            overlay.sprite = crop.GetCropSprite();
+        }			
 		else
-			overlay.sprite = null;
+        {
+            overlay.sprite = null;
+        }
+			
 	}
 
 }

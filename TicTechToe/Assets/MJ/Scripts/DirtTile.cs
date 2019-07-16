@@ -109,6 +109,7 @@ public class DirtTile : MonoBehaviour
 		if (crop.GetWaterState() == WaterState.Dry)
 		{
 			crop.Water();
+            WaterCan.curFill -= 5;
 			UpdateSprite();
 			waterIndicator.SetActive(false);
 		}

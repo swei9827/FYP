@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerInteraction : MonoBehaviour
 	public KeyCode interactKey;
 
 	public IconBox iconBox;
+    public Image waterIndicator;
     public InventoryUI itemBox;
 
 	[SerializeField]
@@ -16,7 +18,12 @@ public class PlayerInteraction : MonoBehaviour
 	[SerializeField]
 	private Tool tool;
 
-	private void Update()
+    private void Start()
+    {
+        waterIndicator.enabled = false;   
+    }
+
+    private void Update()
 	{
 		if (Input.GetKeyDown(interactKey))
 		{
@@ -56,6 +63,14 @@ public class PlayerInteraction : MonoBehaviour
                     fishing.Interact(tool,this);
                 }
             }
+
+            RefillWater refillWater = target.GetComponent<RefillWater>();
+            {
+                if(refillWater)
+                {
+                    refillWater.Interact(tool, this);
+                }
+            }
 		}
 	}
 
@@ -74,14 +89,28 @@ public class PlayerInteraction : MonoBehaviour
 	void DisplayInventory ()
 	{
 		if (crop.HasCrop())
-		{			
+		{
+            waterIndicator.enabled = false;
             iconBox.SetIcon(crop.GetCropSprite());
-		} else if (tool != null)
+		}
+        else if (tool != null)
 		{
-			iconBox.SetIcon(tool.sprite);
-		} else
+            if (tool.toolType == ToolType.Watercan)
+            {
+                waterIndicator.enabled = true;
+                iconBox.SetIcon(tool.sprite);
+            }
+            else
+            {
+                waterIndicator.enabled = false;
+                iconBox.SetIcon(tool.sprite);
+            }
+           
+		}
+        else
 		{
-			iconBox.Close();
+            waterIndicator.enabled = false;
+            iconBox.Close();
 		}
 	}
 
