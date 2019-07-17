@@ -11,7 +11,6 @@ public class PlayerInteraction : MonoBehaviour
 
 	public IconBox iconBox;
     public Image waterIndicator;
-    public InventoryUI itemBox;
 
 	[SerializeField]
 	private Crop crop;
@@ -104,8 +103,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 waterIndicator.enabled = false;
                 iconBox.SetIcon(tool.sprite);
-            }
-           
+            }        
 		}
         else
 		{

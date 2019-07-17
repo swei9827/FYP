@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09472cf4583e38b42884783561fa32e6, type: 3}
   m_Name: Strawberries
   m_EditorClassIdentifier: 
+  itemIcons: {fileID: 21300000, guid: 0306c17d25ebefa46ace3534deb73ed3, type: 3}
+  numberHeld: 0
+  usable: 0
   seedSprite: {fileID: 21300000, guid: e3028b2f48bf7de40a745dcdd41f4428, type: 3}
   deadSprite: {fileID: 21300000, guid: 17e9937a427d0244782678a83a9965bd, type: 3}
   doneSprite: {fileID: 21300000, guid: cadc047f021e02f4f8798e9101ddda5b, type: 3}

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Crop", menuName = "Crop")]
-public class CropAsset : ScriptableObject
+[CreateAssetMenu(fileName = "New Crop", menuName = "Item/Crop")]
+public class CropAsset : Item
 {
 	public Sprite seedSprite;
 	public Sprite deadSprite;

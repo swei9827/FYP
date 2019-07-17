@@ -8,6 +8,8 @@ public class Fishing : MonoBehaviour
     public GameObject fishingGame;
 
     public GameObject inventory;
+    public PlayerInventory playerInventory;
+    [SerializeField] private Item item;
 
     //fish Image
     public Sprite[] fishImage;
@@ -104,7 +106,13 @@ public class Fishing : MonoBehaviour
     {
         if (bucketHit >= 3)
         {
-            Debug.Log("Success!");           
+            Debug.Log("Success!");
+            if(item)
+            {
+                playerInventory.AddItem(item);
+                item.itemIcons = item;
+            }
+
             bucketHit = 0;
             waterHit = 0;
             fishImg.rectTransform.localPosition = spawnPos;

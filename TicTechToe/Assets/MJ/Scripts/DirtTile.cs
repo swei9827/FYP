@@ -5,9 +5,10 @@ using UnityEngine;
 public class DirtTile : MonoBehaviour
 {
 	public Crop crop;
+    [SerializeField]private PlayerInventory inventory;
+    [SerializeField] private Item item;
 
 	public SpriteRenderer overlay;
-    public InventoryUI itemBox;
 
 	public bool needsPlowing = true;
 	public Sprite extraDirt;
@@ -77,11 +78,11 @@ public class DirtTile : MonoBehaviour
 	{
 		if (crop.state == CropState.Done || crop.state == CropState.Dead)
 		{
-			player.SetCrop(crop);
-            crop = new Crop(null);
-			needsPlowing = true;
+            player.SetCrop(crop);
+            crop = new Crop(null);        
+            needsPlowing = true;
 			AddDirt();
-		}
+		}   
 	}
 
 	public void BirdEatsCrop()

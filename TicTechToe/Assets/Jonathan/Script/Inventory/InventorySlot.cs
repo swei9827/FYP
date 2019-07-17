@@ -5,28 +5,58 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    public Image icon;
+    [Header("UI")]
+    [SerializeField] private Image itemImage;
+    [SerializeField] private Text itemNum;
 
-    Fish fish;
-    Crop crop;
+    [Header("Variables for items")]
+    public Item thisItem;
+    public InventoryManager thisManager;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Setup(Item newItem, InventoryManager newManager)
     {
-        
+        thisItem = newItem;
+        thisManager = newManager;
+
+        if(thisItem)
+        {
+            if(thisItem)
+            {
+                itemImage.sprite = thisItem.itemIcons;
+                itemNum.text = "" + thisItem.numberHeld;
+                itemImage.enabled = true;
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+      
     }
 
-    public void AddItem(Fish newfish, Crop newCrop)
-    {
-        fish = newfish;
-        crop = newCrop;
 
-        icon.sprite = fish.fishSprite;
-    }
+    //public Image icon;
+
+    ////Fish fish;
+    //Crop crop;
+
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+
+    //}
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+
+    //}
+
+    //public void AddItem(Fish newfish, Crop newCrop)
+    //{
+    //    fish = newfish;
+    //    crop = newCrop;
+
+    //    icon.sprite = fish.fishSprite;
+    //}
 }
