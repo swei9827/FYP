@@ -31,7 +31,7 @@ public class DirtTile : MonoBehaviour
 	{
 		if (c.HasCrop())
 		{
-			if (!needsPlowing)
+            if (!needsPlowing)
 				PlantSeed(c, player);
 			else
 				Debug.Log("Ground needs plowing!");

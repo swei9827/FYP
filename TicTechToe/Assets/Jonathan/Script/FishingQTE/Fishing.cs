@@ -107,12 +107,7 @@ public class Fishing : MonoBehaviour
         if (bucketHit >= 3)
         {
             Debug.Log("Success!");
-            if(item)
-            {
-                playerInventory.AddItem(item);
-                item.itemIcons = item;
-            }
-
+     
             bucketHit = 0;
             waterHit = 0;
             fishImg.rectTransform.localPosition = spawnPos;
