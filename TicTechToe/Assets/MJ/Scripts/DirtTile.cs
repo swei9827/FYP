@@ -5,8 +5,8 @@ using UnityEngine;
 public class DirtTile : MonoBehaviour
 {
 	public Crop crop;
-    [SerializeField]private PlayerInventory inventory;
-    [SerializeField] private Item item;
+
+    [SerializeField]private ItemTest items;
 
 	public SpriteRenderer overlay;
 
@@ -32,9 +32,12 @@ public class DirtTile : MonoBehaviour
 		if (c.HasCrop())
 		{
             if (!needsPlowing)
-				PlantSeed(c, player);
-			else
-				Debug.Log("Ground needs plowing!");
+            {
+                PlantSeed(c, player);
+            }
+
+            else
+                Debug.Log("Ground needs plowing!");
 
 			return;
 		}

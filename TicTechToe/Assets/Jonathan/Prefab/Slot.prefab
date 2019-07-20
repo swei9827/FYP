@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 779738150849750322}
   - component: {fileID: 779738150849750332}
   - component: {fileID: 779738150849750333}
+  - component: {fileID: 3266851973342180340}
   m_Layer: 5
   m_Name: Items
   m_TagString: Untagged
@@ -74,6 +75,25 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &3266851973342180340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779738150849750323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0870fcd39468845bb5ed3bc6fc2d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  empty: 0
+  id: 0
+  itemIcon: {fileID: 0}
+  sprites: {fileID: 0}
+  CropType: 0
+  FishType: 0
 --- !u!1 &779738151050384761
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +226,7 @@ GameObject:
   - component: {fileID: 779738152112415910}
   - component: {fileID: 779738152112415904}
   - component: {fileID: 779738152112415905}
-  - component: {fileID: 8728985615796029578}
+  - component: {fileID: 8334713359621702817}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -272,7 +292,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &8728985615796029578
+--- !u!114 &8334713359621702817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,13 +301,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 779738152112415911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26da556e7d2493249bea587bc835ad97, type: 3}
+  m_Script: {fileID: 11500000, guid: af0870fcd39468845bb5ed3bc6fc2d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 779738150849750333}
-  itemNum: {fileID: 1104401209538632916}
-  thisItem: {fileID: 0}
-  thisManager: {fileID: 0}
+  item: {fileID: 0}
+  empty: 0
+  id: 0
+  itemIcon: {fileID: 0}
+  sprites: {fileID: 0}
+  CropType: 0
+  FishType: 0
 --- !u!1 &963481596861551319
 GameObject:
   m_ObjectHideFlags: 0

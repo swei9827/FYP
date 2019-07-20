@@ -8,7 +8,6 @@ public class Fishing : MonoBehaviour
     public GameObject fishingGame;
 
     public GameObject inventory;
-    public PlayerInventory playerInventory;
     [SerializeField] private Item item;
 
     //fish Image
@@ -56,10 +55,6 @@ public class Fishing : MonoBehaviour
     public void Update()
     {
         FishingGame();
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            PopFishingGame();
-        }
     }
 
     public void PopFishingGame()

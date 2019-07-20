@@ -32,13 +32,14 @@ public enum FishTypeTest
 }
 
 public class ItemTest : MonoBehaviour {
-    public ItemTest() { }
+
     public CropsTypeTest CropType;
-    public ToolTypeTest ToolType;
     public FishTypeTest FishType;
+
     public int id;
     public Sprite[] sprites;
     public string details;
+    public bool pickUp;
 };
 
 
