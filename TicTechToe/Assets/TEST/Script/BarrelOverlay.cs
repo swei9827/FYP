@@ -13,8 +13,7 @@ public class BarrelOverlay : MonoBehaviour
     {
         GameObject temp = Instantiate(OverlaySprite, this.transform.position, Quaternion.identity);
         temp.transform.SetParent(this.transform);
-        temp.transform.position = new Vector2(this.transform.position.x, 0.6f + this.transform.position.y);
-          
+        temp.transform.position = new Vector2(this.transform.position.x, 0.6f + this.transform.position.y);          
     }
 
     void Interact()

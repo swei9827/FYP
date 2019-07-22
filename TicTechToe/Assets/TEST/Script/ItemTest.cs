@@ -23,7 +23,7 @@ public enum CropsTypeTest
 
 public enum FishTypeTest
 {
-    None,
+    //None,
     Tuna,
     Sardine,
     Salmon,
@@ -39,6 +39,7 @@ public class ItemTest : MonoBehaviour {
     public int id;
     public Sprite[] sprites;
     public string details;
+    public int numberHeld;
     public bool pickUp;
 };
 

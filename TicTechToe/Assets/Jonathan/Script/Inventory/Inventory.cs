@@ -14,7 +14,9 @@ public class Inventory : MonoBehaviour
 
     public GameObject slotHolder;
 
-    public static bool canInteract = false;
+    public  bool canInteract = false;
+    public bool canGetFish = false;
+    public bool canGetCrops = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,24 +37,44 @@ public class Inventory : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Crops")
+        if (other.tag == "Crops" || other.tag == "Fish")
         {
-            Debug.Log("Enter");
             itemPickedUp = other.gameObject;
-            items = itemPickedUp.GetComponent<ItemTest>();         
+            items = itemPickedUp.GetComponent<ItemTest>();
+            canInteract = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Crops" || other.tag == "Fish")
+        {
+            canInteract = false;
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (canInteract)
         {
-            AddItem(itemPickedUp, items.id, items.FishType, items.CropType, items.sprites[1]);
-        }
+            if(canGetCrops)
+            {
+                if(Input.GetKeyDown(KeyCode.Space))
+                {
+                    AddCropsItem(itemPickedUp, items.id, items.CropType, items.FishType, items.sprites[1]);
+                    canGetCrops = false;
+                }              
+            }
+
+            if (canGetFish)
+            {
+                AddCropsItem(itemPickedUp, items.id, items.CropType, items.FishType, items.sprites[0]);
+                canGetFish = false;
+            }
+        }      
     }
 
-
-    void AddItem(GameObject itemObject, int itemID, FishTypeTest fish, CropsTypeTest crops, Sprite itemIcon)
+    void AddCropsItem(GameObject itemObject, int itemID, CropsTypeTest crops,FishTypeTest fish, Sprite itemIcon)
     {
         for (int i = 0; i < allslots; i++)
         {
@@ -64,7 +86,6 @@ public class Inventory : MonoBehaviour
                 slots[i].GetComponent<Slots>().item = itemObject;
                 slots[i].GetComponent<Slots>().id = itemID;
                 slots[i].GetComponent<Slots>().itemIcon = itemIcon;
-                slots[i].GetComponent<Slots>().FishType = fish;
                 slots[i].GetComponent<Slots>().CropType = crops;
 
                 itemObject.transform.parent = slots[i].transform;

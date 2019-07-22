@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class Fishing : MonoBehaviour
 {
     public GameObject fishingGame;
+    public GameObject player;
+    public GameObject[] fishObject;
 
     public GameObject inventory;
-    [SerializeField] private Item item;
 
     //fish Image
     public Sprite[] fishImage;
@@ -21,11 +22,13 @@ public class Fishing : MonoBehaviour
 
     //script
     private FishMovement fish;
-    public FishAsset asset;
-    public FishType fishType;
+    public ItemTest item;
+    public FishTypeTest fishType;
 
     Vector2 spawnPos;
     Vector2 spawnPos2;
+
+    GameObject temp;
 
     public void Start()
     {
@@ -67,28 +70,28 @@ public class Fishing : MonoBehaviour
 
     public void GetFishSprite()
     {
-        fishType = (FishType)Random.Range(0, (int)FishType.Max);     
+        fishType = (FishTypeTest)Random.Range(0, (int)FishTypeTest.Max);
         switch (fishType)
         {
-            case FishType.Catfish:
+            case FishTypeTest.Catfish:
                 {
-                    fishImg.sprite = fishImage[0];                   
+                    fishImg.sprite = fishImage[0];
                     Debug.Log("Catfish");
                     break;
                 }
-            case FishType.Salmon:
+            case FishTypeTest.Salmon:
                 {
                     fishImg.sprite = fishImage[1];
                     Debug.Log("Salmon");
                     break;
                 }
-            case FishType.Sardine:
+            case FishTypeTest.Sardine:
                 {
                     fishImg.sprite = fishImage[2];
                     Debug.Log("Sardine");
                     break;
                 }
-            case FishType.Tuna:
+            case FishTypeTest.Tuna:
                 {
                     fishImg.sprite= fishImage[3];
                     Debug.Log("Tuna");
@@ -97,12 +100,34 @@ public class Fishing : MonoBehaviour
         }
     }
 
+    void spawnFish()
+    {
+        if (fishType == FishTypeTest.Catfish)
+        {
+            temp = Instantiate(fishObject[0], player.transform.position, Quaternion.identity);
+        }
+        if (fishType == FishTypeTest.Salmon)
+        {
+            temp = Instantiate(fishObject[1], player.transform.position, Quaternion.identity);
+        }
+        if(fishType == FishTypeTest.Sardine)
+        {
+            temp = Instantiate(fishObject[2], player.transform.position, Quaternion.identity);
+        }
+         if(fishType == FishTypeTest.Tuna)
+        {
+            temp = Instantiate(fishObject[3], player.transform.position, Quaternion.identity);
+        }
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canGetFish = true;
+    }
+
     public void FishingGame()
     {
         if (bucketHit >= 3)
         {
+            spawnFish();
             Debug.Log("Success!");
-     
             bucketHit = 0;
             waterHit = 0;
             fishImg.rectTransform.localPosition = spawnPos;
@@ -113,6 +138,7 @@ public class Fishing : MonoBehaviour
         else if (waterHit >= 5)
         {
             Debug.Log("Fail");
+            Destroy(temp);
             waterHit = 0;
             bucketHit = 0;
             fishImg.rectTransform.localPosition = spawnPos;

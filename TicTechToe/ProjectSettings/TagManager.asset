@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Water
   - Crops
+  - Fish
+  - DirtTile
   layers:
   - Default
   - TransparentFX
