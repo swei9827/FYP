@@ -95,13 +95,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CropType: 2
-  FishType: 4
+  FishType: 0
   id: 0
   sprites:
   - {fileID: 21300000, guid: a0f74aa692830384e8e127eb7c21ca63, type: 3}
   - {fileID: 21300000, guid: 0306c17d25ebefa46ace3534deb73ed3, type: 3}
   details: Strawberries
-  numberHeld: 0
   pickUp: 0
   sr: {fileID: 7379912915436053530}
   planted: 1

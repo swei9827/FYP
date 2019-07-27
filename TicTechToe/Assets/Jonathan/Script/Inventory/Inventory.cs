@@ -23,7 +23,6 @@ public class Inventory : MonoBehaviour
     {
         allslots = 5;
         slots = new GameObject[allslots];
-
         for (int i = 0; i < allslots; i++)
         {
             slots[i] = slotHolder.transform.GetChild(i).gameObject;
@@ -59,22 +58,22 @@ public class Inventory : MonoBehaviour
         {
             if(canGetCrops)
             {
-                if(Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    AddCropsItem(itemPickedUp, items.id, items.CropType, items.FishType, items.sprites[1]);
+                    AddCropsItem(itemPickedUp, items.CropType, items.sprites[1]);
                     canGetCrops = false;
                 }              
             }
 
             if (canGetFish)
             {
-                AddCropsItem(itemPickedUp, items.id, items.CropType, items.FishType, items.sprites[0]);
+                AddFishItem(itemPickedUp, items.FishType, items.sprites[0]);
                 canGetFish = false;
             }
         }      
     }
 
-    void AddCropsItem(GameObject itemObject, int itemID, CropsTypeTest crops,FishTypeTest fish, Sprite itemIcon)
+    void AddCropsItem(GameObject itemObject, CropsTypeTest crops, Sprite itemIcon)
     {
         for (int i = 0; i < allslots; i++)
         {
@@ -83,16 +82,80 @@ public class Inventory : MonoBehaviour
                 //add item to slots
                 itemObject.GetComponent<ItemTest>().pickUp = true;
 
+                //add item's component
                 slots[i].GetComponent<Slots>().item = itemObject;
-                slots[i].GetComponent<Slots>().id = itemID;
                 slots[i].GetComponent<Slots>().itemIcon = itemIcon;
                 slots[i].GetComponent<Slots>().CropType = crops;
+
+                //add number held
+                slots[i].GetComponent<Slots>().numberHeld += 1;
 
                 itemObject.transform.parent = slots[i].transform;
                 itemObject.SetActive(false);
 
                 slots[i].GetComponent<Slots>().UpdateSlot();
+                slots[i].GetComponent<Slots>().UpdateNumHeld();
+                slots[i].GetComponent<Slots>().empty = false;                
+            }
+
+           else if(slots[i].GetComponent<Slots>().CropType == itemObject.GetComponent<ItemTest>().CropType )
+            {
+                itemObject.GetComponent<ItemTest>().pickUp = true;
+
+                //add number held
+                slots[i].GetComponent<Slots>().numberHeld += 1;
+
+                itemObject.transform.parent = slots[i].transform;
+                itemObject.SetActive(false);
+
+                slots[i].GetComponent<Slots>().UpdateSlot();
+                slots[i].GetComponent<Slots>().UpdateNumHeld();
+            }    
+
+            else
+            {
+                continue;
+            }
+            return;
+        }     
+    }
+
+    void AddFishItem(GameObject itemObject, FishTypeTest fish, Sprite itemIcon)
+    {
+        for (int i = 0; i < allslots; i++)
+        {
+            if (slots[i].GetComponent<Slots>().empty)
+            {
+                //add item to slots
+                itemObject.GetComponent<ItemTest>().pickUp = true;
+
+                //add item's component
+                slots[i].GetComponent<Slots>().item = itemObject;
+                slots[i].GetComponent<Slots>().itemIcon = itemIcon;
+                slots[i].GetComponent<Slots>().FishType = fish;
+
+                //add number held
+                slots[i].GetComponent<Slots>().numberHeld += 1;
+
+                itemObject.transform.parent = slots[i].transform;
+                itemObject.SetActive(false);
+
+                slots[i].GetComponent<Slots>().UpdateSlot();
+                slots[i].GetComponent<Slots>().UpdateNumHeld();
                 slots[i].GetComponent<Slots>().empty = false;
+            }
+            else if (slots[i].GetComponent<Slots>().FishType == itemObject.GetComponent<ItemTest>().FishType)
+            {
+                itemObject.GetComponent<ItemTest>().pickUp = true;
+
+                //add number held
+                slots[i].GetComponent<Slots>().numberHeld += 1;
+
+                itemObject.transform.parent = slots[i].transform;
+                itemObject.SetActive(false);
+
+                slots[i].GetComponent<Slots>().UpdateSlot();
+                slots[i].GetComponent<Slots>().UpdateNumHeld();
             }
             else
             {
@@ -101,4 +164,4 @@ public class Inventory : MonoBehaviour
             return;
         }
     }
- }
+}

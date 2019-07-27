@@ -120,10 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CropType: 0
-  FishType: 2
+  FishType: 3
   id: 0
   sprites:
   - {fileID: 21300000, guid: 19cbac3695630b64693284ad7acd4bf6, type: 3}
   details: Salmon
-  numberHeld: 0
   pickUp: 0

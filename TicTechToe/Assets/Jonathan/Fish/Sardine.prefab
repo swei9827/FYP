@@ -120,10 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CropType: 0
-  FishType: 1
+  FishType: 2
   id: 0
   sprites:
   - {fileID: 21300000, guid: bd9f7150d0be3fc4aa521b4aa6c4d925, type: 3}
   details: Sardine
-  numberHeld: 0
   pickUp: 0

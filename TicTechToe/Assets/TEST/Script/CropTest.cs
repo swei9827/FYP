@@ -60,7 +60,6 @@ public class CropTest : ItemTest
         {
             if(canInteract)
             {
-                Debug.Log(canInteract);
                 if (Input.GetKeyDown(KeyCode.Space) && tool.toolType == ToolType.Watercan)
                 {
                     WaterCan.curFill -= 5;
