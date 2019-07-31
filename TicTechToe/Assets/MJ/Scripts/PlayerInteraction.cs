@@ -107,7 +107,7 @@ public class PlayerInteraction : MonoBehaviour
 		}
         else
 		{
-            waterIndicator.enabled = false;
+           waterIndicator.enabled = false;
             iconBox.Close();
 		}
 	}

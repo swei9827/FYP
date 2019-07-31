@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 7874831637532023805}
   - component: {fileID: 7629838099163602566}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerUnit
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   target: {fileID: 0}
   interactKey: 32
   iconBox: {fileID: 2950955122300295703}
-  waterIndicator: {fileID: 0}
+  waterIndicator: {fileID: 597213384178286402}
   crop:
     asset: {fileID: 0}
     state: 0
@@ -333,7 +333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5f61edd63dc70419e1e491ed7a7e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotHolder: {fileID: 0}
+  slotHolder: {fileID: 6088887736735057864, guid: 5f50b9e6233dc6d4aa2f07bf2540e37f,
+    type: 3}
   canInteract: 0
   canGetFish: 0
   canGetCrops: 0
@@ -632,3 +633,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7185881136953359467}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &597213384178286402 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7777957052982674217, guid: 9ded0285582b8d54d8a8640fe15c5b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 7185881136953359467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
