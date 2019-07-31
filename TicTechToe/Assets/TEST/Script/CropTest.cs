@@ -56,19 +56,16 @@ public class CropTest : ItemTest
 
     void WaterCrops()
     {
-        if (cropState == CropStateTest.Delayed)
+        if(canInteract)
         {
-            if(canInteract)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (Input.GetKeyDown(KeyCode.Space) && tool.toolType == ToolType.Watercan)
-                {
-                    WaterCan.curFill -= 5;
-                    Debug.Log("Interact");
-                    waterIndicator.SetActive(false);
-                    watered = true;
-                }
-            }          
-        }
+                WaterCan.curFill -= 5;
+                Debug.Log("Interact");
+                waterIndicator.SetActive(false);
+                watered = true;
+            }
+        }          
     }
 
     void CropStateChange()
@@ -119,7 +116,29 @@ public class CropTest : ItemTest
         {
             cropState = CropStateTest.Done;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canGetCrops = true;
-        }       
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            if (cropState == CropStateTest.Delayed)
+            {
+                canInteract = true;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (cropState == CropStateTest.Delayed)
+            {
+                canInteract = false;
+            }
+        }
     }
 }
 

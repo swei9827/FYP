@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd3b4d1ec2eba044a118bee76b7e2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterBar: {fileID: 0}
+  waterBar: {fileID: 597213384178286402}
 --- !u!114 &7874831637532023805
 MonoBehaviour:
   m_ObjectHideFlags: 0
