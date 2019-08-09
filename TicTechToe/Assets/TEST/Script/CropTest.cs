@@ -63,6 +63,7 @@ public class CropTest : ItemTest
                 WaterCan.curFill -= 5;
                 Debug.Log("Interact");
                 waterIndicator.SetActive(false);
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(4, this.name.ToString());
                 watered = true;
             }
         }          

@@ -60,6 +60,7 @@ public class DirtTile : MonoBehaviour
             else if (t.toolType == ToolType.Watercan && cropStateTest == CropStateTest.Delayed)
             {
                 WaterCrops();
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(4, this.name.ToString());
             }
 
 			return;

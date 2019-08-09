@@ -1,1 +1,27 @@
-9/8/2019 9:35:36 PM Log Started
+9/8/2019 10:19:47 PM Log Started
+9/8/2019 10:19:48 PM Player obtained Plow
+9/8/2019 10:19:49 PM Player plowed DirtTile
+9/8/2019 10:19:50 PM Player plowed DirtTile (1)
+9/8/2019 10:19:50 PM Player plowed DirtTile (2)
+9/8/2019 10:19:53 PM Player planted Strawberries
+9/8/2019 10:19:56 PM Player obtained Plow
+9/8/2019 10:19:57 PM Player obtained Watering Can
+9/8/2019 10:19:57 PM Player obtained Plow
+9/8/2019 10:19:58 PM Player obtained Watering Can
+9/8/2019 10:19:59 PM Player obtained Plow
+9/8/2019 10:19:59 PM Player obtained Watering Can
+9/8/2019 10:19:59 PM Player obtained Plow
+9/8/2019 10:19:59 PM Player obtained Watering Can
+9/8/2019 10:19:59 PM Player obtained Plow
+9/8/2019 10:19:59 PM Player obtained Watering Can
+9/8/2019 10:19:59 PM Player obtained Plow
+9/8/2019 10:20:00 PM Player obtained Watering Can
+9/8/2019 10:20:00 PM Player obtained Plow
+9/8/2019 10:20:00 PM Player obtained Watering Can
+9/8/2019 10:20:00 PM Player obtained Plow
+9/8/2019 10:20:00 PM Player obtained Watering Can
+9/8/2019 10:20:00 PM Player obtained Plow
+9/8/2019 10:20:02 PM Player obtained Watering Can
+9/8/2019 10:20:03 PM Player watered Strawberry(Clone)
+9/8/2019 10:20:04 PM Player watered Strawberry(Clone)
+9/8/2019 10:20:09 PM Player harvested Strawberries

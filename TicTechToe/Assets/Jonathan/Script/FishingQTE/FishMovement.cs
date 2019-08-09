@@ -45,12 +45,12 @@ public class FishMovement : MonoBehaviour
         if (dirRight)
         {
             fishImage.rectTransform.localScale = new Vector3(1, 1, 1);
-            fish.AddForce(new Vector2(70, 360), ForceMode2D.Impulse);           
+            fish.AddForce(new Vector2(70, 560), ForceMode2D.Impulse);           
         }
         else
         {
             fishImage.rectTransform.localScale = new Vector3(-1, 1, 1);
-            fish.AddForce(new Vector2(-70, 360), ForceMode2D.Impulse);           
+            fish.AddForce(new Vector2(-70, 560), ForceMode2D.Impulse);           
         }
     }
 
@@ -71,12 +71,12 @@ public class FishMovement : MonoBehaviour
         if (dirRight)
         {
             fishImage.rectTransform.localScale = new Vector3(1, 1, 1);
-            fish.AddForce(new Vector2(70, 310), ForceMode2D.Impulse);
+            fish.AddForce(new Vector2(70, 510), ForceMode2D.Impulse);
         }
         else
         {
             fishImage.rectTransform.localScale = new Vector3(-1, 1, 1);
-            fish.AddForce(new Vector2(-70, 310), ForceMode2D.Impulse);
+            fish.AddForce(new Vector2(-70, 510), ForceMode2D.Impulse);
         }
     }
 

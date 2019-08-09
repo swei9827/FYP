@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.IO;
 
 public class DataRecord : MonoBehaviour
 {
-    [MenuItem("Tools/Write file")]
+    //[MenuItem("Tools/Write file")]
     static void LogFileGeneration()
     {       
         string path = "Assets/Resource/DataRecord/Log.txt";
@@ -31,7 +31,7 @@ public class DataRecord : MonoBehaviour
         
     }
 
-    [MenuItem("Tools/Write file")]
+   // [MenuItem("Tools/Write file")]
     public void AddEvents(int eventID, string eventObj)
     {
         string eventName;
@@ -76,4 +76,5 @@ public class DataRecord : MonoBehaviour
         LogFileGeneration();
     }
 }
+
 
