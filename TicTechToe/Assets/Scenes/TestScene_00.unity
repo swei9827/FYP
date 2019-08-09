@@ -434,6 +434,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2755420889966546539, guid: 4b1d187909613b04584bc2d0aafd6dca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024578654607640093, guid: 4b1d187909613b04584bc2d0aafd6dca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025843634979677737, guid: 4b1d187909613b04584bc2d0aafd6dca,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025843634979677737, guid: 4b1d187909613b04584bc2d0aafd6dca,
+        type: 3}
+      propertyPath: m_DynamicPixelsPerUnit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531557829737504971, guid: 4b1d187909613b04584bc2d0aafd6dca,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1d187909613b04584bc2d0aafd6dca, type: 3}
 --- !u!114 &241047395 stripped
@@ -465,6 +490,7 @@ GameObject:
   - component: {fileID: 331706262}
   - component: {fileID: 331706263}
   - component: {fileID: 331706261}
+  - component: {fileID: 331706264}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -524,6 +550,20 @@ MonoBehaviour:
   dayFog: {r: 0.7058824, g: 0.8156863, b: 0.81960785, a: 1}
   nightSkybox: {fileID: 0}
   nightFog: {r: 0.047058824, g: 0.05882353, b: 0.35686275, a: 1}
+--- !u!114 &331706264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331706260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806f63dfccb02f9459ed193fb1c29244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTutorial: 0
+  isGame: 1
 --- !u!1 &387774787
 GameObject:
   m_ObjectHideFlags: 0
