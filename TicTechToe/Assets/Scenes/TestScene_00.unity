@@ -464,13 +464,26 @@ GameObject:
   m_Component:
   - component: {fileID: 331706262}
   - component: {fileID: 331706263}
+  - component: {fileID: 331706261}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &331706261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331706260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cda0da0477695b4a9424418bea5cd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &331706262
 Transform:
   m_ObjectHideFlags: 0
@@ -1756,11 +1769,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4094478639997455367, guid: 116a35d4ccf128e489c7b8487d8ae045,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2539705720589047732, guid: 116a35d4ccf128e489c7b8487d8ae045,
         type: 3}
       propertyPath: m_SortingOrder
@@ -1770,6 +1778,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094478639997455367, guid: 116a35d4ccf128e489c7b8487d8ae045,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116a35d4ccf128e489c7b8487d8ae045, type: 3}
@@ -3159,11 +3172,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4094478639997455367, guid: 116a35d4ccf128e489c7b8487d8ae045,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2539705720589047732, guid: 116a35d4ccf128e489c7b8487d8ae045,
         type: 3}
       propertyPath: m_SortingOrder
@@ -3173,6 +3181,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094478639997455367, guid: 116a35d4ccf128e489c7b8487d8ae045,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116a35d4ccf128e489c7b8487d8ae045, type: 3}
@@ -3788,26 +3801,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TableTile (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 6023746417712011427, guid: e662119d3d370834f957aa1e5fcaf72b,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6023746417712011427, guid: e662119d3d370834f957aa1e5fcaf72b,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 6023746417712011427, guid: e662119d3d370834f957aa1e5fcaf72b,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 6023746417712011427, guid: e662119d3d370834f957aa1e5fcaf72b,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6023746417854685801, guid: e662119d3d370834f957aa1e5fcaf72b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3866,6 +3859,26 @@ PrefabInstance:
     - target: {fileID: 6023746417854685803, guid: e662119d3d370834f957aa1e5fcaf72b,
         type: 3}
       propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023746417712011427, guid: e662119d3d370834f957aa1e5fcaf72b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023746417712011427, guid: e662119d3d370834f957aa1e5fcaf72b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023746417712011427, guid: e662119d3d370834f957aa1e5fcaf72b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023746417712011427, guid: e662119d3d370834f957aa1e5fcaf72b,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

@@ -39,7 +39,8 @@ public class PlayerInteraction : MonoBehaviour
 			if (table != null)
 			{
 				table.Interact(crop, tool, this);
-			}
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, tool.name.ToString());
+            }
 
 			SeedBarrel barrel = target.GetComponent<SeedBarrel>();
 			if (barrel != null)

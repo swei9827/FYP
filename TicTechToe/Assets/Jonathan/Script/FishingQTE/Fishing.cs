@@ -41,6 +41,7 @@ public class Fishing : MonoBehaviour
         if (t == null)
         {
             Debug.Log("Use fishing rod");
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, t.name.ToString());
         }
         else if (t != null)
         {

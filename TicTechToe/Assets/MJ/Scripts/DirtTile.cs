@@ -35,7 +35,8 @@ public class DirtTile : MonoBehaviour
 		{
             if (!needsPlowing)
             {
-                 PlantCrop(c, player);                
+                PlantCrop(c, player);
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(3, c.GetName());
                 // PlantSeed(c, player);
             }
 
@@ -78,7 +79,7 @@ public class DirtTile : MonoBehaviour
             temp.transform.SetParent(this.transform);
             temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
             temp.GetComponent<CropTest>().planted = true;
-            player.SetCrop(new Crop(null));
+            player.SetCrop(new Crop(null));         
         }
         else if (c.asset.cropsType == CropsType.Potatoes)
         {
@@ -152,7 +153,8 @@ public class DirtTile : MonoBehaviour
 	{
 		Debug.Log("Plowing...");
 		overlay.sprite = null;
-		needsPlowing = false;
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(2, this.name.ToString());
+        needsPlowing = false;
 	}
 
 	//void WaterCrop ()
