@@ -10,6 +10,8 @@ public class DirtTile : MonoBehaviour
 	public SpriteRenderer overlay;
 
 	public bool needsPlowing = true;
+    public static bool addPlant = true;
+    public static bool isEmpty = false;
 	public Sprite extraDirt;
 	public GameObject waterIndicator;
 
@@ -35,9 +37,12 @@ public class DirtTile : MonoBehaviour
 		{
             if (!needsPlowing)
             {
-                PlantCrop(c, player);
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(3, c.GetName());
-                // PlantSeed(c, player);
+                if(temp == null)
+                {
+                    PlantCrop(c, player);
+                    addPlant = false;
+                    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(3, c.GetName());             
+                }  
             }
 
             else
@@ -57,11 +62,11 @@ public class DirtTile : MonoBehaviour
             //{
             //	WaterCrop();
             //}
-            else if (t.toolType == ToolType.Watercan && cropStateTest == CropStateTest.Delayed)
-            {
-                WaterCrops();
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(4, this.name.ToString());
-            }
+            //else if (t.toolType == ToolType.Watercan && cropStateTest == CropStateTest.Delayed)
+            //{
+            //    WaterCrops();
+            //    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(4, this.name.ToString());
+            //}
 
 			return;
 		}
@@ -80,7 +85,7 @@ public class DirtTile : MonoBehaviour
             temp.transform.SetParent(this.transform);
             temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
             temp.GetComponent<CropTest>().planted = true;
-            player.SetCrop(new Crop(null));         
+            player.SetCrop(new Crop(null));
         }
         else if (c.asset.cropsType == CropsType.Potatoes)
         {
@@ -158,17 +163,6 @@ public class DirtTile : MonoBehaviour
         needsPlowing = false;
 	}
 
-	//void WaterCrop ()
-	//{
-	//	if (crop.GetWaterState() == WaterState.Dry)
-	//	{
-	//		crop.Water();
- //           WaterCan.curFill -= 5;
-	//		UpdateSprite();
-	//		waterIndicator.SetActive(false);
-	//	}
-	//}
-
 	void UpdateSprite ()
 	{
 		overlay.sprite = crop.GetCropSprite();
@@ -205,6 +199,11 @@ public class DirtTile : MonoBehaviour
 				}
 			}
 		}
-	}
+
+        if(addPlant)
+        {
+            temp = null;
+        }
+    }
 
 }

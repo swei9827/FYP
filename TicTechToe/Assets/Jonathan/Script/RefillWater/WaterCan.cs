@@ -9,6 +9,7 @@ public class WaterCan : MonoBehaviour
 
     public static float maxFill = 10f;
     public static float curFill;
+    public static bool isFull;
     float calculateFill;
 
     private void Start()
@@ -20,6 +21,14 @@ public class WaterCan : MonoBehaviour
     void Update()
     {
         totalFill();
+        if(curFill == maxFill)
+        {
+            isFull = true;
+        }
+        else if(curFill != maxFill)
+        {
+            isFull = false;
+        }
     }
 
     void totalFill()

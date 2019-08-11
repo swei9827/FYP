@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
 
     public GameObject slotHolder;
 
-    public  bool canInteract = false;
+    public bool canInteract = false;
     public bool canGetFish = false;
     public bool canGetCrops = false;
 
@@ -44,7 +44,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Crops" || other.tag == "Fish")
         {
@@ -53,17 +53,18 @@ public class Inventory : MonoBehaviour
     }
 
     private void Update()
-    {
-        if (canInteract)
+    {       
+        if(canInteract)
         {
-            if(canGetCrops)
+            if (canGetCrops)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     AddCropsItem(itemPickedUp, items.CropType, items.sprites[1]);
                     GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(5, items.CropType.ToString());
                     canGetCrops = false;
-                }              
+                    DirtTile.addPlant = true;
+                }
             }
 
             if (canGetFish)
@@ -72,7 +73,7 @@ public class Inventory : MonoBehaviour
                 GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, items.FishType.ToString());
                 canGetFish = false;
             }
-        }      
+        }       
     }
 
     void AddCropsItem(GameObject itemObject, CropsTypeTest crops, Sprite itemIcon)

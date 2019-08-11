@@ -17,6 +17,9 @@ public class PlayerInteraction : MonoBehaviour
 	[SerializeField]
 	private Tool tool;
 
+    public static bool canUse = false;
+    public static bool canWater = false;
+
     private void Start()
     {
         waterIndicator.enabled = false;   
@@ -72,7 +75,15 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
 		}
-	}
+        if (WaterCan.curFill == 0)
+        {
+            canWater = false;
+        }
+        else
+        {
+            canWater = true;
+        }
+    }
 
 	public void SetCrop(Crop c)
 	{
@@ -97,21 +108,26 @@ public class PlayerInteraction : MonoBehaviour
 		{
             if (tool.toolType == ToolType.Watercan)
             {
-                waterIndicator.enabled = true;
-                iconBox.SetIcon(tool.sprite);
+                canUse = true;
+                waterIndicator.enabled = true;                
+                iconBox.SetIcon(tool.sprite);             
             }
-            else
+            else if(tool.toolType != ToolType.Watercan)
             {
+                canUse = false;
                 waterIndicator.enabled = false;
-                iconBox.SetIcon(tool.sprite);
-            }        
-		}
+                iconBox.SetIcon(tool.sprite);            
+            }       
+        }
         else
 		{
+            canUse = false;
             waterIndicator.enabled = false;
             iconBox.Close();
 		}
-	}
+
+       
+    }
 
 	private void OnTriggerStay2D(Collider2D col)
 	{

@@ -71,7 +71,7 @@ public class Fishing : MonoBehaviour
 
     public void GetFishSprite()
     {
-        fishType = (FishTypeTest)Random.Range(0, (int)FishTypeTest.Max);
+        fishType = (FishTypeTest)Random.Range(1, (int)FishTypeTest.Max);
         switch (fishType)
         {
             case FishTypeTest.Catfish:

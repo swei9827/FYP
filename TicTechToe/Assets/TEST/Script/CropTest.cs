@@ -19,7 +19,9 @@ public class CropTest : ItemTest
     [Header("Other Settings")]
     public GameObject waterIndicator;
     public Tool tool;
-    bool canInteract;
+    bool tempCanInteract;
+    bool goWater;
+    public bool canInteract;
 
     public DirtTile dirtTile;
 
@@ -31,8 +33,8 @@ public class CropTest : ItemTest
         cropState = CropStateTest.Seed;
         growPercentage = 0;
         sr = GetComponent<SpriteRenderer>();
-        canInteract = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canInteract;
-        //temp = GameObject.FindGameObjectWithTag("Crops").GetComponent<DirtTile>().temp;
+        canInteract = false;
+        tempCanInteract = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canGetCrops;
     }
  
     void Update()
@@ -55,18 +57,19 @@ public class CropTest : ItemTest
     }
 
     void WaterCrops()
-    {    
-        if(canInteract)
+    {        
+        if (goWater)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && PlayerInteraction.canUse && PlayerInteraction.canWater)
             {
                 WaterCan.curFill -= 5;
-                Debug.Log("Interact");
                 waterIndicator.SetActive(false);
+                Debug.Log("Interact");
                 GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(4, this.name.ToString());
                 watered = true;
+                goWater = false;
             }
-        }          
+        }      
     }
 
     void CropStateChange()
@@ -126,7 +129,7 @@ public class CropTest : ItemTest
         {
             if (cropState == CropStateTest.Delayed)
             {
-                canInteract = true;
+                goWater = true;
             }
         }
     }
@@ -137,7 +140,7 @@ public class CropTest : ItemTest
         {
             if (cropState == CropStateTest.Delayed)
             {
-                canInteract = false;
+                goWater = false;
             }
         }
     }

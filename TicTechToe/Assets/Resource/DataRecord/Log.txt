@@ -1,27 +1,19 @@
-9/8/2019 10:19:47 PM Log Started
-9/8/2019 10:19:48 PM Player obtained Plow
-9/8/2019 10:19:49 PM Player plowed DirtTile
-9/8/2019 10:19:50 PM Player plowed DirtTile (1)
-9/8/2019 10:19:50 PM Player plowed DirtTile (2)
-9/8/2019 10:19:53 PM Player planted Strawberries
-9/8/2019 10:19:56 PM Player obtained Plow
-9/8/2019 10:19:57 PM Player obtained Watering Can
-9/8/2019 10:19:57 PM Player obtained Plow
-9/8/2019 10:19:58 PM Player obtained Watering Can
-9/8/2019 10:19:59 PM Player obtained Plow
-9/8/2019 10:19:59 PM Player obtained Watering Can
-9/8/2019 10:19:59 PM Player obtained Plow
-9/8/2019 10:19:59 PM Player obtained Watering Can
-9/8/2019 10:19:59 PM Player obtained Plow
-9/8/2019 10:19:59 PM Player obtained Watering Can
-9/8/2019 10:19:59 PM Player obtained Plow
-9/8/2019 10:20:00 PM Player obtained Watering Can
-9/8/2019 10:20:00 PM Player obtained Plow
-9/8/2019 10:20:00 PM Player obtained Watering Can
-9/8/2019 10:20:00 PM Player obtained Plow
-9/8/2019 10:20:00 PM Player obtained Watering Can
-9/8/2019 10:20:00 PM Player obtained Plow
-9/8/2019 10:20:02 PM Player obtained Watering Can
-9/8/2019 10:20:03 PM Player watered Strawberry(Clone)
-9/8/2019 10:20:04 PM Player watered Strawberry(Clone)
-9/8/2019 10:20:09 PM Player harvested Strawberries
+12/8/2019 3:36:02 AM Log Started
+12/8/2019 3:36:10 AM Player obtained Plow
+12/8/2019 3:36:12 AM Player plowed DirtTile
+12/8/2019 3:36:15 AM Player planted Strawberries
+12/8/2019 3:36:19 AM Player obtained Plow
+12/8/2019 3:36:20 AM Player plowed DirtTile (1)
+12/8/2019 3:36:21 AM Player obtained Watering Can
+12/8/2019 3:36:24 AM Player planted Strawberries
+12/8/2019 3:36:28 AM Player obtained Watering Can
+12/8/2019 3:36:29 AM Player watered Strawberry(Clone)
+12/8/2019 3:36:30 AM Player watered Strawberry(Clone)
+12/8/2019 3:36:35 AM Player harvested Strawberries
+12/8/2019 3:36:36 AM Player harvested Strawberries
+12/8/2019 3:36:42 AM Player obtained Fishing Rod
+12/8/2019 3:36:54 AM Player obtained Salmon
+12/8/2019 3:37:05 AM Player obtained Sardine
+12/8/2019 3:37:17 AM Player obtained Salmon
+12/8/2019 3:37:28 AM Player obtained Catfish
+12/8/2019 3:37:39 AM Player obtained Sardine
