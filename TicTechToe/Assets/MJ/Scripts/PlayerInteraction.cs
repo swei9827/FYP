@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerInteraction : MonoBehaviour
 {
 	public GameObject target;
+    public GameObject Quests;
 
 	public KeyCode interactKey;
 
@@ -20,8 +21,17 @@ public class PlayerInteraction : MonoBehaviour
     public static bool canUse = false;
     public static bool canWater = false;
 
+
+    // CJ
+    public Dialogue dialogueManager;
+    public bool firstChat = false;
+    public bool inChat = false;
+    public bool canChat = false;
+    public bool convoStarted = false;
+
     private void Start()
     {
+        dialogueManager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<Dialogue>();
         waterIndicator.enabled = false;   
     }
 
@@ -75,17 +85,12 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
 		}
-        if (WaterCan.curFill == 0)
-        {
-            canWater = false;
-        }
-        else
-        {
-            canWater = true;
-        }
+
+        checkWater();
+        StartConvo();
     }
 
-	public void SetCrop(Crop c)
+    public void SetCrop(Crop c)
 	{
 		crop = c;
 		DisplayInventory();
@@ -174,5 +179,60 @@ public class PlayerInteraction : MonoBehaviour
 			sr.color = Color.white;
 		}
 	}
+
+    void checkWater()
+    {
+        if (WaterCan.curFill == 0)
+        {
+            canWater = false;
+        }
+        else
+        {
+            canWater = true;
+        }
+
+    }
+
+    void StartConvo()
+    {
+        if (canChat)
+        {         
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (!inChat)
+                {
+                    PlayerMovement.canMove = false;
+                    dialogueManager.wholeDialogue.SetActive(true);
+                    dialogueManager.inventory.SetActive(false);
+
+                    //start conversation
+                    dialogueManager.StartCoroutine(dialogueManager.Type());
+                    inChat = true;
+                }
+                else
+                {
+                    dialogueManager.NextSentence();
+                }
+            }       
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("NPC"))
+        {
+            canChat = true;
+            Quests.SetActive(true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("NPC"))
+        {
+            canChat = false;
+            Quests.SetActive(false);
+        }
+    }
 
 }
