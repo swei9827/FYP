@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public List<Sprite> sp_Fish = new List<Sprite>();
+    
 
     /* GetComponent<SpriteComponent>().Sprite = sp_Fish[Enum];
      * 
@@ -17,10 +18,20 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     RaycastHit2D hit;
 
+    // CJ
+    public Dialogue dialogueManager;
+    public bool firstChat = false;
+    public bool inChat = false;
+    public bool canChat = false;
+
+    public bool convoStarted = false;
+
     // Use this for initialization
     void Start()
     {
+        dialogueManager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<Dialogue>();
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -29,7 +40,10 @@ public class PlayerMovement : MonoBehaviour
         if(canMove)
         {
             Move();
-        }     
+        }
+
+        StartConvo();
+
     }
 
     void Move()
@@ -71,6 +85,44 @@ public class PlayerMovement : MonoBehaviour
         }
         transform.localScale = characterScale;
         
+
+        // CJ,Dialogue Script
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(inChat == true)
+            {
+                dialogueManager.NextSentence();
+            }
+        }
+    }
+
+    void StartConvo()
+    {
+        if(canChat)
+        {
+            if(convoStarted == false)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    dialogueManager.wholeDialogue.SetActive(true);
+                    inChat = true;
+                    convoStarted = true;
+                }
+            }
+        }      
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("NPC"))
+        {
+            canChat = true;
+        }
+        else
+        {
+            canChat = false;
+        }
     }
 
 }
