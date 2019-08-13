@@ -28,7 +28,7 @@ public class Dialogue : MonoBehaviour
         foreach (char letter in npcNames[index].ToCharArray())
         {
             npcNameDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            yield return new WaitForSeconds(0.0f);
         }
     }
 
