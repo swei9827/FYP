@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public List<Sprite> sp_Fish = new List<Sprite>();
+    
 
     /* GetComponent<SpriteComponent>().Sprite = sp_Fish[Enum];
      * 
@@ -17,9 +18,13 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     RaycastHit2D hit;
 
+    // CJ
+    public Dialogue dialogueManager;
+
     // Use this for initialization
     void Start()
     {
+        dialogueManager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<Dialogue>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -71,6 +76,13 @@ public class PlayerMovement : MonoBehaviour
         }
         transform.localScale = characterScale;
         
+
+        // CJ,Dialogue Script
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            dialogueManager.NextSentence();
+        }
+
     }
 
 }
