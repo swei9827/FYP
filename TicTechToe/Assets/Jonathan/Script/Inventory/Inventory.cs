@@ -60,7 +60,7 @@ public class Inventory : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    AddCropsItem(itemPickedUp, items.CropType, items.sprites[1]);
+                    AddCropsItem(itemPickedUp, items.CropType, items.sprites[1], 0);
                     GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(5, items.CropType.ToString());
                     canGetCrops = false;
                     DirtTile.addPlant = true;
@@ -69,14 +69,14 @@ public class Inventory : MonoBehaviour
 
             if (canGetFish)
             {
-                AddFishItem(itemPickedUp, items.FishType, items.sprites[0]);
+                AddFishItem(itemPickedUp, items.FishType, items.sprites[0], 1);
                 GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, items.FishType.ToString());
                 canGetFish = false;
             }
         }       
     }
 
-    void AddCropsItem(GameObject itemObject, CropsTypeTest crops, Sprite itemIcon)
+    void AddCropsItem(GameObject itemObject, CropsTypeTest crops, Sprite itemIcon, int id)
     {
         for (int i = 0; i < allslots; i++)
         {
@@ -89,6 +89,7 @@ public class Inventory : MonoBehaviour
                 slots[i].GetComponent<Slots>().item = itemObject;
                 slots[i].GetComponent<Slots>().itemIcon = itemIcon;
                 slots[i].GetComponent<Slots>().CropType = crops;
+                slots[i].GetComponent<Slots>().id = id;
 
                 //add number held
                 slots[i].GetComponent<Slots>().numberHeld += 1;
@@ -123,7 +124,7 @@ public class Inventory : MonoBehaviour
         }     
     }
 
-    void AddFishItem(GameObject itemObject, FishTypeTest fish, Sprite itemIcon)
+    void AddFishItem(GameObject itemObject, FishTypeTest fish, Sprite itemIcon,int id)
     {
         for (int i = 0; i < allslots; i++)
         {
@@ -136,6 +137,7 @@ public class Inventory : MonoBehaviour
                 slots[i].GetComponent<Slots>().item = itemObject;
                 slots[i].GetComponent<Slots>().itemIcon = itemIcon;
                 slots[i].GetComponent<Slots>().FishType = fish;
+                slots[i].GetComponent<Slots>().id = id;
 
                 //add number held
                 slots[i].GetComponent<Slots>().numberHeld += 1;
