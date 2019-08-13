@@ -13,8 +13,10 @@ public class Dialogue : MonoBehaviour
     private int index;
 
     public GameObject wholeDialogue;
+    public PlayerMovement player;
+    public bool finishChat = false;
 
-    IEnumerator Type()
+    public IEnumerator Type()
     {
         foreach(char letter in sentences[index].ToCharArray())
         {
@@ -33,23 +35,29 @@ public class Dialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         StartCoroutine(Type());
     }
 
     public void NextSentence()
     {
-        if(index < sentences.Length - 1)
+        if(player.inChat == true)
         {
-            index++;
-            textDisplay.text = "";
-            npcNameDisplay.text = "";
-            StartCoroutine(Type());
-        }
-        else
-        {
-            textDisplay.text = "";
-            npcNameDisplay.text = "";
-            wholeDialogue.SetActive(false);
+            if (index < sentences.Length - 1)
+            {
+                index++;
+                textDisplay.text = "";
+                npcNameDisplay.text = "";
+                StartCoroutine(Type());
+            }
+            else
+            {
+                textDisplay.text = "";
+                npcNameDisplay.text = "";
+                wholeDialogue.SetActive(false);
+                player.inChat = false;
+                player.canChat = false;
+            }
         }
     }
 }
