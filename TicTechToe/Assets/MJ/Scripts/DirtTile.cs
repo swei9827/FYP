@@ -10,6 +10,8 @@ public class DirtTile : MonoBehaviour
 	public SpriteRenderer overlay;
 
 	public bool needsPlowing = true;
+    public static bool addPlant = true;
+    public static bool isEmpty = false;
 	public Sprite extraDirt;
 	public GameObject waterIndicator;
 
@@ -35,8 +37,12 @@ public class DirtTile : MonoBehaviour
 		{
             if (!needsPlowing)
             {
-                 PlantCrop(c, player);                
-                // PlantSeed(c, player);
+                if(temp == null)
+                {
+                    PlantCrop(c, player);
+                    addPlant = false;
+                    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(3, c.GetName());             
+                }  
             }
 
             else
@@ -56,10 +62,11 @@ public class DirtTile : MonoBehaviour
             //{
             //	WaterCrop();
             //}
-            else if (t.toolType == ToolType.Watercan && cropStateTest == CropStateTest.Delayed)
-            {
-                WaterCrops();
-            }
+            //else if (t.toolType == ToolType.Watercan && cropStateTest == CropStateTest.Delayed)
+            //{
+            //    WaterCrops();
+            //    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(4, this.name.ToString());
+            //}
 
 			return;
 		}
@@ -152,19 +159,9 @@ public class DirtTile : MonoBehaviour
 	{
 		Debug.Log("Plowing...");
 		overlay.sprite = null;
-		needsPlowing = false;
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(2, this.name.ToString());
+        needsPlowing = false;
 	}
-
-	//void WaterCrop ()
-	//{
-	//	if (crop.GetWaterState() == WaterState.Dry)
-	//	{
-	//		crop.Water();
- //           WaterCan.curFill -= 5;
-	//		UpdateSprite();
-	//		waterIndicator.SetActive(false);
-	//	}
-	//}
 
 	void UpdateSprite ()
 	{
@@ -202,6 +199,11 @@ public class DirtTile : MonoBehaviour
 				}
 			}
 		}
-	}
+
+        if(addPlant)
+        {
+            temp = null;
+        }
+    }
 
 }

@@ -19,7 +19,9 @@ public class CropTest : ItemTest
     [Header("Other Settings")]
     public GameObject waterIndicator;
     public Tool tool;
-    bool canInteract;
+    bool tempCanInteract;
+    bool goWater;
+    public bool canInteract;
 
     public DirtTile dirtTile;
 
@@ -31,8 +33,8 @@ public class CropTest : ItemTest
         cropState = CropStateTest.Seed;
         growPercentage = 0;
         sr = GetComponent<SpriteRenderer>();
-        canInteract = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canInteract;
-        //temp = GameObject.FindGameObjectWithTag("Crops").GetComponent<DirtTile>().temp;
+        canInteract = false;
+        tempCanInteract = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canGetCrops;
     }
  
     void Update()
@@ -55,6 +57,7 @@ public class CropTest : ItemTest
     }
 
     void WaterCrops()
+<<<<<<< HEAD
     {
         if(canInteract)
         {
@@ -66,6 +69,21 @@ public class CropTest : ItemTest
                 watered = true;
             }
         }          
+=======
+    {        
+        if (goWater)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && PlayerInteraction.canUse && PlayerInteraction.canWater)
+            {
+                WaterCan.curFill -= 5;
+                waterIndicator.SetActive(false);
+                Debug.Log("Interact");
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(4, this.name.ToString());
+                watered = true;
+                goWater = false;
+            }
+        }      
+>>>>>>> TEST
     }
 
     void CropStateChange()
@@ -137,6 +155,28 @@ public class CropTest : ItemTest
             if (cropState == CropStateTest.Delayed)
             {
                 canInteract = false;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (cropState == CropStateTest.Delayed)
+            {
+                goWater = true;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (cropState == CropStateTest.Delayed)
+            {
+                goWater = false;
             }
         }
     }

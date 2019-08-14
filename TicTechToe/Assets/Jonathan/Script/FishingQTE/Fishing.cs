@@ -41,6 +41,7 @@ public class Fishing : MonoBehaviour
         if (t == null)
         {
             Debug.Log("Use fishing rod");
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, t.name.ToString());
         }
         else if (t != null)
         {
@@ -70,7 +71,7 @@ public class Fishing : MonoBehaviour
 
     public void GetFishSprite()
     {
-        fishType = (FishTypeTest)Random.Range(0, (int)FishTypeTest.Max);
+        fishType = (FishTypeTest)Random.Range(1, (int)FishTypeTest.Max);
         switch (fishType)
         {
             case FishTypeTest.Catfish:

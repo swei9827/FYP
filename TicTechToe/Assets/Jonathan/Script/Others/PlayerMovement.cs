@@ -6,8 +6,11 @@ using UnityEngine.Networking;
 public class PlayerMovement : NetworkBehaviour
 {
     public float speed;
+<<<<<<< HEAD
     public List<Sprite> sp_Fish = new List<Sprite>();
 
+=======
+>>>>>>> TEST
     public static bool canMove = true;
     private Vector2 direction;
     Rigidbody2D rb;
@@ -21,8 +24,12 @@ public class PlayerMovement : NetworkBehaviour
     // Use this for initialization
     void Start()
     {
+<<<<<<< HEAD
         rb = GetComponent<Rigidbody2D>();
         serverScale = new Vector3(1.5f, 1.5f, 1.5f);
+=======
+        rb = GetComponent<Rigidbody2D>();      
+>>>>>>> TEST
     }
 
     // Update is called once per frame
@@ -43,8 +50,12 @@ public class PlayerMovement : NetworkBehaviour
         }
         else if (hasAuthority == false)
         {
+<<<<<<< HEAD
             transform.position = Vector3.SmoothDamp(transform.position, serverPosition, ref serverPositionSmoothVelocity, 0.25f);
             transform.localScale = serverScale;
+=======
+            Move();
+>>>>>>> TEST
         }
     }
 
@@ -85,6 +96,7 @@ public class PlayerMovement : NetworkBehaviour
         {
             characterScale.x = 1.5f;
         }
+<<<<<<< HEAD
         transform.localScale = characterScale;
         
     }
@@ -114,4 +126,8 @@ public class PlayerMovement : NetworkBehaviour
         //if the client tried to move char in some kind of illegal manner.
         transform.position = newPosition;
     }
+=======
+        transform.localScale = characterScale;      
+    } 
+>>>>>>> TEST
 }

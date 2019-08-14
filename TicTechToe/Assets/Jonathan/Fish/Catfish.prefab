@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CropType: 0
   FishType: 4
-  id: 0
+  id: 1
   sprites:
   - {fileID: 21300000, guid: 8152849875f806d4bacf5f6547c5b2e9, type: 3}
   details: Catfish

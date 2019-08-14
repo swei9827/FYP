@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Inventory : MonoBehaviour
 {
     private int allslots;
     private int enabledSlots;
     private GameObject[] slots;
     private GameObject itemPickedUp;
+    public GameObject dialogue;
     ItemTest items;
     CropTest cropTest;
     CropStateTest state;
 
     public GameObject slotHolder;
 
-    public  bool canInteract = false;
+    public bool canInteract = false;
     public bool canGetFish = false;
     public bool canGetCrops = false;
 
@@ -44,7 +46,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Crops" || other.tag == "Fish")
         {
@@ -53,28 +55,37 @@ public class Inventory : MonoBehaviour
     }
 
     private void Update()
-    {
-        if (canInteract)
+    {       
+        if(canInteract)
         {
-            if(canGetCrops)
+            if (canGetCrops)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    AddCropsItem(itemPickedUp, items.CropType, items.sprites[1]);
+                    AddCropsItem(itemPickedUp, items.CropType, items.sprites[1], 0);
+                    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(5, items.CropType.ToString());
                     canGetCrops = false;
-                }              
+                    DirtTile.addPlant = true;
+                }
             }
 
             if (canGetFish)
             {
-                AddFishItem(itemPickedUp, items.FishType, items.sprites[0]);
+                AddFishItem(itemPickedUp, items.FishType, items.sprites[0], 1);
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, items.FishType.ToString());
                 canGetFish = false;
             }
-        }      
+        }       
     }
 
-    void AddCropsItem(GameObject itemObject, CropsTypeTest crops, Sprite itemIcon)
+    void AddCropsItem(GameObject itemObject, CropsTypeTest crops, Sprite itemIcon, int id)
     {
+        if(dialogue.GetComponent<Dialogue>().getIndex() == 2 && !Dialogue.completeTask1)
+        {
+            dialogue.GetComponent<Dialogue>().setIndex(3);
+            Dialogue.completeTask1 = true;
+        }
+
         for (int i = 0; i < allslots; i++)
         {
             if (slots[i].GetComponent<Slots>().empty)
@@ -86,6 +97,7 @@ public class Inventory : MonoBehaviour
                 slots[i].GetComponent<Slots>().item = itemObject;
                 slots[i].GetComponent<Slots>().itemIcon = itemIcon;
                 slots[i].GetComponent<Slots>().CropType = crops;
+                slots[i].GetComponent<Slots>().id = id;
 
                 //add number held
                 slots[i].GetComponent<Slots>().numberHeld += 1;
@@ -120,8 +132,14 @@ public class Inventory : MonoBehaviour
         }     
     }
 
-    void AddFishItem(GameObject itemObject, FishTypeTest fish, Sprite itemIcon)
+    void AddFishItem(GameObject itemObject, FishTypeTest fish, Sprite itemIcon,int id)
     {
+        if (dialogue.GetComponent<Dialogue>().getIndex() == 2 && Dialogue.completeTask1)
+        {
+            dialogue.GetComponent<Dialogue>().setIndex(6);
+            Dialogue.completeTask2 = true;
+        }
+
         for (int i = 0; i < allslots; i++)
         {
             if (slots[i].GetComponent<Slots>().empty)
@@ -133,6 +151,7 @@ public class Inventory : MonoBehaviour
                 slots[i].GetComponent<Slots>().item = itemObject;
                 slots[i].GetComponent<Slots>().itemIcon = itemIcon;
                 slots[i].GetComponent<Slots>().FishType = fish;
+                slots[i].GetComponent<Slots>().id = id;
 
                 //add number held
                 slots[i].GetComponent<Slots>().numberHeld += 1;
@@ -155,7 +174,7 @@ public class Inventory : MonoBehaviour
                 itemObject.SetActive(false);
 
                 slots[i].GetComponent<Slots>().UpdateSlot();
-                slots[i].GetComponent<Slots>().UpdateNumHeld();
+                slots[i].GetComponent<Slots>().UpdateNumHeld();          
             }
             else
             {

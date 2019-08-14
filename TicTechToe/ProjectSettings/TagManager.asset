@@ -8,6 +8,8 @@ TagManager:
   - Crops
   - Fish
   - DirtTile
+  - DialogueManager
+  - NPC
   layers:
   - Default
   - TransparentFX
