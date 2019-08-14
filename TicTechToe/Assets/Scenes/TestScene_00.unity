@@ -449,6 +449,11 @@ PrefabInstance:
       propertyPath: Quests
       value: 
       objectReference: {fileID: 419616462}
+    - target: {fileID: 2831242842766318681, guid: 4b1d187909613b04584bc2d0aafd6dca,
+        type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 460748044}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1d187909613b04584bc2d0aafd6dca, type: 3}
 --- !u!114 &241047395 stripped
@@ -1185,6 +1190,24 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &460748043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3659707413763448872, guid: 661f0d50a2578a649b19d43a4e248ca5,
+    type: 3}
+  m_PrefabInstance: {fileID: 10166744639827168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &460748044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
+    type: 3}
+  m_PrefabInstance: {fileID: 10166744639827168}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460748043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf0213efd5ef54479bf4c9df4283f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &479158029
 GameObject:
   m_ObjectHideFlags: 0
@@ -5099,6 +5122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5f61edd63dc70419e1e491ed7a7e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogue: {fileID: 460748043}
   slotHolder: {fileID: 1970513457}
   canInteract: 0
   canGetFish: 0
@@ -17279,7 +17303,7 @@ PrefabInstance:
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
       propertyPath: sentences.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
@@ -17319,12 +17343,12 @@ PrefabInstance:
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
       propertyPath: sentences.Array.data[3]
-      value: Can you help me to fish?
+      value: Well Done!!
       objectReference: {fileID: 0}
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
       propertyPath: sentences.Array.data[4]
-      value: One fish is enough
+      value: Can you help me to fish?
       objectReference: {fileID: 0}
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
@@ -17335,6 +17359,16 @@ PrefabInstance:
         type: 3}
       propertyPath: sentences.Array.data[1]
       value: One crops is enough
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
+        type: 3}
+      propertyPath: sentences.Array.data[5]
+      value: One fish is enough
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
+        type: 3}
+      propertyPath: sentences.Array.data[6]
+      value: You completed all task
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 661f0d50a2578a649b19d43a4e248ca5, type: 3}

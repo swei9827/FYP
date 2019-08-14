@@ -1,1 +1,12 @@
-14/8/2019 1:33:48 AM Log Started
+14/8/2019 8:59:28 AM Log Started
+14/8/2019 8:59:31 AM Player obtained Plow
+14/8/2019 8:59:32 AM Player plowed DirtTile
+14/8/2019 8:59:33 AM Player plowed DirtTile (1)
+14/8/2019 8:59:34 AM Player plowed DirtTile (2)
+14/8/2019 8:59:40 AM Player planted Strawberries
+14/8/2019 8:59:50 AM Player obtained Watering Can
+14/8/2019 8:59:51 AM Player watered Strawberry(Clone)
+14/8/2019 9:02:52 AM Player harvested Strawberries
+14/8/2019 9:03:07 AM Player obtained Fishing Rod
+14/8/2019 9:03:19 AM Player obtained Tuna
+14/8/2019 9:03:34 AM Player obtained Catfish

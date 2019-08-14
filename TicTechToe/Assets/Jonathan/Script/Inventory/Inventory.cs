@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     private int enabledSlots;
     private GameObject[] slots;
     private GameObject itemPickedUp;
+    public GameObject dialogue;
     ItemTest items;
     CropTest cropTest;
     CropStateTest state;
@@ -78,6 +79,11 @@ public class Inventory : MonoBehaviour
 
     void AddCropsItem(GameObject itemObject, CropsTypeTest crops, Sprite itemIcon, int id)
     {
+        if(dialogue.GetComponent<Dialogue>().getIndex() == 2)
+        {
+            dialogue.GetComponent<Dialogue>().setIndex(3);
+        }
+
         for (int i = 0; i < allslots; i++)
         {
             if (slots[i].GetComponent<Slots>().empty)
@@ -126,6 +132,11 @@ public class Inventory : MonoBehaviour
 
     void AddFishItem(GameObject itemObject, FishTypeTest fish, Sprite itemIcon,int id)
     {
+        if (dialogue.GetComponent<Dialogue>().getIndex() == 6)
+        {
+            dialogue.GetComponent<Dialogue>().setIndex(7);
+        }
+
         for (int i = 0; i < allslots; i++)
         {
             if (slots[i].GetComponent<Slots>().empty)
