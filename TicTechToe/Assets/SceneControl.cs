@@ -7,6 +7,7 @@ public class SceneControl : MonoBehaviour
 {
     public bool isTutorial;
     public bool isGame;
+    public static  bool completeAllTasks;
 
     public void PlayButton()
     {
@@ -31,6 +32,19 @@ public class SceneControl : MonoBehaviour
         if(isGame)
         {
             if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
+
+        //if(completeAllTasks)
+        //{
+        //    SceneManager.LoadScene(3);          
+        //}
+
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ToBeContinue"))
+        {
+            if (Input.anyKey)
             {
                 SceneManager.LoadScene(0);
             }

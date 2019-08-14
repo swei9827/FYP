@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Inventory : MonoBehaviour
 {
     private int allslots;
@@ -79,9 +80,10 @@ public class Inventory : MonoBehaviour
 
     void AddCropsItem(GameObject itemObject, CropsTypeTest crops, Sprite itemIcon, int id)
     {
-        if(dialogue.GetComponent<Dialogue>().getIndex() == 2)
+        if(dialogue.GetComponent<Dialogue>().getIndex() == 2 && !Dialogue.completeTask1)
         {
             dialogue.GetComponent<Dialogue>().setIndex(3);
+            Dialogue.completeTask1 = true;
         }
 
         for (int i = 0; i < allslots; i++)
@@ -132,9 +134,10 @@ public class Inventory : MonoBehaviour
 
     void AddFishItem(GameObject itemObject, FishTypeTest fish, Sprite itemIcon,int id)
     {
-        if (dialogue.GetComponent<Dialogue>().getIndex() == 6)
+        if (dialogue.GetComponent<Dialogue>().getIndex() == 2 && Dialogue.completeTask1)
         {
-            dialogue.GetComponent<Dialogue>().setIndex(7);
+            dialogue.GetComponent<Dialogue>().setIndex(6);
+            Dialogue.completeTask2 = true;
         }
 
         for (int i = 0; i < allslots; i++)
@@ -171,7 +174,7 @@ public class Inventory : MonoBehaviour
                 itemObject.SetActive(false);
 
                 slots[i].GetComponent<Slots>().UpdateSlot();
-                slots[i].GetComponent<Slots>().UpdateNumHeld();
+                slots[i].GetComponent<Slots>().UpdateNumHeld();          
             }
             else
             {

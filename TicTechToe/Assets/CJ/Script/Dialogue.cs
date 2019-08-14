@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class Dialogue : MonoBehaviour
     public GameObject wholeDialogue;
     public PlayerInteraction player;
     public bool finishChat = false;
+
+    public static bool completeTask1 = false;
+    public static bool completeTask2 = false;
 
     public IEnumerator Type()
     {     
@@ -52,15 +56,34 @@ public class Dialogue : MonoBehaviour
     {
         if(player.inChat)
         {
-            if (index == 0 || index == 3)
+            if (index == 0  && !completeTask1)
             {
                 index++;
                 textDisplay.text = "";
                 npcNameDisplay.text = "";
                 StartCoroutine(Type());
             }
+            else if(index == 3 ||index == 4 && completeTask1)
+            {
+                index++;
+                textDisplay.text = "";
+                npcNameDisplay.text = "";
+                StartCoroutine(Type());
+            }
+            else if(!completeTask1 || ! completeTask2)
+            {
+                index = 2;
+                textDisplay.text = "";
+                npcNameDisplay.text = "";
+                wholeDialogue.SetActive(false);
+                inventory.SetActive(true);
+                player.inChat = false;
+                player.canChat = false;
+                PlayerMovement.canMove = true;           
+            }
             else
             {
+                index = 6;
                 textDisplay.text = "";
                 npcNameDisplay.text = "";
                 wholeDialogue.SetActive(false);
@@ -68,9 +91,10 @@ public class Dialogue : MonoBehaviour
                 player.inChat = false;
                 player.canChat = false;
                 PlayerMovement.canMove = true;
-
-                //set dialogue index
-                index = 2;
+                SceneControl.completeAllTasks = true;
+                SceneManager.LoadScene(3);
+                completeTask1 = false;
+                completeTask2 = false;
             }
         }
     }
