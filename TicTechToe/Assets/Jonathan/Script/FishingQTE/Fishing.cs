@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Fishing : MonoBehaviour
 {
+    // GameObject
     public GameObject fishingGame;
     public GameObject player;
     public GameObject[] fishObject;
@@ -17,8 +18,18 @@ public class Fishing : MonoBehaviour
     public Image fishImg;
     public Image bucketImg;
 
-    public float bucketHit;
-    public int waterHit;
+    public float bucketHit = 0;
+    public float waterHit = -1;
+
+    private float hitBucketAmount;
+    private float hitWaterAmount;
+
+    bool canInteract = true;
+
+    //UI
+    public Text fishName;
+    public Text bucketCounter;
+    public Text waterCounter;
 
     //script
     private FishMovement fish;
@@ -33,7 +44,10 @@ public class Fishing : MonoBehaviour
     public void Start()
     {
         fishingGame.SetActive(false);
-        spawnPos = new Vector2(fishImg.rectTransform.localPosition.x, fishImg.rectTransform.localPosition.y);   
+        spawnPos = new Vector2(fishImg.rectTransform.localPosition.x, fishImg.rectTransform.localPosition.y);
+
+        bucketHit = 0;
+        waterHit = -1;
     }
 
     public void Interact(Tool t, PlayerInteraction player)
@@ -47,7 +61,10 @@ public class Fishing : MonoBehaviour
         {
             if (t.toolType == ToolType.fishRod)
             {
-                PopFishingGame();
+                if(canInteract)
+                {
+                    PopFishingGame();
+                }             
             }
             else
             {
@@ -59,10 +76,15 @@ public class Fishing : MonoBehaviour
     public void Update()
     {
         FishingGame();
+
+        //update fish counter
+        bucketCounter.text = "Bucket Hit : " + bucketHit.ToString() + " / " + hitBucketAmount.ToString();
+        waterCounter.text = "Water Hit : " + waterHit.ToString() + " / " + hitWaterAmount.ToString();
     }
 
     public void PopFishingGame()
     {
+        canInteract = false;
         fishingGame.SetActive(true);
         PlayerMovement.canMove = false;      
         inventory.SetActive(false);
@@ -77,25 +99,47 @@ public class Fishing : MonoBehaviour
             case FishTypeTest.Catfish:
                 {
                     fishImg.sprite = fishImage[0];
-                    Debug.Log("Catfish");
+
+                    //set hit amount
+                    hitBucketAmount = 2;
+                    hitWaterAmount = 3;
+
+                    //set text
+                    fishName.text = FishTypeTest.Catfish.ToString();                
                     break;
                 }
             case FishTypeTest.Salmon:
                 {
                     fishImg.sprite = fishImage[1];
-                    Debug.Log("Salmon");
+
+                    //set hit amount
+                    hitBucketAmount = 4;
+                    hitWaterAmount = 2;
+
+                    //set UI
+                    fishName.text = FishTypeTest.Salmon.ToString();
                     break;
                 }
             case FishTypeTest.Sardine:
                 {
                     fishImg.sprite = fishImage[2];
-                    Debug.Log("Sardine");
+
+                    //set hit amount
+                    hitBucketAmount = 3;
+                    hitWaterAmount = 4;
+
+                    fishName.text = FishTypeTest.Sardine.ToString();
                     break;
                 }
             case FishTypeTest.Tuna:
                 {
                     fishImg.sprite= fishImage[3];
-                    Debug.Log("Tuna");
+
+                    //set hit amount
+                    hitBucketAmount = 3;
+                    hitWaterAmount = 3;
+
+                    fishName.text = FishTypeTest.Tuna.ToString();
                     break;
                 }
         }
@@ -125,28 +169,40 @@ public class Fishing : MonoBehaviour
 
     public void FishingGame()
     {
-        if (bucketHit >= 3)
+        if(!canInteract)
         {
-            spawnFish();
-            Debug.Log("Success!");
-            bucketHit = 0;
-            waterHit = 0;
-            fishImg.rectTransform.localPosition = spawnPos;
-            fishingGame.SetActive(false);
-            inventory.SetActive(true);
-            PlayerMovement.canMove = true;
-        }
-        else if (waterHit >= 5)
-        {
-            Debug.Log("Fail");
-            Destroy(temp);
-            waterHit = 0;
-            bucketHit = 0;
-            fishImg.rectTransform.localPosition = spawnPos;
-            fishingGame.SetActive(false);
-            inventory.SetActive(true);
-            PlayerMovement.canMove = true;
-        }
+            if (bucketHit >= hitBucketAmount)
+            {
+                spawnFish();
+                Debug.Log("Success!");
+                //set everything to 0
+                bucketHit = 0;
+                waterHit = -1;
+                fishImg.rectTransform.localPosition = spawnPos;
+
+                //active back
+                fishingGame.SetActive(false);
+                inventory.SetActive(true);
+                PlayerMovement.canMove = true;
+                canInteract = true;
+            }
+            else if (waterHit >= hitWaterAmount)
+            {
+                Debug.Log("Fail");
+
+                //set everything to 0
+                bucketHit = 0;
+                waterHit = -1;
+                Destroy(temp);
+
+                //active back
+                fishImg.rectTransform.localPosition = spawnPos;
+                fishingGame.SetActive(false);
+                inventory.SetActive(true);
+                PlayerMovement.canMove = true;
+                canInteract = true;
+            }
+        }      
     }
 
 
