@@ -1,0 +1,18 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BGMChanger : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        BGMManager.PlayMusic("BGM");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

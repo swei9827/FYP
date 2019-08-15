@@ -103,6 +103,7 @@ public class DirtTile : MonoBehaviour
             temp.GetComponent<CropTest>().planted = true;
             player.SetCrop(new Crop(null));
         }
+        FxManager.PlayMusic("PlantFx");
     }
 
     void WaterCrops()
@@ -111,7 +112,7 @@ public class DirtTile : MonoBehaviour
         {
             WaterCan.curFill -= 5;
             temp.GetComponent<CropTest>().watered = true;
-            waterIndicator.SetActive(false);       
+            waterIndicator.SetActive(false);
         }
     }
 
@@ -160,6 +161,7 @@ public class DirtTile : MonoBehaviour
 		Debug.Log("Plowing...");
 		overlay.sprite = null;
         GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(2, this.name.ToString());
+        FxManager.PlayMusic("PlowFx");
         needsPlowing = false;
 	}
 

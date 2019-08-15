@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();      
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -35,6 +35,14 @@ public class PlayerMovement : MonoBehaviour
         if (direction != Vector2.zero)
         {
             transform.Translate(direction * speed * Time.deltaTime);
+            if(FxManager.instance.GetComponent<AudioSource>().isPlaying == false)
+            {
+                FxManager.PlayMusic("WalkFx");
+            }
+        }
+        else
+        {
+            FxManager.StopMusic("WalkFx");
         }
 
         //raycastPosition

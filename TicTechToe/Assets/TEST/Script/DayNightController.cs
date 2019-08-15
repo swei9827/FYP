@@ -156,6 +156,7 @@ public class DayNightController : MonoBehaviour
     void Start()
     {
         Initialize();
+        BGMManager.PlayMusic("BGM");
     }
 
     // Update is called once per frame
@@ -315,7 +316,7 @@ public class DayNightController : MonoBehaviour
     /// </summary>
     private void UpdateWorldTime()
     {
-            worldTimeHour = (int)((Mathf.Ceil((currentCycleTime / dayCycleLength) * hoursPerDay) + dawnTimeOffset) % hoursPerDay) + 1;
+        worldTimeHour = (int)((Mathf.Ceil((currentCycleTime / dayCycleLength) * hoursPerDay) + dawnTimeOffset) % hoursPerDay) + 1;
     }
 
     public enum DayPhase

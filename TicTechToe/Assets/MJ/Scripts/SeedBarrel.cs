@@ -14,7 +14,6 @@ public class SeedBarrel : MonoBehaviour
 		{
 			Debug.Log("Taking " + crop.GetName());
 			player.SetCrop(new Crop(crop.asset));
-            GameObject.FindGameObjectWithTag("DataRecorder").GetComponent<DataRecord>().AddEvents(0, crop.GetName().ToString());
         }
 
         if(c.HasCrop())
@@ -27,7 +26,6 @@ public class SeedBarrel : MonoBehaviour
             {
                 Debug.Log("Put back " + crop.GetName());
                 player.SetCrop(new Crop(null));
-                GameObject.FindGameObjectWithTag("DataRecorder").GetComponent<DataRecord>().AddEvents(1, crop.GetName().ToString());
             }         
         }
 	}

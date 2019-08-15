@@ -1,4 +1,8 @@
-15/8/2019 1:17:04 AM Log Started
-15/8/2019 1:17:08 AM Player obtained Fishing Rod
-15/8/2019 1:17:19 AM Player obtained Tuna
-15/8/2019 1:17:31 AM Player obtained Tuna
+8/15/2019 12:37:44 PM Log Started
+8/15/2019 12:37:45 PM Player obtained Plow02
+8/15/2019 12:37:47 PM Player plowed DirtTile
+8/15/2019 12:37:49 PM Player obtained Potatoes_Seed
+8/15/2019 12:37:51 PM Player planted Potatoes
+8/15/2019 12:37:53 PM Player obtained WateringCan
+8/15/2019 12:37:56 PM Player watered Potatoes(Clone)
+8/15/2019 12:38:02 PM Player harvested Potatoes

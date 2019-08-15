@@ -64,6 +64,7 @@ public class Inventory : MonoBehaviour
                 {
                     AddCropsItem(itemPickedUp, items.CropType, items.sprites[1], 0);
                     GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(5, items.CropType.ToString());
+                    FxManager.PlayMusic("HarvestFx");
                     canGetCrops = false;
                     DirtTile.addPlant = true;
                 }
