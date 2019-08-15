@@ -55,7 +55,6 @@ public class Fishing : MonoBehaviour
         if (t == null)
         {
             Debug.Log("Use fishing rod");
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, t.name.ToString());
         }
         else if (t != null)
         {
@@ -84,6 +83,7 @@ public class Fishing : MonoBehaviour
 
     public void PopFishingGame()
     {
+        FxManager.PlayMusic("FishingFx");
         canInteract = false;
         fishingGame.SetActive(true);
         PlayerMovement.canMove = false;      

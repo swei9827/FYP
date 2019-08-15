@@ -1,8 +1,8 @@
-8/15/2019 12:37:44 PM Log Started
-8/15/2019 12:37:45 PM Player obtained Plow02
-8/15/2019 12:37:47 PM Player plowed DirtTile
-8/15/2019 12:37:49 PM Player obtained Potatoes_Seed
-8/15/2019 12:37:51 PM Player planted Potatoes
-8/15/2019 12:37:53 PM Player obtained WateringCan
-8/15/2019 12:37:56 PM Player watered Potatoes(Clone)
-8/15/2019 12:38:02 PM Player harvested Potatoes
+8/15/2019 1:04:51 PM Log Started
+8/15/2019 1:04:52 PM Player obtained Plow02
+8/15/2019 1:04:55 PM Player plowed DirtTile
+8/15/2019 1:04:58 PM Player obtained Strawberries_Seed
+8/15/2019 1:04:59 PM Player planted Strawberries
+8/15/2019 1:05:01 PM Player obtained WateringCan
+8/15/2019 1:05:06 PM Player watered Strawberry(Clone)
+8/15/2019 1:05:11 PM Player harvested Strawberries
