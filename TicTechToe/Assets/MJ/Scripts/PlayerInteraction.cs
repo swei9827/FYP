@@ -126,12 +126,8 @@ public class PlayerInteraction : MonoBehaviour
         }
         else
 		{
-<<<<<<< HEAD
-           waterIndicator.enabled = false;
-=======
             canUse = false;
             waterIndicator.enabled = false;
->>>>>>> TEST
             iconBox.Close();
 		}
 

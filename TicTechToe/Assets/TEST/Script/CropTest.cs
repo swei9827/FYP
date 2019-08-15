@@ -21,7 +21,7 @@ public class CropTest : ItemTest
     public Tool tool;
     bool tempCanInteract;
     bool goWater;
-    public bool canInteract;
+    //public bool canInteract;
 
     public DirtTile dirtTile;
 
@@ -33,7 +33,7 @@ public class CropTest : ItemTest
         cropState = CropStateTest.Seed;
         growPercentage = 0;
         sr = GetComponent<SpriteRenderer>();
-        canInteract = false;
+        //canInteract = false;
         tempCanInteract = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canGetCrops;
     }
  
@@ -57,19 +57,6 @@ public class CropTest : ItemTest
     }
 
     void WaterCrops()
-<<<<<<< HEAD
-    {
-        if(canInteract)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                WaterCan.curFill -= 5;
-                Debug.Log("Interact");
-                waterIndicator.SetActive(false);
-                watered = true;
-            }
-        }          
-=======
     {        
         if (goWater)
         {
@@ -83,7 +70,6 @@ public class CropTest : ItemTest
                 goWater = false;
             }
         }      
->>>>>>> TEST
     }
 
     void CropStateChange()
@@ -134,28 +120,6 @@ public class CropTest : ItemTest
         {
             cropState = CropStateTest.Done;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canGetCrops = true;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Player"))
-        {
-            if (cropState == CropStateTest.Delayed)
-            {
-                canInteract = true;
-            }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            if (cropState == CropStateTest.Delayed)
-            {
-                canInteract = false;
-            }
         }
     }
 
