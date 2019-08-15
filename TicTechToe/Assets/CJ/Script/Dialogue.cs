@@ -16,7 +16,7 @@ public class Dialogue : MonoBehaviour
     private int index;
 
     public GameObject wholeDialogue;
-    public PlayerInteraction player;
+    public NPCinteraction player;
     public bool finishChat = false;
 
     public static bool completeTask1 = false;
@@ -34,7 +34,7 @@ public class Dialogue : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>();
+        player = GameObject.FindGameObjectWithTag("NPC").GetComponent<NPCinteraction>();
     }
 
     private void Update()

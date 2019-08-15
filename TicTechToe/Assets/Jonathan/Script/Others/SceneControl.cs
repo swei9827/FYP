@@ -9,6 +9,7 @@ public class SceneControl : MonoBehaviour
     public bool isGame;
     public static  bool completeAllTasks;
 
+
     public void PlayButton()
     {
         SceneManager.LoadScene(1);
@@ -36,11 +37,6 @@ public class SceneControl : MonoBehaviour
                 SceneManager.LoadScene(0);
             }
         }
-
-        //if(completeAllTasks)
-        //{
-        //    SceneManager.LoadScene(3);          
-        //}
 
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ToBeContinue"))
         {
