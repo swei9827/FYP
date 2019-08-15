@@ -1,8 +1,19 @@
-8/15/2019 1:04:51 PM Log Started
-8/15/2019 1:04:52 PM Player obtained Plow02
-8/15/2019 1:04:55 PM Player plowed DirtTile
-8/15/2019 1:04:58 PM Player obtained Strawberries_Seed
-8/15/2019 1:04:59 PM Player planted Strawberries
-8/15/2019 1:05:01 PM Player obtained WateringCan
-8/15/2019 1:05:06 PM Player watered Strawberry(Clone)
-8/15/2019 1:05:11 PM Player harvested Strawberries
+8/15/2019 8:34:13 PM Log Started
+8/15/2019 8:34:14 PM Player obtained Plow02
+8/15/2019 8:34:16 PM Player plowed DirtTile
+8/15/2019 8:34:17 PM Player plowed DirtTile (1)
+8/15/2019 8:34:18 PM Player plowed DirtTile (2)
+8/15/2019 8:34:18 PM Player plowed DirtTile (4)
+8/15/2019 8:34:19 PM Player plowed DirtTile (5)
+8/15/2019 8:34:22 PM Player plowed DirtTile (3)
+8/15/2019 8:34:35 PM Player obtained Potatoes_Seed
+8/15/2019 8:34:37 PM Player planted Potatoes
+8/15/2019 8:34:38 PM Player obtained Strawberries_Seed
+8/15/2019 8:34:39 PM Player planted Strawberries
+8/15/2019 8:34:44 PM Player obtained WateringCan
+8/15/2019 8:34:46 PM Player watered Potatoes(Clone)
+8/15/2019 8:34:46 PM Player watered Strawberry(Clone)
+8/15/2019 8:34:53 PM Player harvested Strawberries
+8/15/2019 8:34:55 PM Player harvested Potatoes
+8/15/2019 8:35:06 PM Player obtained generic-rpg-rod
+8/15/2019 8:35:18 PM Player obtained Sardine

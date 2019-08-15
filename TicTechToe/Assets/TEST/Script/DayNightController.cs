@@ -156,7 +156,6 @@ public class DayNightController : MonoBehaviour
     void Start()
     {
         Initialize();
-        BGMManager.PlayMusic("BGM");
     }
 
     // Update is called once per frame

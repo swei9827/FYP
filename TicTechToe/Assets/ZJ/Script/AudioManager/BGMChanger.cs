@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class BGMChanger : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool MainMenu;
+    public bool InGame;
     void Start()
     {
-        BGMManager.PlayMusic("BGM");
+        if (MainMenu)
+        {
+            BGMManager.StopMusic("BGM");
+            BGMManager.PlayMusic("MainMenuBGM");
+        }
+        else if (InGame)
+        {
+            BGMManager.StopMusic("MainMenuBGM");
+            BGMManager.PlayMusic("BGM");
+        }
     }
 
     // Update is called once per frame
