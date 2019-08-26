@@ -45,6 +45,7 @@ public class Fishing : MonoBehaviour
     {
         fishingGame.SetActive(false);
         spawnPos = new Vector2(fishImg.rectTransform.localPosition.x, fishImg.rectTransform.localPosition.y);
+        spawnPos2 = new Vector2(bucketImg.rectTransform.localPosition.x, bucketImg.rectTransform.localPosition.y);
 
         bucketHit = 0;
         waterHit = -1;
@@ -179,6 +180,7 @@ public class Fishing : MonoBehaviour
                 bucketHit = 0;
                 waterHit = -1;
                 fishImg.rectTransform.localPosition = spawnPos;
+                bucketImg.rectTransform.localPosition = spawnPos2;
 
                 //active back
                 fishingGame.SetActive(false);
@@ -197,6 +199,7 @@ public class Fishing : MonoBehaviour
 
                 //active back
                 fishImg.rectTransform.localPosition = spawnPos;
+                bucketImg.rectTransform.localPosition = spawnPos2;
                 fishingGame.SetActive(false);
                 inventory.SetActive(true);
                 PlayerMovement.canMove = true;

@@ -35,6 +35,7 @@ public class SceneControl : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 SceneManager.LoadScene(0);
+                PlayerMovement.canMove = true;
             }
         }
 
