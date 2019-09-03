@@ -120,7 +120,7 @@ public class CropTest : ItemTest
        if(growPercentage == 100)
         {
             cropState = CropStateTest.Done;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canGetCrops = true;
+            GameObject.FindGameObjectWithTag("Crops").GetComponent<GetItems>().canGetCrops = true;
         }       
     }
 

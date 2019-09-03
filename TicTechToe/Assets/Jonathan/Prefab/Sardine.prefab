@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6091871722068485103
+--- !u!1 &83825528128214595
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6091871722068485101}
-  - component: {fileID: 6091871722068485102}
-  - component: {fileID: 6091871722068485074}
-  - component: {fileID: 492038479882925501}
+  - component: {fileID: 7780024282034890010}
+  - component: {fileID: 8469594832491939932}
+  - component: {fileID: 8966163962877263548}
+  - component: {fileID: 3515042680183580317}
+  - component: {fileID: -7132148650652366080}
   m_Layer: 0
-  m_Name: Tuna
+  m_Name: Sardine
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6091871722068485101
+--- !u!4 &7780024282034890010
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6091871722068485103}
+  m_GameObject: {fileID: 83825528128214595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6091871722068485102
+--- !u!212 &8469594832491939932
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6091871722068485103}
+  m_GameObject: {fileID: 83825528128214595}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b2bc26730b0c8fc4a925cdebac1ddca4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd9f7150d0be3fc4aa521b4aa6c4d925, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,13 +82,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6091871722068485074
+--- !u!61 &8966163962877263548
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6091871722068485103}
+  m_GameObject: {fileID: 83825528128214595}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -107,22 +108,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1243467, y: 1.2299738}
   m_EdgeRadius: 0
---- !u!114 &492038479882925501
+--- !u!114 &3515042680183580317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6091871722068485103}
+  m_GameObject: {fileID: 83825528128214595}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f59aede133a7c8f4e95a0fc1fa0f4823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CropType: 0
-  FishType: 1
+  FishType: 2
   id: 1
   sprites:
-  - {fileID: 21300000, guid: b2bc26730b0c8fc4a925cdebac1ddca4, type: 3}
-  details: Tuna
+  - {fileID: 21300000, guid: bd9f7150d0be3fc4aa521b4aa6c4d925, type: 3}
+  details: Sardine
   pickUp: 0
+--- !u!114 &-7132148650652366080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83825528128214595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988d559ae9fd5f0439456332d5825e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemPrefab: {fileID: 7209126259650667150, guid: 1bdebcba18bfe23469e93c79e5c03671,
+    type: 3}
+  canInteract: 0
+  canGetFish: 0
+  canGetCrops: 0

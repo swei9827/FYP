@@ -27,12 +27,12 @@ public class Inventory : MonoBehaviour
         slots = new GameObject[allslots];
         for (int i = 0; i < allslots; i++)
         {
-            slots[i] = slotHolder.transform.GetChild(i).gameObject;
+           // slots[i] = slotHolder.transform.GetChild(i).gameObject;
 
-            if (slots[i].GetComponent<Slots>().item == null)
-            {
-                slots[i].GetComponent<Slots>().empty = true;
-            }
+            //if (slots[i].GetComponent<Slots>().item == null)
+            //{
+            //    slots[i].GetComponent<Slots>().empty = true;
+            //}
         }
     }
 

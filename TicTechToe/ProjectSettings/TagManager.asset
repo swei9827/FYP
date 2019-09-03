@@ -10,6 +10,8 @@ TagManager:
   - DirtTile
   - DialogueManager
   - NPC
+  - Slots
+  - ItemIcon
   layers:
   - Default
   - TransparentFX
