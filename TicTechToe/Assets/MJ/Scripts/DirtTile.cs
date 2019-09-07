@@ -41,7 +41,7 @@ public class DirtTile : MonoBehaviour
                 {
                     PlantCrop(c, player);
                     addPlant = false;
-                    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(3, c.GetName());             
+                    DataRecord.AddEvents(3, c.GetName());             
                 }  
             }
 
@@ -160,7 +160,7 @@ public class DirtTile : MonoBehaviour
 	{
 		Debug.Log("Plowing...");
 		overlay.sprite = null;
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(2, this.name.ToString());
+        DataRecord.AddEvents(2, this.name.ToString());
         FxManager.PlayMusic("PlowFx");
         needsPlowing = false;
 	}

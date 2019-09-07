@@ -9,7 +9,6 @@ public class SceneControl : MonoBehaviour
     public bool isGame;
     public static  bool completeAllTasks;
 
-
     public void PlayButton()
     {
         SceneManager.LoadScene(1);
@@ -18,6 +17,11 @@ public class SceneControl : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
+    }
+
+    public void AnalyticButton()
+    {
+        SceneManager.LoadScene(4);
     }
 
     public void Update()
@@ -33,6 +37,14 @@ public class SceneControl : MonoBehaviour
         if(isGame)
         {
             if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
+
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ActivitiesAnalytic"))
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 SceneManager.LoadScene(0);
             }
