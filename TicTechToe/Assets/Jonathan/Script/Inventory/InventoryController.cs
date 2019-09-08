@@ -23,7 +23,7 @@ public class InventoryController : MonoBehaviour
     {
         InventoryInstance = this;
 
-        // Initialize lists
+        // Initialize inventory lists
         foreach(Transform s in transform.Find("Background/SlotHolder"))
         {
             slots.Add(s);
@@ -32,7 +32,7 @@ public class InventoryController : MonoBehaviour
                 _items.Add(s.GetComponentInChildren<Item>());
             }
         }
-       
+
         graphicRayCaster = GameObject.Find("Canvas").GetComponent<GraphicRaycaster>();
         pointerEventData = new PointerEventData(null);
         raycastResults = new List<RaycastResult>();
@@ -47,17 +47,22 @@ public class InventoryController : MonoBehaviour
         DragItem();
     }
 
+    public void showToolTip(string name, string description)
+    {
+        ToolTip.instance.setToolTip(name, description);
+    }
+
     void DragItem()
     {
         if(Input.GetMouseButtonDown(0))
         {
             pointerEventData.position = Input.mousePosition;
             graphicRayCaster.Raycast(pointerEventData, raycastResults);
-            if(raycastResults.Count > 0)
+            showToolTip(string.Empty,string.Empty);
+            if (raycastResults.Count > 0)
             {
-                // "Need to change GetComponent"
                 if(raycastResults[0].gameObject.GetComponent<Item>())
-                {
+                {                 
                     draggedItem = raycastResults[0].gameObject;
                     dragItemParent = draggedItem.transform.parent;
                     draggedItem.transform.SetParent(UIManager.Instance.canvas);
@@ -116,12 +121,13 @@ public class InventoryController : MonoBehaviour
                             draggedItem.transform.SetParent(results.gameObject.transform.parent);
                             results.gameObject.transform.SetParent(dragItemParent);
                             results.gameObject.transform.localPosition = Vector3.zero;
+                            //set tooltip
+                            showToolTip(results.gameObject.GetComponent<Item>().itemName, results.gameObject.GetComponent<Item>().itemDescription);
                             break;
                         }  
                         //stack Item if same
                         else
                         {
-                            //"Get Component migh change"
                             results.gameObject.GetComponent<Item>().quantity += draggedItem.GetComponent<Item>().quantity;
                             results.gameObject.transform.Find("NumberHeld").GetComponent<Text>().text = results.gameObject.GetComponent<Item>().quantity.ToString();
                             GameObject.Destroy(draggedItem);
@@ -178,5 +184,5 @@ public class InventoryController : MonoBehaviour
         {
             _items.Remove(item);
         }
-    }
+    } 
 }

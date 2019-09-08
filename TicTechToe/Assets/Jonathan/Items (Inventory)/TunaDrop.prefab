@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantity: 1
+  itemName: Tuna
+  description: 
   CropType: 0
   FishType: 1
 --- !u!1 &3215262558039862205

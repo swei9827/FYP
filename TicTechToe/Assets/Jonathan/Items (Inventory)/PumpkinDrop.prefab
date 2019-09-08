@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantity: 1
+  itemName: Pumpkin
+  description: 
   CropType: 3
   FishType: 0
 --- !u!1 &8484155335083617868

@@ -183,5 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantity: 1
+  itemName: CatFish
+  itemDescription: Cheap Fish
   CropType: 0
   FishType: 4

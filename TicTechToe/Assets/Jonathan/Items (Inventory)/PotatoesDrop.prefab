@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantity: 1
+  itemName: Potatoes
+  description: 
   CropType: 1
   FishType: 0
 --- !u!1 &3552622247819268624

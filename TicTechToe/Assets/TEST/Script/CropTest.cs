@@ -34,7 +34,7 @@ public class CropTest : ItemTest
         growPercentage = 0;
         sr = GetComponent<SpriteRenderer>();
         canInteract = false;
-        tempCanInteract = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canGetCrops;
+        //tempCanInteract = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canGetCrops;
     }
  
     void Update()
