@@ -5,11 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Crop", menuName = "Item/Crop")]
 public class CropAsset : Item
 {
-	public Sprite seedSprite;
-	public Sprite deadSprite;
-	public Sprite doneSprite;
+    public Sprite seedSprite;
+    public Sprite deadSprite;
+    public Sprite doneSprite;
 
-	public bool seedIsOnGround = false;
+    public bool seedIsOnGround = false;
     public CropsType cropsType;
 }
 

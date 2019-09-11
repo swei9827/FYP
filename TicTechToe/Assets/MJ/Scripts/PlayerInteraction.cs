@@ -7,7 +7,6 @@ public class PlayerInteraction : MonoBehaviour
 {
 	public GameObject target;
 
-
 	public KeyCode interactKey;
 
 	public IconBox iconBox;
