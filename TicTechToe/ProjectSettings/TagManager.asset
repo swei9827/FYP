@@ -12,6 +12,7 @@ TagManager:
   - NPC
   - Slots
   - ItemIcon
+  - HotBar
   layers:
   - Default
   - TransparentFX

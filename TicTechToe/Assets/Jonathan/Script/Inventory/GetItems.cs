@@ -35,12 +35,18 @@ public class GetItems : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     GameObject crops = GameObject.Instantiate(_itemPrefab);
-                    if (InventoryController.InventoryInstance.AddItem(crops))
+                    if (HotBar.HotBarInstance.AddItem(crops))
                     {
                         GameObject.Destroy(this.gameObject);
-                        GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(5, crops.ToString());
-                        FxManager.PlayMusic("HarvestFx");
-                        canGetCrops = false;
+                        GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, crops.GetComponentInChildren<Item>().itemName.ToString());
+                        canGetFish = false;
+                    }
+                    else if (!HotBar.HotBarInstance.AddItem(crops))
+                    {
+                        InventoryController.InventoryInstance.AddItem(crops);
+                        GameObject.Destroy(this.gameObject);
+                        GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, crops.GetComponentInChildren<Item>().itemName.ToString());
+                        canGetFish = false;
                     }
                     else
                     {
@@ -52,10 +58,17 @@ public class GetItems : MonoBehaviour
             if (canGetFish)
             {
                 GameObject fish = GameObject.Instantiate(_itemPrefab);
-                if (InventoryController.InventoryInstance.AddItem(fish))
+                if (HotBar.HotBarInstance.AddItem(fish))
                 {
                     GameObject.Destroy(this.gameObject);
-                    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, fish.ToString());
+                    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, fish.GetComponentInChildren<Item>().itemName.ToString());
+                    canGetFish = false;
+                }
+                else if(!HotBar.HotBarInstance.AddItem(fish))
+                {
+                    InventoryController.InventoryInstance.AddItem(fish);
+                    GameObject.Destroy(this.gameObject);
+                    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, fish.GetComponentInChildren<Item>().itemName.ToString());
                     canGetFish = false;
                 }
                 else
@@ -66,3 +79,17 @@ public class GetItems : MonoBehaviour
         }
     }
 }
+
+
+
+//previous method
+//if (InventoryController.InventoryInstance.AddItem(fish))
+//{
+//    GameObject.Destroy(this.gameObject);
+//    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, fish.ToString());
+//    canGetFish = false;
+//}
+//else
+//{
+//    Debug.Log("Inventory is full");
+//}

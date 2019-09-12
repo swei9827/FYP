@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InventoryController : MonoBehaviour
+public class HotBar : MonoBehaviour
 {
-    public static InventoryController InventoryInstance;
+    public static HotBar HotBarInstance;
 
     GraphicRaycaster graphicRayCaster;
     PointerEventData pointerEventData;
@@ -21,13 +21,13 @@ public class InventoryController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InventoryInstance = this;
+        HotBarInstance = this;
 
         // Initialize inventory lists
-        foreach(Transform s in transform.Find("Background/SlotHolder"))
+        foreach (Transform s in transform.Find("HotBarBackground/HotbarHolder"))
         {
             slots.Add(s);
-            if(s.GetComponentInChildren<Item>() != null)
+            if (s.GetComponentInChildren<Item>() != null)
             {
                 _items.Add(s.GetComponentInChildren<Item>());
             }
@@ -36,9 +36,6 @@ public class InventoryController : MonoBehaviour
         graphicRayCaster = GameObject.Find("Canvas").GetComponent<GraphicRaycaster>();
         pointerEventData = new PointerEventData(null);
         raycastResults = new List<RaycastResult>();
-
-        //Off inventory
-        this.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,22 +44,16 @@ public class InventoryController : MonoBehaviour
         DragItem();
     }
 
-    public void showToolTip(string name, string description)
-    {
-        ToolTip.instance.setToolTip(name, description);
-    }
-
     void DragItem()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             pointerEventData.position = Input.mousePosition;
             graphicRayCaster.Raycast(pointerEventData, raycastResults);
-            showToolTip(string.Empty,string.Empty);
             if (raycastResults.Count > 0)
             {
-                if(raycastResults[0].gameObject.GetComponent<Item>())
-                {                 
+                if (raycastResults[0].gameObject.GetComponent<Item>())
+                {
                     draggedItem = raycastResults[0].gameObject;
                     dragItemParent = draggedItem.transform.parent;
                     draggedItem.transform.SetParent(UIManager.Instance.canvas);
@@ -87,28 +78,28 @@ public class InventoryController : MonoBehaviour
         }
 
         // End Drag
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
             pointerEventData.position = Input.mousePosition;
             raycastResults.Clear();
             graphicRayCaster.Raycast(pointerEventData, raycastResults);
 
             draggedItem.transform.SetParent(dragItemParent);
-            if(raycastResults.Count > 0)
+            if (raycastResults.Count > 0)
             {
                 foreach (var results in raycastResults)
                 {
                     // Skip drag item when it is result
-                    if(results.gameObject == draggedItem)
+                    if (results.gameObject == draggedItem)
                     {
                         continue;
                     }
 
                     //swap with empty slots
-                    if(results.gameObject.CompareTag("Slots"))
+                    if (results.gameObject.CompareTag("Slots"))
                     {
                         // if slots contain item, prevent overlay
-                        if(results.gameObject.transform.childCount > 0)
+                        if (results.gameObject.transform.childCount > 0)
                         {
                             continue;
                         }
@@ -117,37 +108,31 @@ public class InventoryController : MonoBehaviour
                             //Set New Parent for dragItem
                             draggedItem.transform.SetParent(results.gameObject.transform);
                             break;
-                        }                                   
+                        }
                     }
 
                     //swap with items
-                    if(results.gameObject.transform.parent.CompareTag("HotBar"))
+                    if (results.gameObject.CompareTag("ItemIcon"))
                     {
-                        if (results.gameObject.CompareTag("ItemIcon"))
+                        //Swap Item
+                        if (results.gameObject.name != draggedItem.name)
                         {
-                            //Swap Item
-                            if (results.gameObject.name != draggedItem.name)
-                            {
-                                draggedItem.transform.SetParent(results.gameObject.transform.parent);
-                                results.gameObject.transform.SetParent(dragItemParent);
-                                results.gameObject.transform.localPosition = Vector3.zero;
-                                //set tooltip
-                                showToolTip(results.gameObject.GetComponent<Item>().itemName, results.gameObject.GetComponent<Item>().itemDescription);
-                                break;
-                            }
-                            //stack Item if same
-                            else
-                            {
-                                results.gameObject.GetComponent<Item>().quantity += draggedItem.GetComponent<Item>().quantity;
-                                results.gameObject.transform.Find("NumberHeld").GetComponent<Text>().text = results.gameObject.GetComponent<Item>().quantity.ToString();
-                                GameObject.Destroy(draggedItem);
-                                draggedItem = null;
-                                raycastResults.Clear();
-                                return;
-                            }
+                            draggedItem.transform.SetParent(results.gameObject.transform.parent);
+                            results.gameObject.transform.SetParent(dragItemParent);
+                            results.gameObject.transform.localPosition = Vector3.zero;
+                            break;
                         }
-                    }
-                    
+                        //stack Item if same
+                        else
+                        {
+                            results.gameObject.GetComponent<Item>().quantity += draggedItem.GetComponent<Item>().quantity;
+                            results.gameObject.transform.Find("NumberHeld").GetComponent<Text>().text = results.gameObject.GetComponent<Item>().quantity.ToString();
+                            GameObject.Destroy(draggedItem);
+                            draggedItem = null;
+                            raycastResults.Clear();
+                            return;
+                        }
+                    }                  
                 }
             }
             //Reset position to 0
@@ -161,21 +146,21 @@ public class InventoryController : MonoBehaviour
     {
         Item item = itemGo.GetComponent<Item>();
         //check all items
-        foreach(Item i in _items)
+        foreach (Item i in _items)
         {
             //if item already inside
-            if(i.CropType == item.CropType && i.FishType == item.FishType)
+            if (i.CropType == item.CropType && i.FishType == item.FishType)
             {
                 i.Add(1);
                 GameObject.Destroy(itemGo);
-                return true;         
+                return true;
             }
         }
 
         //check all slots
         foreach (Transform s in slots)
         {
-            if(s.GetComponentInChildren<Item>() == null)
+            if (s.GetComponentInChildren<Item>() == null)
             {
                 itemGo.transform.SetParent(s);
                 itemGo.transform.localScale = Vector3.one;
@@ -192,9 +177,9 @@ public class InventoryController : MonoBehaviour
 
     public void RemoveItem(Item item)
     {
-        if(_items.Contains(item))
+        if (_items.Contains(item))
         {
             _items.Remove(item);
         }
-    } 
+    }
 }

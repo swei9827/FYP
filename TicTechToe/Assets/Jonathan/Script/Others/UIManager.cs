@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
     public void ToggleInventory()
     {
         inventory.gameObject.SetActive(!inventory.gameObject.activeInHierarchy);
+
         if(!inventory.gameObject.activeSelf)
         {
             PlayerMovement.canMove = true;
@@ -54,6 +55,7 @@ public class UIManager : MonoBehaviour
         else
         {
             PlayerMovement.canMove = false;
+            InventoryController.InventoryInstance.showToolTip(string.Empty,string.Empty);
         }
     }
 
