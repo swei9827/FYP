@@ -15,17 +15,17 @@ public class ShopSystem : MonoBehaviour
 
     void Start()
     {
-        moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().playerCurrency;
+        moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getMoney();
     }
 
     private void OnEnable()
     {
-        moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().playerCurrency;
+        moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getMoney();
     }
 
     private void OnDisable()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().playerCurrency = moneyAmount;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().setMoney(moneyAmount);
     }
 
     void Update()
@@ -53,6 +53,6 @@ public class ShopSystem : MonoBehaviour
 
     void closeShop()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().playerCurrency = moneyAmount;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().setMoney(moneyAmount);
     }
 }
