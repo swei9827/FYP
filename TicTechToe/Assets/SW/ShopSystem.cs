@@ -5,54 +5,67 @@ using UnityEngine.UI;
 
 public class ShopSystem : MonoBehaviour
 {
-    //int moneyAmount;
+    int moneyAmount;
 
-    //public Text currentMoney;
-    //public Image[] itemIcon;
-    //public Text[] itemPrice;
-    //public Button[] buyButton;
-    //public Item[] itemObject;
+    public Text currentMoney;
+    public List<Image> itemIcon;
+    public List<Text> itemPrice;
+    public List<Text> itemCount;
+    public List<Button> buyButton;
+    public List<Item> itemObject;
 
-    //void Start()
-    //{
-    //    moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().playerCurrency;
-    //}
+    void Start()
+    {
+        moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getMoney();
+    }
 
-    //private void OnEnable()
-    //{
-    //    moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().playerCurrency;
-    //}
+    private void OnEnable()
+    {
+        moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getMoney();
+    }
 
-    //private void OnDisable()
-    //{
-    //    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().playerCurrency = moneyAmount;
-    //}
+    private void OnDisable()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().setMoney(moneyAmount);
+    }
 
-    //void Update()
-    //{
-    //    currentMoney.text = moneyAmount.ToString();
-    //}
+    void Update()
+    {
+        currentMoney.text = moneyAmount.ToString();
+    }
 
-    //void buyItem()
-    //{
-    //    moneyAmount -= 5;
-    //    //GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().AddCropsItem(itemObject, CropsTypeTest,)
-    //}
+    public void buyItem(int itemN)
+    {
+        //int finalCost = count * cost;
 
-    //void buyItem(int item, int cost)
-    //{
-    //    if(moneyAmount>=cost)
-    //    {
-    //        moneyAmount -= cost;
-    //    }
-    //    else
-    //    {
-    //        //GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().AddCropsItem(itemObject, CropsTypeTest,)
-    //    }        
-    //}
+        //if (moneyAmount >= finalCost)
+        //{
+        //    moneyAmount -= finalCost;
+        //    //GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().AddCropsItem(itemObject, CropsTypeTest,)
+        //}
+        //else
+        {
+            Debug.Log("Not Enough Money");
+        }
+    }
 
-    //void closeShop()
-    //{
-    //    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().playerCurrency = moneyAmount;
-    //}
+    public void buyItem(int count, int cost)
+    {
+        int finalCost = count * cost;
+
+        if (moneyAmount >= finalCost)
+        {
+            moneyAmount -= finalCost;
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().AddCropsItem(itemObject, CropsTypeTest,)
+        }
+        else
+        {
+            Debug.Log("Not Enough Money");
+        }
+    }
+
+    public void closeShop()
+    {
+        moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getMoney();
+    }
 }

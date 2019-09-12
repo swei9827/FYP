@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 public class Player : Character
 {
+    private int money;
     public Inventory inventory;
 
-    void Start()
+    public int getMoney()
     {
-        
+        return money;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void setMoney(int m)
     {
-        
+        money = m;
     }
 }
