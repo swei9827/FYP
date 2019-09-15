@@ -52,19 +52,19 @@ public class ShopSystem : MonoBehaviour
     public void buyItem(int count, int cost, int slot)
     {
         List<GameObject> itemSlot;
-        int finalCost = itemSlot[slot].count * itemSlot[slot].cost;
+        //int finalCost = itemSlot[slot].count * itemSlot[slot].cost;
 
-        int 
+        //int 
 
-        if (moneyAmount >= finalCost)
-        {
-            moneyAmount -= finalCost;
-            //GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().AddCropsItem(itemObject, CropsTypeTest,)
-        }
-        else
-        {
-            Debug.Log("Not Enough Money");
-        }
+        //if (moneyAmount >= finalCost)
+        //{
+        //    moneyAmount -= finalCost;
+        //    //GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().AddCropsItem(itemObject, CropsTypeTest,)
+        //}
+        //else
+        //{
+        //    Debug.Log("Not Enough Money");
+        //}
     }
 
     public void closeShop()
