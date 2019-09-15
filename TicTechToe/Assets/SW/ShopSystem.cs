@@ -49,9 +49,12 @@ public class ShopSystem : MonoBehaviour
         }
     }
 
-    public void buyItem(int count, int cost)
+    public void buyItem(int count, int cost, int slot)
     {
-        int finalCost = count * cost;
+        List<GameObject> itemSlot;
+        int finalCost = itemSlot[slot].count * itemSlot[slot].cost;
+
+        int 
 
         if (moneyAmount >= finalCost)
         {
