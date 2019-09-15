@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     //Inventory
     public Transform inventory;
 
+    //Fishing QTE
+    public Transform fishingGame;
+
     private void Awake()
     {
         if (!Instance)
@@ -22,6 +25,9 @@ public class UIManager : MonoBehaviour
 
         //Initialize Inventory
         inventory = canvas.Find("Inventory");
+
+        //Initialize FishingGame
+        fishingGame = canvas.Find("FishingGame");
     }
 
     public Vector2 WorldToCanvasPoint(Vector3 position)
@@ -63,7 +69,11 @@ public class UIManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.I))
         {
-            ToggleInventory();
+            //if didnt play fishing QTE
+            if(!fishingGame.gameObject.activeInHierarchy)
+            {
+                ToggleInventory();
+            }            
         }
     }
 }

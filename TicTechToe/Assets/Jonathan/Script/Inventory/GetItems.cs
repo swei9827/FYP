@@ -10,6 +10,10 @@ public class GetItems : MonoBehaviour
     public bool canGetFish = false;
     public bool canGetCrops = false;
 
+    //for tutorial use
+    public bool getCropsTutorial = false;
+    public bool getFishTutorial = false;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -40,6 +44,7 @@ public class GetItems : MonoBehaviour
                         GameObject.Destroy(this.gameObject);
                         GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, crops.GetComponentInChildren<Item>().itemName.ToString());
                         canGetFish = false;
+                        getCropsTutorial = true;
                     }
                     else if (!HotBar.HotBarInstance.AddItem(crops))
                     {
@@ -63,6 +68,7 @@ public class GetItems : MonoBehaviour
                     GameObject.Destroy(this.gameObject);
                     GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, fish.GetComponentInChildren<Item>().itemName.ToString());
                     canGetFish = false;
+                    getFishTutorial = true;
                 }
                 else if(!HotBar.HotBarInstance.AddItem(fish))
                 {

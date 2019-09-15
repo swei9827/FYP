@@ -88,7 +88,7 @@ public class Fishing : MonoBehaviour
         canInteract = false;
         fishingGame.SetActive(true);
         PlayerMovement.canMove = false;      
-       // inventory.SetActive(false);
+        inventory.SetActive(false);
         GetFishSprite();      
     }
 
@@ -184,7 +184,7 @@ public class Fishing : MonoBehaviour
 
                 //active back
                 fishingGame.SetActive(false);
-                //inventory.SetActive(true);
+                inventory.SetActive(true);
                 PlayerMovement.canMove = true;
                 canInteract = true;
             }
@@ -201,7 +201,7 @@ public class Fishing : MonoBehaviour
                 fishImg.rectTransform.localPosition = spawnPos;
                 bucketImg.rectTransform.localPosition = spawnPos2;
                 fishingGame.SetActive(false);
-                //inventory.SetActive(true);
+                inventory.SetActive(true);
                 PlayerMovement.canMove = true;
                 canInteract = true;
             }
