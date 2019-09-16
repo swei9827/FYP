@@ -1110,10 +1110,7 @@ GameObject:
   - component: {fileID: 331706263}
   - component: {fileID: 331706261}
   - component: {fileID: 331706264}
-  - component: {fileID: 331706265}
   - component: {fileID: 331706266}
-  - component: {fileID: 331706267}
-  - component: {fileID: 331706268}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -1133,8 +1130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cda0da0477695b4a9424418bea5cd88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HarvestModifier: 0
-  FishModifier: 0
 --- !u!4 &331706262
 Transform:
   m_ObjectHideFlags: 0
@@ -1189,20 +1184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenu: 0
   InGame: 1
---- !u!114 &331706265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331706260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 806f63dfccb02f9459ed193fb1c29244, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTutorial: 0
-  isGame: 1
 --- !u!114 &331706266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1224,41 +1205,6 @@ MonoBehaviour:
   buyButton:
   - {fileID: 1502372462}
   itemObject: []
---- !u!114 &331706267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331706260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dff7dd54af8b664d96db2749fa5d006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 906835430}
-  inventory: {fileID: 89045565}
-  fishingGame: {fileID: 445214895}
---- !u!114 &331706268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331706260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea4c5cdb7c8c3b4898a670841248d61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TutorialPopOut:
-  - {fileID: 2072669681}
-  - {fileID: 1587087320}
-  - {fileID: 1489210785}
-  - {fileID: 821158157}
-  - {fileID: 889906220}
-  - {fileID: 357903754}
-  - {fileID: 261211962}
 --- !u!1 &357903754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8080095805585737938, guid: 813eebd421111fc4cb098a529970b333,
@@ -2194,6 +2140,12 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!328 &438660230 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 9011566241305008410, guid: e5fef7b368059254e83207b804dc6de5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7090770888099410152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &445214894 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8797645978049003486, guid: 594c73a47a5282541ab1ce4595dddf03,
@@ -6585,6 +6537,7 @@ MonoBehaviour:
   bucketImg: {fileID: 1967832259}
   bucketHit: 0
   waterHit: -1
+  success: 0
   fishName: {fileID: 984827376}
   bucketCounter: {fileID: 645991249}
   waterCounter: {fileID: 582743283}
@@ -8429,6 +8382,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1366757596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2759854691792153033, guid: 813eebd421111fc4cb098a529970b333,
+    type: 3}
+  m_PrefabInstance: {fileID: 8080095805372556632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1391983144 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3659707413763448872, guid: 661f0d50a2578a649b19d43a4e248ca5,
@@ -22329,6 +22288,92 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116a35d4ccf128e489c7b8487d8ae045, type: 3}
+--- !u!1 &2018621282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2018621286}
+  - component: {fileID: 2018621285}
+  - component: {fileID: 2018621284}
+  - component: {fileID: 2018621283}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2018621283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018621282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806f63dfccb02f9459ed193fb1c29244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTutorial: 0
+  isGame: 1
+  isMainMenu: 0
+  analyticCanvas: {fileID: 0}
+--- !u!114 &2018621284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018621282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dff7dd54af8b664d96db2749fa5d006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 906835430}
+  inventory: {fileID: 89045565}
+  fishingGame: {fileID: 445214895}
+--- !u!114 &2018621285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018621282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea4c5cdb7c8c3b4898a670841248d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TutorialPopOut:
+  - {fileID: 2072669681}
+  - {fileID: 1587087320}
+  - {fileID: 1489210785}
+  - {fileID: 821158157}
+  - {fileID: 889906220}
+  - {fileID: 357903754}
+  - {fileID: 261211962}
+  - {fileID: 1366757596}
+  fish: {fileID: 0}
+--- !u!4 &2018621286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018621282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061267908 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7227584735667442809, guid: ff55d2ff02048bb4ea6a54beee5b4d54,
@@ -24688,7 +24733,12 @@ PrefabInstance:
     - target: {fileID: 8080095806413186784, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.4999847
+      value: -2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7311215673429458164, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: videoPlayer
+      value: 
+      objectReference: {fileID: 438660230}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 813eebd421111fc4cb098a529970b333, type: 3}

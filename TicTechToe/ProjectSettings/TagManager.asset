@@ -13,6 +13,7 @@ TagManager:
   - Slots
   - ItemIcon
   - HotBar
+  - Analytic
   layers:
   - Default
   - TransparentFX

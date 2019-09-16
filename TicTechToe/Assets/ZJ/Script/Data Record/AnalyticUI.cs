@@ -8,24 +8,22 @@ public class AnalyticUI : MonoBehaviour
     public bool FarmingData;
     public bool FishingData;
     int value;
-
-    [Header("Developer Use")]
-    public float Modifier;
+    public int temp;
 
     void Start()
     {
         if (FarmingData)
         {
-            value = GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().HarvestCount;
+            value = DataRecord.HarvestCount;
         }
         else if (FishingData)
         {
-            value = GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().FishCount;
+            value = DataRecord.FishCount;
         }
     }
 
     void Update()
     {
-        this.GetComponent<Image>().fillAmount = value / 100;
+        GetComponent<Text>().text = value.ToString();
     }
 }

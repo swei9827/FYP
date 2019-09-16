@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class TutorialManager : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class TutorialManager : MonoBehaviour
 
     //Set player interact
     bool playerAction = false;
+
+    public Fishing fish;
 
     // Update is called once per frame
     void Update()
@@ -33,18 +37,18 @@ public class TutorialManager : MonoBehaviour
             if (i == popUpIndex)
             {
                 Time.timeScale = 0;
-                TutorialPopOut[popUpIndex].SetActive(true);              
+                TutorialPopOut[popUpIndex].SetActive(true);
             }
         }
-        
+
         //First Tutorial
-        if(popUpIndex == 0)
+        if (popUpIndex == 0)
         {
             if (playerAction)
             {
                 timer -= Time.deltaTime;
                 Time.timeScale = 1;
-                TutorialPopOut[popUpIndex].SetActive(false);               
+                TutorialPopOut[popUpIndex].SetActive(false);
                 if (timer <= 0)
                 {
                     popUpIndex++;
@@ -99,9 +103,9 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
 
                 if (!DirtTile.addPlant)
-                {                 
+                {
                     playerAction = false;
-                    popUpIndex++;              
+                    popUpIndex++;
                 }
             }
         }
@@ -134,7 +138,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     playerAction = false;
                     popUpIndex++;
-                }              
+                }
             }
         }
 
@@ -146,10 +150,25 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                if (GameObject.Find("Tilemap_River").GetComponent<Fishing>().success)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        else if(popUpIndex == 7)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
                 playerAction = false;
                 popUpIndex++;
             }
         }
-    }
+    }  
 }
 

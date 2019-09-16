@@ -7,11 +7,15 @@ public class SceneControl : MonoBehaviour
 {
     public bool isTutorial;
     public bool isGame;
+    public bool isMainMenu;
     public static  bool completeAllTasks;
+    public Canvas analyticCanvas;
 
     public void PlayButton()
     {
         SceneManager.LoadScene(1);
+        DataRecord.HarvestCount = 0;
+        DataRecord.FishCount = 0;
     }
 
     public void ExitButton()
@@ -21,11 +25,19 @@ public class SceneControl : MonoBehaviour
 
     public void AnalyticButton()
     {
-        SceneManager.LoadScene(4);
+        analyticCanvas.gameObject.SetActive(true);
     }
 
     public void Update()
     {
+        if (isMainMenu)
+        {
+            if(Input.anyKey && analyticCanvas.isActiveAndEnabled)
+            {
+                analyticCanvas.gameObject.SetActive(false);
+            }
+        }
+
         if (isTutorial)
         {
             if(Input.anyKey)

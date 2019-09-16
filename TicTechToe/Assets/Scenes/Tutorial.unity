@@ -391,6 +391,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTutorial: 1
   isGame: 0
+  isMainMenu: 0
+  startTutorial: 0
+  analyticCanvas: {fileID: 0}
 --- !u!1 &1923288358
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,10 +10,6 @@ public class GetItems : MonoBehaviour
     public bool canGetFish = false;
     public bool canGetCrops = false;
 
-    //for tutorial use
-    public bool getCropsTutorial = false;
-    public bool getFishTutorial = false;
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -40,25 +36,24 @@ public class GetItems : MonoBehaviour
                 {
                     GameObject crops = GameObject.Instantiate(_itemPrefab);
                     if (HotBar.HotBarInstance.AddItem(crops))
-                    {
+                    {                       
                         //for Dialogue
                         if (GameObject.Find("DialogueManager").GetComponent<Dialogue>().getIndex() == 2 && !Dialogue.completeTask1)
                         {
                             GameObject.Find("DialogueManager").GetComponent<Dialogue>().setIndex(3);
                             Dialogue.completeTask1 = true;
-                            Debug.Log("Run!");
                         }
-
                         GameObject.Destroy(this.gameObject);
-                        GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, crops.GetComponentInChildren<Item>().itemName.ToString());
-                        canGetFish = false;
-                        getCropsTutorial = true;                      
+                        DataRecord.AddEvents(0, crops.GetComponentInChildren<Item>().itemName.ToString());
+                        DataRecord.HarvestCount += 1;
+                        canGetFish = false;                  
                     }
                     else if (!HotBar.HotBarInstance.AddItem(crops))
                     {
                         InventoryController.InventoryInstance.AddItem(crops);
                         GameObject.Destroy(this.gameObject);
-                        GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, crops.GetComponentInChildren<Item>().itemName.ToString());
+                        DataRecord.AddEvents(0, crops.GetComponentInChildren<Item>().itemName.ToString());
+                        DataRecord.HarvestCount += 1;
                         canGetFish = false;
                     }
                     else
@@ -81,15 +76,16 @@ public class GetItems : MonoBehaviour
                     }
 
                     GameObject.Destroy(this.gameObject);
-                    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, fish.GetComponentInChildren<Item>().itemName.ToString());
+                    DataRecord.AddEvents(0, fish.GetComponentInChildren<Item>().itemName.ToString());
+                    DataRecord.FishCount += 1;
                     canGetFish = false;
-                    getFishTutorial = true;
                 }
                 else if(!HotBar.HotBarInstance.AddItem(fish))
                 {
                     InventoryController.InventoryInstance.AddItem(fish);
                     GameObject.Destroy(this.gameObject);
-                    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, fish.GetComponentInChildren<Item>().itemName.ToString());
+                    DataRecord.AddEvents(0, fish.GetComponentInChildren<Item>().itemName.ToString());
+                    DataRecord.FishCount += 1;
                     canGetFish = false;
                 }
                 else

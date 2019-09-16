@@ -25,6 +25,7 @@ public class Fishing : MonoBehaviour
     private float hitWaterAmount;
 
     bool canInteract = true;
+    public bool success = false;
 
     //UI
     public Text fishName;
@@ -187,6 +188,7 @@ public class Fishing : MonoBehaviour
                 inventory.SetActive(true);
                 PlayerMovement.canMove = true;
                 canInteract = true;
+                success = true;
             }
             else if (waterHit >= hitWaterAmount)
             {

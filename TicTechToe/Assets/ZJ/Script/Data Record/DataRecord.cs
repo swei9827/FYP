@@ -12,10 +12,8 @@ public class DataRecord : MonoBehaviour
     static string eventName;
 
     // Activities Data Collection
-    [HideInInspector]
-    public int HarvestCount;
-    [HideInInspector]
-    public int FishCount;
+    static public int HarvestCount;
+    static public int FishCount;
 
     void Awake()
     {
@@ -32,7 +30,7 @@ public class DataRecord : MonoBehaviour
     }
 
     static void LogFileGeneration()
-    {       
+    {
         string path = "Assets/Resource/DataRecord/Log.txt";
         StreamWriter writer = new StreamWriter(path, true);
         writer.WriteLine(System.DateTime.Now + " Log Started");

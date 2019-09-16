@@ -1,0 +1,19 @@
+17/9/2019 12:06:58 AM Log Started
+17/9/2019 12:07:01 AM Player obtained Plow02
+17/9/2019 12:07:04 AM Player obtained Plow02
+17/9/2019 12:07:05 AM Player plowed DirtTile
+17/9/2019 12:07:07 AM Player obtained Strawberries_Seed
+17/9/2019 12:07:08 AM Player obtained Strawberries_Seed
+17/9/2019 12:07:10 AM Player planted Strawberries
+17/9/2019 12:07:13 AM Player obtained WateringCan
+17/9/2019 12:07:17 AM Player watered Strawberry(Clone)
+17/9/2019 12:07:24 AM Player obtained Strawberry
+17/9/2019 12:07:29 AM Player obtained generic-rpg-rod
+17/9/2019 12:07:36 AM Player obtained Tuna
+17/9/2019 12:08:17 AM Player obtained Pumpkin_Seed
+17/9/2019 12:08:19 AM Player planted Pumpkins
+17/9/2019 12:08:20 AM Player obtained WateringCan
+17/9/2019 12:08:24 AM Player watered Pumpkins(Clone)
+17/9/2019 12:08:31 AM Player obtained Pumpkin
+17/9/2019 12:08:43 AM Player obtained generic-rpg-rod
+17/9/2019 12:08:49 AM Player obtained CatFish
