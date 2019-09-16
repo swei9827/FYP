@@ -188,8 +188,9 @@ public class Fishing : MonoBehaviour
                 inventory.SetActive(true);
                 PlayerMovement.canMove = true;
                 canInteract = true;
-                success = true;
+                success = true;            
             }
+
             else if (waterHit >= hitWaterAmount)
             {
                 Debug.Log("Fail");

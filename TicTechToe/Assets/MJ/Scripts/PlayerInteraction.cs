@@ -20,63 +20,69 @@ public class PlayerInteraction : MonoBehaviour
     public static bool canUse = false;
     public static bool canWater = false;
 
+    public bool canInteract = true;
+
+
     private void Start()
-    {
-      
+    {      
         waterIndicator.enabled = false;   
     }
 
     private void Update()
 	{
-		if (Input.GetKeyDown(interactKey))
-		{
-			if (target == null)
-				return;
-
-			DirtTile dirt = target.GetComponent<DirtTile>();
-			if (dirt != null)
-			{
-				dirt.Interact(crop, tool, this);
-			}
-
-			TableTile table = target.GetComponent<TableTile>();
-			if (table != null)
-			{
-				table.Interact(crop, tool, this);
-            }
-
-			SeedBarrel barrel = target.GetComponent<SeedBarrel>();
-			if (barrel != null)
-			{
-				barrel.Interact(crop, tool, this);
-            }
-
-            TrashCan trashcan = target.GetComponent<TrashCan>();
+        if(canInteract)
+        {
+            if (Input.GetKeyDown(interactKey))
             {
-                if(trashcan)
-                {
-                    trashcan.Interact(crop,tool, this);
-                }
-            }
+                if (target == null)
+                    return;
 
-            Fishing fishing = target.GetComponent<Fishing>();
-            {
-                if(fishing)
+                DirtTile dirt = target.GetComponent<DirtTile>();
+                if (dirt != null)
                 {
-                    fishing.Interact(tool,this);
+                    dirt.Interact(crop, tool, this);
                 }
-            }
 
-            RefillWater refillWater = target.GetComponent<RefillWater>();
-            {
-                if(refillWater)
+                TableTile table = target.GetComponent<TableTile>();
+                if (table != null)
                 {
-                    refillWater.Interact(tool, this);
+                    table.Interact(crop, tool, this);
                 }
-            }
-		}
 
-        checkWater();
+                SeedBarrel barrel = target.GetComponent<SeedBarrel>();
+                if (barrel != null)
+                {
+                    barrel.Interact(crop, tool, this);
+                }
+
+                TrashCan trashcan = target.GetComponent<TrashCan>();
+                {
+                    if (trashcan)
+                    {
+                        trashcan.Interact(crop, tool, this);
+                    }
+                }
+
+                Fishing fishing = target.GetComponent<Fishing>();
+                {
+                    if (fishing)
+                    {
+                        fishing.Interact(tool, this);
+                    }
+                }
+
+                RefillWater refillWater = target.GetComponent<RefillWater>();
+                {
+                    if (refillWater)
+                    {
+                        refillWater.Interact(tool, this);
+                    }
+                }
+
+                checkWater();
+            }
+        }
+        
     }
 
     public void SetCrop(Crop c)

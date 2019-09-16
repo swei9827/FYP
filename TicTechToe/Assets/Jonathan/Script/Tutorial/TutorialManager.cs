@@ -17,8 +17,6 @@ public class TutorialManager : MonoBehaviour
     //Set player interact
     bool playerAction = false;
 
-    public Fishing fish;
-
     // Update is called once per frame
     void Update()
     {
@@ -73,7 +71,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     popUpIndex++;
                     playerAction = false;
-                    timer = 5f;
+                    timer = 1f;
                 }
             }
         }
@@ -135,7 +133,7 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
 
                 if (GameObject.FindGameObjectWithTag("Crops").GetComponent<GetItems>().canGetCrops)
-                {
+                {                   
                     playerAction = false;
                     popUpIndex++;
                 }
@@ -152,9 +150,10 @@ public class TutorialManager : MonoBehaviour
 
                 if (GameObject.Find("Tilemap_River").GetComponent<Fishing>().success)
                 {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
                     playerAction = false;
-                    popUpIndex++;
-                }
+                    popUpIndex++;                 
+                }               
             }
         }
 
@@ -166,9 +165,12 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
 
                 playerAction = false;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
                 popUpIndex++;
+
             }
         }
-    }  
+    }
 }
+
 
