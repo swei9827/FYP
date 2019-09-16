@@ -1,12 +1,14 @@
-17/9/2019 1:17:32 AM Log Started
-17/9/2019 1:17:38 AM Player obtained Plow02
-17/9/2019 1:17:39 AM Player plowed DirtTile
-17/9/2019 1:17:42 AM Player obtained Strawberries_Seed
-17/9/2019 1:17:43 AM Player planted Strawberries
-17/9/2019 1:17:45 AM Player obtained WateringCan
-17/9/2019 1:17:52 AM Player watered Strawberry(Clone)
-17/9/2019 1:17:57 AM Player obtained WateringCan
-17/9/2019 1:18:00 AM Player obtained Strawberry
-17/9/2019 1:18:13 AM Player obtained generic-rpg-rod
-17/9/2019 1:18:23 AM Player obtained Salmon
-17/9/2019 1:18:35 AM Player obtained generic-rpg-rod
+17/9/2019 2:05:28 AM Log Started
+17/9/2019 2:05:31 AM Player obtained Plow02
+17/9/2019 2:05:36 AM Player obtained Plow02
+17/9/2019 2:05:39 AM Player obtained Plow02
+17/9/2019 2:05:40 AM Player plowed DirtTile
+17/9/2019 2:05:43 AM Player obtained Strawberries_Seed
+17/9/2019 2:05:43 AM Player planted Strawberries
+17/9/2019 2:05:49 AM Player obtained WateringCan
+17/9/2019 2:05:51 AM Player watered Strawberry(Clone)
+17/9/2019 2:05:59 AM Player obtained Strawberry
+17/9/2019 2:06:04 AM Player obtained generic-rpg-rod
+17/9/2019 2:06:12 AM Player obtained Sardine
+17/9/2019 2:06:23 AM Player obtained Salmon
+17/9/2019 2:06:30 AM Player obtained Sardine

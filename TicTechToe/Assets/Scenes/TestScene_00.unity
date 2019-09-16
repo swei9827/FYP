@@ -22360,7 +22360,6 @@ MonoBehaviour:
   - {fileID: 357903754}
   - {fileID: 261211962}
   - {fileID: 1366757596}
-  fish: {fileID: 0}
 --- !u!4 &2018621286
 Transform:
   m_ObjectHideFlags: 0
@@ -23171,7 +23170,7 @@ PrefabInstance:
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
       propertyPath: sentences.Array.data[2]
-      value: Finish the quests
+      value: You havent finish the task
       objectReference: {fileID: 0}
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
@@ -23181,7 +23180,7 @@ PrefabInstance:
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
       propertyPath: sentences.Array.data[3]
-      value: Well Done !!
+      value: Well Done !
       objectReference: {fileID: 0}
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
@@ -23196,17 +23195,17 @@ PrefabInstance:
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
       propertyPath: sentences.Array.data[1]
-      value: One crop is enough
+      value: I just need one crop
       objectReference: {fileID: 0}
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
       propertyPath: sentences.Array.data[5]
-      value: One fish is enough
+      value: I just need one fish
       objectReference: {fileID: 0}
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
       propertyPath: sentences.Array.data[6]
-      value: You completed all the tasks
+      value: Congratulation! You have complete all the tasks !
       objectReference: {fileID: 0}
     - target: {fileID: 2630691452124052568, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
@@ -24748,7 +24747,7 @@ PrefabInstance:
     - target: {fileID: 8080095806413186784, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.4999847
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7311215673429458164, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}

@@ -658,7 +658,6 @@ GameObject:
   - component: {fileID: 314078477}
   - component: {fileID: 314078480}
   - component: {fileID: 314078479}
-  - component: {fileID: 314078478}
   m_Layer: 5
   m_Name: NPC A Count
   m_TagString: Untagged
@@ -685,21 +684,6 @@ RectTransform:
   m_AnchoredPosition: {x: 4, y: 1.6501312}
   m_SizeDelta: {x: -5.799988, y: 6.699997}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &314078478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314078476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc6ffa076ef21fd4191e2940fd01ba30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FarmingData: 0
-  FishingData: 1
-  temp: 0
 --- !u!114 &314078479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,7 +739,6 @@ GameObject:
   - component: {fileID: 372664567}
   - component: {fileID: 372664570}
   - component: {fileID: 372664569}
-  - component: {fileID: 372664568}
   m_Layer: 5
   m_Name: NPC B Count
   m_TagString: Untagged
@@ -782,21 +765,6 @@ RectTransform:
   m_AnchoredPosition: {x: 4.3199463, y: 6.850006}
   m_SizeDelta: {x: -5.799988, y: 13.699997}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &372664568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372664566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc6ffa076ef21fd4191e2940fd01ba30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FarmingData: 1
-  FishingData: 0
-  temp: 0
 --- !u!114 &372664569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2248,7 +2216,6 @@ GameObject:
   - component: {fileID: 1641461025}
   - component: {fileID: 1641461028}
   - component: {fileID: 1641461027}
-  - component: {fileID: 1641461026}
   m_Layer: 5
   m_Name: Quests Count
   m_TagString: Untagged
@@ -2275,21 +2242,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2.8999023, y: 3.0600586}
   m_SizeDelta: {x: -5.799988, y: 5.700012}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1641461026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641461024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc6ffa076ef21fd4191e2940fd01ba30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FarmingData: 0
-  FishingData: 1
-  temp: 0
 --- !u!114 &1641461027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2628,7 +2580,6 @@ GameObject:
   - component: {fileID: 2021876951}
   - component: {fileID: 2021876954}
   - component: {fileID: 2021876953}
-  - component: {fileID: 2021876952}
   m_Layer: 5
   m_Name: Artifacts Count
   m_TagString: Untagged
@@ -2655,21 +2606,6 @@ RectTransform:
   m_AnchoredPosition: {x: 4.3199463, y: 1}
   m_SizeDelta: {x: -5.799988, y: -2.2999878}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2021876952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2021876950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc6ffa076ef21fd4191e2940fd01ba30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FarmingData: 1
-  FishingData: 0
-  temp: 0
 --- !u!114 &2021876953
 MonoBehaviour:
   m_ObjectHideFlags: 0

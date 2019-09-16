@@ -152,7 +152,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
                     playerAction = false;
-                    popUpIndex++;                 
+                    popUpIndex++;                   
                 }               
             }
         }
@@ -164,10 +164,13 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                playerAction = false;
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
-                popUpIndex++;
-
+                timer -= Time.deltaTime;
+                if (Input.GetKeyDown(KeyCode.Space) && timer <= 0)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
+                } 
             }
         }
     }
