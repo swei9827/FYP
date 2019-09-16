@@ -24,7 +24,7 @@ public class IconBox : MonoBehaviour
 			iconBoxAnim.SetBool("Enable", true);
             if(!recorded && playerIconBox) {
                 FxManager.PlayMusic("PickedUpFx");
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, s.name.ToString());
+                DataRecord.AddEvents(0, s.name.ToString());
                 recorded = true;
             }
         }

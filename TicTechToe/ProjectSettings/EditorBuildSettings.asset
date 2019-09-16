@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ToBeContinue.unity
     guid: 5a3b2244401889d4ca177d45bccf5b8e
+  - enabled: 1
+    path: Assets/Scenes/ActivitiesAnalytic.unity
+    guid: d784e8dc04f65084588b36352473dfdf
   m_configObjects: {}

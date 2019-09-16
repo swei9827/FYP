@@ -1,12 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEditor;
 using System.IO;
 
 public class DataRecord : MonoBehaviour
 {
-    //[MenuItem("Tools/Write file")]
+    // Singleton Declaration
+    public static DataRecord instance;
+
+    // Event Name
+    static string eventName;
+
+    // Activities Data Collection
+    [HideInInspector]
+    public int HarvestCount;
+    [HideInInspector]
+    public int FishCount;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     static void LogFileGeneration()
     {       
         string path = "Assets/Resource/DataRecord/Log.txt";
@@ -27,47 +51,70 @@ public class DataRecord : MonoBehaviour
         else
         {
             Debug.Log("No Log file found");
-        }
-        
+        }        
     }
 
-   // [MenuItem("Tools/Write file")]
-    public void AddEvents(int eventID, string eventObj)
+    public static void AddEvents(int eventid, string eventObj)
     {
-        string eventName;
         string path = "Assets/Resource/DataRecord/Log.txt";
         StreamWriter writer = new StreamWriter(path, true);
-        if (eventID == 0)
-        {
-            eventName = " obtained ";
-            writer.WriteLine(System.DateTime.Now + " Player" + eventName + eventObj);
-        }
-        else if (eventID == 1)
-        {
-            eventName = " returned ";
-            writer.WriteLine(System.DateTime.Now + " Player" + eventName + eventObj);                       
-        }
-        else if(eventID == 2)
-        {
-            eventName = " plowed ";
-            writer.WriteLine(System.DateTime.Now + " Player" + eventName + eventObj);
-        }
-        else if(eventID == 3)
-        {
-            eventName = " planted ";
-            writer.WriteLine(System.DateTime.Now + " Player" + eventName + eventObj);
-        }
-        else if(eventID == 4)
-        {
-            eventName = " watered ";
-            writer.WriteLine(System.DateTime.Now + " Player" + eventName + eventObj);
-        }
-        else if (eventID == 5)
-        {
-            eventName = " harvested ";
-            writer.WriteLine(System.DateTime.Now + " Player" + eventName + eventObj);
-        }
+
+        writer.WriteLine(System.DateTime.Now + " Player" + EventAction(eventid) + eventObj);
+
         writer.Close();
+    } 
+
+    public void ActivitiesRecord(int eventid)
+    {
+        switch (eventid)
+        {
+            case 0:
+                HarvestCount += 1;
+                break;
+
+            case 1:
+                FishCount += 1;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    static string EventAction(int eventID)
+    {
+        switch (eventID)
+        {
+            case 0:
+                eventName = " obtained ";
+                break;
+
+            case 1:
+                eventName = " returned ";
+                break;
+
+            case 2:
+                eventName = " plowed ";
+                break;
+
+            case 3:
+                eventName = " planted ";
+                break;
+
+            case 4:
+                eventName = " watered ";
+                break;
+
+            case 5:
+                eventName = " harvested ";
+                break;
+
+            default:
+                eventName = "NULL";
+                break;
+        }
+
+        return eventName;
     }
 
     void Start()
@@ -75,6 +122,12 @@ public class DataRecord : MonoBehaviour
         ClearLogFile();
         LogFileGeneration();
     }
+
+    void Update()
+    {
+        
+    }
 }
+
 
 

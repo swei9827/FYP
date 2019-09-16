@@ -63,7 +63,7 @@ public class Inventory : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     AddCropsItem(itemPickedUp, items.CropType, items.sprites[1], 0);
-                    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(5, items.CropType.ToString());
+                    DataRecord.AddEvents(5, items.CropType.ToString());
                     FxManager.PlayMusic("HarvestFx");
                     canGetCrops = false;
                     DirtTile.addPlant = true;
@@ -73,7 +73,7 @@ public class Inventory : MonoBehaviour
             if (canGetFish)
             {
                 AddFishItem(itemPickedUp, items.FishType, items.sprites[0], 1);
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, items.FishType.ToString());
+                DataRecord.AddEvents(0, items.FishType.ToString());
                 canGetFish = false;
             }
         }       
