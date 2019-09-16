@@ -157,6 +157,10 @@ MonoBehaviour:
   canInteract: 0
   canGetFish: 0
   canGetCrops: 0
+  getCropsTutorial: 0
+  getFishTutorial: 0
+  dialogue: {fileID: 3659707413763448872, guid: 661f0d50a2578a649b19d43a4e248ca5,
+    type: 3}
 --- !u!1001 &5265394777222824490
 PrefabInstance:
   m_ObjectHideFlags: 0

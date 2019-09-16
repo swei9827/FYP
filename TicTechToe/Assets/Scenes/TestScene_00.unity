@@ -2210,7 +2210,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 10166744639827168}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1391983144}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bf0213efd5ef54479bf4c9df4283f5a, type: 3}
@@ -8427,6 +8427,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1391983144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3659707413763448872, guid: 661f0d50a2578a649b19d43a4e248ca5,
+    type: 3}
+  m_PrefabInstance: {fileID: 10166744639827168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1412821319
 GameObject:
   m_ObjectHideFlags: 0
@@ -9858,6 +9864,23 @@ MonoBehaviour:
   spriteRdr: {fileID: 0}
   rb: {fileID: 0}
   inventory: {fileID: 0}
+--- !u!114 &1698814707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698814695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb5f61edd63dc70419e1e491ed7a7e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 1391983144}
+  slotHolder: {fileID: 0}
+  canInteract: 0
+  canGetFish: 0
+  canGetCrops: 0
 --- !u!328 &1767958452 stripped
 VideoPlayer:
   m_CorrespondingSourceObject: {fileID: 2151167392196870850, guid: e5fef7b368059254e83207b804dc6de5,
@@ -23077,7 +23100,7 @@ PrefabInstance:
         type: 3}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2061267908}
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
       propertyPath: typingSpeed
@@ -23096,7 +23119,7 @@ PrefabInstance:
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
       propertyPath: sentences.Array.data[3]
-      value: Well Done!!
+      value: Well Done !!
       objectReference: {fileID: 0}
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
@@ -23111,7 +23134,7 @@ PrefabInstance:
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
       propertyPath: sentences.Array.data[1]
-      value: One crops is enough
+      value: One crop is enough
       objectReference: {fileID: 0}
     - target: {fileID: 8111744394732515350, guid: 661f0d50a2578a649b19d43a4e248ca5,
         type: 3}
@@ -24393,6 +24416,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5383637362339812715, guid: 9c4f9b2ddc943b2489e9e14526475914,
+        type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 1391983144}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c4f9b2ddc943b2489e9e14526475914, type: 3}
 --- !u!1 &4779072840584857191 stripped
@@ -24655,5 +24683,10 @@ PrefabInstance:
       propertyPath: videoPlayer
       value: 
       objectReference: {fileID: 1929833721347185447}
+    - target: {fileID: 8080095806413186784, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.4999847
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 813eebd421111fc4cb098a529970b333, type: 3}

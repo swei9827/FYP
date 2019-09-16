@@ -43,7 +43,6 @@ public class TutorialManager : MonoBehaviour
             if (playerAction)
             {
                 timer -= Time.deltaTime;
-                Debug.Log(timer);
                 Time.timeScale = 1;
                 TutorialPopOut[popUpIndex].SetActive(false);               
                 if (timer <= 0)

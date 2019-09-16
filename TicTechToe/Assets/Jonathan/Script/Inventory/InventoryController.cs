@@ -167,9 +167,9 @@ public class InventoryController : MonoBehaviour
             if(i.CropType == item.CropType && i.FishType == item.FishType)
             {
                 i.Add(1);
-                GameObject.Destroy(itemGo);
-                return true;         
-            }
+                GameObject.Destroy(itemGo); 
+                return true;              
+            }           
         }
 
         //check all slots

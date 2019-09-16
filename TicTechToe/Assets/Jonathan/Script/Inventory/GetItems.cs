@@ -41,10 +41,18 @@ public class GetItems : MonoBehaviour
                     GameObject crops = GameObject.Instantiate(_itemPrefab);
                     if (HotBar.HotBarInstance.AddItem(crops))
                     {
+                        //for Dialogue
+                        if (GameObject.Find("DialogueManager").GetComponent<Dialogue>().getIndex() == 2 && !Dialogue.completeTask1)
+                        {
+                            GameObject.Find("DialogueManager").GetComponent<Dialogue>().setIndex(3);
+                            Dialogue.completeTask1 = true;
+                            Debug.Log("Run!");
+                        }
+
                         GameObject.Destroy(this.gameObject);
                         GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, crops.GetComponentInChildren<Item>().itemName.ToString());
                         canGetFish = false;
-                        getCropsTutorial = true;
+                        getCropsTutorial = true;                      
                     }
                     else if (!HotBar.HotBarInstance.AddItem(crops))
                     {
@@ -56,7 +64,7 @@ public class GetItems : MonoBehaviour
                     else
                     {
                         Debug.Log("Inventory is full");
-                    }
+                    }                
                 }           
             }
 
@@ -65,6 +73,13 @@ public class GetItems : MonoBehaviour
                 GameObject fish = GameObject.Instantiate(_itemPrefab);
                 if (HotBar.HotBarInstance.AddItem(fish))
                 {
+                    // for Dialogue
+                    if (GameObject.Find("DialogueManager").GetComponent<Dialogue>().getIndex() == 2 && Dialogue.completeTask1)
+                    {
+                        GameObject.Find("DialogueManager").GetComponent<Dialogue>().setIndex(6);
+                        Dialogue.completeTask2 = true;
+                    }
+
                     GameObject.Destroy(this.gameObject);
                     GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, fish.GetComponentInChildren<Item>().itemName.ToString());
                     canGetFish = false;
