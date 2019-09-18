@@ -9,7 +9,9 @@ public class BGMManager : MonoBehaviour
     #region VARIABLES
 
     public static BGMManager instance;
+    public static bool Scene_MainMenu, Scene_InGame, isPlaying;
     public AudioFile[] audioFiles;
+
     private float timeToReset;
     private bool timerIsSet = false;
     private string tmpName;
@@ -21,6 +23,23 @@ public class BGMManager : MonoBehaviour
     private string fadeOutUsedString;
 
     #endregion
+
+    [System.Serializable]
+    public class AudioFile
+    {
+        public string audioName;
+        public AudioClip audioClip;
+
+        [Range(0f, 1f)]
+        public float volume;
+
+        [HideInInspector]
+        public AudioSource source;
+
+        public bool isLooping;
+
+        public bool playOnAwake;
+    }
 
     // Use this for initialization
 
@@ -43,11 +62,34 @@ public class BGMManager : MonoBehaviour
             s.source.clip = s.audioClip;
             s.source.volume = s.volume;
             s.source.loop = s.isLooping;
+            s.source.playOnAwake = false;
 
             if (s.playOnAwake)
             {
                 s.source.Play();
             }
+        }
+    }
+
+    void Update()
+    {
+        if (Time.time >= timeToReset && timerIsSet)
+        {
+            ResetVol();
+            timerIsSet = false;
+        }
+
+        if (Scene_MainMenu && !isPlaying)
+        {
+            BGMManager.StopMusic("InGameBGM");
+            BGMManager.PlayMusic("MainMenuBGM");
+            isPlaying = true;
+        }
+        else if (Scene_InGame && !isPlaying)
+        {
+            BGMManager.PlayMusic("InGameBGM");
+            BGMManager.StopMusic("MainMenuBGM");
+            isPlaying = true;
         }
     }
 
@@ -229,15 +271,6 @@ public class BGMManager : MonoBehaviour
         AudioFile s = Array.Find(instance.audioFiles, AudioFile => AudioFile.audioName == tmpName);
         s.source.volume = tmpVol;
         isLowered = false;
-    }
-
-    private void Update()
-    {
-        if (Time.time >= timeToReset && timerIsSet)
-        {
-            ResetVol();
-            timerIsSet = false;
-        }
     }
 
     #endregion

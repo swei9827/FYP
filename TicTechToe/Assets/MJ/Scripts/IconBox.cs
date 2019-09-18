@@ -17,13 +17,13 @@ public class IconBox : MonoBehaviour
         if (s == null)
         {
             iconBoxAnim.SetBool("Enable", false);
-            FxManager.StopMusic("PickedUpFx");
+            FxManager.StopMusic("PickUpFx");
         }
         else if (s != null)
 		{
 			iconBoxAnim.SetBool("Enable", true);
             if(!recorded && playerIconBox) {
-                FxManager.PlayMusic("PickedUpFx");
+                FxManager.PlayMusic("PickUpFx");
                 DataRecord.AddEvents(0, s.name.ToString());
                 recorded = true;
             }

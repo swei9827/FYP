@@ -28,6 +28,22 @@ public class SceneControl : MonoBehaviour
         analyticCanvas.gameObject.SetActive(true);
     }
 
+    void Start()
+    {
+        if (isMainMenu)
+        {
+            BGMManager.Scene_MainMenu = true;
+            BGMManager.Scene_InGame = false;
+            BGMManager.isPlaying = false;
+        }
+        else if (isGame)
+        {
+            BGMManager.Scene_MainMenu = false;
+            BGMManager.Scene_InGame = true;
+            BGMManager.isPlaying = false;
+        }
+    }
+
     public void Update()
     {
         if (isMainMenu)
@@ -51,7 +67,7 @@ public class SceneControl : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 SceneManager.LoadScene(0);
-            }
+            }          
         }
 
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ActivitiesAnalytic"))
