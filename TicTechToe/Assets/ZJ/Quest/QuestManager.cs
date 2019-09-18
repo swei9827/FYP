@@ -121,7 +121,7 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public static void questStatusChange(GameObject go)
+    public static void returnQuestAccepted(GameObject go)
     {
         QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.QuestProvider == go);
         if (q == null)
@@ -131,6 +131,19 @@ public class QuestManager : MonoBehaviour
         else
         {
             q.accepted = true;
+        }
+    }
+
+    public static void returnQuestCompleted(int id)
+    {
+        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.questID == id);
+        if (q == null)
+        {
+            Debug.Log("Invalid ID");
+        }
+        else
+        {
+            q.completed = true;
         }
     }
 }

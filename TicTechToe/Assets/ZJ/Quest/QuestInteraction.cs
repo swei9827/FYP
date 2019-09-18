@@ -4,18 +4,34 @@ using UnityEngine;
 
 public class QuestInteraction : MonoBehaviour
 {
-    public List<AcceptedQuests> acceptedQuestLists;
+    public List<Quests> acceptedQuestLists;
+    public List<Quests> completedQuestLists;
 
     [System.Serializable]
-    public class AcceptedQuests
+    public class Quests
     {
         public string questName;
         public int questID;        
         public string requirement;
         public int amount;
         public int reward;
+        public int collected;
         public bool accepted;
         public bool completed;
+
+        public bool questStatusCheck()
+        {
+            if(collected >= amount)
+            {
+                completed = true;
+                QuestManager.returnQuestCompleted(questID);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
     void OnCollisionStay2D(Collision2D collision)
@@ -24,7 +40,7 @@ public class QuestInteraction : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                AcceptedQuests aq = new AcceptedQuests();
+                Quests aq = new Quests();
                 if (!QuestManager.returnQuestStatus(collision.gameObject))
                 {
                     aq.questName = QuestManager.returnQuestName(collision.gameObject);
@@ -33,9 +49,21 @@ public class QuestInteraction : MonoBehaviour
                     aq.amount = QuestManager.returnAmount(collision.gameObject);
                     aq.reward = QuestManager.returnReward(collision.gameObject);
                     aq.accepted = true;
-                    QuestManager.questStatusChange(collision.gameObject);
+                    QuestManager.returnQuestAccepted(collision.gameObject);
                     acceptedQuestLists.Add(aq);
                 }                
+            }
+        }
+    }
+
+    void Update()
+    {
+        foreach(Quests q in acceptedQuestLists)
+        {
+            if (q.questStatusCheck())
+            {
+                completedQuestLists.Add(q);
+                acceptedQuestLists.Remove(q);
             }
         }
     }
