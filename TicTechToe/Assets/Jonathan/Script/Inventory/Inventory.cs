@@ -81,7 +81,7 @@ public class Inventory : MonoBehaviour
 
     void AddCropsItem(GameObject itemObject, CropsTypeTest crops, Sprite itemIcon, int id)
     {
-        if(dialogue.GetComponent<Dialogue>().getIndex() == 2 && !Dialogue.completeTask1)
+        if (dialogue.GetComponent<Dialogue>().getIndex() == 2 && !Dialogue.completeTask1)
         {
             dialogue.GetComponent<Dialogue>().setIndex(3);
             Dialogue.completeTask1 = true;

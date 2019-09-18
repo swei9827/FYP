@@ -1,3 +1,10 @@
-9/18/2019 10:23:04 PM Log Started
-9/18/2019 10:23:07 PM Player obtained WateringCan
-9/18/2019 10:23:20 PM Player obtained WateringCan
+9/18/2019 11:06:51 PM Log Started
+9/18/2019 11:06:54 PM Player obtained Plow02
+9/18/2019 11:06:58 PM Player plowed DirtTile
+9/18/2019 11:07:00 PM Player obtained WateringCan
+9/18/2019 11:07:04 PM Player obtained Potatoes_Seed
+9/18/2019 11:07:05 PM Player obtained Potatoes_Seed
+9/18/2019 11:07:07 PM Player planted Potatoes
+9/18/2019 11:07:09 PM Player obtained WateringCan
+9/18/2019 11:07:13 PM Player watered Potatoes(Clone)
+9/18/2019 11:07:19 PM Player obtained Potatoes

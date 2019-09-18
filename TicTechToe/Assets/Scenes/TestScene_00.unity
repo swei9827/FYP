@@ -6716,12 +6716,12 @@ PrefabInstance:
     - target: {fileID: 2571984552411659460, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.37
+      value: 1.87
       objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659460, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.58
+      value: -4.48
       objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659460, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
@@ -8156,7 +8156,7 @@ PrefabInstance:
     - target: {fileID: 7227584735667442808, guid: ff55d2ff02048bb4ea6a54beee5b4d54,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -54
+      value: -54.00006
       objectReference: {fileID: 0}
     - target: {fileID: 7227584735667442808, guid: ff55d2ff02048bb4ea6a54beee5b4d54,
         type: 3}
@@ -8553,7 +8553,7 @@ MonoBehaviour:
     QuestProvider: {fileID: 694169318}
     questType: Harvesting
     questDetail: Harvest 1 Potato
-    objectName: Potato
+    objectName: Potatoes
     amount: 1
     reward: 10
     accepted: 0
@@ -10010,6 +10010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceptedQuestLists: []
+  completedQuestLists: []
 --- !u!4 &1698814705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2831242842766318660, guid: 4b1d187909613b04584bc2d0aafd6dca,
@@ -10069,12 +10070,12 @@ PrefabInstance:
     - target: {fileID: 2571984552411659460, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.27
+      value: 1.83
       objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659460, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.35
+      value: -6.92
       objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659460, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
@@ -23855,6 +23856,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Collector
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571984552411659458, guid: 9411f1e2aa184fb4592d66a739ca0912,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2571984552809873335, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}

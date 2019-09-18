@@ -11,7 +11,8 @@ public class QuestInteraction : MonoBehaviour
     public class Quests
     {
         public string questName;
-        public int questID;        
+        public int questID;
+        public string questType;
         public string requirement;
         public int amount;
         public int reward;
@@ -40,17 +41,18 @@ public class QuestInteraction : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                Quests aq = new Quests();
+                Quests q = new Quests();
                 if (!QuestManager.returnQuestStatus(collision.gameObject))
                 {
-                    aq.questName = QuestManager.returnQuestName(collision.gameObject);
-                    aq.questID = QuestManager.returnQuestID(collision.gameObject);
-                    aq.requirement = QuestManager.returnRequirement(collision.gameObject);
-                    aq.amount = QuestManager.returnAmount(collision.gameObject);
-                    aq.reward = QuestManager.returnReward(collision.gameObject);
-                    aq.accepted = true;
+                    q.questName = QuestManager.returnQuestName(collision.gameObject);
+                    q.questID = QuestManager.returnQuestID(collision.gameObject);
+                    q.questType = QuestManager.returnQuestType(collision.gameObject);
+                    q.requirement = QuestManager.returnRequirement(collision.gameObject);
+                    q.amount = QuestManager.returnAmount(collision.gameObject);
+                    q.reward = QuestManager.returnReward(collision.gameObject);
                     QuestManager.returnQuestAccepted(collision.gameObject);
-                    acceptedQuestLists.Add(aq);
+                    q.accepted = true;                    
+                    acceptedQuestLists.Add(q);
                 }                
             }
         }

@@ -145,6 +145,22 @@ public class HotBar : MonoBehaviour
     public bool AddItem(GameObject itemGo)
     {
         Item item = itemGo.GetComponent<Item>();
+
+        // QUEST //
+        QuestInteraction qi = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestInteraction>();
+        foreach (QuestInteraction.Quests q in qi.acceptedQuestLists)
+        {
+            if (q.questType == "Harvesting" && q.requirement == item.CropType.ToString())
+            {
+                q.collected += 1;
+            }
+            else if(q.questType == "Fishing" && q.requirement == item.FishType.ToString())
+            {
+                q.collected += 1;
+            }
+        }
+        // QUEST //
+
         //check all items
         foreach (Item i in _items)
         {

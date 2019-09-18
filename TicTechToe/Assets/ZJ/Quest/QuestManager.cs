@@ -107,6 +107,20 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    public static string returnQuestType(GameObject go)
+    {
+        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.QuestProvider == go);
+        if (q == null)
+        {
+            Debug.Log("Invalid NPC");
+            return "null";
+        }
+        else
+        {
+            return q.questType;
+        }
+    }
+
     public static bool returnQuestStatus(GameObject go)
     {
         QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.QuestProvider == go);
@@ -145,5 +159,5 @@ public class QuestManager : MonoBehaviour
         {
             q.completed = true;
         }
-    }
+    }    
 }
