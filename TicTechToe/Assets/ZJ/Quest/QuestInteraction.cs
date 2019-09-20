@@ -4,33 +4,45 @@ using UnityEngine;
 
 public class QuestInteraction : MonoBehaviour
 {
-    public List<Quests> acceptedQuestLists;
-    public List<Quests> completedQuestLists;
+    public List<QuestManager.QuestInfo> acceptedQuestLists;
+    public List<QuestLog> completedQuestLists;
 
-    [System.Serializable]
-    public class Quests
+    [System.Serializable] 
+    public class QuestLog
     {
-        public string questName;
         public int questID;
-        public string questType;
-        public string requirement;
-        public int amount;
+        public string questName;
+        [TextArea(5, 15)]
+        public string questDetail;
         public int reward;
-        public int collected;
-        public bool accepted;
         public bool completed;
+    }
 
-        public bool questStatusCheck()
+
+    public void questStatusCheck(QuestManager.QuestInfo q)
+    {
+        int count = 0;
+        if (q != null)
         {
-            if(collected >= amount)
+            foreach (QuestManager.Requirement r in q.requirement)
             {
-                completed = true;
-                QuestManager.returnQuestCompleted(questID);
-                return true;
+                if (r.collected >= r.amount)
+                {
+                    count++;
+                }
             }
-            else
+            if (count == q.requirementCount)
             {
-                return false;
+                QuestLog log = new QuestLog();
+                q.completed = true;
+                log.questID = q.questID;
+                log.questName = q.questName;
+                log.questDetail = q.questDetail;
+                log.reward = q.reward;
+                log.completed = q.completed;
+                StartCoroutine(q.DelayReset(2f));
+                completedQuestLists.Add(log);
+                acceptedQuestLists.Remove(q);                
             }
         }
     }
@@ -39,33 +51,22 @@ public class QuestInteraction : MonoBehaviour
     {
         if (collision.collider.CompareTag("NPC"))
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q) && !QuestManager.returnQuestStatusProvider(collision.gameObject))
             {
-                Quests q = new Quests();
-                if (!QuestManager.returnQuestStatus(collision.gameObject))
-                {
-                    q.questName = QuestManager.returnQuestName(collision.gameObject);
-                    q.questID = QuestManager.returnQuestID(collision.gameObject);
-                    q.questType = QuestManager.returnQuestType(collision.gameObject);
-                    q.requirement = QuestManager.returnRequirement(collision.gameObject);
-                    q.amount = QuestManager.returnAmount(collision.gameObject);
-                    q.reward = QuestManager.returnReward(collision.gameObject);
-                    QuestManager.returnQuestAccepted(collision.gameObject);
-                    q.accepted = true;                    
-                    acceptedQuestLists.Add(q);
-                }                
+                QuestManager.QuestInfo q = new QuestManager.QuestInfo();
+                q = QuestManager.returnQuestInfoProvider(collision.gameObject);
+                q.accepted = true;
+                acceptedQuestLists.Add(q);
             }
-        }
-    }
-
-    void Update()
-    {
-        foreach(Quests q in acceptedQuestLists)
-        {
-            if (q.questStatusCheck())
+            else if (Input.GetKeyDown(KeyCode.Q))
             {
-                completedQuestLists.Add(q);
-                acceptedQuestLists.Remove(q);
+                foreach(QuestManager.QuestInfo q in acceptedQuestLists)
+                {
+                    if(q.questCompleter == collision.gameObject)
+                    {
+                        questStatusCheck(q);
+                    }
+                }
             }
         }
     }

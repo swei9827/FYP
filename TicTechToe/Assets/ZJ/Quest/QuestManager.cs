@@ -13,14 +13,40 @@ public class QuestManager : MonoBehaviour
     {
         public int questID;
         public string questName;
-        public GameObject QuestProvider;
+        public GameObject questProvider;
+        public GameObject questCompleter;
         public string questType;
+        [TextArea (5, 15)]
         public string questDetail;
-        public string objectName;
-        public int amount;
+        public int requirementCount;
+        public List<Requirement> requirement;
         public int reward;
+        public bool showQuest;
+        public bool repeatable;
         public bool accepted;
         public bool completed;
+
+        public IEnumerator DelayReset(float time)
+        {
+            yield return new WaitForSeconds(time);
+            if(repeatable && completed && accepted)
+            {
+                completed = false;
+                accepted = false;
+                foreach(Requirement r in requirement)
+                {
+                    r.collected = 0;
+                }
+            }
+        }
+    }
+
+    [System.Serializable]
+    public class Requirement
+    {
+        public string objectName;
+        public int amount;
+        public int collected;
     }
 
     void Awake()
@@ -37,96 +63,32 @@ public class QuestManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public static int returnQuestID(GameObject go)
+    void Start()
     {
-        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.QuestProvider == go);
-        if(q == null)
+        foreach(QuestInfo q in QuestsLists)
         {
-            Debug.Log("Invalid NPC");
-            return -1;
+            q.requirementCount = q.requirement.Count;
         }
-        else
-        {
-            return q.questID;
-        }
-    }
+    }  
 
-    public static string returnRequirement(GameObject go)
+    public static QuestInfo returnQuestInfoProvider(GameObject go)
     {
-        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.QuestProvider == go);
-        if(q == null)
-        {
-            Debug.Log("Invalid NPC");
-            return "null";
-        }
-        else
-        {
-            return q.objectName;
-        }
-    }
-
-    public static int returnAmount(GameObject go)
-    {
-        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.QuestProvider == go);
+        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.questProvider == go);
         if (q == null)
         {
-            Debug.Log("Invalid NPC");
-            return -1;
+            return null;
         }
         else
         {
-            return q.amount;
+            return q;
         }
     }
 
-    public static int returnReward(GameObject go)
+    public static bool returnQuestStatusProvider(GameObject go)
     {
-        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.QuestProvider == go);
+        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.questProvider == go);
         if (q == null)
         {
-            Debug.Log("Invalid NPC");
-            return -1;
-        }
-        else
-        {
-            return q.reward;
-        }
-    }
-
-    public static string returnQuestName(GameObject go)
-    {
-        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.QuestProvider == go);
-        if (q == null)
-        {
-            Debug.Log("Invalid NPC");
-            return "null";
-        }
-        else
-        {
-            return q.questName;
-        }
-    }
-
-    public static string returnQuestType(GameObject go)
-    {
-        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.QuestProvider == go);
-        if (q == null)
-        {
-            Debug.Log("Invalid NPC");
-            return "null";
-        }
-        else
-        {
-            return q.questType;
-        }
-    }
-
-    public static bool returnQuestStatus(GameObject go)
-    {
-        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.QuestProvider == go);
-        if (q == null)
-        {
-            Debug.Log("Invalid NPC");
             return true;
         }
         else
@@ -134,30 +96,4 @@ public class QuestManager : MonoBehaviour
             return q.accepted;
         }
     }
-
-    public static void returnQuestAccepted(GameObject go)
-    {
-        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.QuestProvider == go);
-        if (q == null)
-        {
-            Debug.Log("Invalid NPC");
-        }
-        else
-        {
-            q.accepted = true;
-        }
-    }
-
-    public static void returnQuestCompleted(int id)
-    {
-        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.questID == id);
-        if (q == null)
-        {
-            Debug.Log("Invalid ID");
-        }
-        else
-        {
-            q.completed = true;
-        }
-    }    
 }

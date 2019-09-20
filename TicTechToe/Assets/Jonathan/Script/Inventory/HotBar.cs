@@ -148,15 +148,23 @@ public class HotBar : MonoBehaviour
 
         // QUEST //
         QuestInteraction qi = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestInteraction>();
-        foreach (QuestInteraction.Quests q in qi.acceptedQuestLists)
+        foreach (QuestManager.QuestInfo q in qi.acceptedQuestLists)
         {
-            if (q.questType == "Harvesting" && q.requirement == item.CropType.ToString())
+            string objectName = null;
+            if (q.questType == "Harvesting")
             {
-                q.collected += 1;
+                objectName = item.CropType.ToString();
             }
-            else if(q.questType == "Fishing" && q.requirement == item.FishType.ToString())
+            else if (q.questType == "Fishing")
             {
-                q.collected += 1;
+                objectName = item.FishType.ToString();
+            }
+            foreach (QuestManager.Requirement r in q.requirement)
+            {
+                if (objectName == r.objectName)
+                {
+                    r.collected++;
+                }
             }
         }
         // QUEST //
