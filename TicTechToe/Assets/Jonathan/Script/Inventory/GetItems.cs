@@ -48,7 +48,7 @@ public class GetItems : MonoBehaviour
                     }
                     else if (!HotBar.HotBarInstance.AddItem(crops))
                     {
-                        InventoryController.InventoryInstance.AddItem(crops);
+                        //InventoryController.InventoryInstance.AddItem(crops);
                         GameObject.Destroy(this.gameObject);
                         GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, crops.GetComponentInChildren<Item>().itemName.ToString());
                         canGetFish = false;
@@ -72,7 +72,7 @@ public class GetItems : MonoBehaviour
                 }
                 else if(!HotBar.HotBarInstance.AddItem(fish))
                 {
-                    InventoryController.InventoryInstance.AddItem(fish);
+                    //InventoryController.InventoryInstance.AddItem(fish);
                     GameObject.Destroy(this.gameObject);
                     GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(0, fish.GetComponentInChildren<Item>().itemName.ToString());
                     canGetFish = false;

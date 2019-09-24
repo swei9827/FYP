@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Crop", menuName = "Item/Crop")]
-public class CropAsset : Item
+public class CropAsset 
 {
     public Sprite seedSprite;
     public Sprite deadSprite;

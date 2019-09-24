@@ -52,16 +52,16 @@ public class HotBar : MonoBehaviour
             graphicRayCaster.Raycast(pointerEventData, raycastResults);
             if (raycastResults.Count > 0)
             {
-                if (raycastResults[0].gameObject.GetComponent<Item>())
-                {
-                    draggedItem = raycastResults[0].gameObject;
-                    dragItemParent = draggedItem.transform.parent;
-                    draggedItem.transform.SetParent(UIManager.Instance.canvas);
-                }
-                else
-                {
-                    raycastResults.Clear();
-                }
+                //if (raycastResults[0].gameObject.GetComponent<Item>())
+                //{
+                //    draggedItem = raycastResults[0].gameObject;
+                //    dragItemParent = draggedItem.transform.parent;
+                //    draggedItem.transform.SetParent(UIManager.Instance.canvas);
+                //}
+                //else
+                //{
+                //    raycastResults.Clear();
+                //}
             }
         }
 
@@ -125,8 +125,8 @@ public class HotBar : MonoBehaviour
                         //stack Item if same
                         else
                         {
-                            results.gameObject.GetComponent<Item>().quantity += draggedItem.GetComponent<Item>().quantity;
-                            results.gameObject.transform.Find("NumberHeld").GetComponent<Text>().text = results.gameObject.GetComponent<Item>().quantity.ToString();
+                            //results.gameObject.GetComponent<Item>().quantity += draggedItem.GetComponent<Item>().quantity;
+                            //results.gameObject.transform.Find("NumberHeld").GetComponent<Text>().text = results.gameObject.GetComponent<Item>().quantity.ToString();
                             GameObject.Destroy(draggedItem);
                             draggedItem = null;
                             raycastResults.Clear();
@@ -149,12 +149,12 @@ public class HotBar : MonoBehaviour
         foreach (Item i in _items)
         {
             //if item already inside
-            if (i.CropType == item.CropType && i.FishType == item.FishType)
-            {
-                i.Add(1);
-                GameObject.Destroy(itemGo);
-                return true;
-            }
+            //if (i.CropType == item.CropType && i.FishType == item.FishType)
+            //{
+            //    i.Add(1);
+            //    GameObject.Destroy(itemGo);
+            //    return true;
+            //}
         }
 
         //check all slots

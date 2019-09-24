@@ -1,0 +1,18 @@
+[
+	{
+		"id" : 0;
+		"itemName" : "Tuna";
+		"stackable" : true;
+		"marketable" : true;
+		"price" : 30;
+		"itemDescription" : "Just a normal tuna fish";
+	},
+	{
+		"id" : 1;
+		"itemName" : "Sardine";
+		"stackable" : true;
+		"marketable" : true;
+		"price" : 40;
+		"itemDescription" : "Just a normal sardine fish";
+	}
+]

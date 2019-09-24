@@ -123,10 +123,11 @@ public class Crop
 
 	public string GetName()
 	{
-		if (asset == null)
-			return null;
+        //if (asset == null)
+        //	return null;
 
-		return asset.name;
+        //return asset.name;
+        return null;
 	}
 }
 

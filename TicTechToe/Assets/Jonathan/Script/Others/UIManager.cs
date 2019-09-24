@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
         else
         {
             PlayerMovement.canMove = false;
-            InventoryController.InventoryInstance.showToolTip(string.Empty,string.Empty);
+            //InventoryController.InventoryInstance.showToolTip(string.Empty,string.Empty);
         }
     }
 
