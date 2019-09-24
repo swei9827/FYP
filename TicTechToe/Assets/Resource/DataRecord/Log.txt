@@ -1,16 +1,11 @@
-9/20/2019 4:00:02 PM Log Started
-9/20/2019 4:00:08 PM Player obtained WateringCan
-9/20/2019 4:00:22 PM Player obtained WateringCan
-9/20/2019 4:00:25 PM Player plowed DirtTile
-9/20/2019 4:00:25 PM Player plowed DirtTile (2)
-9/20/2019 4:00:26 PM Player plowed DirtTile (1)
-9/20/2019 4:00:28 PM Player obtained Potatoes_Seed
-9/20/2019 4:00:30 PM Player planted Potatoes
-9/20/2019 4:00:31 PM Player obtained Strawberries_Seed
-9/20/2019 4:00:32 PM Player planted Strawberries
-9/20/2019 4:00:34 PM Player obtained WateringCan
-9/20/2019 4:00:37 PM Player watered Potatoes(Clone)
-9/20/2019 4:00:39 PM Player watered Strawberry(Clone)
-9/20/2019 4:01:03 PM Player obtained Potatoes
-9/20/2019 4:01:06 PM Player obtained Strawberry
-9/20/2019 4:01:08 PM Player obtained generic-rpg-rod
+24/9/2019 9:54:38 PM Log Started
+24/9/2019 9:54:45 PM Player obtained WateringCan
+24/9/2019 9:54:53 PM Player obtained WateringCan
+24/9/2019 9:54:56 PM Player obtained WateringCan
+24/9/2019 9:54:58 PM Player obtained WateringCan
+24/9/2019 9:54:58 PM Player obtained WateringCan
+24/9/2019 9:54:59 PM Player obtained WateringCan
+24/9/2019 9:54:59 PM Player obtained WateringCan
+24/9/2019 9:55:00 PM Player obtained WateringCan
+24/9/2019 9:55:00 PM Player obtained WateringCan
+24/9/2019 9:55:01 PM Player obtained WateringCan
