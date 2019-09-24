@@ -854,7 +854,7 @@ PrefabInstance:
     - target: {fileID: 2831242842766318660, guid: 4b1d187909613b04584bc2d0aafd6dca,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8
+      value: -8.36
       objectReference: {fileID: 0}
     - target: {fileID: 2831242842766318660, guid: 4b1d187909613b04584bc2d0aafd6dca,
         type: 3}
@@ -906,74 +906,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2831242842766318681, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: inventory
+    - target: {fileID: 1698814707, guid: 4b1d187909613b04584bc2d0aafd6dca, type: 3}
+      propertyPath: dialogue
       value: 
+      objectReference: {fileID: 1391983144}
+    - target: {fileID: 1698814699, guid: 4b1d187909613b04584bc2d0aafd6dca, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: -0.500728
       objectReference: {fileID: 0}
-    - target: {fileID: 2831242842766318681, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: Quests
-      value: 
-      objectReference: {fileID: 419616462}
-    - target: {fileID: 2831242842766318681, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: dialogueManager
-      value: 
-      objectReference: {fileID: 460748044}
-    - target: {fileID: 2831242842766318681, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5024578653982631362, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5024578653982631362, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5024578653982631362, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.9858491
-      objectReference: {fileID: 0}
-    - target: {fileID: 5024578653982631362, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.9858491
-      objectReference: {fileID: 0}
-    - target: {fileID: 5024578654607640088, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: playerIconBox
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1698814696, guid: 4b1d187909613b04584bc2d0aafd6dca, type: 3}
-      propertyPath: walkFx
-      value: 
-      objectReference: {fileID: 8300000, guid: 72d2212a51cf9784a859a463750f97f0, type: 3}
-    - target: {fileID: 5024578653982631363, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5024578654607640089, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4092064767466950113, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2831242841299886492, guid: 4b1d187909613b04584bc2d0aafd6dca,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
+    - target: {fileID: 1698814699, guid: 4b1d187909613b04584bc2d0aafd6dca, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: 0.17479739
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1d187909613b04584bc2d0aafd6dca, type: 3}
@@ -10126,59 +10069,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 157900032}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1698814696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698814695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18bc58e29ab299143a30a79d1d53385d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acceptedQuestLists: []
-  completedQuestLists: []
 --- !u!4 &1698814705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2831242842766318660, guid: 4b1d187909613b04584bc2d0aafd6dca,
     type: 3}
   m_PrefabInstance: {fileID: 157900032}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1698814706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698814695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e31bc38d219fbb49927e0b152e50d25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anm: {fileID: 0}
-  spriteRdr: {fileID: 0}
-  rb: {fileID: 0}
-  inventory: {fileID: 0}
---- !u!114 &1698814707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698814695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb5f61edd63dc70419e1e491ed7a7e0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 1391983144}
-  slotHolder: {fileID: 0}
-  canInteract: 0
-  canGetFish: 0
-  canGetCrops: 0
 --- !u!1001 &1736970963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25329,7 +25225,7 @@ PrefabInstance:
     - target: {fileID: 8080095806413186784, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.5
+      value: -2.4999847
       objectReference: {fileID: 0}
     - target: {fileID: 7311215673429458164, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}

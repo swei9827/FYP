@@ -1,6 +1,14 @@
-24/9/2019 10:33:38 PM Log Started
-24/9/2019 10:33:44 PM Player obtained Plow02
-24/9/2019 10:33:52 PM Player obtained Plow02
-24/9/2019 10:33:54 PM Player plowed DirtTile
-24/9/2019 10:33:54 PM Player plowed DirtTile (1)
-24/9/2019 10:33:54 PM Player plowed DirtTile (2)
+24/9/2019 11:05:05 PM Log Started
+24/9/2019 11:05:07 PM Player obtained Plow02
+24/9/2019 11:05:09 PM Player obtained WateringCan
+24/9/2019 11:05:10 PM Player obtained WateringCan
+24/9/2019 11:05:11 PM Player obtained WateringCan
+24/9/2019 11:05:12 PM Player obtained WateringCan
+24/9/2019 11:05:15 PM Player obtained Strawberries_Seed
+24/9/2019 11:05:17 PM Player obtained Plow02
+24/9/2019 11:05:25 PM Player plowed DirtTile (2)
+24/9/2019 11:05:26 PM Player plowed DirtTile (5)
+24/9/2019 11:05:27 PM Player plowed DirtTile
+24/9/2019 11:05:29 PM Player plowed DirtTile (1)
+24/9/2019 11:05:30 PM Player plowed DirtTile (4)
+24/9/2019 11:05:32 PM Player plowed DirtTile (3)
