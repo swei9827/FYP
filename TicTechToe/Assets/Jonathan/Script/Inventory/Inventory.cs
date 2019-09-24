@@ -18,8 +18,8 @@ public class Inventory : NetworkBehaviour
 
     void Start()
     {
-        database = GetComponent<ItemDatabase>();
-        slotAmount = 24;
+        database = GetComponent<ItemDatabase>();   //Reference to the database
+        slotAmount = 24;  //Inventory size
         inventoryPanel = GameObject.Find("Inventory Panel");
         slotPanel = inventoryPanel.transform.FindChild("Slot Panel").gameObject;
         for(int i = 0; i < slotAmount; i++)
@@ -28,23 +28,58 @@ public class Inventory : NetworkBehaviour
             slots.Add(Instantiate(inventorySlot));
             slots[i].transform.SetParent(slotPanel.transform,false);
         }
+
+        AddItem(0);
+        AddItem(0);
+        AddItem(0);
+        AddItem(1);
     }
 
+    //Add Item by item's id in item database json file
     public void AddItem(int id)
     {
+        //get data&variable of item from database
         Item itemToAdd = database.FetchItemById(id);
-        for(int i = 0; i < items.Count; i++)
+
+        if(itemToAdd.stackable && CheckIfItemIsInInventory(itemToAdd))
         {
-            if(items[i].id == -1)
+            for(int i = 0; i < items.Count; i++)
             {
-                items[i] = itemToAdd;
-                GameObject itemObj = Instantiate(inventoryItem);
-                itemObj.transform.SetParent(slots[i].transform);
-                itemObj.GetComponent<Image>().sprite = itemToAdd.sprite;
-                itemObj.transform.position = Vector2.zero;
-                break;
+                if(items[i].id == id)
+                {
+                    ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
+                    data.amount++;
+                    data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                }
             }
         }
+        else
+        {
+            for(int i = 0; i < items.Count; i++)
+            {
+                if(items[i].id == -1)
+                {
+                    items[i] = itemToAdd;
+                    //instantiate canvas GO and change sprite
+                    GameObject itemObj = Instantiate(inventoryItem);
+                    itemObj.transform.SetParent(slots[i].transform,false);
+                    itemObj.GetComponent<Image>().sprite = itemToAdd.sprite;
+                    break;
+                }
+            }
+        }        
     }
 
+    //check is there a same item in inven
+    bool CheckIfItemIsInInventory(Item item)
+    {
+        for(int i = 0; i < items.Count; i++)
+        {
+            if(items[i].id == item.id)
+            {
+                return true;
+            }
+        }
+        return false;
+    }     
 }

@@ -9517,7 +9517,7 @@ GameObject:
   - component: {fileID: 1456439640}
   m_Layer: 0
   m_Name: Inventory
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9538,8 +9538,9 @@ MonoBehaviour:
   syncInterval: 0.1
   inventorySlot: {fileID: 8770148868206400250, guid: 1353bd0156918964ea02703cb3cd35e1,
     type: 3}
-  inventoryItem: {fileID: 7841651739405702491, guid: baf179332ca73cf48a0271e40b541168,
+  inventoryItem: {fileID: 6376696743502104965, guid: 07bedd9e4b91bcf4d9637f4c3a53da2d,
     type: 3}
+  items: []
   slots: []
 --- !u!114 &1456439641
 MonoBehaviour:
@@ -24915,6 +24916,11 @@ PrefabInstance:
       propertyPath: videoPlayer
       value: 
       objectReference: {fileID: 1929833721347185447}
+    - target: {fileID: 8080095806413186784, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8080095805766574401, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}
       propertyPath: m_AnchoredPosition.x

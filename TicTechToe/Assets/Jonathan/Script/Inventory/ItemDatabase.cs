@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using System.IO;
 using LitJson;
 using System.Linq;
@@ -17,6 +15,7 @@ public class ItemDatabase : NetworkBehaviour
     {
         itemData = JsonMapper.ToObject(File.ReadAllText((Application.dataPath + "/StreamingAssets/Items.json")).Trim());
         ConstructItemDatabase();
+        Debug.Log(database[0].itemName);
     }
 
     public Item FetchItemById(int id)
@@ -39,6 +38,7 @@ public class ItemDatabase : NetworkBehaviour
     }
 }
 
+[System.Serializable]
 public class Item
 {
     public int id;
