@@ -52,10 +52,13 @@ public class QuestInteraction : MonoBehaviour
         questAccepted = false;
         questUI.SetActive(false);
         currentQuest = null;
+        PlayerMovement.canMove = true;
     }
 
     void questUIAccepted(QuestManager.QuestInfo info)
     {
+        PlayerMovement.canMove = false;
+
         QuestManager.QuestInfo q = new QuestManager.QuestInfo();
         q = info;
         questUI.SetActive(true);
@@ -70,6 +73,7 @@ public class QuestInteraction : MonoBehaviour
             questAccepted = false;
             currentQuest = null;
             questUI.SetActive(false);
+            PlayerMovement.canMove = true;
         }
     }   
 
