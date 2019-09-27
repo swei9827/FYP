@@ -8875,8 +8875,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1393971530}
   - component: {fileID: 1393971529}
+  - component: {fileID: 1393971531}
   m_Layer: 0
-  m_Name: QuestManager
+  m_Name: NPCManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8945,6 +8946,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1393971531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393971528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0ff6ab94698cf4abe5fdd39b46972c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popup: {fileID: 2882463904897887045, guid: ff1f4fadd676ae141b5b6a958c10dd0f, type: 3}
+  npcList:
+  - NPC: {fileID: 694169318}
+    distance: 2
+    offsetX: -0.1
+    offsetY: 1.1
+  - NPC: {fileID: 1414102794}
+    distance: 2
+    offsetX: -0.1
+    offsetY: 1.1
+  - NPC: {fileID: 1851321699}
+    distance: 2
+    offsetX: -0.1
+    offsetY: 1.1
 --- !u!1 &1412821319
 GameObject:
   m_ObjectHideFlags: 0
@@ -10766,7 +10793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.274375, y: 0.09}
   m_AnchorMax: {x: 0.74, y: 0.9166734}
-  m_AnchoredPosition: {x: 4.5, y: 1.1954956}
+  m_AnchoredPosition: {x: 4.5, y: 1.1955566}
   m_SizeDelta: {x: 5.750244, y: 6.014282}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1757280869
