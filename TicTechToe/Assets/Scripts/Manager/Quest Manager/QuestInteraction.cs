@@ -43,6 +43,28 @@ public class QuestInteraction : MonoBehaviour
         questUICompletion.SetActive(false);
     }
 
+    void Update()
+    {
+        if (currentQuest != null)
+        {
+            questUIAccepted(currentQuest);
+        }
+        if (interactable && Input.GetKeyDown(KeyCode.Q) && !QuestManager.returnQuestStatusProvider(NPCManager.currentNpc.NPC))
+        {
+            currentQuest = QuestManager.returnQuestInfoProvider(NPCManager.currentNpc.NPC);
+        }
+        else if (interactable && Input.GetKeyDown(KeyCode.Q))
+        {
+            foreach (QuestManager.QuestInfo q in acceptedQuestLists)
+            {
+                if (q.questCompleter == NPCManager.currentNpc.NPC)
+                {
+                    questStatusCheck(q);
+                }
+            }
+        }
+    }
+
     public void acceptQuest()
     {
         questAccepted = true;
@@ -109,28 +131,6 @@ public class QuestInteraction : MonoBehaviour
                 questUICompletion.SetActive(true);
                 questUICompletion.GetComponentInChildren<Text>().text = "Quest Completed ! \n" + "Rewarded " + log.reward + " Gold";
                 StartCoroutine(closeUI(2f));
-            }
-        }
-    }
-
-    void Update()
-    {
-        if (currentQuest != null)
-        {
-            questUIAccepted(currentQuest);
-         }
-        if (interactable && Input.GetKeyDown(KeyCode.Q) && !QuestManager.returnQuestStatusProvider(NPCManager.currentNpc.NPC))
-        {
-            currentQuest = QuestManager.returnQuestInfoProvider(NPCManager.currentNpc.NPC);
-        }
-        else if(interactable && Input.GetKeyDown(KeyCode.Q))
-        {
-            foreach (QuestManager.QuestInfo q in acceptedQuestLists)
-            {
-                if (q.questCompleter == NPCManager.currentNpc.NPC)
-                {
-                    questStatusCheck(q);
-                }
             }
         }
     }

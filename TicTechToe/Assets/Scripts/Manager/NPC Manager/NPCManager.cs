@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPCManager : MonoBehaviour
 {
     public GameObject popup;
+    public float updateFrequency;
     public List<NPCs> npcList;
 
     public static NPCs currentNpc;
@@ -29,7 +30,7 @@ public class NPCManager : MonoBehaviour
 
     void Awake()
     {
-        StartCoroutine(DistanceCheck(.5f));
+        StartCoroutine(DistanceCheck(updateFrequency));
     }
 
     IEnumerator DistanceCheck(float time)
@@ -37,7 +38,7 @@ public class NPCManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(time);
-            Debug.Log("x");
+
             foreach (NPCs n in npcList)
             {
                 float dist = Vector2.Distance(n.NPC.transform.position, player.position);

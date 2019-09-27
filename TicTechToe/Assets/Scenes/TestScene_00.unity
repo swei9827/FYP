@@ -8959,6 +8959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popup: {fileID: 2882463904897887045, guid: ff1f4fadd676ae141b5b6a958c10dd0f, type: 3}
+  updateFrequency: 0.5
   npcList:
   - NPC: {fileID: 694169318}
     distance: 2
