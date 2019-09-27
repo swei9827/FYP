@@ -14,6 +14,11 @@ TagManager:
   - ItemIcon
   - HotBar
   - Analytic
+  - QuestUI
+  - QuestTitle
+  - QuestDetail
+  - QuestReward
+  - QuestUICompletion
   layers:
   - Default
   - TransparentFX
