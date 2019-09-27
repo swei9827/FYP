@@ -6,9 +6,10 @@ public class NPCManager : MonoBehaviour
 {
     public GameObject popup;
     public List<NPCs> npcList;
-    
+
+    public static NPCs currentNpc;
+
     Transform player;
-    NPCs currentNpc;
     GameObject instance;
     bool popupInstantiated;
 
@@ -50,6 +51,7 @@ public class NPCManager : MonoBehaviour
                     instance = Instantiate(popup, parent, Quaternion.identity);
                     currentNpc = n;
                     popupInstantiated = true;
+                    QuestInteraction.interactable = true;
                 }
             }
 
@@ -58,6 +60,7 @@ public class NPCManager : MonoBehaviour
                 Destroy(instance);
                 popupInstantiated = false;
                 currentNpc = null;
+                QuestInteraction.interactable = false;
             }
         }
     }

@@ -14,7 +14,8 @@ public class QuestInteraction : MonoBehaviour
     bool questAccepted;    
 
     public List<QuestManager.QuestInfo> acceptedQuestLists;
-    public List<QuestLog> completedQuestLists;  
+    public List<QuestLog> completedQuestLists;
+    public static bool interactable;
 
     [System.Serializable] 
     public class QuestLog
@@ -117,25 +118,18 @@ public class QuestInteraction : MonoBehaviour
         if (currentQuest != null)
         {
             questUIAccepted(currentQuest);
-        }
-    }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("NPC"))
+         }
+        if (interactable && Input.GetKeyDown(KeyCode.Q) && !QuestManager.returnQuestStatusProvider(NPCManager.currentNpc.NPC))
         {
-            if (Input.GetKeyDown(KeyCode.Q) && !QuestManager.returnQuestStatusProvider(collision.gameObject))
+            currentQuest = QuestManager.returnQuestInfoProvider(NPCManager.currentNpc.NPC);
+        }
+        else if(interactable && Input.GetKeyDown(KeyCode.Q))
+        {
+            foreach (QuestManager.QuestInfo q in acceptedQuestLists)
             {
-                currentQuest = QuestManager.returnQuestInfoProvider(collision.gameObject);
-            }
-            else if (Input.GetKeyDown(KeyCode.Q))
-            {
-                foreach(QuestManager.QuestInfo q in acceptedQuestLists)
+                if (q.questCompleter == NPCManager.currentNpc.NPC)
                 {
-                    if(q.questCompleter == collision.gameObject)
-                    {
-                        questStatusCheck(q);
-                    }
+                    questStatusCheck(q);
                 }
             }
         }
