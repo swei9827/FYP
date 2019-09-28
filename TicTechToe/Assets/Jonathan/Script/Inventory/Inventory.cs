@@ -26,6 +26,7 @@ public class Inventory : NetworkBehaviour
         {
             items.Add(new Item());
             slots.Add(Instantiate(inventorySlot));
+            slots[i].GetComponent<Slot>().id = i;
             slots[i].transform.SetParent(slotPanel.transform,false);
         }
 
@@ -33,6 +34,7 @@ public class Inventory : NetworkBehaviour
         AddItem(0);
         AddItem(0);
         AddItem(1);
+        AddItem(2);
     }
 
     //Add Item by item's id in item database json file
@@ -50,6 +52,7 @@ public class Inventory : NetworkBehaviour
                     ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
                     data.amount++;
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                    break;
                 }
             }
         }
@@ -62,8 +65,11 @@ public class Inventory : NetworkBehaviour
                     items[i] = itemToAdd;
                     //instantiate canvas GO and change sprite
                     GameObject itemObj = Instantiate(inventoryItem);
+                    itemObj.GetComponent<ItemData>().item = itemToAdd;
+                    itemObj.GetComponent<ItemData>().slot = i;
                     itemObj.transform.SetParent(slots[i].transform,false);
                     itemObj.GetComponent<Image>().sprite = itemToAdd.sprite;
+                    itemObj.name = itemToAdd.itemName;
                     break;
                 }
             }

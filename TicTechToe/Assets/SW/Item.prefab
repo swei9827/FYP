@@ -107,6 +107,8 @@ GameObject:
   - component: {fileID: 3605830005952007770}
   - component: {fileID: 6200869322234381325}
   - component: {fileID: 1537385857670567768}
+  - component: {fileID: -6620069493782940151}
+  - component: {fileID: -296739032369510843}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -183,6 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5cf7fdfb086df42a7d5673481bea92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   item:
     id: -1
     itemName: 
@@ -192,3 +196,36 @@ MonoBehaviour:
     itemDescription: 
     sprite: {fileID: 0}
   amount: 1
+  slot: 0
+--- !u!114 &-6620069493782940151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376696743502104965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 1
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
+--- !u!225 &-296739032369510843
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376696743502104965}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

@@ -14,5 +14,14 @@
 		"marketable" : true,
 		"price" : 40,
 		"itemDescription" : "Just a normal sardine fish"
+	},
+	{
+		"id" : 2,
+		"itemName" : "Salmon",
+		"stackable" : true,
+		"marketable" : true,
+		"price" : 50,
+		"itemDescription" : "Just a normal salmon fish"
 	}
+]
 ]
