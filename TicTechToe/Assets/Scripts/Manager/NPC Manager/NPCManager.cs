@@ -46,6 +46,20 @@ public class NPCManager : MonoBehaviour
         public int itemsRequired;
         public List<TradeItem> availableItems;
         public List<TradeItem> requestedItems;
+        public bool repeatable;
+        public bool readyToTrade;
+        public IEnumerator DelayReset(float time)
+        {
+            yield return new WaitForSeconds(time);
+            if (repeatable)
+            {
+                readyToTrade = false;
+                foreach (TradeItem r in requestedItems)
+                {
+                    r.playerOwned = 0;
+                }
+            }
+        }
     }
 
     [System.Serializable]
@@ -164,6 +178,19 @@ public class NPCManager : MonoBehaviour
         else
         {
             return t;
+        }
+    }
+
+    public static bool returnTraderStatus(GameObject go)
+    {
+        Trader t = Array.Find(instance.traderList, Trader => Trader.tradeNPC == go);
+        if (t == null)
+        {
+            return false;
+        }
+        else
+        {
+            return t.readyToTrade;
         }
     }
 

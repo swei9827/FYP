@@ -77,22 +77,25 @@ public class NPCInteraction : MonoBehaviour
             tradeUIPrompt(currentTrader);
         }
 
-        if (interactable && Input.GetKeyDown(KeyCode.Q) && !NPCManager.returnQuestStatusProvider(NPCManager.currentNpc.NPC))
-        {
-            currentQuest = NPCManager.returnQuestInfoProvider(NPCManager.currentNpc.NPC);
-        }
-
         if(interactable && Input.GetKeyDown(KeyCode.Q))
         {
+            if (!NPCManager.returnQuestStatusProvider(NPCManager.currentNpc.NPC))
+            {
+                currentQuest = NPCManager.returnQuestInfoProvider(NPCManager.currentNpc.NPC);
+            }
+
+            if (!NPCManager.returnTraderStatus(NPCManager.currentNpc.NPC))
+            {
+                getTraderInfo(NPCManager.currentNpc.NPC);
+            }
+
             foreach (NPCManager.QuestInfo q in acceptedQuestLists)
             {
                 if (q.questCompleter == NPCManager.currentNpc.NPC)
                 {
                     questStatusCheck(q);
                 }
-            }
-
-            getTraderInfo(NPCManager.currentNpc.NPC);
+            }           
         }
     }
 
@@ -166,6 +169,7 @@ public class NPCInteraction : MonoBehaviour
 
                 questUICompletion.SetActive(true);
                 questUICompletion.GetComponentInChildren<Text>().text = "Quest Completed ! \n" + "Rewarded " + log.reward + " Gold";
+
                 StartCoroutine(closeUI(2f));
             }
         }
@@ -179,6 +183,7 @@ public class NPCInteraction : MonoBehaviour
         Detail = GameObject.FindGameObjectWithTag("TradeDetail").GetComponent<Text>();
         Title.text = t.traderName;
         Detail.text = t.tradeDetail;
+        t.readyToTrade = true;
 
         tradeStatusCheck(t);
     }
@@ -204,6 +209,9 @@ public class NPCInteraction : MonoBehaviour
                     log.tradeNPC = t.traderName;
                     log.tradeDetail = t.tradeDetail;
                     tradeLog.Add(log);
+
+                    StartCoroutine(t.DelayReset(2f));
+
                     Accepted = false;
                     currentTrader = null;
                     traderInfo = null;

@@ -1076,6 +1076,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
       value: 0.17479739
       objectReference: {fileID: 0}
+    - target: {fileID: 7531121698391862420, guid: 4b1d187909613b04584bc2d0aafd6dca,
+        type: 3}
+      propertyPath: traderInfo.readyToTrade
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1d187909613b04584bc2d0aafd6dca, type: 3}
 --- !u!1 &191999034 stripped
@@ -9348,13 +9353,21 @@ MonoBehaviour:
   - tradeID: 0
     traderName: James
     tradeNPC: {fileID: 191999034}
-    tradeDetail: Give me 1 Salmon and I will give you 1 Potato
+    tradeDetail: Give me 1 Salmon and 1 Tune. I will give you 10 Potato
+    itemsRequired: 0
     availableItems:
     - itemName: Potatoes
       itemCount: 1
+      playerOwned: 0
     requestedItems:
     - itemName: Salmon
       itemCount: 1
+      playerOwned: 0
+    - itemName: Tuna
+      itemCount: 1
+      playerOwned: 0
+    repeatable: 1
+    readyToTrade: 0
   popup: {fileID: 2882463904897887045, guid: ff1f4fadd676ae141b5b6a958c10dd0f, type: 3}
   updateFrequency: 0.5
   npcList:
