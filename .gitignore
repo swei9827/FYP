@@ -35,3 +35,4 @@ sysinfo.txt
 *.apk
 *.unitypackage
 TicTechToe/.collabignore
+TicTechToe/Assets/StreamingAssets.meta
