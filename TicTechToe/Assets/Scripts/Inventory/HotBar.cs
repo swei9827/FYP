@@ -151,7 +151,7 @@ public class HotBar : MonoBehaviour
         foreach (NPCManager.QuestInfo q in ni.acceptedQuestLists)
         {
             string objectName = null;
-            if (q.questType == "Harvesting")
+            if (q.questType == "Farming")
             {
                 objectName = item.CropType.ToString();
             }
@@ -159,7 +159,7 @@ public class HotBar : MonoBehaviour
             {
                 objectName = item.FishType.ToString();
             }
-            foreach (NPCManager.Requirement r in q.requirement)
+            foreach (NPCManager.NPCItem r in q.requirement)
             {
                 if (objectName == r.objectName)
                 {

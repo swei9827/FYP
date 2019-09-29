@@ -6,7 +6,11 @@ using UnityEngine;
 public class NPCManager : MonoBehaviour
 {
     public static NPCManager instance;
-    public static NPCs currentNpc;
+    public static NPCPopUp currentNpc;
+
+    Transform player;
+    GameObject popupInstance;
+    bool popupInstantiated;
 
     [Header("Quest NPCs")]
     public QuestInfo[] QuestsLists;
@@ -17,102 +21,83 @@ public class NPCManager : MonoBehaviour
     [Header("NPCs Pop Up")]
     public GameObject popup;
     public float updateFrequency;
-    public List<NPCs> npcList;   
+    public List<NPCPopUp> npcList;
 
-    Transform player;
-    GameObject temp;
-    bool popupInstantiated;
+    #region NPC Data Declaration
 
-    // Pop up UI
     [System.Serializable]
-    public class NPCs
+    public class NPCData
+    {
+        public int id;
+        public string name;
+        public GameObject target;
+        [TextArea(5, 15)]
+        public string detail;
+        public int requirementCount;
+        public List<NPCItem> requirement;
+        public bool repeatable;
+        public bool accepted;
+
+        public IEnumerator DelayReset(float time)
+        {
+            yield return new WaitForSeconds(time);
+            if (repeatable && accepted)
+            {
+                accepted = false;
+                foreach (NPCItem n in requirement)
+                {
+                    n.collected = 0;
+                }
+            }
+        }
+    }
+
+    [System.Serializable]
+    public class NPCItem
+    {
+        public string objectName;
+        public int amount;
+        public int collected;
+    }
+
+    #endregion
+
+    #region Trading System
+
+    [System.Serializable]
+    public class Trader : NPCData
+    {
+        public List<NPCItem> availableItems;
+    }
+
+    #endregion
+
+    #region Quest System
+
+    [System.Serializable]
+    public class QuestInfo : NPCData
+    {
+        public string questType;
+        public GameObject questCompleter;
+        public int reward;
+        public bool showQuest;
+        public bool completed;
+    }
+
+    #endregion
+
+    #region NPC Pop Up UI
+
+    [System.Serializable]
+    public class NPCPopUp
     {
         public GameObject NPC;
         public float distance;
         public float offsetX;
         public float offsetY;
     }
-    //
 
-    // Trading system
-    [System.Serializable]
-    public class Trader
-    {
-        public int tradeID;
-        public string traderName;
-        public GameObject tradeNPC;
-        [TextArea(5, 15)]
-        public string tradeDetail;
-        public int itemsRequired;
-        public List<TradeItem> availableItems;
-        public List<TradeItem> requestedItems;
-        public bool repeatable;
-        public bool readyToTrade;
-        public IEnumerator DelayReset(float time)
-        {
-            yield return new WaitForSeconds(time);
-            if (repeatable)
-            {
-                readyToTrade = false;
-                foreach (TradeItem r in requestedItems)
-                {
-                    r.playerOwned = 0;
-                }
-            }
-        }
-    }
-
-    [System.Serializable]
-    public class TradeItem
-    {
-        public string itemName;
-        public int itemCount;
-        public int playerOwned;
-    }
-    //
-
-    // Quest system
-    [System.Serializable]
-    public class QuestInfo
-    {
-        public int questID;
-        public string questName;
-        public GameObject questProvider;
-        public GameObject questCompleter;
-        public string questType;
-        [TextArea (5, 15)]
-        public string questDetail;
-        public int requirementCount;
-        public List<Requirement> requirement;
-        public int reward;
-        public bool showQuest;
-        public bool repeatable;
-        public bool accepted;
-        public bool completed;
-
-        public IEnumerator DelayReset(float time)
-        {
-            yield return new WaitForSeconds(time);
-            if(repeatable && completed && accepted)
-            {
-                completed = false;
-                accepted = false;
-                foreach(Requirement r in requirement)
-                {
-                    r.collected = 0;
-                }
-            }
-        }
-    }
-
-    [System.Serializable]
-    public class Requirement
-    {
-        public string objectName;
-        public int amount;
-        public int collected;
-    }
-    //
+    #endregion
 
     void Awake()
     {
@@ -136,61 +121,121 @@ public class NPCManager : MonoBehaviour
         {
             q.requirementCount = q.requirement.Count;
         }
-        foreach(Trader t in traderList)
+        foreach (Trader t in traderList)
         {
-            t.itemsRequired = t.requestedItems.Count;   
-        }
-    }  
-
-    public static QuestInfo returnQuestInfoProvider(GameObject go)
-    {
-        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.questProvider == go);
-        if (q == null)
-        {
-            return null;
-        }
-        else
-        {
-            return q;
+            t.requirementCount = t.requirement.Count;
         }
     }
 
-    public static bool returnQuestStatusProvider(GameObject go)
+    public static bool returnNPCType(GameObject go, int type)
     {
-        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.questProvider == go);
-        if (q == null)
+        if (type == 0)
         {
-            return true;
+            QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.target == go);
+            if (q == null)
+            {
+                return false;
+            }
+            else if (!q.accepted)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (type == 1)
+        {
+            QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.questCompleter == go);
+            if (q == null)
+            {
+                return false;
+            }
+            else if (q.accepted && !q.completed)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (type == 2)
+        {
+            Trader t = Array.Find(instance.traderList, Trader => Trader.target == go);
+            if (t == null)
+            {
+                return false;
+            }
+            else if (!t.accepted)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
-        {
-            return q.accepted;
-        }
-    }
-
-    public static Trader returnTraderInfo(GameObject go)
-    {
-        Trader t = Array.Find(instance.traderList, Trader => Trader.tradeNPC == go);
-        if (t == null)
-        {
-            return null;
-        }
-        else
-        {
-            return t;
-        }
-    }
-
-    public static bool returnTraderStatus(GameObject go)
-    {
-        Trader t = Array.Find(instance.traderList, Trader => Trader.tradeNPC == go);
-        if (t == null)
         {
             return false;
         }
+    }
+
+    public static NPCData returnNPCData(GameObject go, int type)
+    {
+        if (type == 0)
+        {
+            QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.target == go);
+            if (q == null)
+            {
+                return null;
+            }
+            else if (!q.accepted)
+            {
+                return q;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        else if (type == 1)
+        {
+            QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.questCompleter == go);
+            if (q == null)
+            {
+                return null;
+            }
+            else if (q.accepted)
+            {
+                return q;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        else if (type == 2)
+        {
+            Trader t = Array.Find(instance.traderList, Trader => Trader.target == go);
+            if (t == null)
+            {
+                return null;
+            }
+            else if (!t.accepted)
+            {
+                return t;
+            }
+            else
+            {
+                return null;
+            }
+        }
         else
         {
-            return t.readyToTrade;
+            return null;
         }
     }
 
@@ -200,7 +245,7 @@ public class NPCManager : MonoBehaviour
         {
             yield return new WaitForSeconds(time);
 
-            foreach (NPCs n in npcList)
+            foreach (NPCPopUp n in npcList)
             {
                 float dist = Vector2.Distance(n.NPC.transform.position, player.position);
 
@@ -210,7 +255,7 @@ public class NPCManager : MonoBehaviour
 
                 if (dist <= n.distance && !popupInstantiated)
                 {
-                    temp = Instantiate(popup, parent, Quaternion.identity);
+                    popupInstance = Instantiate(popup, parent, Quaternion.identity);
                     currentNpc = n;
                     popupInstantiated = true;
                     NPCInteraction.interactable = true;
@@ -219,7 +264,7 @@ public class NPCManager : MonoBehaviour
 
             if (currentNpc != null && Vector2.Distance(currentNpc.NPC.transform.position, player.position) > currentNpc.distance)
             {
-                Destroy(temp);
+                Destroy(popupInstance);
                 popupInstantiated = false;
                 currentNpc = null;
                 NPCInteraction.interactable = false;
@@ -229,7 +274,7 @@ public class NPCManager : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        foreach (NPCs n in npcList)
+        foreach (NPCPopUp n in npcList)
         {
             Vector2 pos = n.NPC.transform.position;
             pos.x += n.offsetX;

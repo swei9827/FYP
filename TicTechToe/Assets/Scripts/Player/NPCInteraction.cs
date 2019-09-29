@@ -19,7 +19,7 @@ public class NPCInteraction : MonoBehaviour
 
     GameObject questUI;
     GameObject questUICompletion;
-    NPCManager.QuestInfo currentQuest;        
+    NPCManager.QuestInfo currentQuest;
 
     [System.Serializable]
     public class QuestLog
@@ -50,7 +50,7 @@ public class NPCInteraction : MonoBehaviour
         public string tradeDetail;
     }
     //
-    
+
     void Awake()
     {
         questUI = GameObject.FindGameObjectWithTag("QuestUI");
@@ -72,30 +72,30 @@ public class NPCInteraction : MonoBehaviour
             questUIPrompt(currentQuest);
         }
 
-        if(currentTrader != null)
+        if (currentTrader != null)
         {
             tradeUIPrompt(currentTrader);
         }
 
-        if(interactable && Input.GetKeyDown(KeyCode.Q))
+        if (interactable && Input.GetKeyDown(KeyCode.Q))
         {
-            if (!NPCManager.returnQuestStatusProvider(NPCManager.currentNpc.NPC))
+            if (NPCManager.returnNPCType(NPCManager.currentNpc.NPC, 0))
             {
-                currentQuest = NPCManager.returnQuestInfoProvider(NPCManager.currentNpc.NPC);
+                currentQuest = (NPCManager.QuestInfo)NPCManager.returnNPCData(NPCManager.currentNpc.NPC, 0);
+                questUIPrompt(currentQuest);
             }
 
-            if (!NPCManager.returnTraderStatus(NPCManager.currentNpc.NPC))
+            else if (NPCManager.returnNPCType(NPCManager.currentNpc.NPC, 1))
             {
-                getTraderInfo(NPCManager.currentNpc.NPC);
+                questStatusCheck((NPCManager.QuestInfo)NPCManager.returnNPCData(NPCManager.currentNpc.NPC, 1));
             }
 
-            foreach (NPCManager.QuestInfo q in acceptedQuestLists)
+            else if (NPCManager.returnNPCType(NPCManager.currentNpc.NPC, 2))
             {
-                if (q.questCompleter == NPCManager.currentNpc.NPC)
-                {
-                    questStatusCheck(q);
-                }
-            }           
+                currentTrader = (NPCManager.Trader)NPCManager.returnNPCData(NPCManager.currentNpc.NPC, 2);
+                traderInfo = currentTrader;
+                tradeUIPrompt(currentTrader);
+            }
         }
     }
 
@@ -106,6 +106,10 @@ public class NPCInteraction : MonoBehaviour
 
     public void decline()
     {
+        if(currentTrader != null)
+        {
+            currentTrader.accepted = false;
+        }
         Accepted = false;
         questUI.SetActive(false);
         tradeUI.SetActive(false);
@@ -117,15 +121,19 @@ public class NPCInteraction : MonoBehaviour
 
     void questUIPrompt(NPCManager.QuestInfo info)
     {
+        info.completed = false;
+        NPCManager.QuestInfo q = new NPCManager.QuestInfo();
+
         PlayerMovement.canMove = false;
         questUI.SetActive(true);
+
         Title = GameObject.FindGameObjectWithTag("QuestTitle").GetComponent<Text>();
         Detail = GameObject.FindGameObjectWithTag("QuestDetail").GetComponent<Text>();
         Reward = GameObject.FindGameObjectWithTag("QuestReward").GetComponent<Text>();
-        NPCManager.QuestInfo q = new NPCManager.QuestInfo();
-        q = info;        
-        Title.text = q.questName;
-        Detail.text = q.questDetail;
+
+        q = info;
+        Title.text = q.name;
+        Detail.text = q.detail;
         Reward.text = "Reward " + q.reward + " gold";
 
         if (Accepted)
@@ -137,28 +145,27 @@ public class NPCInteraction : MonoBehaviour
             questUI.SetActive(false);
             PlayerMovement.canMove = true;
         }
-    }   
+    }
 
-    public void questStatusCheck(NPCManager.QuestInfo q)
+    void questStatusCheck(NPCManager.QuestInfo q)
     {
         int count = 0;
         if (q != null)
         {
-            foreach (NPCManager.Requirement r in q.requirement)
+            foreach (NPCManager.NPCItem i in q.requirement)
             {
-                if (r.collected >= r.amount)
+                if (i.collected >= i.amount)
                 {
                     count++;
                 }
             }
             if (count == q.requirementCount)
             {
-                QuestLog log = new QuestLog();    
-                
+                QuestLog log = new QuestLog();
                 q.completed = true;
-                log.questID = q.questID;
-                log.questName = q.questName;
-                log.questDetail = q.questDetail;
+                log.questID = q.id;
+                log.questName = q.name;
+                log.questDetail = q.detail;
                 log.reward = q.reward;
                 log.completed = q.completed;
 
@@ -181,9 +188,9 @@ public class NPCInteraction : MonoBehaviour
         tradeUI.SetActive(true);
         Title = GameObject.FindGameObjectWithTag("TradeTitle").GetComponent<Text>();
         Detail = GameObject.FindGameObjectWithTag("TradeDetail").GetComponent<Text>();
-        Title.text = t.traderName;
-        Detail.text = t.tradeDetail;
-        t.readyToTrade = true;
+        Title.text = t.name;
+        Detail.text = t.detail;
+        t.accepted = true;
 
         tradeStatusCheck(t);
     }
@@ -193,21 +200,21 @@ public class NPCInteraction : MonoBehaviour
         int count = 0;
         if (t != null)
         {
-            foreach (NPCManager.TradeItem ti in t.requestedItems)
+            foreach (NPCManager.NPCItem i in t.requirement)
             {
-                if (ti.playerOwned >= ti.itemCount)
+                if (i.collected >= t.requirementCount)
                 {
                     count++;
                 }
             }
-            if (count == t.itemsRequired)
+            if (count == t.requirementCount)
             {
                 if (Accepted)
                 {
                     TradeLog log = new TradeLog();
-                    log.tradeID = t.tradeID;
-                    log.tradeNPC = t.traderName;
-                    log.tradeDetail = t.tradeDetail;
+                    log.tradeID = t.id;
+                    log.tradeNPC = t.name;
+                    log.tradeDetail = t.detail;
                     tradeLog.Add(log);
 
                     StartCoroutine(t.DelayReset(2f));
@@ -219,31 +226,18 @@ public class NPCInteraction : MonoBehaviour
                     PlayerMovement.canMove = true;
                 }
             }
-            else if(count != t.itemsRequired)
+            else if (count != t.requirementCount)
             {
                 Accepted = false;
             }
         }
     }
 
-    void getTraderInfo(GameObject go)
-    {
-        NPCManager.Trader t = NPCManager.returnTraderInfo(go);
-        if (t != null)
-        {
-            currentTrader = t;
-            traderInfo = t;
-        }
-        else
-        {
-            return;
-        }
-    }
-
     IEnumerator closeUI(float time)
-    {        
+    {
         yield return new WaitForSeconds(time);
         questUICompletion.GetComponentInChildren<Text>().text = "";
         questUICompletion.SetActive(false);
     }
 }
+

@@ -1081,6 +1081,11 @@ PrefabInstance:
       propertyPath: traderInfo.readyToTrade
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7531121698391862420, guid: 4b1d187909613b04584bc2d0aafd6dca,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1d187909613b04584bc2d0aafd6dca, type: 3}
 --- !u!1 &191999034 stripped
@@ -6864,11 +6869,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestProvider_00
       objectReference: {fileID: 0}
-    - target: {fileID: 2571984552809873335, guid: 9411f1e2aa184fb4592d66a739ca0912,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659460, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6928,6 +6928,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571984552809873335, guid: 9411f1e2aa184fb4592d66a739ca0912,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659461, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
@@ -9314,12 +9319,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestsLists:
-  - questID: 0
-    questName: Harvest Basic
-    questProvider: {fileID: 694169318}
-    questCompleter: {fileID: 1851321699}
-    questType: Farming
-    questDetail: Harvest 1 Potato and 1 Straberry for me
+  - id: 0
+    name: Farming Basic
+    target: {fileID: 694169318}
+    detail: Harvest 1 Potato and 1 Strawberry
     requirementCount: 0
     requirement:
     - objectName: Potatoes
@@ -9328,46 +9331,45 @@ MonoBehaviour:
     - objectName: Strawberries
       amount: 1
       collected: 0
-    reward: 10
-    showQuest: 1
     repeatable: 1
     accepted: 0
+    questType: Farming
+    questCompleter: {fileID: 1851321699}
+    reward: 10
+    showQuest: 1
     completed: 0
-  - questID: 1
-    questName: Fishing Basic
-    questProvider: {fileID: 1414102794}
-    questCompleter: {fileID: 1414102794}
-    questType: Fishing
-    questDetail: Fish 1 Salmon for me
+  - id: 1
+    name: Fishing Basic
+    target: {fileID: 1414102794}
+    detail: Fish 1 Salmon
     requirementCount: 0
     requirement:
     - objectName: Salmon
       amount: 1
       collected: 0
-    reward: 20
-    showQuest: 1
     repeatable: 0
     accepted: 0
+    questType: Fishing
+    questCompleter: {fileID: 1414102794}
+    reward: 20
+    showQuest: 1
     completed: 0
   traderList:
-  - tradeID: 0
-    traderName: James
-    tradeNPC: {fileID: 191999034}
-    tradeDetail: Give me 1 Salmon and 1 Tune. I will give you 10 Potato
-    itemsRequired: 0
-    availableItems:
-    - itemName: Potatoes
-      itemCount: 1
-      playerOwned: 0
-    requestedItems:
-    - itemName: Salmon
-      itemCount: 1
-      playerOwned: 0
-    - itemName: Tuna
-      itemCount: 1
-      playerOwned: 0
+  - id: 0
+    name: James
+    target: {fileID: 191999034}
+    detail: Give me 2 Potatoes and I will give you 1 Tuna
+    requirementCount: 0
+    requirement:
+    - objectName: Potatoes
+      amount: 2
+      collected: 0
     repeatable: 1
-    readyToTrade: 0
+    accepted: 0
+    availableItems:
+    - objectName: Tuna
+      amount: 1
+      collected: 0
   popup: {fileID: 2882463904897887045, guid: ff1f4fadd676ae141b5b6a958c10dd0f, type: 3}
   updateFrequency: 0.5
   npcList:
@@ -11217,11 +11219,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestProvider_01
       objectReference: {fileID: 0}
-    - target: {fileID: 2571984552809873335, guid: 9411f1e2aa184fb4592d66a739ca0912,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659460, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11281,6 +11278,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571984552809873335, guid: 9411f1e2aa184fb4592d66a739ca0912,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659461, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
@@ -23679,11 +23681,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestCompleter_00
       objectReference: {fileID: 0}
-    - target: {fileID: 2571984552809873335, guid: 9411f1e2aa184fb4592d66a739ca0912,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659460, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23743,6 +23740,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571984552809873335, guid: 9411f1e2aa184fb4592d66a739ca0912,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659461, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
@@ -24045,11 +24047,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trader_00
       objectReference: {fileID: 0}
-    - target: {fileID: 2571984552809873335, guid: 9411f1e2aa184fb4592d66a739ca0912,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659460, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24109,6 +24106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571984552809873335, guid: 9411f1e2aa184fb4592d66a739ca0912,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659461, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
@@ -25903,11 +25905,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2571984552809873335, guid: 9411f1e2aa184fb4592d66a739ca0912,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659460, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25967,6 +25964,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571984552809873335, guid: 9411f1e2aa184fb4592d66a739ca0912,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2571984552411659461, guid: 9411f1e2aa184fb4592d66a739ca0912,
         type: 3}
