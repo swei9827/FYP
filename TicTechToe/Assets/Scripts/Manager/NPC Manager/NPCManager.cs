@@ -1,19 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class NPCManager : MonoBehaviour
 {
-    public GameObject popup;
-    public float updateFrequency;
-    public List<NPCs> npcList;
-
+    public static NPCManager instance;
     public static NPCs currentNpc;
 
+    [Header("Quest NPCs")]
+    public QuestInfo[] QuestsLists;
+
+    [Header("Trade NPCs")]
+    public Trader[] traderList;
+
+    [Header("NPCs Pop Up")]
+    public GameObject popup;
+    public float updateFrequency;
+    public List<NPCs> npcList;   
+
     Transform player;
-    GameObject instance;
+    GameObject temp;
     bool popupInstantiated;
 
+    // Pop up UI
     [System.Serializable]
     public class NPCs
     {
@@ -22,15 +32,139 @@ public class NPCManager : MonoBehaviour
         public float offsetX;
         public float offsetY;
     }
+    //
 
-    void Start()
+    // Trading system
+    [System.Serializable]
+    public class Trader
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;        
+        public int tradeID;
+        public string traderName;
+        public GameObject tradeNPC;
+        [TextArea(5, 15)]
+        public string tradeDetail;
+        public int itemsRequired;
+        public List<TradeItem> availableItems;
+        public List<TradeItem> requestedItems;
     }
+
+    [System.Serializable]
+    public class TradeItem
+    {
+        public string itemName;
+        public int itemCount;
+        public int playerOwned;
+    }
+    //
+
+    // Quest system
+    [System.Serializable]
+    public class QuestInfo
+    {
+        public int questID;
+        public string questName;
+        public GameObject questProvider;
+        public GameObject questCompleter;
+        public string questType;
+        [TextArea (5, 15)]
+        public string questDetail;
+        public int requirementCount;
+        public List<Requirement> requirement;
+        public int reward;
+        public bool showQuest;
+        public bool repeatable;
+        public bool accepted;
+        public bool completed;
+
+        public IEnumerator DelayReset(float time)
+        {
+            yield return new WaitForSeconds(time);
+            if(repeatable && completed && accepted)
+            {
+                completed = false;
+                accepted = false;
+                foreach(Requirement r in requirement)
+                {
+                    r.collected = 0;
+                }
+            }
+        }
+    }
+
+    [System.Serializable]
+    public class Requirement
+    {
+        public string objectName;
+        public int amount;
+        public int collected;
+    }
+    //
 
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
         StartCoroutine(DistanceCheck(updateFrequency));
+    }
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        foreach (QuestInfo q in QuestsLists)
+        {
+            q.requirementCount = q.requirement.Count;
+        }
+        foreach(Trader t in traderList)
+        {
+            t.itemsRequired = t.requestedItems.Count;   
+        }
+    }  
+
+    public static QuestInfo returnQuestInfoProvider(GameObject go)
+    {
+        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.questProvider == go);
+        if (q == null)
+        {
+            return null;
+        }
+        else
+        {
+            return q;
+        }
+    }
+
+    public static bool returnQuestStatusProvider(GameObject go)
+    {
+        QuestInfo q = Array.Find(instance.QuestsLists, QuestInfo => QuestInfo.questProvider == go);
+        if (q == null)
+        {
+            return true;
+        }
+        else
+        {
+            return q.accepted;
+        }
+    }
+
+    public static Trader returnTraderInfo(GameObject go)
+    {
+        Trader t = Array.Find(instance.traderList, Trader => Trader.tradeNPC == go);
+        if (t == null)
+        {
+            return null;
+        }
+        else
+        {
+            return t;
+        }
     }
 
     IEnumerator DistanceCheck(float time)
@@ -49,19 +183,19 @@ public class NPCManager : MonoBehaviour
 
                 if (dist <= n.distance && !popupInstantiated)
                 {
-                    instance = Instantiate(popup, parent, Quaternion.identity);
+                    temp = Instantiate(popup, parent, Quaternion.identity);
                     currentNpc = n;
                     popupInstantiated = true;
-                    QuestInteraction.interactable = true;
+                    NPCInteraction.interactable = true;
                 }
             }
 
             if (currentNpc != null && Vector2.Distance(currentNpc.NPC.transform.position, player.position) > currentNpc.distance)
             {
-                Destroy(instance);
+                Destroy(temp);
                 popupInstantiated = false;
                 currentNpc = null;
-                QuestInteraction.interactable = false;
+                NPCInteraction.interactable = false;
             }
         }
     }
@@ -75,7 +209,7 @@ public class NPCManager : MonoBehaviour
             pos.y += n.offsetY;
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(n.NPC.transform.position, n.distance);
-            Gizmos.DrawWireCube(pos, new Vector2(.5f,.5f));
+            Gizmos.DrawWireCube(pos, new Vector2(.5f, .5f));
         }
     }
 }

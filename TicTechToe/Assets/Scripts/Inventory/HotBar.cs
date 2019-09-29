@@ -147,8 +147,8 @@ public class HotBar : MonoBehaviour
         Item item = itemGo.GetComponent<Item>();
 
         // QUEST //
-        QuestInteraction qi = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestInteraction>();
-        foreach (QuestManager.QuestInfo q in qi.acceptedQuestLists)
+        NPCInteraction ni = GameObject.FindGameObjectWithTag("Player").GetComponent<NPCInteraction>();
+        foreach (NPCManager.QuestInfo q in ni.acceptedQuestLists)
         {
             string objectName = null;
             if (q.questType == "Harvesting")
@@ -159,7 +159,7 @@ public class HotBar : MonoBehaviour
             {
                 objectName = item.FishType.ToString();
             }
-            foreach (QuestManager.Requirement r in q.requirement)
+            foreach (NPCManager.Requirement r in q.requirement)
             {
                 if (objectName == r.objectName)
                 {
