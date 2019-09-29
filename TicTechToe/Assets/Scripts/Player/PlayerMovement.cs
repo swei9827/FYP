@@ -6,15 +6,18 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public static bool canMove = true;
+    public bool isMoving = false;
     private Vector2 direction;
     Rigidbody2D rb;
     RaycastHit2D hit;
+
+    private Vector3 target;
 
     // Use this for initialization
     void Start()
     {
         canMove = true;
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();      
     }
 
     // Update is called once per frame
@@ -22,13 +25,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if(canMove)
         {
-            Move();
+            keyboardMove();
+            clickMove();
+            flip();
         }
     }
 
-    void Move()
+    void keyboardMove()
     {
-        //Movement
+        // Keyboard Movement
         direction = Vector2.zero;
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
@@ -59,18 +64,41 @@ public class PlayerMovement : MonoBehaviour
         }
 
         hit = Physics2D.Raycast(transform.position, direction, 1f);
-        Debug.DrawRay(transform.position, direction, Color.green);
+        Debug.DrawRay(transform.position, direction, Color.green);       
+    } 
 
+    void clickMove()
+    {
+        // Mouse Movement
+        if (Input.GetMouseButton(0))
+        {
+            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            isMoving = true;   
+        }
+        else
+        {
+            isMoving = false;
+        }
+
+        if (isMoving)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        }
+    }
+
+    void flip()
+    {
         //Flip the character
         Vector2 characterScale = transform.localScale;
-        if(Input.GetAxisRaw("Horizontal") < 0)
+        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetAxisRaw("Horizontal") < 0 || target.x < transform.position.x)
         {
             characterScale.x = -1.5f;
         }
-        if (Input.GetAxisRaw("Horizontal") > 0)
+        if (Input.GetAxisRaw("Horizontal") > 0 || target.x > transform.position.x)
         {
             characterScale.x = 1.5f;
         }
-        transform.localScale = characterScale;      
-    } 
+        transform.localScale = characterScale;
+    }
 }
