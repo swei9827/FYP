@@ -166,7 +166,7 @@ public class Fishing : MonoBehaviour
             temp = Instantiate(fishObject[3], player.transform.position, Quaternion.identity);
         }
 
-        GameObject.FindGameObjectWithTag("Fish").GetComponent<GetItems>().canGetFish = true;
+        //GameObject.FindGameObjectWithTag("Fish").GetComponent<GetItems>().canGetFish = true;
     }
 
     public void FishingGame()

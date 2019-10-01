@@ -3,51 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ToolTip : MonoBehaviour
+public class Tooltip : MonoBehaviour
 {
-    public static ToolTip instance;
+    private Item item;
+    private string data;
+    private GameObject tooltip;
 
-    public Text itemText;
-    public Text descriptionText;
-    private Image toolTip;
-    private bool isHovering;
-    private Vector3 offset;
-
-    // Start is called before the first frame update
     void Start()
     {
-        instance = this;
-
-        toolTip = GetComponent<Image>();
-        toolTip.enabled = false;
-        offset = new Vector3(0, -100, 0);
+        tooltip = GameObject.Find("Tooltip");
+        tooltip.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(isHovering)
+        if (tooltip.activeSelf)
         {
-            transform.position = Input.mousePosition + offset;
+            tooltip.transform.position = Input.mousePosition;
         }
     }
 
-    public void setToolTip(string itemName, string description)
+    public void Activate(Item item)
     {
-        if(itemName.Length > 0)
-        {
-            isHovering = true;
-            itemText.text = itemName;
-            descriptionText.text = description;
-            toolTip.enabled = true;
-        }
-        else
-        {
-            toolTip.enabled = false;
-            itemText.text = string.Empty;
-            descriptionText.text = description;
-            isHovering = false;
-        }
+        this.item = item;
+        ConstructDataString();
+        tooltip.SetActive(true);
     }
 
+    public void Deactivate()
+    {
+        tooltip.SetActive(false);
+    }
+
+    public void ConstructDataString()
+    {
+        data = "<color=#FFFFFF><b>" + item.itemName + "</b></color>\n\n" + "<color=#FBFF84>" + item.itemDescription + "</color>";
+        tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
+    }
 }

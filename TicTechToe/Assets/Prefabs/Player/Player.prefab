@@ -96,7 +96,6 @@ GameObject:
   - component: {fileID: 1698814697}
   - component: {fileID: 7531121698391862420}
   - component: {fileID: 1698814706}
-  - component: {fileID: 1698814707}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -159,7 +158,6 @@ MonoBehaviour:
   iconBox: {fileID: 5024578654607640088}
   waterIndicator: {fileID: 7278027889755038541}
   crop:
-    asset: {fileID: 0}
     state: 0
   tool: {fileID: 0}
   canInteract: 1
@@ -189,7 +187,7 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.49817723, y: 0.5563444}
-      - {x: -0.5079645, y: 0.16033173}
+      - {x: -0.500728, y: 0.17479739}
       - {x: -0.07161395, y: 0.18345389}
       - {x: -0.0684948, y: -0.59974545}
       - {x: 0.051743828, y: -0.59974575}
@@ -252,6 +250,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptedQuestLists: []
   completedQuestLists: []
+  traderInfo:
+    id: 0
+    name: 
+    target: {fileID: 0}
+    detail: 
+    requirementCount: 0
+    requirement: []
+    repeatable: 0
+    accepted: 0
+    availableItems: []
+  tradeLog: []
 --- !u!114 &1698814706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,23 +277,6 @@ MonoBehaviour:
   spriteRdr: {fileID: 0}
   rb: {fileID: 0}
   inventory: {fileID: 0}
---- !u!114 &1698814707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2831242842766318662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb5f61edd63dc70419e1e491ed7a7e0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 0}
-  slotHolder: {fileID: 0}
-  canInteract: 0
-  canGetFish: 0
-  canGetCrops: 0
 --- !u!1001 &1076471863849967716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -292,11 +284,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2831242842766318660}
     m_Modifications:
-    - target: {fileID: 2940109244082384399, guid: 9ded0285582b8d54d8a8640fe15c5b90,
-        type: 3}
-      propertyPath: m_Name
-      value: WaterRefillCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 88199934939614077, guid: 9ded0285582b8d54d8a8640fe15c5b90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -402,6 +389,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2940109244082384399, guid: 9ded0285582b8d54d8a8640fe15c5b90,
+        type: 3}
+      propertyPath: m_Name
+      value: WaterRefillCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 3907306216140352901, guid: 9ded0285582b8d54d8a8640fe15c5b90,
         type: 3}
       propertyPath: m_SortingOrder
@@ -434,6 +426,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2831242842766318660}
     m_Modifications:
+    - target: {fileID: 7129334512322656864, guid: 9c09250944df8b140b25b0b336ad4cca,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129334512322656865, guid: 9c09250944df8b140b25b0b336ad4cca,
+        type: 3}
+      propertyPath: playerIconBox
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7129334512322656868, guid: 9c09250944df8b140b25b0b336ad4cca,
         type: 3}
       propertyPath: m_Name
@@ -543,16 +545,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7129334512322656865, guid: 9c09250944df8b140b25b0b336ad4cca,
-        type: 3}
-      propertyPath: playerIconBox
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7129334512322656864, guid: 9c09250944df8b140b25b0b336ad4cca,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7129334512905853371, guid: 9c09250944df8b140b25b0b336ad4cca,
         type: 3}

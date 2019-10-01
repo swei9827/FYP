@@ -132,11 +132,11 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                if (GameObject.FindGameObjectWithTag("Crops").GetComponent<GetItems>().canGetCrops)
-                {                   
-                    playerAction = false;
-                    popUpIndex++;
-                }
+                //if (GameObject.FindGameObjectWithTag("Crops").GetComponent<GetItems>().canGetCrops)
+                //{                   
+                //    playerAction = false;
+                //    popUpIndex++;
+                //}
             }
         }
 
