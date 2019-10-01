@@ -23,27 +23,21 @@ public class Inventory : MonoBehaviour
         tooltip = GameObject.Find("Tooltip");
     }
     void Start()
-    {       
+    {
         database = GetComponent<ItemDatabase>();   //Reference to the database 
         Debug.Log("Construct Itemdatabase");
         slotAmount = 24;  //Inventory size        
-        inventoryPanel.SetActive(false);       
+        inventoryPanel.SetActive(false);
         tooltip.SetActive(false);
 
         slotPanel = inventoryPanel.transform.GetChild(0).gameObject;
-        for(int i = 0; i < slotAmount; i++)
+        for (int i = 0; i < slotAmount; i++)
         {
             items.Add(new Item());
             slots.Add(Instantiate(inventorySlot));
             slots[i].GetComponent<Slot>().id = i;
-            slots[i].transform.SetParent(slotPanel.transform,false);
+            slots[i].transform.SetParent(slotPanel.transform, false);
         }
-
-        AddItem(0);
-        AddItem(0);
-        AddItem(0);
-        AddItem(1);
-        AddItem(2);
     }
 
     private void Update()

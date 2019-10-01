@@ -8,7 +8,7 @@ using Mirror;
 
 public class ItemDatabase : MonoBehaviour
 {
-    private List<Item> database = new List<Item>();
+    public List<Item> database = new List<Item>();
     private JsonData itemData;
 
     void Awake()

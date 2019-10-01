@@ -1,27 +1,58 @@
 [
-	{
-		"id" : 0,
-		"itemName" : "Tuna",
-		"stackable" : true,
-		"marketable" : true,
-		"price" : 30,
-		"itemDescription" : "Just a normal tuna fish"
-	},
-	{
-		"id" : 1,
-		"itemName" : "Sardine",
-		"stackable" : true,
-		"marketable" : true,
-		"price" : 40,
-		"itemDescription" : "Just a normal sardine fish"
-	},
-	{
-		"id" : 2,
-		"itemName" : "Salmon",
-		"stackable" : true,
-		"marketable" : true,
-		"price" : 50,
-		"itemDescription" : "Just a normal salmon fish"
-	}
-]
+  {
+    "id": 0,
+    "itemName": "Tuna",
+    "stackable": true,
+    "marketable": true,
+    "price": 30,
+    "itemDescription": "Just a normal tuna fish"
+  },
+  {
+    "id": 1,
+    "itemName": "Sardine",
+    "stackable": true,
+    "marketable": true,
+    "price": 40,
+    "itemDescription": "Just a normal sardine fish"
+  },
+  {
+    "id": 2,
+    "itemName": "Salmon",
+    "stackable": true,
+    "marketable": true,
+    "price": 50,
+    "itemDescription": "Just a normal salmon fish"
+  },
+  {
+    "id": 3,
+    "itemName": "Catfish",
+    "stackable": true,
+    "marketable": true,
+    "price": 50,
+    "itemDescription": "A fish that look like cat"
+  },
+  {
+    "id": 11,
+    "itemName": "Strawberry",
+    "stackable": true,
+    "marketable": true,
+    "price": 50,
+    "itemDescription": "sberry"
+  },
+  {
+    "id": 12,
+    "itemName": "Potato",
+    "stackable": true,
+    "marketable": true,
+    "price": 50,
+    "itemDescription": "ubisoft"
+  },
+  {
+    "id": 13,
+    "itemName": "Pumpkin",
+    "stackable": true,
+    "marketable": true,
+    "price": 50,
+    "itemDescription": "Pumpkin"
+  }
 ]
