@@ -1,0 +1,12 @@
+1/10/2019 10:46:09 PM Log Started
+1/10/2019 10:46:12 PM Player obtained Plow02
+1/10/2019 10:46:14 PM Player obtained Potatoes_Seed
+1/10/2019 10:46:15 PM Player obtained Potatoes_Seed
+1/10/2019 10:46:18 PM Player obtained Pumpkin_Seed
+1/10/2019 10:46:20 PM Player obtained WateringCan
+1/10/2019 10:46:23 PM Player obtained Plow02
+1/10/2019 10:46:27 PM Player plowed DirtTile (2)
+1/10/2019 10:46:28 PM Player plowed DirtTile (1)
+1/10/2019 10:46:28 PM Player plowed DirtTile
+1/10/2019 10:46:33 PM Player obtained Strawberries_Seed
+1/10/2019 10:46:35 PM Player planted asfas

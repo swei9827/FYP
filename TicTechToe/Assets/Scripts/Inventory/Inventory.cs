@@ -11,17 +11,25 @@ public class Inventory : MonoBehaviour
     ItemDatabase database;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
+    private GameObject tooltip;
 
     private int slotAmount;
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
 
+    private void Awake()
+    {
+        inventoryPanel = GameObject.Find("Inventory Panel");
+        tooltip = GameObject.Find("Tooltip");
+    }
     void Start()
     {       
         database = GetComponent<ItemDatabase>();   //Reference to the database 
         Debug.Log("Construct Itemdatabase");
-        slotAmount = 24;  //Inventory size
-        inventoryPanel = GameObject.Find("Inventory Panel");
+        slotAmount = 24;  //Inventory size        
+        inventoryPanel.SetActive(false);       
+        tooltip.SetActive(false);
+
         slotPanel = inventoryPanel.transform.GetChild(0).gameObject;
         for(int i = 0; i < slotAmount; i++)
         {
@@ -36,6 +44,25 @@ public class Inventory : MonoBehaviour
         AddItem(0);
         AddItem(1);
         AddItem(2);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            if(inventoryPanel.activeSelf)
+            {
+                inventoryPanel.SetActive(false);
+                PlayerMovement.canMove = true;
+                tooltip.SetActive(false);
+
+            }
+            else
+            {
+                inventoryPanel.SetActive(true);
+                PlayerMovement.canMove = false;
+            }
+        }
     }
 
     //Add Item by item's id in item database json file

@@ -24,7 +24,7 @@
 //        HotBarInstance = this;
 
 //        // Initialize 
-lists
+
 //        foreach (Transform s in transform.Find("HotBarBackground/HotbarHolder"))
 //        {
 //            slots.Add(s);

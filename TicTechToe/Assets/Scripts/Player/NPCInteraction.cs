@@ -77,7 +77,7 @@ public class NPCInteraction : MonoBehaviour
             tradeUIPrompt(currentTrader);
         }
 
-        if (interactable && Input.GetKeyDown(KeyCode.Q))
+        if (interactable && Input.GetKeyDown(KeyCode.Mouse1))
         {
             if (NPCManager.returnNPCType(NPCManager.currentNpc.NPC, 0))
             {
