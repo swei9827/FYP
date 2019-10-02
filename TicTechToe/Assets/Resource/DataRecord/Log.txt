@@ -1,1 +1,7 @@
-9/30/2019 4:27:25 PM Log Started
+2/10/2019 12:39:58 AM Log Started
+2/10/2019 12:40:04 AM Player obtained Plow02
+2/10/2019 12:40:06 AM Player plowed DirtTile
+2/10/2019 12:40:08 AM Player obtained Strawberries_Seed
+2/10/2019 12:40:09 AM Player planted asfas
+2/10/2019 12:40:12 AM Player obtained WateringCan
+2/10/2019 12:40:16 AM Player watered Strawberry(Clone)

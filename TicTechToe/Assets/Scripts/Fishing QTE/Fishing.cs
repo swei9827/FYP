@@ -10,7 +10,8 @@ public class Fishing : MonoBehaviour
     public GameObject player;
     public GameObject[] fishObject;
 
-    public GameObject inventory;
+    public Inventory inventory;
+    private ItemDatabase itemDatabase;
 
     //fish Image
     public Sprite[] fishImage;
@@ -41,6 +42,12 @@ public class Fishing : MonoBehaviour
     Vector2 spawnPos2;
 
     GameObject temp;
+
+    private void Awake()
+    {
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        itemDatabase = GameObject.Find("Inventory").GetComponent<ItemDatabase>();
+    }
 
     public void Start()
     {
@@ -88,8 +95,7 @@ public class Fishing : MonoBehaviour
         FxManager.PlayMusic("FishingFx");
         canInteract = false;
         fishingGame.SetActive(true);
-        PlayerMovement.canMove = false;      
-        inventory.SetActive(false);
+        PlayerMovement.canMove = false;
         GetFishSprite();      
     }
 
@@ -149,24 +155,33 @@ public class Fishing : MonoBehaviour
 
     void spawnFish()
     {
-        if (fishType == FishTypeTest.Catfish)
-        {
-            temp = Instantiate(fishObject[0], player.transform.position, Quaternion.identity);
-        }
-        if (fishType == FishTypeTest.Salmon)
-        {
-            temp = Instantiate(fishObject[1], player.transform.position, Quaternion.identity);
-        }
-        if(fishType == FishTypeTest.Sardine)
-        {
-            temp = Instantiate(fishObject[2], player.transform.position, Quaternion.identity);
-        }
-         if(fishType == FishTypeTest.Tuna)
-        {
-            temp = Instantiate(fishObject[3], player.transform.position, Quaternion.identity);
-        }
+        //if (fishType == FishTypeTest.Catfish)
+        //{
+        //    temp = Instantiate(fishObject[0], player.transform.position, Quaternion.identity);
+        //}
+        //if (fishType == FishTypeTest.Salmon)
+        //{
+        //    temp = Instantiate(fishObject[1], player.transform.position, Quaternion.identity);
+        //}
+        //if(fishType == FishTypeTest.Sardine)
+        //{
+        //    temp = Instantiate(fishObject[2], player.transform.position, Quaternion.identity);
+        //}
+        // if(fishType == FishTypeTest.Tuna)
+        //{
+        //    temp = Instantiate(fishObject[3], player.transform.position, Quaternion.identity);
+        //}
 
-        GameObject.FindGameObjectWithTag("Fish").GetComponent<GetItems>().canGetFish = true;
+        foreach (Item item in itemDatabase.database)
+        {
+            Debug.Log(item.itemName);
+            if ((item.itemName) == fishImg.sprite.name)
+            {
+                inventory.AddItem(item.id);
+                break;
+            }
+        }
+        //GameObject.FindGameObjectWithTag("Fish").GetComponent<GetItems>().canGetFish = true;
     }
 
     public void FishingGame()
@@ -185,7 +200,6 @@ public class Fishing : MonoBehaviour
 
                 //active back
                 fishingGame.SetActive(false);
-                inventory.SetActive(true);
                 PlayerMovement.canMove = true;
                 canInteract = true;
                 success = true;            
@@ -204,7 +218,6 @@ public class Fishing : MonoBehaviour
                 fishImg.rectTransform.localPosition = spawnPos;
                 bucketImg.rectTransform.localPosition = spawnPos2;
                 fishingGame.SetActive(false);
-                inventory.SetActive(true);
                 PlayerMovement.canMove = true;
                 canInteract = true;
             }

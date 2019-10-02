@@ -10,6 +10,8 @@ public class CropTest : ItemTest
     public bool watered;
     public float growthRate;
     public float waterRate;
+    public Inventory inventory;
+    public ItemDatabase itemDatabase;
     [SerializeField]
     CropStateTest cropState;
     [SerializeField]
@@ -27,6 +29,11 @@ public class CropTest : ItemTest
 
     private GameObject temp;
 
+    private void Awake()
+    {
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        itemDatabase = GameObject.Find("Inventory").GetComponent<ItemDatabase>();
+    }
     void Start()
     {
         waterIndicator.SetActive(false);
@@ -34,7 +41,6 @@ public class CropTest : ItemTest
         growPercentage = 0;
         sr = GetComponent<SpriteRenderer>();
         canInteract = false;
-        //tempCanInteract = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().canGetCrops;
     }
  
     void Update()
@@ -42,6 +48,7 @@ public class CropTest : ItemTest
         CropStateChange();
         UpdateSprite();
         WaterCrops();
+        Harvest();
     }
    
     void UpdateSprite()
@@ -60,7 +67,7 @@ public class CropTest : ItemTest
     {        
         if (goWater)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && PlayerInteraction.canUse && PlayerInteraction.canWater)
+            if (Input.GetKeyDown(KeyCode.Mouse1) && PlayerInteraction.canUse && PlayerInteraction.canWater)
             {
                 WaterCan.curFill -= 5;
                 waterIndicator.SetActive(false);
@@ -120,17 +127,46 @@ public class CropTest : ItemTest
        if(growPercentage == 100)
         {
             cropState = CropStateTest.Done;
-            GameObject.FindGameObjectWithTag("Crops").GetComponent<GetItems>().canGetCrops = true;
-        }       
+            //GameObject.FindGameObjectWithTag("Crops").GetComponent<GetItems>().canGetCrops = true;
+        }      
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Harvest()
+    {
+        if (canInteract)
+        {
+            Debug.Log(canInteract);
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                Debug.Log("harvest");
+                foreach (Item item in itemDatabase.database)
+                {
+                    Debug.Log(item.itemName);
+                    if ((item.itemName + "(Clone)") == this.gameObject.name)
+                    {                       
+                        inventory.AddItem(item.id);
+                        Destroy(this.gameObject);
+                        break;
+                    }
+                }               
+            }
+            canInteract = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             if (cropState == CropStateTest.Delayed)
             {
                 goWater = true;
+            }
+
+            else if(cropState == CropStateTest.Done)
+            {               
+                canInteract = true;
+                Debug.Log("damn");
             }
         }
     }
@@ -142,6 +178,11 @@ public class CropTest : ItemTest
             if (cropState == CropStateTest.Delayed)
             {
                 goWater = false;
+            }
+
+            else if (cropState == CropStateTest.Done)
+            {
+                canInteract = false;
             }
         }
     }

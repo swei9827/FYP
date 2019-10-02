@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
         canvas = GameObject.Find("Canvas").transform;
 
         //Initialize Inventory
-        inventory = canvas.Find("Inventory");
+        //inventory = canvas.Find("Inventory");
 
         //Initialize FishingGame
         fishingGame = canvas.Find("FishingGame");
@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
         else
         {
             PlayerMovement.canMove = false;
-            InventoryController.InventoryInstance.showToolTip(string.Empty,string.Empty);
+            //InventoryController.InventoryInstance.showToolTip(string.Empty,string.Empty);
         }
     }
 
@@ -72,7 +72,7 @@ public class UIManager : MonoBehaviour
             //if didnt play fishing QTE
             if(!fishingGame.gameObject.activeInHierarchy)
             {
-                ToggleInventory();
+                //ToggleInventory();
             }            
         }
     }
