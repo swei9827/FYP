@@ -7,6 +7,8 @@ public class NPCInteraction : MonoBehaviour
 {
     public static bool interactable;
 
+    NPCManager npcmanager;
+
     Text Title;
     Text Detail;
     Text Reward;
@@ -63,6 +65,7 @@ public class NPCInteraction : MonoBehaviour
         questUI.SetActive(false);
         questUICompletion.SetActive(false);
         tradeUI.SetActive(false);
+        npcmanager = GameObject.FindGameObjectWithTag("NPCManager").GetComponent<NPCManager>();
     }
 
     void Update()
@@ -77,22 +80,22 @@ public class NPCInteraction : MonoBehaviour
             tradeUIPrompt(currentTrader);
         }
 
-        if (interactable && Input.GetKeyDown(KeyCode.Mouse1))
+        if (interactable && Input.GetKeyDown(KeyCode.Mouse1) && npcmanager.currentNpc != null)
         {
-            if (NPCManager.returnNPCType(NPCManager.currentNpc.NPC, 0))
+            if (npcmanager.returnNPCType(npcmanager.currentNpc.NPC, 0))
             {
-                currentQuest = (NPCManager.QuestInfo)NPCManager.returnNPCData(NPCManager.currentNpc.NPC, 0);
+                currentQuest = (NPCManager.QuestInfo)npcmanager.returnNPCData(npcmanager.currentNpc.NPC, 0);
                 questUIPrompt(currentQuest);
             }
 
-            else if (NPCManager.returnNPCType(NPCManager.currentNpc.NPC, 1))
+            else if (npcmanager.returnNPCType(npcmanager.currentNpc.NPC, 1))
             {
-                questStatusCheck((NPCManager.QuestInfo)NPCManager.returnNPCData(NPCManager.currentNpc.NPC, 1));
+                questStatusCheck((NPCManager.QuestInfo)npcmanager.returnNPCData(npcmanager.currentNpc.NPC, 1));
             }
 
-            else if (NPCManager.returnNPCType(NPCManager.currentNpc.NPC, 2))
+            else if (npcmanager.returnNPCType(npcmanager.currentNpc.NPC, 2))
             {
-                currentTrader = (NPCManager.Trader)NPCManager.returnNPCData(NPCManager.currentNpc.NPC, 2);
+                currentTrader = (NPCManager.Trader)npcmanager.returnNPCData(npcmanager.currentNpc.NPC, 2);
                 traderInfo = currentTrader;
                 tradeUIPrompt(currentTrader);
             }
@@ -117,6 +120,20 @@ public class NPCInteraction : MonoBehaviour
         currentTrader = null;
         traderInfo = null;
         PlayerMovement.canMove = true;
+    }
+
+    public void questItemCheck(Item item)
+    {
+        foreach (NPCManager.QuestInfo q in acceptedQuestLists)
+        {
+            foreach (NPCManager.NPCItem i in q.requirement)
+            {
+                if (item.itemName == i.objectName)
+                {
+                    i.collected++;
+                }
+            }
+        }
     }
 
     void questUIPrompt(NPCManager.QuestInfo info)

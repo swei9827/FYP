@@ -11,13 +11,13 @@ public class ItemData : NetworkBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public int slot;
     
     private Inventory inv;
-    private Tooltip tooltip;
+    private ToolTip tooltip;
     private Vector2 offset;
 
     void Start()
     {
         inv = GameObject.Find("Inventory").GetComponent<Inventory>();
-        tooltip = inv.GetComponent<Tooltip>();
+        tooltip = inv.GetComponent<ToolTip>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)

@@ -9525,7 +9525,7 @@ GameObject:
   - component: {fileID: 1393971529}
   m_Layer: 0
   m_Name: NPCManager
-  m_TagString: Untagged
+  m_TagString: NPCManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9549,10 +9549,10 @@ MonoBehaviour:
     detail: Harvest 1 Potato and 1 Strawberry
     requirementCount: 0
     requirement:
-    - objectName: Potatoes
+    - objectName: Potato
       amount: 1
       collected: 0
-    - objectName: Strawberries
+    - objectName: Strawberry
       amount: 1
       collected: 0
     repeatable: 1
@@ -9585,7 +9585,7 @@ MonoBehaviour:
     detail: Give me 2 Potatoes and I will give you 1 Tuna
     requirementCount: 0
     requirement:
-    - objectName: Potatoes
+    - objectName: Potato
       amount: 2
       collected: 0
     repeatable: 1
@@ -9613,6 +9613,11 @@ MonoBehaviour:
     distance: 2
     offsetX: -0.1
     offsetY: 1.1
+  currentNpc:
+    NPC: {fileID: 0}
+    distance: 0
+    offsetX: 0
+    offsetY: 0
 --- !u!4 &1393971530
 Transform:
   m_ObjectHideFlags: 0
@@ -26607,7 +26612,7 @@ PrefabInstance:
     - target: {fileID: 8080095806413186784, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.4999847
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8080095806413186784, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}

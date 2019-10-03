@@ -66,6 +66,7 @@ public class SceneControl : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Escape))
             {
+                Destroy(GameObject.FindGameObjectWithTag("NPCManager"));
                 SceneManager.LoadScene(0);
             }          
         }
