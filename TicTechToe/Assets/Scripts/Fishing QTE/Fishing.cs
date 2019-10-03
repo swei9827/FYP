@@ -41,6 +41,7 @@ public class Fishing : MonoBehaviour
     Vector2 spawnPos;
     Vector2 spawnPos2;
 
+    NPCInteraction ni;
     GameObject temp;
 
     private void Awake()
@@ -51,6 +52,7 @@ public class Fishing : MonoBehaviour
 
     public void Start()
     {
+        ni = GameObject.FindGameObjectWithTag("Player").GetComponent<NPCInteraction>();
         fishingGame.SetActive(false);
         spawnPos = new Vector2(fishImg.rectTransform.localPosition.x, fishImg.rectTransform.localPosition.y);
         spawnPos2 = new Vector2(bucketImg.rectTransform.localPosition.x, bucketImg.rectTransform.localPosition.y);
@@ -177,6 +179,7 @@ public class Fishing : MonoBehaviour
             Debug.Log(item.itemName);
             if ((item.itemName) == fishImg.sprite.name)
             {
+                ni.questItemCheck(item);
                 inventory.AddItem(item.id);
                 break;
             }
