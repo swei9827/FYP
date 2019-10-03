@@ -7,7 +7,8 @@ public class PlayerInteraction : MonoBehaviour
 {
 	public GameObject target;
 
-	public KeyCode interactKey;
+	public KeyCode interactKey1;
+    public KeyCode interactKey2;
 
 	public IconBox iconBox;
     public Image waterIndicator;
@@ -32,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
 	{
         if(canInteract)
         {
-            if (Input.GetKeyDown(interactKey))
+            if (Input.GetKeyDown(interactKey1) || Input.GetKeyDown(interactKey2))
             {
                 if (target == null)
                     return;

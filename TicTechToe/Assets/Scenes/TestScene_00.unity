@@ -1159,6 +1159,16 @@ PrefabInstance:
       propertyPath: interactKey
       value: 324
       objectReference: {fileID: 0}
+    - target: {fileID: 2831242842766318681, guid: 4b1d187909613b04584bc2d0aafd6dca,
+        type: 3}
+      propertyPath: interactKey1
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2831242842766318681, guid: 4b1d187909613b04584bc2d0aafd6dca,
+        type: 3}
+      propertyPath: interactKey2
+      value: 324
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1d187909613b04584bc2d0aafd6dca, type: 3}
 --- !u!1 &191999034 stripped
@@ -24802,7 +24812,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018621282}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ea4c5cdb7c8c3b4898a670841248d61, type: 3}
   m_Name: 
@@ -26563,6 +26573,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080095806303013033, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8080095804846664499, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}

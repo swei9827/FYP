@@ -67,7 +67,7 @@ public class CropTest : ItemTest
     {        
         if (goWater)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1) && PlayerInteraction.canUse && PlayerInteraction.canWater)
+            if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && PlayerInteraction.canUse && PlayerInteraction.canWater )
             {
                 WaterCan.curFill -= 5;
                 waterIndicator.SetActive(false);
@@ -135,8 +135,7 @@ public class CropTest : ItemTest
     {
         if (canInteract)
         {
-            Debug.Log(canInteract);
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("harvest");
                 foreach (Item item in itemDatabase.database)
@@ -166,6 +165,7 @@ public class CropTest : ItemTest
             else if(cropState == CropStateTest.Done)
             {               
                 canInteract = true;
+
                 Debug.Log("damn");
             }
         }

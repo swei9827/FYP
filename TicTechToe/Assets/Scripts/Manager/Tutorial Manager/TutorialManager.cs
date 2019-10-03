@@ -10,6 +10,7 @@ public class TutorialManager : MonoBehaviour
     //Tutorial
     public GameObject[] TutorialPopOut;
     private int popUpIndex;
+    private Inventory inventory;
 
     //set timer for player to move
     private float timer = 1f;
@@ -17,6 +18,10 @@ public class TutorialManager : MonoBehaviour
     //Set player interact
     bool playerAction = false;
 
+    private void Awake()
+    {
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -137,6 +142,15 @@ public class TutorialManager : MonoBehaviour
                 //    playerAction = false;
                 //    popUpIndex++;
                 //}
+                foreach(Item item in inventory.items)
+                {
+                    if(item.id >= 10)
+                    {
+                        playerAction = false;
+                        popUpIndex++;
+                        break;
+                    }
+                }
             }
         }
 
@@ -152,8 +166,8 @@ public class TutorialManager : MonoBehaviour
                 {
                     GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
                     playerAction = false;
-                    popUpIndex++;                   
-                }               
+                    popUpIndex++;
+                }
             }
         }
 
