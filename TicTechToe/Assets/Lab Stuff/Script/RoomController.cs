@@ -8,8 +8,7 @@ public class RoomController : MonoBehaviourPunCallbacks
 {    
     public GameObject playerPrefab;
     public Transform spawnPoint;
-    public Text roomInfo;
-    
+
     void Start()
     {
         if (PhotonNetwork.CurrentRoom == null)
