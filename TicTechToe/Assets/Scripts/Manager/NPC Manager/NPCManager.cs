@@ -21,6 +21,8 @@ public class NPCManager : MonoBehaviour
     public List<NPCPopUp> npcList;
     public NPCPopUp currentNpc;
 
+    bool variableObtained;
+
     #region Class Declaration
 
     [System.Serializable]
@@ -92,7 +94,6 @@ public class NPCManager : MonoBehaviour
     void Start()
     {
         currentNpc = null;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         foreach (QuestInfo q in QuestsLists)
             q.requirementCount = q.requirement.Count;
         foreach (Trader t in traderList)
@@ -101,6 +102,12 @@ public class NPCManager : MonoBehaviour
 
     void Update()
     {
+        if(RoomController.playerSpawned && !variableObtained)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            variableObtained = true;
+        }
+
         if (currentNpc != null)
         {
             if (Vector2.Distance(currentNpc.NPC.transform.position, player.position) > currentNpc.distance)

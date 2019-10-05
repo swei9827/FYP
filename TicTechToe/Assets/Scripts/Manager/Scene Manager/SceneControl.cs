@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class SceneControl : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class SceneControl : MonoBehaviour
 
     public void PlayButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Lab_Login");
         DataRecord.HarvestCount = 0;
         DataRecord.FishCount = 0;
     }
@@ -35,6 +36,7 @@ public class SceneControl : MonoBehaviour
             BGMManager.Scene_MainMenu = true;
             BGMManager.Scene_InGame = false;
             BGMManager.isPlaying = false;
+            RoomController.playerSpawned = false;
         }
         else if (isGame)
         {
@@ -58,7 +60,7 @@ public class SceneControl : MonoBehaviour
         {
             if(Input.anyKey)
             {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene("Lab_Lobby");
             }
         }
 
@@ -67,7 +69,9 @@ public class SceneControl : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 Destroy(GameObject.FindGameObjectWithTag("NPCManager"));
-                SceneManager.LoadScene(0);
+                PhotonNetwork.LeaveRoom();
+                SceneManager.LoadScene("Lab_Lobby");
+                RoomController.playerSpawned = false;
             }          
         }
 

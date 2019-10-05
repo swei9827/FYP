@@ -10,7 +10,17 @@ public class Camera_Follow_Player : MonoBehaviour
     public Vector2 minPos;
 
     Vector3 cameraPos;
- 
+    bool playerObtained;
+
+    void Update()
+    {
+        if (RoomController.playerSpawned && !playerObtained)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            playerObtained = true;
+        }
+    }
+
     void LateUpdate()
     {
         if(transform.position != player.position)

@@ -1905,6 +1905,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: LobbyManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6264455255921876565, guid: 4a4d1081d51f3c7499dd1428a340ec30,
+        type: 3}
+      propertyPath: info
+      value: 
+      objectReference: {fileID: 1337832928}
+    - target: {fileID: 6264455255921876565, guid: 4a4d1081d51f3c7499dd1428a340ec30,
+        type: 3}
+      propertyPath: buttonListContent
+      value: 
+      objectReference: {fileID: 1310933054}
+    - target: {fileID: 6264455255921876565, guid: 4a4d1081d51f3c7499dd1428a340ec30,
+        type: 3}
+      propertyPath: roomName
+      value: 
+      objectReference: {fileID: 335140448}
+    - target: {fileID: 6264455255921876565, guid: 4a4d1081d51f3c7499dd1428a340ec30,
+        type: 3}
+      propertyPath: roomPrefab
+      value: 
+      objectReference: {fileID: 2220364720265703761, guid: efa2035e6bc770a4bba123760ed443e0,
+        type: 3}
+    - target: {fileID: 6264455255921876565, guid: 4a4d1081d51f3c7499dd1428a340ec30,
+        type: 3}
+      propertyPath: levelToLoad
+      value: TestScene_00
+      objectReference: {fileID: 0}
     - target: {fileID: 6264455255921876554, guid: 4a4d1081d51f3c7499dd1428a340ec30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1960,26 +1986,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6264455255921876565, guid: 4a4d1081d51f3c7499dd1428a340ec30,
-        type: 3}
-      propertyPath: info
-      value: 
-      objectReference: {fileID: 1337832928}
-    - target: {fileID: 6264455255921876565, guid: 4a4d1081d51f3c7499dd1428a340ec30,
-        type: 3}
-      propertyPath: buttonListContent
-      value: 
-      objectReference: {fileID: 1310933054}
-    - target: {fileID: 6264455255921876565, guid: 4a4d1081d51f3c7499dd1428a340ec30,
-        type: 3}
-      propertyPath: roomName
-      value: 
-      objectReference: {fileID: 335140448}
-    - target: {fileID: 6264455255921876565, guid: 4a4d1081d51f3c7499dd1428a340ec30,
-        type: 3}
-      propertyPath: roomPrefab
-      value: 
-      objectReference: {fileID: 2220364720265703761, guid: efa2035e6bc770a4bba123760ed443e0,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a4d1081d51f3c7499dd1428a340ec30, type: 3}

@@ -8,6 +8,7 @@ public class RoomController : MonoBehaviourPunCallbacks
 {    
     public GameObject playerPrefab;
     public Transform spawnPoint;
+    public static bool playerSpawned;
 
     void Start()
     {
@@ -17,8 +18,8 @@ public class RoomController : MonoBehaviourPunCallbacks
             UnityEngine.SceneManagement.SceneManager.LoadScene("Lab_Lobby");
             return;
         }
-        
-        PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity, 0);
+        GameObject playerInstance = (GameObject) PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity, 0);
+        playerSpawned = true;
     }
 
     public void LeaveRoom()

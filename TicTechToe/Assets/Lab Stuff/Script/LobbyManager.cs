@@ -21,6 +21,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     [HideInInspector]
     public bool joiningRoom = false;
 
+    public string levelToLoad;
     public Text info;
     public InputField roomName;
     public GameObject buttonListContent;    
@@ -130,7 +131,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("OnCreatedRoom");
         PhotonNetwork.NickName = playerName;
-        PhotonNetwork.LoadLevel("Lab_Game");
+        PhotonNetwork.LoadLevel(levelToLoad);
     }
 
     public override void OnJoinedRoom()

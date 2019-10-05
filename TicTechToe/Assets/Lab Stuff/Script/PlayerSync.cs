@@ -10,11 +10,10 @@ public class PlayerSync : MonoBehaviourPun, IPunObservable
     public MonoBehaviour[] localScripts;
     //List of the GameObjects that should only be active for the local player (ex. Camera, AudioListener etc.)
     public GameObject[] localObjects;
-    //Values that will be synced over network
+
     Vector3 latestPos;
     Quaternion latestRot;
-
-    // Use this for initialization
+    
     void Start()
     {
         if (photonView.IsMine)
@@ -28,10 +27,11 @@ public class PlayerSync : MonoBehaviourPun, IPunObservable
             {
                 localScripts[i].enabled = false;
             }
-            //for (int i = 0; i < localObjects.Length; i++)
-            //{
-            //    localObjects[i].SetActive(false);
-            //}
+
+            for (int i = 0; i < localObjects.Length; i++)
+            {
+                localObjects[i].SetActive(false);
+            }
         }
     }
 

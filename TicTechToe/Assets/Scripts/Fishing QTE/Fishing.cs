@@ -44,15 +44,11 @@ public class Fishing : MonoBehaviour
     NPCInteraction ni;
     GameObject temp;
 
-    private void Awake()
-    {
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-        itemDatabase = GameObject.Find("Inventory").GetComponent<ItemDatabase>();
-    }
-
+    bool variableObtained;
+    
     public void Start()
     {
-        ni = GameObject.FindGameObjectWithTag("Player").GetComponent<NPCInteraction>();
+       
         fishingGame.SetActive(false);
         spawnPos = new Vector2(fishImg.rectTransform.localPosition.x, fishImg.rectTransform.localPosition.y);
         spawnPos2 = new Vector2(bucketImg.rectTransform.localPosition.x, bucketImg.rectTransform.localPosition.y);
@@ -85,6 +81,14 @@ public class Fishing : MonoBehaviour
 
     public void Update()
     {
+        if(RoomController.playerSpawned && !variableObtained)
+        {
+            ni = GameObject.FindGameObjectWithTag("Player").GetComponent<NPCInteraction>();
+            inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+            itemDatabase = GameObject.Find("Inventory").GetComponent<ItemDatabase>();
+            variableObtained = true;
+        }
+
         FishingGame();
 
         //update fish counter
