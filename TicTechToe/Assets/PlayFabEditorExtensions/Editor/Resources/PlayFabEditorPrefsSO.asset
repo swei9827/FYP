@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0199c11aa6f514784c5c69cd8378d8, type: 3}
   m_Name: PlayFabEditorPrefsSO
   m_EditorClassIdentifier: 
-  DevAccountEmail: 0118259@kdu-online.com
-  DevAccountToken: mj6urf8za7fqor3xnqjd1wrns3bfiobf8gzdht4uga1ouh9josg1y63taeiga6jj8nyb8mirws1ztkxduyfztygiy8csq7f1irjappnn6p5k8e8etuhfd6u87y5f6g6d9rchujy7o9iop1fkwnaas8t9osqeznbn4p7ihrnuehkdys1jhbor488ad83s3ofkd1fus4ub
+  DevAccountEmail: blzjohn98@gmail.com
+  DevAccountToken: ku4t4ocfx38y6ja6f41dxw4nzqr9ae6p5tx5m65ma6xunc6mb78w1megk31t97g7wk1euejgtkgkhzkr8nj5dcuo8jbc176sqbtbd5q4fodxoorwagmosrhwo3pu1ew4o5r5gpasqhgqq4nkt4z7585jypbe36s3guxijhr6skpsh4w6qtyyiuqmo478xa3d19hq6xsc
   SelectedStudio: LabTest
   SdkPath: Assets/PlayFabSdk
   EdExPath: 
