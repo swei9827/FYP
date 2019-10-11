@@ -31,6 +31,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         playerName = PlayerPrefs.GetString("Email");
+        roomName.text = "abc";
     }
 
     void Update()
