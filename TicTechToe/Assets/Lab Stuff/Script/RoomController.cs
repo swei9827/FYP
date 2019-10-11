@@ -18,6 +18,8 @@ public class RoomController : MonoBehaviourPunCallbacks
             UnityEngine.SceneManagement.SceneManager.LoadScene("Lab_Lobby");
             return;
         }
+
+        
         GameObject playerInstance = (GameObject) PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity, 0);
         playerSpawned = true;
     }
