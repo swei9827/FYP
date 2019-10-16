@@ -74,7 +74,7 @@ public class LoginSystem : MonoBehaviour
             Password = pass.text
         }, RequestPhotonToken, OnPlayFabError);
 
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Lab_Login");
     }
 
     private void OnPlayFabError(PlayFabError obj)
