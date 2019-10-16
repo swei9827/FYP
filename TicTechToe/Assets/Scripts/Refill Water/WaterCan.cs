@@ -7,7 +7,7 @@ public class WaterCan : MonoBehaviour
 {
     public Image waterBar;
 
-    public static float maxFill = 10f;
+    public static float maxFill = 3f;
     public static float curFill;
     public static bool isFull;
     float calculateFill;

@@ -69,7 +69,7 @@ public class CropTest : ItemTest
         {
             if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && PlayerInteraction.canUse && PlayerInteraction.canWater )
             {
-                WaterCan.curFill -= 5;
+                WaterCan.curFill -= 1;
                 waterIndicator.SetActive(false);
                 Debug.Log("Interact");
                 DataRecord.AddEvents(4, this.name.ToString());

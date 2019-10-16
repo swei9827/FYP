@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seedSprite: {fileID: 21300000, guid: ff85dc4aa264b33408182cc0497398c6, type: 3}
   deadSprite: {fileID: 21300000, guid: 580229cb6f2d16b42aa8df6214453e44, type: 3}
-  doneSprite: {fileID: 21300000, guid: 6f558c1d5ac067f40a1008903ee81204, type: 3}
+  doneSprite: {fileID: 21300000, guid: 9764d1ea1b5dc67429540d6611ea9e45, type: 3}
   seedIsOnGround: 1
+  cropsType: 0

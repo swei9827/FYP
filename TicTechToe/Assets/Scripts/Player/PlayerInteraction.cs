@@ -12,6 +12,7 @@ public class PlayerInteraction : MonoBehaviour
 
 	public IconBox iconBox;
     public Image waterIndicator;
+    public GameObject WaterBar;
 
 	[SerializeField]
 	private Crop crop;
@@ -25,8 +26,8 @@ public class PlayerInteraction : MonoBehaviour
 
 
     private void Start()
-    {      
-        waterIndicator.enabled = false;   
+    {
+        waterIndicator.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -102,7 +103,7 @@ public class PlayerInteraction : MonoBehaviour
 	{
 		if (crop.HasCrop())
 		{
-            waterIndicator.enabled = false;
+            waterIndicator.gameObject.SetActive(false);
             iconBox.SetIcon(crop.GetCropSprite());
 		}
         else if (tool != null)
@@ -110,20 +111,20 @@ public class PlayerInteraction : MonoBehaviour
             if (tool.toolType == ToolType.Watercan)
             {
                 canUse = true;
-                waterIndicator.enabled = true;                
+                waterIndicator.gameObject.SetActive(true);
                 iconBox.SetIcon(tool.sprite);             
             }
             else if(tool.toolType != ToolType.Watercan)
             {
                 canUse = false;
-                waterIndicator.enabled = false;
+                waterIndicator.gameObject.SetActive(false);
                 iconBox.SetIcon(tool.sprite);            
             }       
         }
         else
 		{
             canUse = false;
-            waterIndicator.enabled = false;
+            waterIndicator.gameObject.SetActive(false);
             iconBox.Close();
 		}
 
