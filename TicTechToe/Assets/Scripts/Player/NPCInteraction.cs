@@ -18,10 +18,14 @@ public class NPCInteraction : MonoBehaviour
     [Header("Quest System")]
     public List<NPCManager.QuestInfo> acceptedQuestLists;
     public List<QuestLog> completedQuestLists;
+    public GameObject questIndicatorContentPrefab;
+    public GameObject questIndicatorContent;
 
     GameObject questUI;
     GameObject questUICompletion;
+    GameObject questIndicator;
     NPCManager.QuestInfo currentQuest;
+    public List<GameObject> spawnedIndicator;
 
     [System.Serializable]
     public class QuestLog
@@ -32,6 +36,15 @@ public class NPCInteraction : MonoBehaviour
         public string questDetail;
         public int reward;
         public bool completed;
+    }
+
+    [System.Serializable]
+    public class Indicator
+    {
+        public int questID;
+        public string questName;
+        public string questDetail;
+        public bool spawned;
     }
     //
 
@@ -58,6 +71,7 @@ public class NPCInteraction : MonoBehaviour
         questUI = GameObject.FindGameObjectWithTag("QuestUI");
         questUICompletion = GameObject.FindGameObjectWithTag("QuestUICompletion");
         tradeUI = GameObject.FindGameObjectWithTag("TradeUI");
+        questIndicator = GameObject.FindGameObjectWithTag("QuestIndicator");
     }
 
     void Start()
@@ -65,6 +79,7 @@ public class NPCInteraction : MonoBehaviour
         questUI.SetActive(false);
         questUICompletion.SetActive(false);
         tradeUI.SetActive(false);
+        questIndicator.SetActive(false);
         npcmanager = GameObject.FindGameObjectWithTag("NPCManager").GetComponent<NPCManager>();
     }
 
@@ -82,6 +97,8 @@ public class NPCInteraction : MonoBehaviour
 
         if (interactable && Input.GetKeyDown(KeyCode.Mouse1) && npcmanager.currentNpc != null)
         {
+            resetIndicator();
+
             if (npcmanager.returnNPCType(npcmanager.currentNpc.NPC, 0))
             {
                 currentQuest = (NPCManager.QuestInfo)npcmanager.returnNPCData(npcmanager.currentNpc.NPC, 0);
@@ -99,6 +116,34 @@ public class NPCInteraction : MonoBehaviour
                 traderInfo = currentTrader;
                 tradeUIPrompt(currentTrader);
             }
+        }
+
+        showQuestIndicator();
+    }
+
+    void showQuestIndicator()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab) && !questIndicator.activeSelf && !interactable){
+            questIndicator.SetActive(true);
+            PlayerMovement.canMove = false;
+            foreach(NPCManager.QuestInfo q in acceptedQuestLists)
+            {
+                GameObject temp = Instantiate(questIndicatorContentPrefab, questIndicatorContent.transform.position, Quaternion.identity);
+                temp.transform.SetParent(questIndicatorContent.transform);
+                temp.GetComponent<Text>().text = q.name;
+                temp.transform.GetChild(0).GetComponent<Text>().text = q.detail;
+                spawnedIndicator.Add(temp);
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.Tab) && questIndicator.activeSelf)
+        {
+            questIndicator.SetActive(false);
+            foreach(GameObject go in spawnedIndicator)
+            {
+                Destroy(go);
+            }
+            spawnedIndicator.Clear();
+            PlayerMovement.canMove = true;
         }
     }
 
@@ -133,6 +178,20 @@ public class NPCInteraction : MonoBehaviour
                     i.collected++;
                 }
             }
+        }
+    }
+
+    void resetIndicator()
+    {
+        if (questIndicator.activeSelf)
+        {
+            questIndicator.SetActive(false);
+            foreach (GameObject go in spawnedIndicator)
+            {
+                Destroy(go);
+            }
+            spawnedIndicator.Clear();
+            PlayerMovement.canMove = true;
         }
     }
 
@@ -178,6 +237,7 @@ public class NPCInteraction : MonoBehaviour
             }
             if (count == q.requirementCount)
             {
+                resetIndicator();
                 QuestLog log = new QuestLog();
                 q.completed = true;
                 log.questID = q.id;
@@ -192,8 +252,8 @@ public class NPCInteraction : MonoBehaviour
                 acceptedQuestLists.Remove(q);
 
                 questUICompletion.SetActive(true);
-                questUICompletion.GetComponentInChildren<Text>().text = "Quest Completed ! \n" + "Rewarded " + log.reward + " Gold";
-
+                questUICompletion.GetComponentInChildren<Text>().text = "Quest Completed ! \n" + "Rewarded " + log.reward + " Gold";                
+               
                 StartCoroutine(closeUI(2f));
             }
         }
