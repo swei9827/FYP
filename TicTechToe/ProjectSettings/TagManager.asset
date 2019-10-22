@@ -23,6 +23,9 @@ TagManager:
   - TradeDetail
   - TradeReward
   - TradeUI
+  - NPCManager
+  - QuestIndicator
+  - QuestIndicatorContent
   layers:
   - Default
   - TransparentFX

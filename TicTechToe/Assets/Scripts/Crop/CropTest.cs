@@ -27,6 +27,8 @@ public class CropTest : ItemTest
 
     public DirtTile dirtTile;
 
+    NPCInteraction ni;
+
     private GameObject temp;
 
     private void Awake()
@@ -36,6 +38,7 @@ public class CropTest : ItemTest
     }
     void Start()
     {
+        ni = GameObject.FindGameObjectWithTag("Player").GetComponent<NPCInteraction>();
         waterIndicator.SetActive(false);
         cropState = CropStateTest.Seed;
         growPercentage = 0;
@@ -142,7 +145,8 @@ public class CropTest : ItemTest
                 {
                     Debug.Log(item.itemName);
                     if ((item.itemName + "(Clone)") == this.gameObject.name)
-                    {                       
+                    {
+                        ni.questItemCheck(item);
                         inventory.AddItem(item.id);
                         Destroy(this.gameObject);
                         break;

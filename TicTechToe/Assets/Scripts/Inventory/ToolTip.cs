@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tooltip : MonoBehaviour
+public class ToolTip : MonoBehaviour
 {
     private Item item;
     private string data;
