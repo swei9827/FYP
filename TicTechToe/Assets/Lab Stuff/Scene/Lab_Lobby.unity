@@ -1929,7 +1929,7 @@ PrefabInstance:
     - target: {fileID: 6264455255921876565, guid: 4a4d1081d51f3c7499dd1428a340ec30,
         type: 3}
       propertyPath: levelToLoad
-      value: TestScene_00
+      value: NewTilemap
       objectReference: {fileID: 0}
     - target: {fileID: 6264455255921876554, guid: 4a4d1081d51f3c7499dd1428a340ec30,
         type: 3}

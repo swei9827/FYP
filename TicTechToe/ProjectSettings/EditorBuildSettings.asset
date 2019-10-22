@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Lab Stuff/Scene/Lab_Lobby.unity
     guid: eac12e4c7087422488b4d91331e8151b
+  - enabled: 1
+    path: Assets/Scenes/NewTilemap.unity
+    guid: 8e7732d642fe91346bc5dd64f5b867c5
   m_configObjects: {}

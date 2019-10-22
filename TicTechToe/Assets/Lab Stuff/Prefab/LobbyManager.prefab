@@ -43,7 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957e4dc9ce72c3d469a9d3fca3331430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
-  buttonListContent: {fileID: 0}
+  playerName: 
   roomCapacity: 5
-  room: {fileID: 2220364720265703761, guid: efa2035e6bc770a4bba123760ed443e0, type: 3}
+  joiningRoom: 0
+  levelToLoad: NewTilemap
+  info: {fileID: 0}
+  roomName: {fileID: 0}
+  buttonListContent: {fileID: 0}
+  roomPrefab: {fileID: 2220364720265703761, guid: efa2035e6bc770a4bba123760ed443e0,
+    type: 3}
