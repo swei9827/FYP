@@ -3,14 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public enum ToolTypeTest
-{
-    Plow,
-    WaterCan,
-    FishRod,
-    Max
-}
-
 public enum CropsTypeTest
 {
     None,

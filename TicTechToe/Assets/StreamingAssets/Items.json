@@ -53,6 +53,30 @@
     "stackable": true,
     "marketable": true,
     "price": 50,
-    "itemDescription": "Pumpkin"
+    "itemDescription": "Pumpkin",
+  },
+  {
+    "id": 21,
+    "itemName": "Strawberry Seed",
+    "stackable": true,
+    "marketable": true,
+    "price": 20,
+    "itemDescription": "sberry Seed",
+  },
+  {
+    "id": 22,
+    "itemName": "Potato Seed",
+    "stackable": true,
+    "marketable": true,
+    "price": 20,
+    "itemDescription": "Potato Seed",
+  },
+  {
+    "id": 23,
+    "itemName": "Pumpkin Seed",
+    "stackable": true,
+    "marketable": true,
+    "price": 20,
+    "itemDescription": "Pumpkin Seed"
   }
 ]

@@ -27,6 +27,6 @@ public class RefillWater : MonoBehaviour
 
     public void fillWater()
     {
-        WaterCan.curFill += WaterCan.maxFill;
+        WaterCan.curFill = WaterCan.maxFill;
     }
 }
