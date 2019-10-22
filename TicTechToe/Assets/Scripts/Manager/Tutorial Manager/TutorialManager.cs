@@ -7,21 +7,26 @@ using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
-    //Tutorial
+    [Header("Tutorial Settings")]
     public GameObject[] TutorialPopOut;
     private int popUpIndex;
-    private Inventory inventory;
+    private float timer = 1f;     //set timer for player to move
+    bool playerAction = false;    //Set player interact
 
-    //set timer for player to move
-    private float timer = 1f;
+    [Header("Movement Collider Settings")]
+    public GameObject[] colliderObj;
 
-    //Set player interact
-    bool playerAction = false;
+    [Header("Dialogue Character Settings")]
+    public GameObject[] dialogueObj;
+
+    [Header("Inventory Settings")]
+    private Inventory inventory;     //inventory
 
     private void Awake()
     {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -56,9 +61,6 @@ public class TutorialManager : MonoBehaviour
                 {
                     popUpIndex++;
                     playerAction = false;
-
-                    //set for next tutorial
-                    timer = 5f;
                 }
             }
         }
@@ -68,20 +70,22 @@ public class TutorialManager : MonoBehaviour
         {
             if (playerAction)
             {
-                timer -= Time.deltaTime;
-                Time.timeScale = 1;
                 TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
 
-                if (timer <= 0)
+                if (colliderObj[0].GetComponent<SpriteRenderer>().color == Color.green && colliderObj[1].GetComponent<SpriteRenderer>().color == Color.green)
                 {
+                    for (int i = 0; i < colliderObj.Length; i++)
+                    {
+                        Destroy(colliderObj[i]);
+                    }
                     popUpIndex++;
                     playerAction = false;
-                    timer = 1f;
                 }
             }
         }
 
-        // plow 
+        //interact with NPC 1
         else if (popUpIndex == 2)
         {
             if (playerAction)
@@ -89,15 +93,16 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                if (!GameObject.Find("DirtTile").GetComponent<DirtTile>().needsPlowing)
+                //NPC Uncle Joseph
+                if (dialogueObj[0].GetComponent<DialogueHolder>().interactNPCJoseph)
                 {
-                    popUpIndex++;
                     playerAction = false;
+                    popUpIndex++;                    
                 }
             }
         }
 
-        //plant seed
+        //interact with NPC 2
         else if (popUpIndex == 3)
         {
             if (playerAction)
@@ -105,88 +110,121 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                if (!DirtTile.addPlant)
+                //NPC Jane
+                if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane)
                 {
                     playerAction = false;
-                    popUpIndex++;
+                    popUpIndex++;                  
                 }
             }
         }
 
-        //Water plant
-        else if (popUpIndex == 4)
-        {
-            if (playerAction)
-            {
-                TutorialPopOut[popUpIndex].SetActive(false);
-                Time.timeScale = 1;
+        //// plow 
+        //else if (popUpIndex == 2)
+        //{
+        //    if (playerAction)
+        //    {
+        //        TutorialPopOut[popUpIndex].SetActive(false);
+        //        Time.timeScale = 1;
 
-                if (GameObject.FindGameObjectWithTag("Crops").GetComponent<CropTest>().watered)
-                {
-                    playerAction = false;
-                    popUpIndex++;
-                }
-            }
-        }
+        //        if (!GameObject.Find("DirtTile").GetComponent<DirtTile>().needsPlowing)
+        //        {
+        //            popUpIndex++;
+        //            playerAction = false;
+        //        }
+        //    }
+        //}
 
-        // harvest
-        else if (popUpIndex == 5)
-        {
-            if (playerAction)
-            {
-                TutorialPopOut[popUpIndex].SetActive(false);
-                Time.timeScale = 1;
+        ////plant seed
+        //else if (popUpIndex == 3)
+        //{
+        //    if (playerAction)
+        //    {
+        //        TutorialPopOut[popUpIndex].SetActive(false);
+        //        Time.timeScale = 1;
 
-                //if (GameObject.FindGameObjectWithTag("Crops").GetComponent<GetItems>().canGetCrops)
-                //{                   
-                //    playerAction = false;
-                //    popUpIndex++;
-                //}
-                foreach(Item item in inventory.items)
-                {
-                    if(item.id >= 10)
-                    {
-                        playerAction = false;
-                        popUpIndex++;
-                        break;
-                    }
-                }
-            }
-        }
+        //        if (!DirtTile.addPlant)
+        //        {
+        //            playerAction = false;
+        //            popUpIndex++;
+        //        }
+        //    }
+        //}
 
-        //fishing
-        else if (popUpIndex == 6)
-        {
-            if (playerAction)
-            {
-                TutorialPopOut[popUpIndex].SetActive(false);
-                Time.timeScale = 1;
+        ////Water plant
+        //else if (popUpIndex == 4)
+        //{
+        //    if (playerAction)
+        //    {
+        //        TutorialPopOut[popUpIndex].SetActive(false);
+        //        Time.timeScale = 1;
 
-                if (GameObject.Find("Tilemap_River").GetComponent<Fishing>().success)
-                {
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
-                    playerAction = false;
-                    popUpIndex++;
-                }
-            }
-        }
+        //        if (GameObject.FindGameObjectWithTag("Crops").GetComponent<CropTest>().watered)
+        //        {
+        //            playerAction = false;
+        //            popUpIndex++;
+        //        }
+        //    }
+        //}
 
-        else if(popUpIndex == 7)
-        {
-            if (playerAction)
-            {
-                TutorialPopOut[popUpIndex].SetActive(false);
-                Time.timeScale = 1;
+        //// harvest
+        //else if (popUpIndex == 5)
+        //{
+        //    if (playerAction)
+        //    {
+        //        TutorialPopOut[popUpIndex].SetActive(false);
+        //        Time.timeScale = 1;
 
-                timer -= Time.deltaTime;
-                if (Input.GetKeyDown(KeyCode.Space) && timer <= 0)
-                {
-                    playerAction = false;
-                    popUpIndex++;
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
-                } 
-            }
-        }
+        //        //if (GameObject.FindGameObjectWithTag("Crops").GetComponent<GetItems>().canGetCrops)
+        //        //{                   
+        //        //    playerAction = false;
+        //        //    popUpIndex++;
+        //        //}
+        //        foreach (Item item in inventory.items)
+        //        {
+        //            if (item.id >= 10)
+        //            {
+        //                playerAction = false;
+        //                popUpIndex++;
+        //                break;
+        //            }
+        //        }
+        //    }
+        //}
+
+        ////fishing
+        //else if (popUpIndex == 6)
+        //{
+        //    if (playerAction)
+        //    {
+        //        TutorialPopOut[popUpIndex].SetActive(false);
+        //        Time.timeScale = 1;
+
+        //        if (GameObject.Find("Tilemap_River").GetComponent<Fishing>().success)
+        //        {
+        //            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
+        //            playerAction = false;
+        //            popUpIndex++;
+        //        }
+        //    }
+        //}
+
+        //else if (popUpIndex == 7)
+        //{
+        //    if (playerAction)
+        //    {
+        //        TutorialPopOut[popUpIndex].SetActive(false);
+        //        Time.timeScale = 1;
+
+        //        timer -= Time.deltaTime;
+        //        if (Input.GetKeyDown(KeyCode.Space) && timer <= 0)
+        //        {
+        //            playerAction = false;
+        //            popUpIndex++;
+        //            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
+        //        }
+        //    }
+        //}
     }
 }
 

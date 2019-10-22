@@ -64,20 +64,25 @@ public class CropTest : ItemTest
     }
 
     void WaterCrops()
-    {        
+    {      
         if (goWater)
         {
-            if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && PlayerInteraction.canUse && PlayerInteraction.canWater )
+            if (canInteract)
             {
-                WaterCan.curFill -= 1;
-                waterIndicator.SetActive(false);
-                Debug.Log("Interact");
-                DataRecord.AddEvents(4, this.name.ToString());
-                FxManager.PlayMusic("WaterFx");
-                watered = true;
-                goWater = false;
+                if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && PlayerInteraction.canUse && PlayerInteraction.canWater)
+                {
+                    WaterCan.curFill -= 1;
+                    waterIndicator.SetActive(false);
+                    Debug.Log("Interact");
+                    DataRecord.AddEvents(4, this.name.ToString());
+                    FxManager.PlayMusic("WaterFx");
+                    watered = true;
+                    goWater = false;
+                    canInteract = false;
+                }
             }
-        }      
+        }
+          
     }
 
     void CropStateChange()
@@ -137,7 +142,6 @@ public class CropTest : ItemTest
         {
             if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("harvest");
                 foreach (Item item in itemDatabase.database)
                 {
                     Debug.Log(item.itemName);
@@ -159,13 +163,14 @@ public class CropTest : ItemTest
         {
             if (cropState == CropStateTest.Delayed)
             {
+                canInteract = true;
                 goWater = true;
             }
 
             else if(cropState == CropStateTest.Done)
             {               
                 canInteract = true;
-
+                goWater = false;
                 Debug.Log("damn");
             }
         }
