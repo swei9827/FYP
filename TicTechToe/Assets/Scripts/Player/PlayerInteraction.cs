@@ -11,8 +11,7 @@ public class PlayerInteraction : MonoBehaviour
     public KeyCode interactKey2;
 
 	public IconBox iconBox;
-    public Image waterIndicator;
-    public GameObject WaterBar;
+    public Image waterBar;
 
 	[SerializeField]
 	private Crop crop;
@@ -27,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Start()
     {
-        waterIndicator.gameObject.SetActive(false);
+        waterBar.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -103,7 +102,7 @@ public class PlayerInteraction : MonoBehaviour
 	{
 		if (crop.HasCrop())
 		{
-            waterIndicator.gameObject.SetActive(false);
+            waterBar.gameObject.SetActive(false);
             iconBox.SetIcon(crop.GetCropSprite());
 		}
         else if (tool != null)
@@ -111,20 +110,20 @@ public class PlayerInteraction : MonoBehaviour
             if (tool.toolType == ToolType.Watercan)
             {
                 canUse = true;
-                waterIndicator.gameObject.SetActive(true);
+                waterBar.gameObject.SetActive(true);
                 iconBox.SetIcon(tool.sprite);             
             }
             else if(tool.toolType != ToolType.Watercan)
             {
                 canUse = false;
-                waterIndicator.gameObject.SetActive(false);
+                waterBar.gameObject.SetActive(false);
                 iconBox.SetIcon(tool.sprite);            
             }       
         }
         else
 		{
             canUse = false;
-            waterIndicator.gameObject.SetActive(false);
+            waterBar.gameObject.SetActive(false);
             iconBox.Close();
 		}
 

@@ -23,7 +23,7 @@ public class FishMovement : MonoBehaviour
     void Start()
     {    
         fish = this.GetComponent<Rigidbody2D>();
-        fishGame = GameObject.Find("Tilemap_River").GetComponent<Fishing>();
+        fishGame = GameObject.Find("Tilemap_Water").GetComponent<Fishing>();
     }
 
     void WaterBounceMove()

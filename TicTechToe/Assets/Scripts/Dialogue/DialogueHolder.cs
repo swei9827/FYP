@@ -8,8 +8,12 @@ public class DialogueHolder : MonoBehaviour
     private DialogueManager dialogueManager;
     public string[] dialogueLines;
 
-    public bool interactNPCJoseph = false;
-    public bool interactNPCJane = false;
+    public bool interactNPCJoseph = true;
+    public bool interactNPCJane = true;
+
+    bool updateNPC = false;
+
+    string temp;
 
     private void Start()
     {
@@ -18,28 +22,24 @@ public class DialogueHolder : MonoBehaviour
 
     public void Update()
     {
-        checkNPC();       
+        //updateDialogue();
+        //checkNPC();     
     }
 
     public void checkNPC()
     {
-        if(this.gameObject.name == "NPC Uncle Joseph")
+        if (dialogueManager.NPCDone && temp == "NPC Uncle Joseph")
         {
-            //finish conversation
-            if(dialogueManager.NPCDone)
-            {
-                interactNPCJoseph = true;
-                interactNPCJane = false;
-                dialogueManager.NPCDone = false;
-            }              
-        }   
+            updateNPC = false;
+            interactNPCJoseph = false;
+            dialogueManager.NPCDone = false;
+        }
 
-        else if(this.gameObject.name == "NPC Jane")
+        else if (this.gameObject.name == "NPC Jane")
         {
-            //finish conversation
             if (dialogueManager.NPCDone)
             {
-                interactNPCJane = true;
+                interactNPCJane = false;
                 dialogueManager.NPCDone = false;
             }
         }
@@ -57,6 +57,34 @@ public class DialogueHolder : MonoBehaviour
                     dialogueManager.sentences = dialogueLines;
                     dialogueManager.currentLine = 0;
                     dialogueManager.showDialogue();
+                }
+            }    
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        temp = this.gameObject.name;
+        Debug.Log(temp);
+
+        if (collision.CompareTag("Player"))
+        {
+            if (temp == "NPC Uncle Joseph")
+            {
+                if (dialogueManager.NPCDone)
+                {
+                    interactNPCJoseph = true;
+                    dialogueManager.NPCDone = false;
+                    temp = null;
+                }
+            }
+            else if (temp == "NPC Jane")
+            {
+                if (dialogueManager.NPCDone)
+                {
+                    interactNPCJane = true;
+                    dialogueManager.NPCDone = false;
+                    temp = null;
                 }
             }
         }

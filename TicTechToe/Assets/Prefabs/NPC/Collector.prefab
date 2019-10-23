@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2571984552411659460}
   - component: {fileID: 2571984552411659461}
   - component: {fileID: 2571984552411659462}
-  - component: {fileID: 1946397842}
   m_Layer: 0
   m_Name: Collector
   m_TagString: NPC
@@ -73,7 +72,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 976b3f24a41bf6e46bc2f163465a44a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.23}
@@ -108,31 +107,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6697178, y: 1.751235}
   m_EdgeRadius: 0
---- !u!114 &1946397842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2571984552411659458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3d002a6713c47f41b721b43083dc7c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  dialogueLines:
-  - Hey there, welcome to La Farmilia.
-  - "I\u2019m the neighbour of your grandpa. We have been close friends since childhood."
-  - I feel happy for him to finally pursue his dream to travel around the world!
-  - I heard that you will be taking care of his farm since he is not around.
-  - If you need any help, feel free to ask for help!
-  - "It\u2019s a lovely town filled with kind and wonderful people! I Everyone will
-    be glad to meet a new friend like you"
-  - But first, I think you can perhaps talk to my daughter. She is about the same
-    age as you.
-  hadInteract: 0
-  interactNPCJane: 0
 --- !u!1 &2571984552809873335
 GameObject:
   m_ObjectHideFlags: 0

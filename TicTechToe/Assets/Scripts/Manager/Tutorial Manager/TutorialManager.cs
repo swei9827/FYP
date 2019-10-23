@@ -19,13 +19,6 @@ public class TutorialManager : MonoBehaviour
     [Header("Dialogue Character Settings")]
     public GameObject[] dialogueObj;
 
-    [Header("Inventory Settings")]
-    private Inventory inventory;     //inventory
-
-    private void Awake()
-    {
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -73,7 +66,7 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                if (colliderObj[0].GetComponent<SpriteRenderer>().color == Color.green && colliderObj[1].GetComponent<SpriteRenderer>().color == Color.green)
+                if (colliderObj[0].GetComponent<SpriteRenderer>().color == Color.red && colliderObj[1].GetComponent<SpriteRenderer>().color == Color.red)
                 {
                     for (int i = 0; i < colliderObj.Length; i++)
                     {

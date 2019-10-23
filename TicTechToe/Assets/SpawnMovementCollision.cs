@@ -20,7 +20,7 @@ public class SpawnMovementCollision : MonoBehaviour
     {
         if(collided)
         {
-            collisionObj.GetComponent<SpriteRenderer>().color = Color.green;
+            collisionObj.GetComponent<SpriteRenderer>().color = Color.red;
         }     
     }
 

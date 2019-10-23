@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 421782333160482214}
   - component: {fileID: 421782333160482213}
   - component: {fileID: 2768586353306940913}
+  - component: {fileID: 561590236}
+  - component: {fileID: 561590235}
   m_Layer: 0
   m_Name: NPC Uncle Joseph
   m_TagString: NPC
@@ -26,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421782333160482209}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.52, y: 1.65, z: -7.3125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -96,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.084974766, y: 0.0047535896}
+  m_Offset: {x: -0.004723549, y: -0.7249396}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -107,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6697178, y: 1.751235}
+  m_Size: {x: 1.3691216, y: 0.4363737}
   m_EdgeRadius: 0
 --- !u!114 &2768586353306940913
 MonoBehaviour:
@@ -121,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d002a6713c47f41b721b43083dc7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Uncle Joseph
+  name: Uncle Joseph
   dialogueLines:
   - Hey there, welcome to La Farmilia.
   - "I\u2019m the neighbour of your grandpa. We have been close friends since childhood."
@@ -132,6 +134,45 @@ MonoBehaviour:
     be glad to meet a new friend like you"
   - But first, I think you can perhaps talk to my daughter. She is about the same
     age as you.
+  interactNPCJoseph: 0
+  interactNPCJane: 0
+--- !u!61 &561590236
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421782333160482209}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.022353172, y: -0.06329727}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 0.16, y: 0.23}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3443108, y: 2.1265945}
+  m_EdgeRadius: 0
+--- !u!210 &561590235
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421782333160482209}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -300
 --- !u!1 &421782333568263892
 GameObject:
   m_ObjectHideFlags: 0

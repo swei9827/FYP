@@ -9,9 +9,13 @@ public class ToolTip : MonoBehaviour
     private string data;
     private GameObject tooltip;
 
-    void Start()
+    private void Awake()
     {
         tooltip = GameObject.Find("Tooltip");
+    }
+
+    void Start()
+    {        
         tooltip.SetActive(false);
     }
 

@@ -43,7 +43,6 @@ public class DialogueManager : MonoBehaviour
         if(currentLine >= sentences.Length)
         {
             dialogueBox.SetActive(false);
-            nameBox.SetActive(false);
             dialogueActive = false;
 
             currentLine = 0;
@@ -59,7 +58,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueActive = true;
         dialogueBox.SetActive(true);
-        nameBox.SetActive(true);
         PlayerMovement.canMove = false;
     }
 }

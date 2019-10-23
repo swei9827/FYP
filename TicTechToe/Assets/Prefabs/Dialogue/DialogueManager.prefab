@@ -43,15 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf0213efd5ef54479bf4c9df4283f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 0}
+  nameBox: {fileID: 0}
   textDisplay: {fileID: 0}
   npcNameDisplay: {fileID: 0}
+  dialogueActive: 0
+  npcName: Jon
   sentences:
-  - Such a good morning
-  - Is it?
-  npcNames:
-  - Georgie
-  - Georgie
-  typingSpeed: 0.02
-  wholeDialogue: {fileID: 0}
-  player: {fileID: 0}
-  finishChat: 0
+  - Test 1
+  - Test 2
+  - Test 3
+  - Test 4
+  - Test 5
+  - Test 6
+  - Test 7
+  currentLine: 0
+  currentName: 0
+  NPCDone: 0
