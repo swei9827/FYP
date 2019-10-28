@@ -19982,6 +19982,23 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 8080095805543664542, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_Text
+      value: Move to Points
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080095805697849003, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Talk with Jane
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080095806650354623, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_Text
+      value: Talk with Uncle Joseph
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 813eebd421111fc4cb098a529970b333, type: 3}
 --- !u!1 &537934750
@@ -20274,6 +20291,7 @@ GameObject:
   - component: {fileID: 558053052}
   - component: {fileID: 558053054}
   - component: {fileID: 558053055}
+  - component: {fileID: 558053056}
   m_Layer: 0
   m_Name: Tilemap_Water
   m_TagString: Untagged
@@ -21568,6 +21586,18 @@ MonoBehaviour:
   waterCounter: {fileID: 1289483042}
   item: {fileID: 0}
   fishType: 0
+--- !u!114 &558053056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558053050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ef2a2f5b3b0cf46930c01b359d429d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &561590233 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 421782333160482209, guid: 9b0746cf8049b4f41b9c313e23927326,
@@ -22461,7 +22491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f55b034b0230f4ab581f2c2958a455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2831242842766318660, guid: 03908443c760a914e8d8802a7b73a085, type: 3}
   smoothing: 0.6
   maxPos: {x: 28.11, y: 12.54}
   minPos: {x: -9.17, y: -2.3}
@@ -23650,6 +23680,16 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1792410758598861459, guid: 72f5ce87c5612f44a87e88e694240db0,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.08437705
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792410758598861459, guid: 72f5ce87c5612f44a87e88e694240db0,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.8444738
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72f5ce87c5612f44a87e88e694240db0, type: 3}
 --- !u!4 &835213752 stripped
@@ -23962,6 +24002,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792410758598861459, guid: 72f5ce87c5612f44a87e88e694240db0,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.089737535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792410758598861459, guid: 72f5ce87c5612f44a87e88e694240db0,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.8551948
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72f5ce87c5612f44a87e88e694240db0, type: 3}
@@ -25768,6 +25818,16 @@ PrefabInstance:
         type: 3}
       propertyPath: playerIconBox
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792410758598861459, guid: 72f5ce87c5612f44a87e88e694240db0,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.08864963
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792410758598861459, guid: 72f5ce87c5612f44a87e88e694240db0,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.853019
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72f5ce87c5612f44a87e88e694240db0, type: 3}
@@ -36526,6 +36586,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: VideoPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1545212135363109954, guid: e5fef7b368059254e83207b804dc6de5,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 65c20bee3108c6c4c9106b9d8d8a99aa,
+        type: 3}
+    - target: {fileID: 2151167392196870850, guid: e5fef7b368059254e83207b804dc6de5,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 38f623505e45a1e4b8640ea9af201282,
+        type: 3}
+    - target: {fileID: 4833154392708170814, guid: e5fef7b368059254e83207b804dc6de5,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 86c2dfd8696a407418efd2e2bf0ed019,
+        type: 3}
     - target: {fileID: 7090770887012260802, guid: e5fef7b368059254e83207b804dc6de5,
         type: 3}
       propertyPath: m_LocalPosition.x

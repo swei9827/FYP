@@ -22,7 +22,7 @@ public class CropTest : ItemTest
     public GameObject waterIndicator;
     public Tool tool;
     bool tempCanInteract;
-    bool goWater;
+    public bool goWater;
     public bool canInteract;
 
     public DirtTile dirtTile;
@@ -67,13 +67,14 @@ public class CropTest : ItemTest
     }
 
     void WaterCrops()
-    {      
+    {
         if (goWater)
         {
             if (canInteract)
             {
-                if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && PlayerInteraction.canUse && PlayerInteraction.canWater)
+                if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && PlayerInteraction.canWater && PlayerInteraction.canWater)
                 {
+ 
                     WaterCan.curFill -= 1;
                     waterIndicator.SetActive(false);
                     Debug.Log("Interact");
@@ -82,10 +83,10 @@ public class CropTest : ItemTest
                     watered = true;
                     goWater = false;
                     canInteract = false;
-                }
+                }              
             }
         }
-          
+         
     }
 
     void CropStateChange()
@@ -135,7 +136,6 @@ public class CropTest : ItemTest
        if(growPercentage == 100)
         {
             cropState = CropStateTest.Done;
-            //GameObject.FindGameObjectWithTag("Crops").GetComponent<GetItems>().canGetCrops = true;
         }      
     }
 
@@ -168,6 +168,7 @@ public class CropTest : ItemTest
             if (cropState == CropStateTest.Delayed)
             {
                 canInteract = true;
+                Debug.Log(canInteract);
                 goWater = true;
             }
 
@@ -175,7 +176,12 @@ public class CropTest : ItemTest
             {               
                 canInteract = true;
                 goWater = false;
-                Debug.Log("damn");
+            }
+
+            else
+            {
+                canInteract = true;
+                goWater = false;
             }
         }
     }
@@ -186,12 +192,14 @@ public class CropTest : ItemTest
         {
             if (cropState == CropStateTest.Delayed)
             {
+                canInteract = false;
                 goWater = false;
             }
 
             else if (cropState == CropStateTest.Done)
             {
                 canInteract = false;
+                goWater = false;
             }
         }
     }

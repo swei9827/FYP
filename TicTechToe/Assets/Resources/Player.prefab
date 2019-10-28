@@ -981,7 +981,7 @@ MonoBehaviour:
   - {fileID: 2831242842766318681}
   - {fileID: 1698814696}
   localObjects:
-  - {fileID: 0}
+  - {fileID: 1008789007120854145}
 --- !u!61 &1231967704766703138
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -33,6 +33,7 @@ public class PlayerSync : MonoBehaviourPun, IPunObservable
                 localObjects[i].SetActive(false);
             }
         }
+
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
