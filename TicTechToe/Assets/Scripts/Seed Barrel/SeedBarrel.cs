@@ -5,15 +5,26 @@ using UnityEngine;
 public class SeedBarrel : MonoBehaviour
 {
 	public Crop crop;
+    public CropAsset asset;
 
-	public IconBox iconBox;
+    public IconBox iconBox;
 
 	public void Interact(Crop c, Tool t, PlayerInteraction player)
 	{
 		if (t == null && !c.HasCrop())
 		{
-			Debug.Log("Taking " + crop.GetName());
-			player.SetCrop(new Crop(crop.asset));
+            if(asset.amount > 0)
+            {
+                Debug.Log("Taking " + crop.GetName());
+                player.SetCrop(new Crop(crop.asset));
+                asset.amount -= 1;
+            }
+            else if(asset.amount <= 0)
+            {
+                Debug.Log("Not enough " + crop.GetName());
+            }
+                      
+            Debug.Log(asset.amount);
         }
 
         if(c.HasCrop())
@@ -26,6 +37,8 @@ public class SeedBarrel : MonoBehaviour
             {
                 Debug.Log("Put back " + crop.GetName());
                 player.SetCrop(new Crop(null));
+                c.asset.amount += 1;
+                Debug.Log(asset.amount);
             }         
         }
 	}

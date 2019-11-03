@@ -11,14 +11,19 @@ public class TutorialManager : MonoBehaviour
     public GameObject[] TutorialPopOut;
     private int popUpIndex;
     private float timer = 1f;     //set timer for player to move
-    bool playerAction = false;    //Set player interact
+    public bool playerAction = false;    //Set player interact
 
     [Header("Movement Collider Settings")]
     public GameObject[] colliderObj;
 
     [Header("Dialogue Character Settings")]
     public GameObject[] dialogueObj;
+    private DialogueManager dialogueManager;
 
+    void Start()
+    {
+        dialogueManager = FindObjectOfType<DialogueManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -90,7 +95,10 @@ public class TutorialManager : MonoBehaviour
                 if (dialogueObj[0].GetComponent<DialogueHolder>().interactNPCJoseph)
                 {
                     playerAction = false;
-                    popUpIndex++;                    
+                    popUpIndex++;
+
+                    //make sure doesnt interact NPC1
+                    dialogueManager.canInteract = false;
                 }
             }
         }
@@ -107,7 +115,7 @@ public class TutorialManager : MonoBehaviour
                 if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane)
                 {
                     playerAction = false;
-                    popUpIndex++;                  
+                    popUpIndex++;
                 }
             }
         }

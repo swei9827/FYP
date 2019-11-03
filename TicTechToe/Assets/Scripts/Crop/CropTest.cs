@@ -68,25 +68,19 @@ public class CropTest : ItemTest
 
     void WaterCrops()
     {
-        if (goWater)
+        if (canInteract && cropState == CropStateTest.Delayed)
         {
-            if (canInteract)
+            if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && PlayerInteraction.canUse)
             {
-                if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && PlayerInteraction.canWater && PlayerInteraction.canWater)
-                {
- 
-                    WaterCan.curFill -= 1;
-                    waterIndicator.SetActive(false);
-                    Debug.Log("Interact");
-                    DataRecord.AddEvents(4, this.name.ToString());
-                    FxManager.PlayMusic("WaterFx");
-                    watered = true;
-                    goWater = false;
-                    canInteract = false;
-                }              
-            }
-        }
-         
+                WaterCan.curFill -= 1;
+                waterIndicator.SetActive(false);
+                Debug.Log("Interact");
+                DataRecord.AddEvents(4, this.name.ToString());
+                FxManager.PlayMusic("WaterFx");
+                watered = true;
+                canInteract = false;
+            }              
+        }   
     }
 
     void CropStateChange()
@@ -141,13 +135,12 @@ public class CropTest : ItemTest
 
     void Harvest()
     {
-        if (canInteract)
+        if (canInteract && cropState == CropStateTest.Done)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space))
             {
                 foreach (Item item in itemDatabase.database)
                 {
-                    Debug.Log(item.itemName);
                     if ((item.itemName + "(Clone)") == this.gameObject.name)
                     {
                         ni.questItemCheck(item);
@@ -168,20 +161,11 @@ public class CropTest : ItemTest
             if (cropState == CropStateTest.Delayed)
             {
                 canInteract = true;
-                Debug.Log(canInteract);
-                goWater = true;
             }
 
             else if(cropState == CropStateTest.Done)
             {               
-                canInteract = true;
-                goWater = false;
-            }
-
-            else
-            {
-                canInteract = true;
-                goWater = false;
+                canInteract = true;                
             }
         }
     }
@@ -193,13 +177,11 @@ public class CropTest : ItemTest
             if (cropState == CropStateTest.Delayed)
             {
                 canInteract = false;
-                goWater = false;
             }
 
             else if (cropState == CropStateTest.Done)
             {
                 canInteract = false;
-                goWater = false;
             }
         }
     }

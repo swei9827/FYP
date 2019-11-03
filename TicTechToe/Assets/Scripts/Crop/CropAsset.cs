@@ -10,6 +10,7 @@ public class CropAsset : ScriptableObject
     public Sprite doneSprite;
 
     public bool seedIsOnGround = false;
+    public int amount;
     public CropsType cropsType;
 }
 

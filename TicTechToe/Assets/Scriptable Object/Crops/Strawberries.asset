@@ -16,4 +16,5 @@ MonoBehaviour:
   deadSprite: {fileID: 21300000, guid: 17e9937a427d0244782678a83a9965bd, type: 3}
   doneSprite: {fileID: 21300000, guid: 4c11bdb4e36a0a144af5982237bd7175, type: 3}
   seedIsOnGround: 1
+  amount: 5
   cropsType: 1
