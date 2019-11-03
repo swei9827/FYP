@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
-using Mirror;
 
-public class Slot : NetworkBehaviour, IDropHandler
+public class Slot : MonoBehaviour, IDropHandler
 {
     public int id;
     private Inventory inv;
