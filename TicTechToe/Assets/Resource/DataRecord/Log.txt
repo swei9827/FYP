@@ -1,19 +1,6 @@
-23/10/2019 12:05:37 PM Log Started
-23/10/2019 12:05:58 PM Player obtained Hoe_AddedStroke
-23/10/2019 12:05:58 PM Player plowed DirtTile (1)
-23/10/2019 12:05:59 PM Player plowed DirtTile (3)
-23/10/2019 12:06:00 PM Player plowed DirtTile (2)
-23/10/2019 12:06:00 PM Player plowed DirtTile (4)
-23/10/2019 12:06:02 PM Player obtained Potatoes_Seed
-23/10/2019 12:06:03 PM Player planted asfas
-23/10/2019 12:06:04 PM Player obtained Pumpkin_Seed
-23/10/2019 12:06:07 PM Player planted asfas
-23/10/2019 12:07:02 PM Player watered Potato(Clone)
-23/10/2019 12:07:07 PM Player watered Pumpkin(Clone)
-23/10/2019 12:07:43 PM Player obtained Watercan
-23/10/2019 12:07:47 PM Player obtained Watercan
-23/10/2019 12:07:49 PM Player obtained Hoe_AddedStroke
-23/10/2019 12:07:51 PM Player obtained Hoe_AddedStroke
-23/10/2019 12:07:54 PM Player obtained Potatoes_Seed
-23/10/2019 12:07:55 PM Player planted asfas
-23/10/2019 12:08:12 PM Player watered Potato(Clone)
+4/11/2019 4:54:10 PM Log Started
+4/11/2019 4:54:50 PM Player obtained Hoe_AddedStroke
+4/11/2019 4:55:16 PM Player obtained Watercan
+4/11/2019 4:55:27 PM Player obtained FishingRod
+4/11/2019 4:55:50 PM Player obtained Hoe_AddedStroke
+4/11/2019 4:55:54 PM Player obtained Hoe_AddedStroke

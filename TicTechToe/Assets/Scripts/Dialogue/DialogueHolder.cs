@@ -6,6 +6,7 @@ public class DialogueHolder : MonoBehaviour
 {
     public string name;
     private DialogueManager dialogueManager;
+    private TutorialManager tutorialManager;
     public string[] dialogueLines;
 
     public bool interactNPCJoseph = true;
@@ -18,45 +19,30 @@ public class DialogueHolder : MonoBehaviour
     private void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
+        tutorialManager = FindObjectOfType<TutorialManager>();
     }
 
     public void Update()
     {
-        //updateDialogue();
-        //checkNPC();     
-    }
 
-    public void checkNPC()
-    {
-        if (dialogueManager.NPCDone && temp == "NPC Uncle Joseph")
-        {
-            updateNPC = false;
-            interactNPCJoseph = false;
-            dialogueManager.NPCDone = false;
-        }
-
-        else if (this.gameObject.name == "NPC Jane")
-        {
-            if (dialogueManager.NPCDone)
-            {
-                interactNPCJane = false;
-                dialogueManager.NPCDone = false;
-            }
-        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (!dialogueManager.dialogueActive)
+                if (!dialogueManager.dialogueActive && !dialogueManager.canInteract)
                 {
                     dialogueManager.npcName = name;
                     dialogueManager.sentences = dialogueLines;
-                    dialogueManager.currentLine = 0;
+
+                    //set dialogue line to 0
+                    dialogueManager.currentLine = -1;
+
                     dialogueManager.showDialogue();
+                    dialogueManager.canInteract = true;
                 }
             }    
         }

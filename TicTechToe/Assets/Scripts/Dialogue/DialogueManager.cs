@@ -18,10 +18,12 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueActive;
     public string npcName;
     public string[] sentences;
+    public int textSpeed;
     public int currentLine;
     public int currentName;
 
     public bool NPCDone = false;
+    public bool canInteract = false;
 
     private void Start()
     {
@@ -34,13 +36,16 @@ public class DialogueManager : MonoBehaviour
 
     void checkStatus()
     {
-        if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
+        if(canInteract)
         {
-            currentLine++;
+            if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
+            {
+                currentLine++;
+            }
         }
-
+           
         //if finish sentences
-        if(currentLine >= sentences.Length)
+        if (currentLine >= sentences.Length)
         {
             dialogueBox.SetActive(false);
             dialogueActive = false;
@@ -48,10 +53,11 @@ public class DialogueManager : MonoBehaviour
             currentLine = 0;
             NPCDone = true;
             PlayerMovement.canMove = true;
+            canInteract = false;
         }
 
         npcNameDisplay.text = npcName;
-        textDisplay.text = sentences[currentLine];        
+        textDisplay.text = sentences[currentLine];
     }
 
     public void showDialogue()
@@ -59,6 +65,15 @@ public class DialogueManager : MonoBehaviour
         dialogueActive = true;
         dialogueBox.SetActive(true);
         PlayerMovement.canMove = false;
+    }
+
+    public IEnumerator Type()
+    {
+        foreach (char letter in sentences[currentLine].ToCharArray())
+        {
+            textDisplay.text += letter;
+            yield return new WaitForSeconds(textSpeed);
+        }
     }
 }
 

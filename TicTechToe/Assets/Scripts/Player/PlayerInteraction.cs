@@ -79,11 +79,10 @@ public class PlayerInteraction : MonoBehaviour
                         refillWater.Interact(tool, this);
                     }
                 }
-
+             
                 checkWater();
             }
         }
-        
     }
 
     public void SetCrop(Crop c)
