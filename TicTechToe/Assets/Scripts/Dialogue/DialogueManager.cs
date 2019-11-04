@@ -58,7 +58,6 @@ public class DialogueManager : MonoBehaviour
 
         npcNameDisplay.text = npcName;
         textDisplay.text = sentences[currentLine];
-        Debug.Log(canInteract);
     }
 
     public void showDialogue()
