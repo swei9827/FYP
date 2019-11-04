@@ -1,11 +1,6 @@
-7/13/2019 4:29:24 PM Log Started
-7/13/2019 4:29:25 PM Player obtained Plow (Tool)
-7/13/2019 4:29:27 PM Player plowed DirtTile
-7/13/2019 4:29:27 PM Player plowed DirtTile (1)
-7/13/2019 4:29:27 PM Player plowed DirtTile (2)
-7/13/2019 4:29:29 PM Player returned Plow (Tool)
-7/13/2019 4:29:36 PM Player obtained Pumpkins
-7/13/2019 4:29:38 PM Player planted Pumpkins
-7/13/2019 4:29:54 PM Player obtained Watering Can (Tool)
-7/13/2019 4:29:56 PM Player returned Watering Can (Tool)
-7/13/2019 4:29:57 PM Player harvested Pumpkins
+4/11/2019 4:54:10 PM Log Started
+4/11/2019 4:54:50 PM Player obtained Hoe_AddedStroke
+4/11/2019 4:55:16 PM Player obtained Watercan
+4/11/2019 4:55:27 PM Player obtained FishingRod
+4/11/2019 4:55:50 PM Player obtained Hoe_AddedStroke
+4/11/2019 4:55:54 PM Player obtained Hoe_AddedStroke
