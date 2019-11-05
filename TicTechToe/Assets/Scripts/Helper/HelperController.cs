@@ -70,6 +70,7 @@ public class HelperController : MonoBehaviour
         {
             StartCoroutine(TriggerTextBox());
 
+            // In game world
             if (interactTarget == null)
             {
                 textDisplay.text = "Follow Me!";
