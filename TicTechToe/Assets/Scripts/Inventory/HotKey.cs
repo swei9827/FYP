@@ -80,7 +80,6 @@ public class HotKey : MonoBehaviour
             }          
         }
 
-        Debug.Log(scrollPosition);
         //select item
         SelectButton();
     }

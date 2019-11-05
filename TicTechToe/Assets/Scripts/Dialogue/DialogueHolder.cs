@@ -51,7 +51,6 @@ public class DialogueHolder : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         temp = this.gameObject.name;
-        Debug.Log(temp);
 
         if (collision.CompareTag("Player"))
         {

@@ -19190,6 +19190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 482577963}
   - component: {fileID: 482577960}
+  - component: {fileID: 482577961}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -19213,6 +19214,20 @@ MonoBehaviour:
   isGame: 1
   isMainMenu: 0
   analyticCanvas: {fileID: 0}
+--- !u!114 &482577961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482577959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383d69dc803163546ba4010cdccbf007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helper: {fileID: 1490933777989697540, guid: d25704942b79942459ce53ceadec42ba, type: 3}
+  inScene: 0
 --- !u!4 &482577963
 Transform:
   m_ObjectHideFlags: 0
@@ -19531,7 +19546,7 @@ PrefabInstance:
     - target: {fileID: 8080095806413186784, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.4999847
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8080095806413186784, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}
