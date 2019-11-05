@@ -60,14 +60,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38679248, g: 0.2823093, b: 0.06020827, a: 0.5882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 12cd7ef47e332e34d8804df9124fb32d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f4529350cf7dc54fb042f4fab62c16b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 0
@@ -85,13 +85,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8770148868206400250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c5cf7fdfb086df42a7d5673481bea92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverOnly: 0
-  localPlayerAuthority: 0
-  m_AssetId: 1353bd0156918964ea02703cb3cd35e1
-  m_SceneId: 0
+  item:
+    id: -1
+    itemName: 
+    stackable: 0
+    marketable: 0
+    price: 0
+    itemDescription: 
+    sprite: {fileID: 0}
+  amount: 0
+  slot: 0
 --- !u!114 &3486389105401256334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08931a7b1ffd8e4381099c879596c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   id: 0

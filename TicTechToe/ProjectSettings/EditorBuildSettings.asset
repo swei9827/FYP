@@ -17,13 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ToBeContinue.unity
     guid: 5a3b2244401889d4ca177d45bccf5b8e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Lab Stuff/Scene/Lab_Login.unity
     guid: 2c394ad2aeab3e4408afc09b4de6d82b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Lab Stuff/Scene/Lab_Lobby.unity
     guid: eac12e4c7087422488b4d91331e8151b
   - enabled: 1
     path: Assets/Scenes/NewTilemap.unity
     guid: 8e7732d642fe91346bc5dd64f5b867c5
+  - enabled: 1
+    path: Assets/Scenes/New Login.unity
+    guid: 9a69272428c79a94881b3eee53fe119c
+  - enabled: 1
+    path: Assets/Scenes/New Lobby.unity
+    guid: 293b70d62be2473449b21136bea55ed0
   m_configObjects: {}

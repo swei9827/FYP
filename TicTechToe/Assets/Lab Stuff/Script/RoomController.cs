@@ -31,6 +31,7 @@ public class RoomController : MonoBehaviourPunCallbacks
 
     public override void OnLeftRoom()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Lab_Lobby");
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Lab_Lobby");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("New Lobby");
     }
 }

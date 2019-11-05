@@ -14,7 +14,7 @@ public class SceneControl : MonoBehaviour
 
     public void PlayButton()
     {
-        SceneManager.LoadScene("Lab_Login");
+        SceneManager.LoadScene("New Login");
         DataRecord.HarvestCount = 0;
         DataRecord.FishCount = 0;
     }
@@ -60,7 +60,7 @@ public class SceneControl : MonoBehaviour
         {
             if(Input.anyKey)
             {
-                SceneManager.LoadScene("Lab_Lobby");
+                SceneManager.LoadScene("New Lobby");
             }
         }
 
@@ -70,7 +70,7 @@ public class SceneControl : MonoBehaviour
             {
                 Destroy(GameObject.FindGameObjectWithTag("NPCManager"));
                 PhotonNetwork.LeaveRoom();
-                SceneManager.LoadScene("Lab_Lobby");
+                SceneManager.LoadScene("New Lobby");
                 RoomController.playerSpawned = false;
             }          
         }
