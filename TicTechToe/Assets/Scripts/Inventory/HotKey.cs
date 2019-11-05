@@ -28,6 +28,7 @@ public class HotKey : MonoBehaviour
     void Start()
     {
         player= FindObjectOfType<PlayerInteraction>();
+        tool = player.GetComponent<Tool>();
     }
 
     // Update is called once per frame
@@ -36,28 +37,43 @@ public class HotKey : MonoBehaviour
         SetItem();
     }
 
+    public void ResetToogle()
+    {
+        tool.isPlow = false;
+        tool.isWaterCan = false;
+        tool.isFishingRod = false;
+        tool.isSeed = false;
+    }
+
     public void SetItem()
     {
         //=================== Keyboard =========================//
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             scrollPosition = 0;
-            tool.toolType = ToolType.Plow;
+            ResetToogle();
+            tool.isPlow = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             scrollPosition = 1;
+            ResetToogle();
+            tool.isWaterCan = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             scrollPosition = 2;
+            ResetToogle();
+            tool.isFishingRod = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             scrollPosition = 3;
+            ResetToogle();
+            tool.isSeed = true;
         }
 
         //====================== MouseScroll ==============================//

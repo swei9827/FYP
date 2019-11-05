@@ -4,7 +4,6 @@ using UnityEngine;
 using System.IO;
 using LitJson;
 using System.Linq;
-using Mirror;
 
 public class ItemDatabase : MonoBehaviour
 {

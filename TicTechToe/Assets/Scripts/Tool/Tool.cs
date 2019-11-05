@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Tool", menuName = "Tool")]
-public class Tool : ScriptableObject
+public class Tool : MonoBehaviour
 {
-	public Sprite sprite;
-	public ToolType toolType;
-}
+	public Sprite[] sprite;
+    public bool isPlow;
+    public bool isWaterCan;
+    public bool isFishingRod;
+    public bool isSeed;
 
-public enum ToolType
-{
-	Plow,
-	Watercan,
-    fishRod
+    public void Start()
+    {
+        isPlow = false;
+        isWaterCan = false;
+        isFishingRod = false;
+        isSeed = false;
+    }
 }

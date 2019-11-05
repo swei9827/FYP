@@ -18,7 +18,7 @@ public class DirtTile : MonoBehaviour
 	public string onGroundLayer;
 	public string normalCropLayer;
 
-	public bool hasCrow = false;
+	//public bool hasCrow = false;
 
     public GameObject[] crops;
     public GameObject temp;
@@ -54,7 +54,7 @@ public class DirtTile : MonoBehaviour
 
 		if (t != null)
 		{
-            if (t.toolType == ToolType.Plow && needsPlowing)
+            if (t.isPlow && needsPlowing)
             {
                 Plow();
             }
@@ -70,11 +70,6 @@ public class DirtTile : MonoBehaviour
 
 			return;
 		}
-
-		//if (crop.HasCrop())
-		//{
-		//	HarvestCrop(player);
-		//}
 	}
 
     void PlantCrop(Crop c, PlayerInteraction player)
