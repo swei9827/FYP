@@ -21,7 +21,6 @@ public class HotKey : MonoBehaviour
     //Tool assets
     public Tool tool;
 
-
     private PlayerInteraction player;
 
     // Start is called before the first frame update
