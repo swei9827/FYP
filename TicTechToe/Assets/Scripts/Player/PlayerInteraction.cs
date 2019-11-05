@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class PlayerInteraction : MonoBehaviour
 
 	[SerializeField]
 	private Crop crop;
-	[SerializeField]
+	
 	private Tool tool;
 
     public static bool canUse = false;
@@ -23,10 +24,10 @@ public class PlayerInteraction : MonoBehaviour
 
     public bool canInteract = true;
 
-
     private void Start()
     {
         waterBar.gameObject.SetActive(false);
+        tool = this.gameObject.GetComponent<Tool>();
     }
 
     private void Update()
@@ -42,18 +43,6 @@ public class PlayerInteraction : MonoBehaviour
                 if (dirt != null)
                 {
                     dirt.Interact(crop, tool, this);
-                }
-
-                TableTile table = target.GetComponent<TableTile>();
-                if (table != null)
-                {
-                    table.Interact(crop, tool, this);
-                }
-
-                SeedBarrel barrel = target.GetComponent<SeedBarrel>();
-                if (barrel != null)
-                {
-                    barrel.Interact(crop, tool, this);
                 }
 
                 TrashCan trashcan = target.GetComponent<TrashCan>();
@@ -106,17 +95,17 @@ public class PlayerInteraction : MonoBehaviour
 		}
         else if (tool != null)
 		{
-            if (tool.toolType == ToolType.Watercan)
+            if (tool.isWaterCan == true)
             {
                 canUse = true;
                 waterBar.gameObject.SetActive(true);
-                iconBox.SetIcon(tool.sprite);             
+                iconBox.SetIcon(tool.sprite[2]);
             }
-            else if(tool.toolType != ToolType.Watercan)
+            else if(tool.isWaterCan == false)
             {
                 canUse = false;
                 waterBar.gameObject.SetActive(false);
-                iconBox.SetIcon(tool.sprite);            
+                iconBox.SetIcon(tool.sprite[0]);            
             }       
         }
         else
@@ -138,12 +127,6 @@ public class PlayerInteraction : MonoBehaviour
 
 		target = col.gameObject;
 
-		SeedBarrel barrel = target.GetComponent<SeedBarrel>();
-		if (barrel != null)
-		{
-			barrel.Select();
-		}
-
 		SpriteRenderer[] srs = target.GetComponentsInChildren<SpriteRenderer>();
 		foreach (SpriteRenderer sr in srs)
 		{
@@ -161,13 +144,7 @@ public class PlayerInteraction : MonoBehaviour
 	}
 
 	void Deselect()
-	{
-		SeedBarrel barrel = target.GetComponent<SeedBarrel>();
-		if (barrel != null)
-		{
-			barrel.DeSelect();
-		}
-
+    { 
 		SpriteRenderer[] srs = target.GetComponentsInChildren<SpriteRenderer>();
 		foreach (SpriteRenderer sr in srs)
 		{

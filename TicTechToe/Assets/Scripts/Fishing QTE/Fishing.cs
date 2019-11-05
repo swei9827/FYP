@@ -65,7 +65,7 @@ public class Fishing : MonoBehaviour
         }
         else if (t != null)
         {
-            if (t.toolType == ToolType.fishRod)
+            if (t.isFishingRod)
             {
                 if(canInteract)
                 {

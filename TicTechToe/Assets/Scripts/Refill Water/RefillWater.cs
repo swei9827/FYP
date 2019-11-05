@@ -13,7 +13,7 @@ public class RefillWater : MonoBehaviour
         }
         else if (t != null)
         {
-            if (t.toolType == ToolType.Watercan)
+            if (t.isWaterCan)
             {              
                 fillWater();
                 Debug.Log("Full!");
