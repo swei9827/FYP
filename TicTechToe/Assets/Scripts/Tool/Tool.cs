@@ -18,3 +18,10 @@ public class Tool : MonoBehaviour
         isSeed = false;
     }
 }
+
+[System.Serializable]
+class Seed
+{
+    public CropAsset crop;
+    public int amount;
+}
