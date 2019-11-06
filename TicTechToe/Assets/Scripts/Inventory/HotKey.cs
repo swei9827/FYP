@@ -7,11 +7,14 @@ using UnityEngine.EventSystems;
 public class HotKey : MonoBehaviour
 {
     [Header("Button Settings")]
-    public Transform slots;
+    public Transform[] slots;
     public int scrollPosition;
 
     bool isClick = false;
     bool canSelect = true;
+
+    [SerializeField]
+    private GameObject SeedBar;
 
     [Header("Sprite Settings")]
     public Sprite disableSprite;
@@ -23,11 +26,13 @@ public class HotKey : MonoBehaviour
 
     private PlayerInteraction player;
 
+    public Button[] button;
+
     // Start is called before the first frame update
     void Start()
     {
         player= FindObjectOfType<PlayerInteraction>();
-        tool = player.GetComponent<Tool>();
+        tool = this.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Tool>();
     }
 
     // Update is called once per frame
@@ -42,6 +47,11 @@ public class HotKey : MonoBehaviour
         tool.isWaterCan = false;
         tool.isFishingRod = false;
         tool.isSeed = false;
+        foreach(Seed s in tool.seeds)
+        {
+            s.isSelected = false;
+        }
+        SeedBar.SetActive(false);
     }
 
     public void SetItem()
@@ -59,6 +69,7 @@ public class HotKey : MonoBehaviour
             scrollPosition = 1;
             ResetToogle();
             tool.isWaterCan = true;
+            //+
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -73,6 +84,7 @@ public class HotKey : MonoBehaviour
             scrollPosition = 3;
             ResetToogle();
             tool.isSeed = true;
+            SeedBar.SetActive(true);
         }
 
         //====================== MouseScroll ==============================//
@@ -95,19 +107,36 @@ public class HotKey : MonoBehaviour
             }          
         }
 
+        if(button[0].gameObject == EventSystem.current.currentSelectedGameObject)
+        {
+            tool.seeds[0].isSelected = true;
+        }
+        else if (button[1].gameObject == EventSystem.current.currentSelectedGameObject)
+        {
+            tool.seeds[1].isSelected = true;
+        }
+        else if (button[0].gameObject == EventSystem.current.currentSelectedGameObject)
+        {
+            tool.seeds[1].isSelected = true;
+        }
+
         //select item
         SelectButton();
     }
 
     void SelectButton()
     {
-        if(slots.name == "Slots (" + scrollPosition + ")")
+        for(int i=0; i<slots.Length; i++)
         {
-            slots.GetComponent<Button>().image.sprite = pressSprite;
+            if (slots[i].name == "Slots (" + scrollPosition + ")")
+            {
+                slots[i].GetComponent<Button>().image.sprite = pressSprite;
+            }
+            else
+            {
+                slots[i].GetComponent<Button>().image.sprite = disableSprite;
+            }
         }
-        else
-        {
-            slots.GetComponent<Button>().image.sprite = disableSprite;
-        }
+        
     }
 }

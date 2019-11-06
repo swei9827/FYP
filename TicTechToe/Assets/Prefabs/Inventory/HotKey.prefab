@@ -235,7 +235,6 @@ GameObject:
   - component: {fileID: 693127993086986418}
   - component: {fileID: 8570309954067002066}
   - component: {fileID: 1237799507049961304}
-  - component: {fileID: 5821497191716152729}
   m_Layer: 5
   m_Name: Slots (3)
   m_TagString: Untagged
@@ -344,23 +343,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &5821497191716152729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5821497191716152728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73cab1e671a907549a18e1a80c3154fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slots: {fileID: 1001801549303942428}
-  scrollPosition: 0
-  disableSprite: {fileID: 21300000, guid: ab86214fef094a246a8cd9ac8c7ba345, type: 3}
-  pressSprite: {fileID: 21300000, guid: 1e6c27270aa32264fb96eea7d4167bf6, type: 3}
-  tool: {fileID: 11400000, guid: 24174c85bdd8630408132c6526cb1423, type: 2}
 --- !u!1 &6060598639432340909
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +355,6 @@ GameObject:
   - component: {fileID: 3802698494984926442}
   - component: {fileID: 4562254338451066580}
   - component: {fileID: 4121717572631912931}
-  - component: {fileID: 6060598639432340910}
   m_Layer: 5
   m_Name: Slots (1)
   m_TagString: Untagged
@@ -483,23 +464,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &6060598639432340910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6060598639432340909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73cab1e671a907549a18e1a80c3154fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slots: {fileID: 5772303643730786994}
-  scrollPosition: 0
-  disableSprite: {fileID: 21300000, guid: ab86214fef094a246a8cd9ac8c7ba345, type: 3}
-  pressSprite: {fileID: 21300000, guid: 1e6c27270aa32264fb96eea7d4167bf6, type: 3}
-  tool: {fileID: 11400000, guid: 951543bd7a79b7c48a92286713eb2777, type: 2}
 --- !u!1 &6433671556683149602
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +476,6 @@ GameObject:
   - component: {fileID: 7973436562149233049}
   - component: {fileID: 6833803689646026803}
   - component: {fileID: 9105106471201790163}
-  - component: {fileID: 6433671556683149603}
   m_Layer: 5
   m_Name: Slots (2)
   m_TagString: Untagged
@@ -622,23 +585,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &6433671556683149603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6433671556683149602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73cab1e671a907549a18e1a80c3154fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slots: {fileID: 4246968448481007369}
-  scrollPosition: 0
-  disableSprite: {fileID: 21300000, guid: ab86214fef094a246a8cd9ac8c7ba345, type: 3}
-  pressSprite: {fileID: 21300000, guid: 1e6c27270aa32264fb96eea7d4167bf6, type: 3}
-  tool: {fileID: 11400000, guid: 305735baab886ab46966b7abcdb23354, type: 2}
 --- !u!1 &6885332630661848756
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +597,6 @@ GameObject:
   - component: {fileID: 8986458225727718904}
   - component: {fileID: 3352519202499386135}
   - component: {fileID: 711433188975860977}
-  - component: {fileID: 6885332630661848757}
   m_Layer: 5
   m_Name: Slots (0)
   m_TagString: Untagged
@@ -761,23 +706,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &6885332630661848757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6885332630661848756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73cab1e671a907549a18e1a80c3154fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slots: {fileID: 6396635829105903033}
-  scrollPosition: 0
-  disableSprite: {fileID: 21300000, guid: ab86214fef094a246a8cd9ac8c7ba345, type: 3}
-  pressSprite: {fileID: 21300000, guid: 1e6c27270aa32264fb96eea7d4167bf6, type: 3}
-  tool: {fileID: 11400000, guid: 24174c85bdd8630408132c6526cb1423, type: 2}
 --- !u!1 &7445769962007354896
 GameObject:
   m_ObjectHideFlags: 0
