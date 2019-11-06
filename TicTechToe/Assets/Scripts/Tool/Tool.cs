@@ -9,6 +9,7 @@ public class Tool : MonoBehaviour
     public bool isWaterCan;
     public bool isFishingRod;
     public bool isSeed;
+    public Seed[] seeds;
 
     public void Start()
     {
@@ -20,8 +21,9 @@ public class Tool : MonoBehaviour
 }
 
 [System.Serializable]
-class Seed
+public class Seed
 {
-    public CropAsset crop;
+    public bool isSelected = false;
+    public Crop crop;
     public int amount;
 }

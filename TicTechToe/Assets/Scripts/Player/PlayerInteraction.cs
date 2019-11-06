@@ -42,14 +42,22 @@ public class PlayerInteraction : MonoBehaviour
                 DirtTile dirt = target.GetComponent<DirtTile>();
                 if (dirt != null)
                 {
+                    for (int i = 0; i < tool.seeds.Length; i++)
+                    {
+                        if (tool.seeds[i].isSelected)
+                        {
+                            crop = tool.seeds[i].crop;                            
+                        }
+                    }
                     dirt.Interact(crop, tool, this);
                 }
+                crop = null;
 
                 TrashCan trashcan = target.GetComponent<TrashCan>();
                 {
                     if (trashcan)
                     {
-                        trashcan.Interact(crop, tool, this);
+                        //trashcan.Interact(crop, tool, this);
                     }
                 }
 

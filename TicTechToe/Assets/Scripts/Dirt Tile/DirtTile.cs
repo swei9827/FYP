@@ -33,36 +33,36 @@ public class DirtTile : MonoBehaviour
 
 	public void Interact (Crop c, Tool t, PlayerInteraction player)
 	{
-		if (c.HasCrop())
-		{
+        if (c.HasCrop())
+        {
             if (!needsPlowing)
             {
-                if(temp == null)
+                if (temp == null)
                 {
                     PlantCrop(c, player);
                     addPlant = false;
-                    DataRecord.AddEvents(3, c.GetName());             
-                }  
+                    DataRecord.AddEvents(3, c.GetName());
+                }
             }
 
             else
             {
                 Debug.Log("Ground needs plowing!");
             }
-			return;
-		}
+            return;
+        }
 
-		if (t != null)
+        if (t != null)
 		{
             if (t.isPlow && needsPlowing)
             {
                 Plow();
             }
-            //else if (t.toolType == ToolType.Watercan && crop.state == CropState.Planted)
+            //else if (t.isWaterCan && crop.state == CropState.Planted)
             //{
-            //	WaterCrop();
+            //	WaterCrops();
             //}
-            //else if (t.toolType == ToolType.Watercan && cropStateTest == CropStateTest.Delayed)
+            //else if (t.isWaterCan && crop.state == CropStateTest.Delayed)
             //{
             //    WaterCrops();
             //    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(4, this.name.ToString());

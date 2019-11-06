@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Crop", menuName = "Item/Crop")]
+[System.Serializable]
 public class CropAsset : ScriptableObject
 {
     public Sprite seedSprite;

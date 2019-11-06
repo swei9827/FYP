@@ -1,1 +1,25 @@
-6/11/2019 1:50:52 AM Log Started
+6/11/2019 8:38:03 AM Log Started
+6/11/2019 8:38:19 AM Player plowed DirtTile
+6/11/2019 8:38:20 AM Player plowed DirtTile (1)
+6/11/2019 8:38:20 AM Player plowed DirtTile (3)
+6/11/2019 8:38:20 AM Player plowed DirtTile (4)
+6/11/2019 8:38:21 AM Player plowed DirtTile (5)
+6/11/2019 8:38:21 AM Player plowed DirtTile (2)
+6/11/2019 8:38:28 AM Player obtained UISprite
+6/11/2019 8:38:28 AM Player planted Strawberries
+6/11/2019 8:38:29 AM Player planted Strawberries
+6/11/2019 8:38:31 AM Player planted Strawberries
+6/11/2019 8:38:32 AM Player planted Strawberries
+6/11/2019 8:38:33 AM Player planted Strawberries
+6/11/2019 8:38:37 AM Player planted Potatoes
+6/11/2019 8:38:56 AM Player plowed DirtTile (1)
+6/11/2019 8:38:56 AM Player plowed DirtTile (2)
+6/11/2019 8:38:57 AM Player plowed DirtTile (4)
+6/11/2019 8:38:58 AM Player plowed DirtTile (5)
+6/11/2019 8:39:00 AM Player plowed DirtTile (3)
+6/11/2019 8:39:09 AM Player obtained UISprite
+6/11/2019 8:39:09 AM Player planted Strawberries
+6/11/2019 8:39:11 AM Player planted Strawberries
+6/11/2019 8:39:12 AM Player planted Strawberries
+6/11/2019 8:39:14 AM Player planted Potatoes
+6/11/2019 8:39:15 AM Player planted Potatoes
