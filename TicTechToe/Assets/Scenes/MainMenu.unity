@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dayCycleLength: 10
   currentCycleTime: 0
-  currentPhase: 0
+  currentPhase: 2
   hoursPerDay: 24
   dawnTimeOffset: 3
   worldTimeHour: 0
