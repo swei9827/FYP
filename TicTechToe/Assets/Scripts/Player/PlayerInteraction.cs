@@ -51,7 +51,7 @@ public class PlayerInteraction : MonoBehaviour
                     }
                     dirt.Interact(crop, tool, this);
                 }
-                crop = null;
+                //crop = null;
 
                 TrashCan trashcan = target.GetComponent<TrashCan>();
                 {

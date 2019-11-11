@@ -3584,11 +3584,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: IconBoxCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7129334512322656865, guid: 9c09250944df8b140b25b0b336ad4cca,
-        type: 3}
-      propertyPath: playerIconBox
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7129334512322656869, guid: 9c09250944df8b140b25b0b336ad4cca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3694,6 +3689,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7129334512322656864, guid: 9c09250944df8b140b25b0b336ad4cca,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129334512322656865, guid: 9c09250944df8b140b25b0b336ad4cca,
+        type: 3}
+      propertyPath: playerIconBox
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7129334512905853371, guid: 9c09250944df8b140b25b0b336ad4cca,
         type: 3}
       propertyPath: m_Color.g
@@ -3703,11 +3708,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.9858491
-      objectReference: {fileID: 0}
-    - target: {fileID: 7129334512322656864, guid: 9c09250944df8b140b25b0b336ad4cca,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c09250944df8b140b25b0b336ad4cca, type: 3}
@@ -3736,6 +3736,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1359342245384281705}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: tool
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tool
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tool
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tool
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2470655482219579692, guid: 093b03ef8ffc92243af9ee53581a9e70,
         type: 3}
       propertyPath: m_Name
@@ -3975,22 +3991,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: tool
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: tool
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: tool
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: tool
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 093b03ef8ffc92243af9ee53581a9e70, type: 3}
