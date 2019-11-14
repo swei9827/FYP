@@ -16,6 +16,10 @@ public class TutorialManager : MonoBehaviour
     [Header("Movement Collider Settings")]
     public GameObject[] colliderObj;
 
+    [Header("Gold UI Settings")]
+    public GameObject goldUI;
+    public GameObject receivedGold;
+
     [Header("Dialogue Character Settings")]
     public GameObject[] dialogueObj;
     private DialogueManager dialogueManager;
@@ -105,6 +109,25 @@ public class TutorialManager : MonoBehaviour
 
         //interact with NPC 2
         else if (popUpIndex == 3)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                //NPC Jane
+                if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane)
+                {
+                    playerAction = false;
+                    goldUI.SetActive(true);
+                    popUpIndex++;
+                }
+                dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane = false;
+            }
+        }
+
+        // Pop Out GoldUI
+        else if (popUpIndex == 4)
         {
             if (playerAction)
             {

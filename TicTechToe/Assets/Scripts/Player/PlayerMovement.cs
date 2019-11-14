@@ -27,7 +27,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         canMove = true;
-        keyboardMove = true;
+        keyboardMove = false;
+        mouseMove = true;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }

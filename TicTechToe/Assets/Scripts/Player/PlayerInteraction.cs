@@ -19,8 +19,8 @@ public class PlayerInteraction : MonoBehaviour
 	
 	private Tool tool;
 
-    public static bool canUse = false;
-    public static bool canWater = false;
+    //public static bool canUse = false;
+    //public static bool canWater = false;
 
     public bool canInteract = true;
 
@@ -50,8 +50,8 @@ public class PlayerInteraction : MonoBehaviour
                         }
                     }
                     dirt.Interact(crop, tool, this);
+                    crop = new Crop(null);
                 }
-                //crop = null;
 
                 TrashCan trashcan = target.GetComponent<TrashCan>();
                 {
@@ -76,8 +76,6 @@ public class PlayerInteraction : MonoBehaviour
                         refillWater.Interact(tool, this);
                     }
                 }
-             
-                checkWater();
             }
         }
     }
@@ -98,28 +96,26 @@ public class PlayerInteraction : MonoBehaviour
 	{
 		if (crop.HasCrop())
 		{
-            waterBar.gameObject.SetActive(false);
+            //waterBar.gameObject.SetActive(false);
             iconBox.SetIcon(crop.GetCropSprite());
 		}
         else if (tool != null)
 		{
-            if (tool.isWaterCan == true)
+            if (tool.isWaterCan)
             {
-                canUse = true;
-                waterBar.gameObject.SetActive(true);
-                iconBox.SetIcon(tool.sprite[2]);
+                //canUse = true;
+               // waterBar.gameObject.SetActive(true);
             }
-            else if(tool.isWaterCan == false)
+            else if(!tool.isWaterCan)
             {
-                canUse = false;
-                waterBar.gameObject.SetActive(false);
-                iconBox.SetIcon(tool.sprite[0]);            
+                //canUse = false;
+               // waterBar.gameObject.SetActive(false);                      
             }       
         }
         else
 		{
-            canUse = false;
-            waterBar.gameObject.SetActive(false);
+           // canUse = false;
+           // waterBar.gameObject.SetActive(false);
             iconBox.Close();
 		}
 
@@ -160,16 +156,15 @@ public class PlayerInteraction : MonoBehaviour
 		}
 	}
 
-    void checkWater()
-    {
-        if (WaterCan.curFill == 0)
-        {
-            canWater = false;
-        }
-        else
-        {
-            canWater = true;
-        }
-
-    }
+    //void checkWater()
+    //{
+    //    if (WaterCan.curFill == 0)
+    //    {
+    //        canWater = false;
+    //    }
+    //    else
+    //    {
+    //        canWater = true;
+    //    }
+    //}
 }

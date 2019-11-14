@@ -962,7 +962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   interactKey1: 32
-  interactKey2: 323
+  interactKey2: 324
   iconBox: {fileID: 5024578654607640088}
   waterBar: {fileID: 4527713183779586229}
   crop:
@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2100,7 +2100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2340,7 +2340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2905,6 +2905,11 @@ MonoBehaviour:
   - {fileID: 3065284250400215596}
   - {fileID: 2117605807887072828}
   - {fileID: 253395562463069039}
+  crop:
+    asset: {fileID: 0}
+    state: 0
+  iconBox: {fileID: 5024578654607640088}
+  waterBar: {fileID: 4527713183779586229}
 --- !u!1 &7232759084653972711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3535,11 +3540,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7645765128199919916, guid: 9ded0285582b8d54d8a8640fe15c5b90,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ded0285582b8d54d8a8640fe15c5b90, type: 3}
 --- !u!224 &1137506538151422745 stripped
@@ -3736,31 +3736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1359342245384281705}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: tool
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: tool
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: tool
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: tool
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2470655482219579692, guid: 093b03ef8ffc92243af9ee53581a9e70,
         type: 3}
       propertyPath: m_Name
       value: HotKey
-      objectReference: {fileID: 0}
-    - target: {fileID: 2470655482219579692, guid: 093b03ef8ffc92243af9ee53581a9e70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9124799417504835434, guid: 093b03ef8ffc92243af9ee53581a9e70,
         type: 3}
@@ -3990,6 +3969,26 @@ PrefabInstance:
     - target: {fileID: 1001801549303942428, guid: 093b03ef8ffc92243af9ee53581a9e70,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237799507049961304, guid: 093b03ef8ffc92243af9ee53581a9e70,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121717572631912931, guid: 093b03ef8ffc92243af9ee53581a9e70,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105106471201790163, guid: 093b03ef8ffc92243af9ee53581a9e70,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 711433188975860977, guid: 093b03ef8ffc92243af9ee53581a9e70,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

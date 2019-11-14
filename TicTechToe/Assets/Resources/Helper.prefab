@@ -204,6 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTarget: {fileID: 0}
   speed: 5
+  highlights: {fileID: 2017694903655764615, guid: 4180e6a395099c64fba1d25d50bff263,
+    type: 3}
   iconBoxAnim: {fileID: 8463977637662304975}
   textDisplay: {fileID: 1552076923601319910}
 --- !u!1 &2167637546465508584

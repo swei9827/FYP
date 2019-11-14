@@ -13,6 +13,9 @@ public class HelperController : MonoBehaviour
     public float speed;
     private bool isMoving = false;
 
+    [Header("Helper Settings")]
+    private GameObject highlights;
+
     //Player movement
     private Vector3 target;
     private Vector2 direction;
@@ -32,14 +35,27 @@ public class HelperController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        highlights = GameObject.Find("Square Highlights");
     }
 
     // Update is called once per frame
     void Update()
     {
         Interaction();
-        ClickMove();
+        KeyboardMove();
+        //ClickMove();
     } 
+
+    void KeyboardMove()
+    {
+        direction = Vector2.zero;
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.y = Input.GetAxisRaw("Vertical");
+
+        transform.Translate(direction * speed * Time.deltaTime);
+        UpdateAnimation();
+        UpdateSFX();
+    }
 
     void ClickMove()
     {
@@ -66,7 +82,7 @@ public class HelperController : MonoBehaviour
 
     void Interaction()
     {
-        if(Input.GetMouseButtonDown(1))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(TriggerTextBox());
 
@@ -83,6 +99,11 @@ public class HelperController : MonoBehaviour
             {
                 textDisplay.text = "Interact this!";
             }                 
+        }
+
+        else if(Input.GetKeyDown(KeyCode.Z))
+        {
+            Debug.Log("Hello");
         }
     }
 

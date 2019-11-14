@@ -35,6 +35,7 @@ public class CropTest : ItemTest
     {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         itemDatabase = GameObject.Find("Inventory").GetComponent<ItemDatabase>();
+        dirtTile = GameObject.FindGameObjectWithTag("DirtTile").GetComponent<DirtTile>();
     }
     void Start()
     {
@@ -70,7 +71,7 @@ public class CropTest : ItemTest
     {
         if (canInteract && cropState == CropStateTest.Delayed)
         {
-            if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && PlayerInteraction.canUse)
+            if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && HotKey.canUse && HotKey.canWater)
             {
                 WaterCan.curFill -= 1;
                 waterIndicator.SetActive(false);
@@ -88,7 +89,7 @@ public class CropTest : ItemTest
        if(planted && cropState == CropStateTest.Seed)
         {
             cropState = CropStateTest.Planted;
-            planted = false;
+            //planted = false;
         }
 
        if(cropState == CropStateTest.Planted)
