@@ -20,6 +20,5 @@ public class ShopRenderer : MonoBehaviour
         itemAdd = add;
         itemRemove = remove;
         itemCount.text = count.ToString();
-
     }
 }

@@ -13,9 +13,6 @@ public class HelperController : MonoBehaviour
     public float speed;
     private bool isMoving = false;
 
-    [Header("Helper Settings")]
-    private GameObject highlights;
-
     //Player movement
     private Vector3 target;
     private Vector2 direction;
@@ -29,13 +26,13 @@ public class HelperController : MonoBehaviour
 
     [Header("UI Settings")]
     public TextMeshProUGUI textDisplay;
-    
+
+   
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        highlights = GameObject.Find("Square Highlights");
     }
 
     // Update is called once per frame
@@ -101,9 +98,15 @@ public class HelperController : MonoBehaviour
             }                 
         }
 
-        else if(Input.GetKeyDown(KeyCode.Z))
-        {
-            Debug.Log("Hello");
+        else if(Input.GetKeyDown(KeyCode.I))
+        {            
+            UIManager.Instance.ToggleHighlight();
+
+            if (UIManager.Instance.triggerHighlight)
+            {
+                StartCoroutine(TriggerTextBox());
+                textDisplay.text = "Check Your Inventory!";
+            }
         }
     }
 
