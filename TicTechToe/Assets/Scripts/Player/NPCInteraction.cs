@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class NPCInteraction : MonoBehaviour
 {
@@ -9,9 +10,9 @@ public class NPCInteraction : MonoBehaviour
 
     NPCManager npcmanager;
 
-    Text Title;
-    Text Detail;
-    Text Reward;
+    TextMeshProUGUI Title;
+    TextMeshProUGUI Detail;
+    TextMeshProUGUI Reward;
     bool Accepted;
 
     // Quest system
@@ -130,8 +131,8 @@ public class NPCInteraction : MonoBehaviour
             {
                 GameObject temp = Instantiate(questIndicatorContentPrefab, questIndicatorContent.transform.position, Quaternion.identity);
                 temp.transform.SetParent(questIndicatorContent.transform);
-                temp.GetComponent<Text>().text = q.name;
-                temp.transform.GetChild(0).GetComponent<Text>().text = q.detail;
+                temp.GetComponent<TextMeshProUGUI>().text = q.name;
+                temp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = q.detail;
                 spawnedIndicator.Add(temp);
             }
         }
@@ -203,9 +204,9 @@ public class NPCInteraction : MonoBehaviour
         PlayerMovement.canMove = false;
         questUI.SetActive(true);
 
-        Title = GameObject.FindGameObjectWithTag("QuestTitle").GetComponent<Text>();
-        Detail = GameObject.FindGameObjectWithTag("QuestDetail").GetComponent<Text>();
-        Reward = GameObject.FindGameObjectWithTag("QuestReward").GetComponent<Text>();
+        Title = GameObject.FindGameObjectWithTag("QuestTitle").GetComponent<TextMeshProUGUI>();
+        Detail = GameObject.FindGameObjectWithTag("QuestDetail").GetComponent<TextMeshProUGUI>();
+        Reward = GameObject.FindGameObjectWithTag("QuestReward").GetComponent<TextMeshProUGUI>();
 
         q = info;
         Title.text = q.name;
@@ -263,8 +264,8 @@ public class NPCInteraction : MonoBehaviour
     {
         PlayerMovement.canMove = false;
         tradeUI.SetActive(true);
-        Title = GameObject.FindGameObjectWithTag("TradeTitle").GetComponent<Text>();
-        Detail = GameObject.FindGameObjectWithTag("TradeDetail").GetComponent<Text>();
+        Title = GameObject.FindGameObjectWithTag("TradeTitle").GetComponent<TextMeshProUGUI>();
+        Detail = GameObject.FindGameObjectWithTag("TradeDetail").GetComponent<TextMeshProUGUI>();
         Title.text = t.name;
         Detail.text = t.detail;
         t.accepted = true;
