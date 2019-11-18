@@ -1,2 +1,50 @@
-18/11/2019 5:57:26 PM Log Started
-18/11/2019 5:57:51 PM Player obtained Hoe_AddedStroke
+19/11/2019 6:12:49 AM Log Started
+19/11/2019 6:13:05 AM Player obtained Hoe_AddedStroke
+19/11/2019 6:13:17 AM Player plowed DirtTile
+19/11/2019 6:13:17 AM Player plowed DirtTile (7)
+19/11/2019 6:13:17 AM Player plowed DirtTile (1)
+19/11/2019 6:13:18 AM Player plowed DirtTile (2)
+19/11/2019 6:13:18 AM Player plowed DirtTile (3)
+19/11/2019 6:13:18 AM Player plowed DirtTile (4)
+19/11/2019 6:13:18 AM Player plowed DirtTile (5)
+19/11/2019 6:13:19 AM Player plowed DirtTile (8)
+19/11/2019 6:13:20 AM Player plowed DirtTile (11)
+19/11/2019 6:13:24 AM Player planted Potatoes
+19/11/2019 6:13:26 AM Player planted Pumpkins
+19/11/2019 6:13:28 AM Player planted Pumpkins
+19/11/2019 6:13:30 AM Player planted Pumpkins
+19/11/2019 6:13:32 AM Player planted Pumpkins
+19/11/2019 6:13:34 AM Player planted Pumpkins
+19/11/2019 6:13:41 AM Player watered Potato(Clone)
+19/11/2019 6:13:42 AM Player watered Pumpkin(Clone)
+19/11/2019 6:13:42 AM Player watered Pumpkin(Clone)
+19/11/2019 6:13:42 AM Player watered Pumpkin(Clone)
+19/11/2019 6:13:43 AM Player watered Pumpkin(Clone)
+19/11/2019 6:13:43 AM Player watered Pumpkin(Clone)
+19/11/2019 6:13:51 AM Player planted Strawberries
+19/11/2019 6:13:54 AM Player planted Potatoes
+19/11/2019 6:13:55 AM Player planted Pumpkins
+19/11/2019 6:14:22 AM Player planted Potatoes
+19/11/2019 6:14:49 AM Player planted Potatoes
+19/11/2019 6:14:59 AM Player watered Strawberry(Clone)
+19/11/2019 6:14:59 AM Player watered Potato(Clone)
+19/11/2019 6:15:00 AM Player watered Potato(Clone)
+19/11/2019 6:15:06 AM Player watered Pumpkin(Clone)
+19/11/2019 6:15:07 AM Player watered Potato(Clone)
+19/11/2019 6:15:15 AM Player plowed DirtTile (12)
+19/11/2019 6:15:15 AM Player plowed DirtTile (10)
+19/11/2019 6:15:16 AM Player plowed DirtTile (9)
+19/11/2019 6:15:18 AM Player plowed DirtTile (13)
+19/11/2019 6:15:20 AM Player plowed DirtTile (6)
+19/11/2019 6:15:23 AM Player planted Strawberries
+19/11/2019 6:15:24 AM Player planted Strawberries
+19/11/2019 6:15:27 AM Player planted Pumpkins
+19/11/2019 6:15:30 AM Player planted Pumpkins
+19/11/2019 6:15:33 AM Player planted Pumpkins
+19/11/2019 6:15:34 AM Player planted Pumpkins
+19/11/2019 6:15:35 AM Player planted Pumpkins
+19/11/2019 6:15:37 AM Player planted Pumpkins
+19/11/2019 6:15:39 AM Player planted Pumpkins
+19/11/2019 6:15:41 AM Player planted Pumpkins
+19/11/2019 6:15:44 AM Player planted Pumpkins
+19/11/2019 6:15:47 AM Player planted Pumpkins

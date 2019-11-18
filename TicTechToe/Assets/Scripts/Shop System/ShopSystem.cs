@@ -50,7 +50,7 @@ public class ShopSystem : MonoBehaviour
     {
         for(int i = 0; i < slotAmount; i++)
         {
-            itemObject.Add(new Item());
+            //itemObject.Add(new Item());
             slots.Add(Instantiate(shopSlot));
             slots[i].transform.SetParent(contentListPanel.transform,false);
         }
