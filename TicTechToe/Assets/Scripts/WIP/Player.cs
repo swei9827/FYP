@@ -6,6 +6,11 @@ public class Player : Character
     private int money;
     public Inventory inventory;
 
+    public void Awake()
+    {
+        money = 50;
+    }
+
     public int getMoney()
     {
         return money;

@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     void clickMovement()
     {
         // Mouse Movement
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             direction = new Vector2(target.x - transform.position.x, target.y - transform.position.y);
