@@ -71,7 +71,7 @@ public class CropTest : ItemTest
     {
         if (canInteract && cropState == CropStateTest.Delayed)
         {
-            if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && HotKey.canUse && HotKey.canWater)
+            if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && HotKey.canUse && HotKey.canWater)
             {
                 WaterCan.curFill -= 1;
                 waterIndicator.SetActive(false);
@@ -138,7 +138,7 @@ public class CropTest : ItemTest
     {
         if (canInteract && cropState == CropStateTest.Done)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
             {
                 foreach (Item item in itemDatabase.database)
                 {

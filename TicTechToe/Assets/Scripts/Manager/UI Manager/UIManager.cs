@@ -15,6 +15,11 @@ public class UIManager : MonoBehaviour
 
     //Highlight
     public GameObject highlights;
+    public GameObject slotPanel;
+    public GameObject Hotbar;
+    public GameObject[] hotkey;
+    GameObject temp;
+
     public bool triggerHighlight;
 
     private void Awake()
@@ -25,12 +30,19 @@ public class UIManager : MonoBehaviour
         }
 
         //Initialize Canvas
-        canvas = GameObject.Find("Canvas").transform;
+        canvas = GameObject.Find("Canvas").transform;   
     }
 
     private void Start()
     {
         highlights.GetComponent<ParticleSystem>().Stop();
+
+        //Debug.Log(slotPanel);
+        //for (int i = 0; i <= 4; i++)
+        //{
+        //    hotkey[i] = slotPanel.transform.GetChild(i).gameObject;
+        //    //hotkey.Add(slotPanel.transform.GetChild(i).gameObject);
+        //}
     }
 
     public Vector2 WorldToCanvasPoint(Vector3 position)
@@ -53,21 +65,6 @@ public class UIManager : MonoBehaviour
         return (new Vector2(viewportPoint.x * canvasSize.x, viewportPoint.y * canvasSize.y) - (canvasSize / 2));
     }
 
-    //public void ToggleInventory()
-    //{
-    //    inventory.gameObject.SetActive(!inventory.gameObject.activeInHierarchy);
-
-    //    if(!inventory.gameObject.activeSelf)
-    //    {
-    //        PlayerMovement.canMove = true;
-    //    }
-    //    else
-    //    {
-    //        PlayerMovement.canMove = false;
-    //        //InventoryController.InventoryInstance.showToolTip(string.Empty,string.Empty);
-    //    }
-    //}
-
     public void ToggleHighlight()
     {
         triggerHighlight = !triggerHighlight;
@@ -87,7 +84,6 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        //ToggleHighlight();
         //if(Input.GetKeyDown(KeyCode.I))
         //{
         //    //if didnt play fishing QTE

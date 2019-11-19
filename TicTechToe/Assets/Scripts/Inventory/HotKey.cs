@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class HotKey : MonoBehaviour
 {
+    private HelperController helper;
+
     [Header("Button Settings")]
     public Transform[] slots;
     public int scrollPosition;
@@ -19,6 +21,9 @@ public class HotKey : MonoBehaviour
     [Header("Sprite Settings")]
     public Sprite disableSprite;
     public Sprite pressSprite;
+
+    public Sprite[] seedPressSprite;
+    public Sprite[] seedDisableSprite;
 
     [Header("Tools Settings")]
     //Tool assets
@@ -69,33 +74,6 @@ public class HotKey : MonoBehaviour
 
     public void SetItem()
     {
-        //=================== Keyboard =========================//
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            scrollPosition = 0;
-            ResetToogle();
-            EventSystem.current.SetSelectedGameObject(null);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            scrollPosition = 1;
-            ResetToogle();
-            EventSystem.current.SetSelectedGameObject(null);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            scrollPosition = 2;
-            ResetToogle();
-            EventSystem.current.SetSelectedGameObject(null);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            scrollPosition = 3;
-        }
-
         //====================== MouseScroll ==============================//
 
         if (Input.mouseScrollDelta.y >= 1)
@@ -117,8 +95,36 @@ public class HotKey : MonoBehaviour
             if (scrollPosition >= 3)
             {
                 scrollPosition = 3;
-            }
-                   
+            }                  
+        }
+
+        //===================== MouseClick =============================//
+        if(slots[0].gameObject == EventSystem.current.currentSelectedGameObject)
+        {
+            scrollPosition = 0;
+            ResetToogle();
+            //EventSystem.current.SetSelectedGameObject(null);         
+        }
+
+        if (slots[1].gameObject == EventSystem.current.currentSelectedGameObject)
+        {
+            scrollPosition = 1;
+            ResetToogle();
+            //EventSystem.current.SetSelectedGameObject(null);
+        }
+
+        if (slots[2].gameObject == EventSystem.current.currentSelectedGameObject)
+        {
+            scrollPosition = 2;
+            ResetToogle();
+            //EventSystem.current.SetSelectedGameObject(null);
+        }
+
+        if (slots[3].gameObject == EventSystem.current.currentSelectedGameObject)
+        {
+            scrollPosition = 3;
+            ResetToogle();
+            //EventSystem.current.SetSelectedGameObject(null);
         }
 
         if (scrollPosition == 0)
@@ -150,22 +156,27 @@ public class HotKey : MonoBehaviour
             tool.seeds[0].isSelected = true;
             crop = tool.seeds[0].crop;
             iconBox.SetIcon(crop.asset.seedSprite);
+            seedSelectButton();
         }
         else if (button[1].gameObject == EventSystem.current.currentSelectedGameObject)
-        {
+        {          
             tool.seeds[1].isSelected = true;
             crop = tool.seeds[1].crop;
             iconBox.SetIcon(crop.asset.seedSprite);
+            seedSelectButton();
         }
         else if (button[2].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             tool.seeds[2].isSelected = true;
             crop = tool.seeds[2].crop;
             iconBox.SetIcon(crop.asset.seedSprite);
+            seedSelectButton();
+            //EventSystem.current.SetSelectedGameObject(null);
         }
 
         //select item
         SelectButton();
+       
     }
 
     void CheckWaterStatus()
@@ -203,7 +214,24 @@ public class HotKey : MonoBehaviour
             {
                 slots[i].GetComponent<Button>().image.sprite = disableSprite;
             }
-        }
+        } 
         
+       
+    }
+
+    void seedSelectButton()
+    {
+        for (int i = 0; i < button.Length; i++)
+        {
+            if (button[i].gameObject == EventSystem.current.currentSelectedGameObject)
+            {
+                button[i].gameObject.GetComponent<Button>().image.sprite = seedPressSprite[i];
+                slots[3].transform.GetChild(0).gameObject.GetComponent<Image>().sprite = crop.asset.seedSprite;
+            }
+            else
+            {
+                button[i].gameObject.GetComponent<Button>().image.sprite = seedDisableSprite[i];
+            }
+        }
     }
 }

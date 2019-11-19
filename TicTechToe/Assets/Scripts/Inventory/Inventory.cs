@@ -82,12 +82,6 @@ public class Inventory : MonoBehaviour
                     inventoryPanel.SetActive(true);
                     PlayerMovement.canMove = false;
                 }
-
-                //off highlight
-                if(UIManager.Instance.triggerHighlight)
-                {
-                    UIManager.Instance.ToggleHighlight();
-                }
             }
         }     
     }
