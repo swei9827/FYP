@@ -38,7 +38,7 @@ public class DialogueManager : MonoBehaviour
     {
         if(canInteract)
         {
-            if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
+            if (dialogueActive && Input.GetKeyDown(KeyCode.Mouse0))
             {
                 currentLine++;
             }

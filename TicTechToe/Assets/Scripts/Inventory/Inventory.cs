@@ -46,21 +46,6 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.I))
-        //{
-        //    if (inventoryPanel.activeSelf)
-        //    {
-        //        inventoryPanel.SetActive(false);
-        //        PlayerMovement.canMove = true;
-        //        tooltip.SetActive(false);
-
-        //    }
-        //    else
-        //    {
-        //        inventoryPanel.SetActive(true);
-        //        PlayerMovement.canMove = false;
-        //    }
-        //}
         popInventory();
     }
 

@@ -7,43 +7,30 @@ public class OpenShop : MonoBehaviour
     public GameObject shop;
     bool openShop = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        shop.SetActive(false);
-    }
-
     // Update is called once per frame
     void Update()
     {
-        onOffShop();
+
     }
 
     public void OnClick()
     {
+        //openShop = false;
+        shop.SetActive(false);
+        PlayerMovement.canMove = true;
         openShop = false;
     }
 
-    void onOffShop()
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (openShop)
+        if (collision.collider.CompareTag("Player"))
         {
-            shop.SetActive(true);
-            PlayerMovement.canMove = false;
-        }
-        else
-        {
-            shop.SetActive(false);
-            PlayerMovement.canMove = true;
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            if (Input.GetMouseButtonDown(0))
+            Debug.Log("Collide!");
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                Debug.Log("Press!");
+                shop.SetActive(true);
+                PlayerMovement.canMove = false;
                 openShop = true;
             }
         }

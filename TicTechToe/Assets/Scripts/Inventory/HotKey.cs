@@ -12,7 +12,6 @@ public class HotKey : MonoBehaviour
     public Transform[] slots;
     public int scrollPosition;
 
-    bool isClick = false;
     bool canSelect = true;
 
     [SerializeField]
@@ -103,28 +102,28 @@ public class HotKey : MonoBehaviour
         {
             scrollPosition = 0;
             ResetToogle();
-            //EventSystem.current.SetSelectedGameObject(null);         
+            EventSystem.current.SetSelectedGameObject(null);         
         }
 
         if (slots[1].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             scrollPosition = 1;
             ResetToogle();
-            //EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(null);
         }
 
         if (slots[2].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             scrollPosition = 2;
             ResetToogle();
-            //EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(null);
         }
 
         if (slots[3].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             scrollPosition = 3;
             ResetToogle();
-            //EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(null);
         }
 
         if (scrollPosition == 0)
@@ -154,20 +153,29 @@ public class HotKey : MonoBehaviour
         if (button[0].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             tool.seeds[0].isSelected = true;
+            tool.seeds[1].isSelected = false;
+            tool.seeds[2].isSelected = false;
+
             crop = tool.seeds[0].crop;
             iconBox.SetIcon(crop.asset.seedSprite);
             seedSelectButton();
         }
         else if (button[1].gameObject == EventSystem.current.currentSelectedGameObject)
-        {          
+        {
+            tool.seeds[0].isSelected = false;
             tool.seeds[1].isSelected = true;
+            tool.seeds[2].isSelected = false;
+
             crop = tool.seeds[1].crop;
             iconBox.SetIcon(crop.asset.seedSprite);
             seedSelectButton();
         }
         else if (button[2].gameObject == EventSystem.current.currentSelectedGameObject)
         {
+            tool.seeds[0].isSelected = false;
+            tool.seeds[1].isSelected = false;
             tool.seeds[2].isSelected = true;
+
             crop = tool.seeds[2].crop;
             iconBox.SetIcon(crop.asset.seedSprite);
             seedSelectButton();
@@ -192,7 +200,7 @@ public class HotKey : MonoBehaviour
             waterBar.gameObject.SetActive(false);
         }
 
-        if (WaterCan.curFill == 0)
+        if (WaterCan.curFill <= 0)
         {
             canWater = false;
         }
