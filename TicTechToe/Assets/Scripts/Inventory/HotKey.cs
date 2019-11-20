@@ -69,6 +69,8 @@ public class HotKey : MonoBehaviour
         SeedBar.SetActive(false);
         waterBar.gameObject.SetActive(false);
         canUse = false;
+
+        //EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void SetItem()
@@ -98,33 +100,34 @@ public class HotKey : MonoBehaviour
         }
 
         //===================== MouseClick =============================//
-        if(slots[0].gameObject == EventSystem.current.currentSelectedGameObject)
+        if (slots[0].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             scrollPosition = 0;
             ResetToogle();
-            EventSystem.current.SetSelectedGameObject(null);         
+            EventSystem.current.SetSelectedGameObject(null);
         }
 
-        if (slots[1].gameObject == EventSystem.current.currentSelectedGameObject)
+        else if (slots[1].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             scrollPosition = 1;
             ResetToogle();
             EventSystem.current.SetSelectedGameObject(null);
         }
 
-        if (slots[2].gameObject == EventSystem.current.currentSelectedGameObject)
+        else if (slots[2].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             scrollPosition = 2;
             ResetToogle();
             EventSystem.current.SetSelectedGameObject(null);
         }
 
-        if (slots[3].gameObject == EventSystem.current.currentSelectedGameObject)
+        else if (slots[3].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             scrollPosition = 3;
             ResetToogle();
             EventSystem.current.SetSelectedGameObject(null);
         }
+       
 
         if (scrollPosition == 0)
         {
@@ -179,12 +182,10 @@ public class HotKey : MonoBehaviour
             crop = tool.seeds[2].crop;
             iconBox.SetIcon(crop.asset.seedSprite);
             seedSelectButton();
-            //EventSystem.current.SetSelectedGameObject(null);
         }
 
         //select item
-        SelectButton();
-       
+        SelectButton();      
     }
 
     void CheckWaterStatus()
@@ -222,9 +223,7 @@ public class HotKey : MonoBehaviour
             {
                 slots[i].GetComponent<Button>().image.sprite = disableSprite;
             }
-        } 
-        
-       
+        }        
     }
 
     void seedSelectButton()
