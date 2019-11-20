@@ -14,6 +14,7 @@ public class DayNight : MonoBehaviour
 
     public TextMeshProUGUI dayText;
     public TextMeshProUGUI timeText;
+    public TextMeshProUGUI moneyText;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,11 @@ public class DayNight : MonoBehaviour
     {
         CountMinutes();
         SetTime();
+    }
+
+    void OnMoneyChanged()
+    {
+        //moneyText = ;
     }
 
     void SetTime()

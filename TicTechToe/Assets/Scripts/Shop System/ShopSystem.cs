@@ -24,24 +24,24 @@ public class ShopSystem : MonoBehaviour
 
     void Start()
     {
-        //moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getMoney();
+        moneyAmount = Player.LocalPlayerInstance.GetComponent<Player>().getMoney();
         slotAmount = shopItemList.Capacity;
         InstantiateShop();
     }
 
-    //private void OnEnable()
-    //{
-    //    moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getMoney();
-    //}
+    private void onenable()
+    {
+        moneyAmount = Player.LocalPlayerInstance.GetComponent<Player>().getMoney();
+    }
 
-    //private void OnDisable()
-    //{
-    //    GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().setMoney(moneyAmount);
-    //}
+    private void OnDisable()
+    {
+        Player.LocalPlayerInstance.GetComponent<Player>().setMoney(moneyAmount);
+    }
 
     void Update()
     {
-        //currentMoney.text = moneyAmount.ToString();
+        currentMoney.text = moneyAmount.ToString();
     }
 
     void InstantiateShop()
@@ -67,7 +67,13 @@ public class ShopSystem : MonoBehaviour
         if (moneyAmount >= finalCost)
         {
             moneyAmount -= finalCost;
-            //GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().AddCropsItem(itemObject, CropsTypeTest,)
+            foreach(Seed sd in Player.LocalPlayerInstance.GetComponent<Tool>().seeds)
+            {
+                if (sd.seedName == shopRenderer.itemName.text)
+                {
+                    sd.amount += int.Parse(shopRenderer.itemCount.text);
+                }
+            }            
         }
         else
         {
