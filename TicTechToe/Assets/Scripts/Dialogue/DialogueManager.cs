@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue Prefab")]
     public GameObject dialogueBox;
     public GameObject nameBox;
+    public GameObject continueButton;
 
     [Header("Dialogue Text")]
     public TextMeshProUGUI textDisplay;
@@ -17,8 +19,14 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue Settings")]
     public bool dialogueActive;
     public string npcName;
+
+    [TextArea (3,10)]
     public string[] sentences;
-    public int textSpeed;
+
+    [TextArea(3, 10)]
+    public string[] sentences2;
+
+    public float textSpeed;
     public int currentLine;
     public int currentName;
 
@@ -27,37 +35,45 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+
     }
 
     private void Update()
     {
-        checkStatus();
+        //if (textDisplay.text == sentences[currentLine])
+        //{
+        //    continueButton.SetActive(true);
+        //}
+
+        updateStatus();
     }
 
-    void checkStatus()
+    public void updateStatus()
     {
-        if(canInteract)
+        if (canInteract)
         {
             if (dialogueActive && Input.GetKeyDown(KeyCode.Mouse0))
             {
                 currentLine++;
             }
         }
-           
+
         //if finish sentences
         if (currentLine >= sentences.Length)
         {
             dialogueBox.SetActive(false);
-            dialogueActive = false;
 
             currentLine = 0;
+
+            dialogueActive = false;
+            canInteract = false;
+
             NPCDone = true;
             PlayerMovement.canMove = true;
-            canInteract = false;
         }
 
         npcNameDisplay.text = npcName;
-        textDisplay.text = sentences[currentLine];
+        textDisplay.text = sentences[currentLine];    
     }
 
     public void showDialogue()
@@ -67,15 +83,28 @@ public class DialogueManager : MonoBehaviour
         PlayerMovement.canMove = false;
     }
 
-    public IEnumerator Type()
-    {
+    IEnumerator Type()
+    {      
         foreach (char letter in sentences[currentLine].ToCharArray())
         {
-            textDisplay.text += letter;
+            textDisplay.text += letter;          
             yield return new WaitForSeconds(textSpeed);
         }
     }
 }
+
+/////for couroutine
+//if (dialogueActive)
+//{
+//    //if (continueButton.activeInHierarchy && Input.GetKeyDown(KeyCode.Mouse0))
+//    //{
+//    //    continueButton.SetActive(false);
+//    //    currentLine++;
+//    //    //textDisplay.text = "";
+//    //    //StartCoroutine(Type());
+//    //}
+//}
+
 
 //public float typingSpeed;
 //private int index;

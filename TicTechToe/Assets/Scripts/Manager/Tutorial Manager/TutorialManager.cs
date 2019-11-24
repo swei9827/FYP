@@ -23,6 +23,7 @@ public class TutorialManager : MonoBehaviour
     [Header("Dialogue Character Settings")]
     public GameObject[] dialogueObj;
     private DialogueManager dialogueManager;
+    public GameObject dialogueBox;
 
     void Start()
     {
@@ -32,7 +33,7 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             playerAction = true;
         }
@@ -51,7 +52,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        //First Tutorial
+        //Start Tutorial 
         if (popUpIndex == 0)
         {
             if (playerAction)
@@ -67,7 +68,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        //player movement
+        //Tutorial 1 - player movement
         if (popUpIndex == 1)
         {
             if (playerAction)
@@ -87,7 +88,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        //interact with NPC 1
+        //Tutorial 2 - interact with NPC 1
         else if (popUpIndex == 2)
         {
             if (playerAction)
@@ -107,7 +108,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        //interact with NPC 2
+        //Tutorial 3- interact with NPC 2
         else if (popUpIndex == 3)
         {
             if (playerAction)
@@ -115,31 +116,74 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                //NPC Jane
-                if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane)
+                //Pop Out GoldUI
+                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 4)
                 {
                     playerAction = false;
-                    goldUI.SetActive(true);
                     popUpIndex++;
+                    dialogueBox.SetActive(false);
                 }
-                dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane = false;
             }
         }
 
-        // Pop Out GoldUI
+        // Tutorial 4- Pop Out GoldUI
         else if (popUpIndex == 4)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                dialogueBox.SetActive(true);
+                Time.timeScale = 1;
+
+                //Pop out received money
+                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 7)
+                {
+                    playerAction = false;
+                    dialogueBox.SetActive(false);
+                    popUpIndex++;
+                }
+            }
+        }
+
+        // Tutorial 5- Pop Out received Money
+        else if (popUpIndex == 5)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                dialogueBox.SetActive(true);
+                Time.timeScale = 1;
+
+                //Pop Out direction to shop
+                if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane)
+                {
+                    playerAction = false;
+                    dialogueBox.SetActive(false);
+                    popUpIndex++;
+
+                    //make sure doesnt interact NPC2
+                    dialogueManager.canInteract = false;
+                }
+            }
+        }
+
+        // Tutorial 5- Pop Out received Money
+        else if (popUpIndex == 6)
         {
             if (playerAction)
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                //NPC Jane
-                if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane)
-                {
-                    playerAction = false;
-                    popUpIndex++;
-                }
+                ////Pop Out direction to shop
+                //if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane)
+                //{
+                //    playerAction = false;
+                //    popUpIndex++;
+
+                //    //make sure doesnt interact NPC2
+                //    dialogueManager.canInteract = false;
+                //}
             }
         }
 

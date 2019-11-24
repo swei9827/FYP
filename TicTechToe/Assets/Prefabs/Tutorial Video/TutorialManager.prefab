@@ -274,9 +274,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  playerAction: 0
   colliderObj:
   - {fileID: 99203052780396254}
   - {fileID: 99203053431960595}
+  goldUI: {fileID: 0}
+  receivedGold: {fileID: 0}
   dialogueObj:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 421782333160482209, guid: 9b0746cf8049b4f41b9c313e23927326, type: 3}
+  - {fileID: 4022346243171249773, guid: 383cfe81789733e46814d007535f6e7c, type: 3}
+  dialogueBox: {fileID: 0}

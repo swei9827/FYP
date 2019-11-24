@@ -7,6 +7,8 @@ public class DialogueHolder : MonoBehaviour
     public string name;
     private DialogueManager dialogueManager;
     private TutorialManager tutorialManager;
+
+    [TextArea(3, 10)]
     public string[] dialogueLines;
 
     public bool interactNPCJoseph = true;

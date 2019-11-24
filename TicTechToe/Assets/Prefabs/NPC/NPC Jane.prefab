@@ -130,8 +130,16 @@ MonoBehaviour:
   - It can be challenging to take over this lovely farm of Uncle Jason.
   - "But don\u2019t sweat it, I\u2019m more than happy to help you out!"
   - As of now, why not we start with some basics to get you going?
+  - Oh...before we begin, I think we might need to get some seeds
+  - Uncle Jason asked me to hand you this before he left
+  - Uncle Jason said this might come in handy for you.
+  - "Now you can go over to Harry\u2019s Store and buy some seeds."
+  - If you take a walk down the road from here, you will see it fairly soon.
+  dialogueLines2: []
   interactNPCJoseph: 0
   interactNPCJane: 0
+  option1: 1
+  option2: 0
 --- !u!210 &8932371
 SortingGroup:
   m_ObjectHideFlags: 0
