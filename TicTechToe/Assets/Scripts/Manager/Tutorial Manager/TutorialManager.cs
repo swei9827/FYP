@@ -23,11 +23,13 @@ public class TutorialManager : MonoBehaviour
     [Header("Dialogue Character Settings")]
     public GameObject[] dialogueObj;
     private DialogueManager dialogueManager;
+    private DialogueHolder dialogueHolder;
     public GameObject dialogueBox;
 
     void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
+        dialogueHolder = FindObjectOfType<DialogueHolder>();
     }
 
     // Update is called once per frame

@@ -32,6 +32,7 @@ public class DialogueManager : MonoBehaviour
 
     public bool NPCDone = false;
     public bool canInteract = false;
+    public bool interactable = true;
 
     private void Start()
     {
@@ -50,14 +51,17 @@ public class DialogueManager : MonoBehaviour
 
     public void updateStatus()
     {
-        if (canInteract)
+        if(interactable)
         {
-            if (dialogueActive && Input.GetKeyDown(KeyCode.Mouse0))
+            if (canInteract)
             {
-                currentLine++;
+                if (dialogueActive && Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    currentLine++;
+                }
             }
         }
-
+     
         //if finish sentences
         if (currentLine >= sentences.Length)
         {

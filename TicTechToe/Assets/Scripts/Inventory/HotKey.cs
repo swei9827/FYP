@@ -9,7 +9,7 @@ public class HotKey : MonoBehaviour
     private HelperController helper;
 
     [Header("Button Settings")]
-    public Transform[] slots;
+    public Button[] slots;
     public int scrollPosition;
 
     bool canSelect = true;
@@ -45,7 +45,8 @@ public class HotKey : MonoBehaviour
     void Start()
     {
         player= FindObjectOfType<PlayerInteraction>();
-        tool = this.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Tool>();
+        //tool = this.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Tool>();
+        tool = this.gameObject.GetComponent<Tool>();
         waterBar.gameObject.SetActive(false);
     }
 

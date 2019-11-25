@@ -7,6 +7,7 @@ public class DialogueHolder : MonoBehaviour
     public string name;
     private DialogueManager dialogueManager;
     private TutorialManager tutorialManager;
+    private OpenShop openShop;
 
     [TextArea(3, 10)]
     public string[] dialogueLines;
@@ -15,13 +16,15 @@ public class DialogueHolder : MonoBehaviour
     public bool interactNPCJane = true;
 
     bool updateNPC = false;
+    bool interacting = true;
 
-    string temp;
+    public string temp;
 
     private void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
         tutorialManager = FindObjectOfType<TutorialManager>();
+        openShop = FindObjectOfType<OpenShop>();
     }
 
     public void Update()
@@ -33,20 +36,23 @@ public class DialogueHolder : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if(dialogueManager.interactable)
             {
-                if (!dialogueManager.dialogueActive && !dialogueManager.canInteract)
+                if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    dialogueManager.npcName = name;
-                    dialogueManager.sentences = dialogueLines;
+                    if (!dialogueManager.dialogueActive && !dialogueManager.canInteract)
+                    {
+                        dialogueManager.npcName = name;
+                        dialogueManager.sentences = dialogueLines;
 
-                    //set dialogue line to 0
-                    dialogueManager.currentLine = -1;
+                        //set dialogue line to 0
+                        dialogueManager.currentLine = -1;
 
-                    dialogueManager.showDialogue();
-                    dialogueManager.canInteract = true;
+                        dialogueManager.showDialogue();
+                        dialogueManager.canInteract = true;
+                    }
                 }
-            }    
+            }          
         }
     }
 
@@ -74,8 +80,17 @@ public class DialogueHolder : MonoBehaviour
                     temp = null;
                 }
             }
+            else if (temp == "NPC Henry")
+            {
+                if (dialogueManager.NPCDone)
+                {
+                    dialogueManager.NPCDone = false;
+                    temp = null;
+                    dialogueManager.interactable = false;
+                }  
+            }
         }
-    }
+    }   
 }
 
 //public bool firstChat = false;

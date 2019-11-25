@@ -96,7 +96,7 @@ public class NPCInteraction : MonoBehaviour
             tradeUIPrompt(currentTrader);
         }
 
-        if (interactable && Input.GetKeyDown(KeyCode.Mouse1) && npcmanager.currentNpc != null)
+        if (interactable && Input.GetKeyDown(KeyCode.Mouse0) && npcmanager.currentNpc != null)
         {
             resetIndicator();
 
