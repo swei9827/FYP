@@ -105,28 +105,28 @@ public class HotKey : MonoBehaviour
         {
             scrollPosition = 0;
             ResetToogle();
-            EventSystem.current.SetSelectedGameObject(null);
+            //EventSystem.current.SetSelectedGameObject(null);
         }
 
         else if (slots[1].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             scrollPosition = 1;
             ResetToogle();
-            EventSystem.current.SetSelectedGameObject(null);
+            //EventSystem.current.SetSelectedGameObject(null);
         }
 
         else if (slots[2].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             scrollPosition = 2;
             ResetToogle();
-            EventSystem.current.SetSelectedGameObject(null);
+           // EventSystem.current.SetSelectedGameObject(null);
         }
 
         else if (slots[3].gameObject == EventSystem.current.currentSelectedGameObject)
         {
             scrollPosition = 3;
             ResetToogle();
-            EventSystem.current.SetSelectedGameObject(null);
+            //EventSystem.current.SetSelectedGameObject(null);
         }
        
 
