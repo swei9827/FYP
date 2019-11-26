@@ -53,30 +53,30 @@ public class DialogueHolder : MonoBehaviour
         if(option1)
         {
             dialogueManager.sentences = dialogueLines;
-            option2 = false;
-            option3 = false;
-            option4 = false;
+            //option2 = false;
+            //option3 = false;
+            //option4 = false;
         }
         else if(option2)
         {
             dialogueManager.sentences = dialogueLines2;
-            option1 = false;
-            option3 = false;
-            option4 = false;
+            //option1 = false;
+            //option3 = false;
+            //option4 = false;
         }
         else if(option3)
         {
             dialogueManager.sentences = dialogueLines3;
-            option1 = false;
-            option2 = false;
-            option4 = false;
+            //option1 = false;
+            //option2 = false;
+            //option4 = false;
         }
         if(option4)
         {
             dialogueManager.sentences = dialogueLines4;
-            option1 = false;
-            option2 = false;
-            option3 = false;
+            //option1 = false;
+            //option2 = false;
+            //option3 = false;
         }
     }
 
@@ -147,6 +147,11 @@ public class DialogueHolder : MonoBehaviour
                         temp = null;
                         option3 = false;
                         option4 = true;
+                    }
+                    else if(option4)
+                    {
+                        dialogueManager.NPCDone = false;
+                        temp = null;
                     }
                 }
             }

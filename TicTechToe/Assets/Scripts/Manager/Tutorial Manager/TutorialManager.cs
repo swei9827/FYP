@@ -267,8 +267,8 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
                 dialogueObj[1].GetComponent<DialogueHolder>().option2 = true;
+                dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
 
                 //Pop Out Plow
                 if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane2)
@@ -286,6 +286,9 @@ public class TutorialManager : MonoBehaviour
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
+
+                dialogueObj[1].GetComponent<DialogueHolder>().option4 = true;
+                dialogueObj[1].GetComponent<DialogueHolder>().option2 = false;
 
                 //Pop out Plant
                 int counter = 0;
@@ -339,9 +342,10 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                //int counter = 0;
+                dialogueObj[1].GetComponent<DialogueHolder>().option3 = true;
+                dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
 
-                if(GameObject.FindGameObjectWithTag("Crops").GetComponent<CropTest>().watered)
+                if (GameObject.FindGameObjectWithTag("Crops").GetComponent<CropTest>().watered)
                 {
                     playerAction = false;
                     popUpIndex++;
@@ -354,8 +358,6 @@ public class TutorialManager : MonoBehaviour
         {
             if (playerAction)
             {
-                dialogueObj[1].GetComponent<DialogueHolder>().option3 = true;
-
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;          
             }

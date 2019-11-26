@@ -164,16 +164,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d002a6713c47f41b721b43083dc7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Henry
+  name: Harry
   dialogueLines:
   - Hey there!
   - "Welcome to Harry\u2019s Store!"
   - How may I help you?
+  dialogueLines2: []
+  dialogueLines3: []
+  dialogueLines4: []
   interactNPCJoseph: 0
   interactNPCJane: 0
-  isJane: 0
-  isJoseph: 0
-  isHenry: 0
+  interactNPCJane2: 0
+  interactNPCJane3: 0
+  option1: 1
+  option2: 0
+  option3: 0
+  option4: 0
   temp: 
 --- !u!210 &2222123433259879634
 SortingGroup:
