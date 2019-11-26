@@ -16,20 +16,24 @@ public class TutorialManager : MonoBehaviour
     [Header("Movement Collider Settings")]
     public GameObject[] colliderObj;
 
-    [Header("Gold UI Settings")]
-    public GameObject goldUI;
-    public GameObject receivedGold;
-
     [Header("Dialogue Character Settings")]
     public GameObject[] dialogueObj;
     private DialogueManager dialogueManager;
     private DialogueHolder dialogueHolder;
     public GameObject dialogueBox;
 
+    [Header("Shop Settings")]
+    public GameObject shop;
+    public GameObject PlusButtonHighlights;
+    public GameObject BuyButtonHighlights;
+    private UpdatableInt updateText;
+    GameObject temphighlights;
+
     void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
         dialogueHolder = FindObjectOfType<DialogueHolder>();
+        updateText = FindObjectOfType<UpdatableInt>();        
     }
 
     // Update is called once per frame
@@ -41,6 +45,8 @@ public class TutorialManager : MonoBehaviour
         }
 
         ChangeTutorial();
+
+        Debug.Log(updateText.temp);
     }
 
     void ChangeTutorial()
@@ -159,17 +165,17 @@ public class TutorialManager : MonoBehaviour
                 //Pop Out direction to shop
                 if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane)
                 {
-                    playerAction = false;
                     dialogueBox.SetActive(false);
+                    playerAction = false;
                     popUpIndex++;
 
                     //make sure doesnt interact NPC2
-                    dialogueManager.canInteract = false;
+                    dialogueManager.canInteract = false;                              
                 }
             }
         }
 
-        // Tutorial 5- Pop Out received Money
+        // Tutorial 5- Pop Out direction To Shop
         else if (popUpIndex == 6)
         {
             if (playerAction)
@@ -177,15 +183,73 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                ////Pop Out direction to shop
-                //if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane)
-                //{
-                //    playerAction = false;
-                //    popUpIndex++;
+                //pop out Add event
+                if (shop.activeInHierarchy)
+                {
+                    //Instantiate highlights
+                    temphighlights = Instantiate(PlusButtonHighlights, shop.transform.GetChild(0).GetChild(3).GetChild(0).GetChild(0));
+                    temphighlights.transform.SetSiblingIndex(3);
 
-                //    //make sure doesnt interact NPC2
-                //    dialogueManager.canInteract = false;
-                //}
+                    playerAction = false;
+                    popUpIndex++;                   
+                }
+            }
+        }
+
+        // Tutorial 7- Pop Out Add event
+        else if (popUpIndex == 7)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+              
+                //pop out click buy button
+                if(updateText.temp == 5)
+                {
+                    //destroy button highlight
+                    Destroy(temphighlights);
+
+                    //Instantiate buy button highlights
+                    temphighlights = Instantiate(PlusButtonHighlights, shop.transform.GetChild(0).GetChild(3).GetChild(0).GetChild(0));
+                    temphighlights.transform.SetSiblingIndex(6);
+
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        // Tutorial 8- Pop Out click buy button
+        else if (popUpIndex == 8)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                if (updateText.temp == 5)
+                {
+                    //destroy button highlight
+                    Destroy(temphighlights);
+
+                    //Instantiate buy button highlights
+                    temphighlights = Instantiate(BuyButtonHighlights, shop.transform.GetChild(0).GetChild(3).GetChild(0).GetChild(0));
+                    temphighlights.transform.SetSiblingIndex(6);
+
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        // Tutorial 8- Pop Out click buy button
+        else if (popUpIndex == 9)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
             }
         }
 

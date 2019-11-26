@@ -217,16 +217,16 @@ public class NPCManager : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
-    {
-        foreach (NPCPopUp n in npcList)
-        {
-            Vector2 pos = n.NPC.transform.position;
-            pos.x += n.offsetX;
-            pos.y += n.offsetY;
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawWireSphere(n.NPC.transform.position, n.distance);
-            Gizmos.DrawWireCube(pos, new Vector2(.5f, .5f));
-        }
-    }
+    //void OnDrawGizmos()
+    //{
+    //    foreach (NPCPopUp n in npcList)
+    //    {
+    //        Vector2 pos = n.NPC.transform.position;
+    //        pos.x += n.offsetX;
+    //        pos.y += n.offsetY;
+    //        Gizmos.color = Color.magenta;
+    //        Gizmos.DrawWireSphere(n.NPC.transform.position, n.distance);
+    //        Gizmos.DrawWireCube(pos, new Vector2(.5f, .5f));
+    //    }
+    //}
 }

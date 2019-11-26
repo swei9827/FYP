@@ -15,7 +15,7 @@ public class RoomController : MonoBehaviourPunCallbacks
         if (PhotonNetwork.CurrentRoom == null)
         {
             Debug.Log("Is not in the room, returning back to Lobby");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Lab_Lobby");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("New Lobby");
             return;
         }
 

@@ -7,6 +7,7 @@ public class UpdatableInt : MonoBehaviour
 {
     private Text textComponent;
     private string content;
+    public int temp;
 
     private void Start()
     {
@@ -15,14 +16,14 @@ public class UpdatableInt : MonoBehaviour
 
     public void Plus()
     {
-        int temp = int.Parse(textComponent.text);
+        temp = int.Parse(textComponent.text);
         temp++;
         textComponent.text = temp.ToString();
     }
 
     public void Minus()
     {
-        int temp = int.Parse(textComponent.text);
+        temp = int.Parse(textComponent.text);
         if (temp > 1)
         {
             temp--;

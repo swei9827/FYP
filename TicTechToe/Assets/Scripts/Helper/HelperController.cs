@@ -35,7 +35,9 @@ public class HelperController : MonoBehaviour
     [Header("Highlight")]
     public GameObject Highlights;
     GameObject temphighlights;
+
     public bool inventoryHighlights = false;
+    public bool questHighlights = false;
     public bool hoeHighlights = false;
     public bool waterHighlights = false;
     public bool fishRodHighlights = false;
@@ -43,6 +45,7 @@ public class HelperController : MonoBehaviour
 
     private HotKey Hotkey;
     private GameObject InventoryIcon;
+    private GameObject QuestIcon;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +55,7 @@ public class HelperController : MonoBehaviour
 
         //Inventory Icon
         InventoryIcon = GameObject.Find("Inventory Icon");
+        QuestIcon = GameObject.Find("Quest Icon");
 
         //Intialize HotKey
         Hotkey = FindObjectOfType<HotKey>();
@@ -135,6 +139,7 @@ public class HelperController : MonoBehaviour
             inventoryHighlights = !inventoryHighlights;
 
             //make sure other boolean are off
+            questHighlights = false;
             hoeHighlights = false;
             waterHighlights = false;
             fishRodHighlights = false;
@@ -159,7 +164,29 @@ public class HelperController : MonoBehaviour
         //Quests
         else if (Input.GetKeyDown(KeyCode.Tab))
         {
+            questHighlights = !questHighlights;
 
+            //make sure other boolean are off
+            hoeHighlights = false;
+            inventoryHighlights = false;
+            waterHighlights = false;
+            fishRodHighlights = false;
+            seedHighlights = false;
+
+            //delete other hotkey's highlight
+            Destroy(temphighlights);
+
+            if(questHighlights)
+            {
+                temphighlights = Instantiate(Highlights, QuestIcon.transform);
+                temphighlights.transform.SetAsFirstSibling();
+                StartCoroutine(TriggerTextBox());
+                textDisplay.text = "Check Your Accepted Quests!";
+            }
+            else if (!questHighlights)
+            {
+                Destroy(temphighlights);
+            }
         }
 
         //Hoe
@@ -168,6 +195,7 @@ public class HelperController : MonoBehaviour
             hoeHighlights = !hoeHighlights;
 
             //make sure other boolean are off
+            questHighlights = false;
             inventoryHighlights = false;
             waterHighlights = false;
             fishRodHighlights = false;
@@ -196,6 +224,7 @@ public class HelperController : MonoBehaviour
             waterHighlights = !waterHighlights;
 
             //make sure other boolean are off
+            questHighlights = false;
             inventoryHighlights = false;
             hoeHighlights = false;
             fishRodHighlights = false;
@@ -224,6 +253,7 @@ public class HelperController : MonoBehaviour
             fishRodHighlights = !fishRodHighlights;
 
             //make sure other boolean are off
+            questHighlights = false;
             inventoryHighlights = false;
             hoeHighlights = false;
             waterHighlights = false;
@@ -252,6 +282,7 @@ public class HelperController : MonoBehaviour
             seedHighlights = !seedHighlights;
 
             //make sure other boolean are off
+            questHighlights = false;
             inventoryHighlights = false;
             hoeHighlights = false;
             waterHighlights = false;
@@ -281,6 +312,13 @@ public class HelperController : MonoBehaviour
         if (InventoryIcon == EventSystem.current.currentSelectedGameObject && inventoryHighlights)
         {
             inventoryHighlights = false;
+            Destroy(temphighlights);
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+
+        else if(QuestIcon == EventSystem.current.currentSelectedGameObject && questHighlights)
+        {
+            questHighlights = false;
             Destroy(temphighlights);
             EventSystem.current.SetSelectedGameObject(null);
         }

@@ -274,13 +274,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   playerAction: 0
   colliderObj:
   - {fileID: 99203052780396254}
   - {fileID: 99203053431960595}
-  goldUI: {fileID: 0}
-  receivedGold: {fileID: 0}
   dialogueObj:
-  - {fileID: 421782333160482209, guid: 9b0746cf8049b4f41b9c313e23927326, type: 3}
-  - {fileID: 4022346243171249773, guid: 383cfe81789733e46814d007535f6e7c, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   dialogueBox: {fileID: 0}
+  shop: {fileID: 0}
+  PlusButtonHighlights: {fileID: 8669162065838446212, guid: b77c69c96ad8e404b9ed246e412857e0,
+    type: 3}
+  BuyButtonHighlights: {fileID: 9100501604405353050, guid: 873e0e1d0aa61f84ea84f5d716f1f25b,
+    type: 3}

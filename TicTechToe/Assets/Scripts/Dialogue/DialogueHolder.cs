@@ -11,12 +11,18 @@ public class DialogueHolder : MonoBehaviour
 
     [TextArea(3, 10)]
     public string[] dialogueLines;
+    [TextArea(3, 10)]
+    public string[] dialogueLines2;
 
     public bool interactNPCJoseph = true;
     public bool interactNPCJane = true;
 
     bool updateNPC = false;
     bool interacting = true;
+
+    bool option1 = true;
+    bool option2 = false;
+    bool option3 = false;
 
     public string temp;
 
@@ -32,6 +38,18 @@ public class DialogueHolder : MonoBehaviour
 
     }
 
+    void changeDialogue()
+    {
+        if(option1)
+        {
+            dialogueManager.sentences = dialogueLines;
+        }
+        else if(option2)
+        {
+            dialogueManager.sentences = dialogueLines2;
+        }
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
@@ -41,15 +59,16 @@ public class DialogueHolder : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     if (!dialogueManager.dialogueActive && !dialogueManager.canInteract)
-                    {
+                    {                     
                         dialogueManager.npcName = name;
-                        dialogueManager.sentences = dialogueLines;
+                        changeDialogue();
 
                         //set dialogue line to 0
                         dialogueManager.currentLine = -1;
 
                         dialogueManager.showDialogue();
                         dialogueManager.canInteract = true;
+                                  
                     }
                 }
             }          
@@ -75,9 +94,21 @@ public class DialogueHolder : MonoBehaviour
             {
                 if (dialogueManager.NPCDone)
                 {
-                    interactNPCJane = true;
-                    dialogueManager.NPCDone = false;
-                    temp = null;
+                    if(option1)
+                    {
+                        interactNPCJane = true;
+                        dialogueManager.NPCDone = false;
+                        temp = null;
+                        option1 = false;
+                        option2 = true;
+                    }
+                    else if(option2)
+                    {
+                        dialogueManager.NPCDone = false;
+                        temp = null;
+                        option1 = true;
+                        option2 = false;                       
+                    }
                 }
             }
             else if (temp == "NPC Henry")
