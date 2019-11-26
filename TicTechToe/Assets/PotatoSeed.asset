@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 2
   itemSprite: {fileID: 21300000, guid: b2335826ef1f590439b0e3763a676761, type: 3}
   itemName: Potato Seeds
-  itemPrice: 10
+  itemPrice: 50

@@ -10,7 +10,7 @@ public class DirtTile : MonoBehaviour
 	public SpriteRenderer overlay;
 
 	public bool needsPlowing = true;
-    public static bool addPlant = true;
+    public bool addPlant = true;
     public static bool isEmpty = false;
 	public Sprite extraDirt;
 	public GameObject waterIndicator;

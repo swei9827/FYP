@@ -19,7 +19,7 @@ public class DayNight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -27,11 +27,12 @@ public class DayNight : MonoBehaviour
     {
         CountMinutes();
         SetTime();
+        OnMoneyChanged();
     }
 
     void OnMoneyChanged()
     {
-        //moneyText = ;
+        moneyText.text = Player.LocalPlayerInstance.GetComponent<Player>().getMoney().ToString() + " $";
     }
 
     void SetTime()

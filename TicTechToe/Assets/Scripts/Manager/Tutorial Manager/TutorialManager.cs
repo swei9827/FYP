@@ -26,14 +26,15 @@ public class TutorialManager : MonoBehaviour
     public GameObject shop;
     public GameObject PlusButtonHighlights;
     public GameObject BuyButtonHighlights;
-    private UpdatableInt updateText;
     GameObject temphighlights;
+
+    [Header("Dirtile Settings")]
+    public GameObject[] dirtTile;
 
     void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
         dialogueHolder = FindObjectOfType<DialogueHolder>();
-        updateText = FindObjectOfType<UpdatableInt>();        
     }
 
     // Update is called once per frame
@@ -45,8 +46,6 @@ public class TutorialManager : MonoBehaviour
         }
 
         ChangeTutorial();
-
-        Debug.Log(updateText.temp);
     }
 
     void ChangeTutorial()
@@ -148,6 +147,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     playerAction = false;
                     dialogueBox.SetActive(false);
+                    Player.LocalPlayerInstance.GetComponent<Player>().setMoney(1000);
                     popUpIndex++;
                 }
             }
@@ -168,7 +168,7 @@ public class TutorialManager : MonoBehaviour
                     dialogueBox.SetActive(false);
                     playerAction = false;
                     popUpIndex++;
-
+                  
                     //make sure doesnt interact NPC2
                     dialogueManager.canInteract = false;                              
                 }
@@ -203,15 +203,15 @@ public class TutorialManager : MonoBehaviour
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
-              
+
                 //pop out click buy button
-                if(updateText.temp == 5)
+                if (shop.GetComponent<ShopSystem>().slots[0].GetComponent<ShopRenderer>().itemCount.text == 5.ToString())
                 {
                     //destroy button highlight
                     Destroy(temphighlights);
 
                     //Instantiate buy button highlights
-                    temphighlights = Instantiate(PlusButtonHighlights, shop.transform.GetChild(0).GetChild(3).GetChild(0).GetChild(0));
+                    temphighlights = Instantiate(BuyButtonHighlights, shop.transform.GetChild(0).GetChild(3).GetChild(0).GetChild(0));
                     temphighlights.transform.SetSiblingIndex(6);
 
                     playerAction = false;
@@ -228,14 +228,12 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                if (updateText.temp == 5)
+                int moneyAmount = int.Parse(shop.GetComponent<ShopSystem>().currentMoney.text);
+                //Pop out Exit Shop
+                if (moneyAmount < 1000)
                 {
                     //destroy button highlight
                     Destroy(temphighlights);
-
-                    //Instantiate buy button highlights
-                    temphighlights = Instantiate(BuyButtonHighlights, shop.transform.GetChild(0).GetChild(3).GetChild(0).GetChild(0));
-                    temphighlights.transform.SetSiblingIndex(6);
 
                     playerAction = false;
                     popUpIndex++;
@@ -243,66 +241,128 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        // Tutorial 8- Pop Out click buy button
+        // Tutorial 9- Exit Shop
         else if (popUpIndex == 9)
         {
             if (playerAction)
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
+
+                //Pop out Go find Jane
+                if (!shop.activeInHierarchy)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+                  
+                }
             }
         }
 
-        //// plow 
-        //else if (popUpIndex == 2)
-        //{
-        //    if (playerAction)
-        //    {
-        //        TutorialPopOut[popUpIndex].SetActive(false);
-        //        Time.timeScale = 1;
+        // Tutorial 10 - Go Find Jane
+        else if (popUpIndex == 10)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
 
-        //        if (!GameObject.Find("DirtTile").GetComponent<DirtTile>().needsPlowing)
-        //        {
-        //            popUpIndex++;
-        //            playerAction = false;
-        //        }
-        //    }
-        //}
+                dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
+                dialogueObj[1].GetComponent<DialogueHolder>().option2 = true;
 
-        ////plant seed
-        //else if (popUpIndex == 3)
-        //{
-        //    if (playerAction)
-        //    {
-        //        TutorialPopOut[popUpIndex].SetActive(false);
-        //        Time.timeScale = 1;
+                //Pop Out Plow
+                if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane2)
+                {
+                    playerAction = false;
+                    popUpIndex++;                 
+                }
+            }
+        }
 
-        //        if (!DirtTile.addPlant)
-        //        {
-        //            playerAction = false;
-        //            popUpIndex++;
-        //        }
-        //    }
-        //}
+        // Tutorial 11 - Plow
+        else if (popUpIndex == 11)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
 
-        ////Water plant
-        //else if (popUpIndex == 4)
-        //{
-        //    if (playerAction)
-        //    {
-        //        TutorialPopOut[popUpIndex].SetActive(false);
-        //        Time.timeScale = 1;
+                //Pop out Plant
+                int counter = 0;
 
-        //        if (GameObject.FindGameObjectWithTag("Crops").GetComponent<CropTest>().watered)
-        //        {
-        //            playerAction = false;
-        //            popUpIndex++;
-        //        }
-        //    }
-        //}
+                for(int i = 0; i <= 5; i ++)
+                {
+                    if(!dirtTile[i].GetComponent<DirtTile>().needsPlowing)
+                    {
+                        counter++;                       
+                    }                  
+                }
+
+                if (counter == 5)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        // Tutorial 12 - Plant
+        else if (popUpIndex == 12)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                int counter = 0;
+                for (int i = 0; i <= 5; i++)
+                {                  
+                    if (!dirtTile[i].GetComponent<DirtTile>().addPlant)
+                    {
+                        counter++;                     
+                    }                  
+                }
+
+                if (counter == 5)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        // Tutorial 13 - Watering
+        else if (popUpIndex == 13)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                //int counter = 0;
+
+                if(GameObject.FindGameObjectWithTag("Crops").GetComponent<CropTest>().watered)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        //Tutorial 14 - Done Tutorial
+        else if (popUpIndex == 14)
+        {
+            if (playerAction)
+            {
+                dialogueObj[1].GetComponent<DialogueHolder>().option3 = true;
+
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;          
+            }
+        }
 
         //// harvest
-        //else if (popUpIndex == 5)
+        //else if (popUpIndex == 15)
         //{
         //    if (playerAction)
         //    {

@@ -15,8 +15,6 @@ public class Player : Character
 
     public void Awake()
     {
-        money = 100;
-
         //keep track of the localPlayer instance to prevent instanciation when levels are synchronized
         if (photonView.IsMine)
         {
