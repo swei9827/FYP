@@ -30,6 +30,7 @@ public class CropTest : ItemTest
     NPCInteraction ni;
 
     private GameObject temp;
+    GameObject player;
 
     private void Awake()
     {
@@ -45,6 +46,7 @@ public class CropTest : ItemTest
         growPercentage = 0;
         sr = GetComponent<SpriteRenderer>();
         canInteract = false;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
  
     void Update()
@@ -146,6 +148,15 @@ public class CropTest : ItemTest
                     {
                         ni.questItemCheck(item);
                         inventory.AddItem(item.id);
+                        foreach(NPCManager.QuestInfo q in player.GetComponent<NPCInteraction>().acceptedQuestLists)
+                        {
+                            foreach(NPCManager.NPCItem it in q.requirement)
+                            {
+                                if ((it.objectName + "(Clone)") == this.gameObject.name){
+                                    it.collected += 1;
+                                }
+                            }
+                        }
                         Destroy(this.gameObject);
                         break;
                     }

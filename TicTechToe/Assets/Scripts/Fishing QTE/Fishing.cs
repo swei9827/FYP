@@ -185,6 +185,16 @@ public class Fishing : MonoBehaviour
             {
                 ni.questItemCheck(item);
                 inventory.AddItem(item.id);
+                foreach (NPCManager.QuestInfo q in player.GetComponent<NPCInteraction>().acceptedQuestLists)
+                {
+                    foreach (NPCManager.NPCItem it in q.requirement)
+                    {
+                        if ((it.objectName) == this.gameObject.name)
+                        {
+                            it.collected += 1;
+                        }
+                    }
+                }
                 break;
             }
         }
