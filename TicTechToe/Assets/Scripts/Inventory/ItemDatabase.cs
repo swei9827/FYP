@@ -7,7 +7,7 @@ using System.Linq;
 
 public class ItemDatabase : MonoBehaviour
 {
-    public List<Item> database = new List<Item>();
+    public static List<Item> database = new List<Item>();
     private JsonData itemData;
 
     void Awake()
@@ -15,7 +15,6 @@ public class ItemDatabase : MonoBehaviour
         Debug.Log("database");
         itemData = JsonMapper.ToObject(File.ReadAllText((Application.dataPath + "/StreamingAssets/Items.json")).Trim());
         ConstructItemDatabase();
-        Debug.Log(database[0].itemName);
     }
 
     public Item FetchItemById(int id)

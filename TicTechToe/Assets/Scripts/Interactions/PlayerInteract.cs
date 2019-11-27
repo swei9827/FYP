@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        
+        if(col.gameObject.tag == "Player" && col.gameObject != Player.LocalPlayerInstance)
+        {
+            col.gameObject.transform.GetChild(5).gameObject.SetActive(true);
+            Debug.Log("Open UI");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerExit2D(Collider2D other)
     {
-        
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.transform.GetChild(5).gameObject.SetActive(false);
+            Debug.Log("Close UI");
+        }
     }
 }

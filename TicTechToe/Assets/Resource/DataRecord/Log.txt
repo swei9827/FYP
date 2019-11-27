@@ -1,17 +1,2 @@
-27/11/2019 4:29:42 AM Log Started
-27/11/2019 4:29:52 AM Player obtained Hoe_AddedStroke
-27/11/2019 4:30:28 AM Player plowed DirtTile
-27/11/2019 4:30:28 AM Player plowed DirtTile (1)
-27/11/2019 4:30:29 AM Player plowed DirtTile (3)
-27/11/2019 4:30:29 AM Player plowed DirtTile (2)
-27/11/2019 4:30:31 AM Player plowed DirtTile (4)
-27/11/2019 4:30:37 AM Player planted Strawberries
-27/11/2019 4:30:38 AM Player planted Strawberries
-27/11/2019 4:30:38 AM Player planted Strawberries
-27/11/2019 4:30:39 AM Player planted Strawberries
-27/11/2019 4:30:40 AM Player planted Strawberries
-27/11/2019 4:30:45 AM Player watered Strawberry(Clone)
-27/11/2019 4:30:47 AM Player watered Strawberry(Clone)
-27/11/2019 4:30:47 AM Player watered Strawberry(Clone)
-27/11/2019 4:31:00 AM Player watered Strawberry(Clone)
-27/11/2019 4:31:00 AM Player watered Strawberry(Clone)
+27/11/2019 7:28:54 AM Log Started
+27/11/2019 7:29:13 AM Player obtained Hoe_AddedStroke
