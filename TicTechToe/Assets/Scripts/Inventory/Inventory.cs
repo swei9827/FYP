@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Inventory : MonoBehaviour
 {
     GameObject inventoryPanel;
+    GameObject inventoryIcon;
     GameObject slotPanel;
     ItemDatabase database;
     public GameObject inventorySlot;
@@ -16,10 +18,13 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
 
+    private RaycastHit raycastHit;
+
     private void Awake()
     {
         inventoryPanel = GameObject.Find("Inventory Panel");
         tooltip = GameObject.Find("Tooltip");
+        inventoryIcon = GameObject.Find("Inventory Icon");
     }
     void Start()
     {
@@ -41,21 +46,29 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-            if(inventoryPanel.activeSelf)
-            {
-                inventoryPanel.SetActive(false);
-                PlayerMovement.canMove = true;
-                tooltip.SetActive(false);
+        popInventory();
+    }
 
+    void popInventory()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            if (inventoryIcon == EventSystem.current.currentSelectedGameObject)
+            {                
+                if (inventoryPanel.activeSelf)
+                {
+                    inventoryPanel.SetActive(false);
+                    PlayerMovement.canMove = true;
+                    tooltip.SetActive(false);
+
+                }
+                else
+                {
+                    inventoryPanel.SetActive(true);
+                    PlayerMovement.canMove = false;
+                }
             }
-            else
-            {
-                inventoryPanel.SetActive(true);
-                PlayerMovement.canMove = false;
-            }
-        }
+        }     
     }
 
     //Add Item by item's id in item database json file

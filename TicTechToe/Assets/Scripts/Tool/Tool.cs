@@ -26,4 +26,5 @@ public class Seed
     public bool isSelected = false;
     public Crop crop;
     public int amount;
+    public string seedName;
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class HelperController : MonoBehaviour
 {
@@ -26,20 +27,66 @@ public class HelperController : MonoBehaviour
 
     [Header("UI Settings")]
     public TextMeshProUGUI textDisplay;
-    
+
+    [Header("Hotkey")]
+    public GameObject slotPanel;
+    public GameObject[] hotKeySlots;
+
+    [Header("Highlight")]
+    public GameObject Highlights;
+    GameObject temphighlights;
+
+    public bool inventoryHighlights = false;
+    public bool questHighlights = false;
+    public bool hoeHighlights = false;
+    public bool waterHighlights = false;
+    public bool fishRodHighlights = false;
+    public bool seedHighlights = false;
+
+    private HotKey Hotkey;
+    private GameObject InventoryIcon;
+    private GameObject QuestIcon;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        //Inventory Icon
+        InventoryIcon = GameObject.Find("Inventory Icon");
+        QuestIcon = GameObject.Find("Quest Icon");
+
+        //Intialize HotKey
+        Hotkey = FindObjectOfType<HotKey>();
+
+        //Initialize SlotPanel
+        slotPanel = GameObject.Find("SlotPanel");             
+        for (int i = 0; i < 4; i++)
+        {
+            hotKeySlots[i] = slotPanel.transform.GetChild(i).gameObject;
+        }       
     }
 
     // Update is called once per frame
     void Update()
     {
         Interaction();
-        ClickMove();
+        KeyboardMove();
+        //ClickMove();
+        DisableHighlight();
     } 
+
+    void KeyboardMove()
+    {
+        direction = Vector2.zero;
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.y = Input.GetAxisRaw("Vertical");
+
+        transform.Translate(direction * speed * Time.deltaTime);
+        UpdateAnimation();
+        UpdateSFX();
+    }
 
     void ClickMove()
     {
@@ -66,7 +113,8 @@ public class HelperController : MonoBehaviour
 
     void Interaction()
     {
-        if(Input.GetMouseButtonDown(1))
+        // Interact
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(TriggerTextBox());
 
@@ -83,6 +131,217 @@ public class HelperController : MonoBehaviour
             {
                 textDisplay.text = "Interact this!";
             }                 
+        }
+
+        //Inventory
+        else if(Input.GetKeyDown(KeyCode.I))
+        {
+            inventoryHighlights = !inventoryHighlights;
+
+            //make sure other boolean are off
+            questHighlights = false;
+            hoeHighlights = false;
+            waterHighlights = false;
+            fishRodHighlights = false;
+            seedHighlights = false;
+
+            //delete other highlights
+            Destroy(temphighlights);
+
+            if (inventoryHighlights)
+            {
+                temphighlights = Instantiate(Highlights, InventoryIcon.transform);
+                temphighlights.transform.SetAsFirstSibling();
+                StartCoroutine(TriggerTextBox());
+                textDisplay.text = "Check Your Inventory!";
+            }
+            else if(!inventoryHighlights)
+            {
+                Destroy(temphighlights);
+            }          
+        }
+
+        //Quests
+        else if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            questHighlights = !questHighlights;
+
+            //make sure other boolean are off
+            hoeHighlights = false;
+            inventoryHighlights = false;
+            waterHighlights = false;
+            fishRodHighlights = false;
+            seedHighlights = false;
+
+            //delete other hotkey's highlight
+            Destroy(temphighlights);
+
+            if(questHighlights)
+            {
+                temphighlights = Instantiate(Highlights, QuestIcon.transform);
+                temphighlights.transform.SetAsFirstSibling();
+                StartCoroutine(TriggerTextBox());
+                textDisplay.text = "Check Your Accepted Quests!";
+            }
+            else if (!questHighlights)
+            {
+                Destroy(temphighlights);
+            }
+        }
+
+        //Hoe
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            hoeHighlights = !hoeHighlights;
+
+            //make sure other boolean are off
+            questHighlights = false;
+            inventoryHighlights = false;
+            waterHighlights = false;
+            fishRodHighlights = false;
+            seedHighlights = false;
+
+            //delete other hotkey's highlight
+            Destroy(temphighlights);
+
+            //Set highlights
+            if(hoeHighlights)
+            {
+                temphighlights = Instantiate(Highlights, hotKeySlots[0].transform);
+                temphighlights.transform.SetAsFirstSibling();
+                StartCoroutine(TriggerTextBox());
+                textDisplay.text = "Scroll to the highlighted box";
+            }
+            else
+            {
+                Destroy(temphighlights);
+            }         
+        }
+
+        //WaterCan
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            waterHighlights = !waterHighlights;
+
+            //make sure other boolean are off
+            questHighlights = false;
+            inventoryHighlights = false;
+            hoeHighlights = false;
+            fishRodHighlights = false;
+            seedHighlights = false;
+
+            //delete other hotkey's highlight
+            Destroy(temphighlights);
+
+            //Set highlights
+            if (waterHighlights)
+            {
+                temphighlights = Instantiate(Highlights, hotKeySlots[1].transform);
+                temphighlights.transform.SetAsFirstSibling();
+                StartCoroutine(TriggerTextBox());
+                textDisplay.text = "Scroll to the highlighted box";
+            }
+            else
+            {
+               Destroy(temphighlights);
+            }
+        }
+
+        //Fishing Rod
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            fishRodHighlights = !fishRodHighlights;
+
+            //make sure other boolean are off
+            questHighlights = false;
+            inventoryHighlights = false;
+            hoeHighlights = false;
+            waterHighlights = false;
+            seedHighlights = false;
+
+            //delete other hotkey's highlight
+            Destroy(temphighlights);
+
+            //Set highlights
+            if (fishRodHighlights)
+            {
+                temphighlights = Instantiate(Highlights, hotKeySlots[2].transform);
+                temphighlights.transform.SetAsFirstSibling();
+                StartCoroutine(TriggerTextBox());
+                textDisplay.text = "Scroll to the highlighted box";
+            }
+            else
+            {
+                Destroy(temphighlights);
+            }
+        }
+
+        //Seed
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            seedHighlights = !seedHighlights;
+
+            //make sure other boolean are off
+            questHighlights = false;
+            inventoryHighlights = false;
+            hoeHighlights = false;
+            waterHighlights = false;
+            fishRodHighlights = false;
+
+            //delete other hotkey's highlight
+            Destroy(temphighlights);
+
+            //Set highlights
+            if (seedHighlights)
+            {
+                temphighlights = Instantiate(Highlights, hotKeySlots[3].transform);
+                temphighlights.transform.SetAsFirstSibling();
+                StartCoroutine(TriggerTextBox());
+                textDisplay.text = "Scroll to the highlighted box and click the seed you want";
+            }
+            else
+            {
+                Destroy(temphighlights);
+            }
+        }     
+    }
+
+    void DisableHighlight()
+    {
+        // Disable highlights once interact
+        if (InventoryIcon == EventSystem.current.currentSelectedGameObject && inventoryHighlights)
+        {
+            inventoryHighlights = false;
+            Destroy(temphighlights);
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+
+        else if(QuestIcon == EventSystem.current.currentSelectedGameObject && questHighlights)
+        {
+            questHighlights = false;
+            Destroy(temphighlights);
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+
+        else if (Hotkey.scrollPosition == 0 && hoeHighlights)
+        {
+            hoeHighlights = false;
+            Destroy(temphighlights);
+        }
+        else if (Hotkey.scrollPosition == 1 && waterHighlights)
+        {
+            waterHighlights = false;
+            Destroy(temphighlights);
+        }
+        else if (Hotkey.scrollPosition == 2 && fishRodHighlights)
+        {
+            fishRodHighlights = false;
+            Destroy(temphighlights);
+        }
+        else if (Hotkey.scrollPosition == 3 && seedHighlights)
+        {
+            seedHighlights = false;
+            Destroy(temphighlights);
         }
     }
 

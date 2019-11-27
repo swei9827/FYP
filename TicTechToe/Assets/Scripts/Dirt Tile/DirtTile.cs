@@ -10,7 +10,7 @@ public class DirtTile : MonoBehaviour
 	public SpriteRenderer overlay;
 
 	public bool needsPlowing = true;
-    public static bool addPlant = true;
+    public bool addPlant = true;
     public static bool isEmpty = false;
 	public Sprite extraDirt;
 	public GameObject waterIndicator;
@@ -33,6 +33,12 @@ public class DirtTile : MonoBehaviour
 
 	public void Interact (Crop c, Tool t, PlayerInteraction player)
 	{
+        if (t.isPlow && needsPlowing)
+        {
+            Plow();
+            return;
+        }
+
         if (c.HasCrop())
         {
             if (!needsPlowing)
@@ -51,26 +57,7 @@ public class DirtTile : MonoBehaviour
             }
             return;
         }
-
-        if (t != null)
-		{
-            if (t.isPlow && needsPlowing)
-            {
-                Plow();
-            }
-            //else if (t.isWaterCan && crop.state == CropState.Planted)
-            //{
-            //	WaterCrops();
-            //}
-            //else if (t.isWaterCan && crop.state == CropStateTest.Delayed)
-            //{
-            //    WaterCrops();
-            //    GameObject.FindGameObjectWithTag("GameController").GetComponent<DataRecord>().AddEvents(4, this.name.ToString());
-            //}
-
-			return;
-		}
-	}
+    }
 
     void PlantCrop(Crop c, PlayerInteraction player)
     {
@@ -80,7 +67,7 @@ public class DirtTile : MonoBehaviour
             temp.transform.SetParent(this.transform);
             temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
             temp.GetComponent<CropTest>().planted = true;
-            player.SetCrop(new Crop(null));
+            //player.SetCrop(new Crop(null));
         }
         else if (c.asset.cropsType == CropsType.Potatoes)
         {
@@ -88,7 +75,7 @@ public class DirtTile : MonoBehaviour
             temp.transform.SetParent(this.transform);
             temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
             temp.GetComponent<CropTest>().planted = true;
-            player.SetCrop(new Crop(null));
+            //player.SetCrop(new Crop(null));
         }
         else if (c.asset.cropsType == CropsType.Pumpkins)
         {
@@ -96,54 +83,10 @@ public class DirtTile : MonoBehaviour
             temp.transform.SetParent(this.transform);
             temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
             temp.GetComponent<CropTest>().planted = true;
-            player.SetCrop(new Crop(null));
+            //player.SetCrop(new Crop(null));
         }
         FxManager.PlayMusic("PlantFx");
     }
-
-    void WaterCrops()
-    {
-        if(cropStateTest == CropStateTest.Delayed)
-        {
-            WaterCan.curFill -= 5;
-            temp.GetComponent<CropTest>().watered = true;
-            waterIndicator.SetActive(false);
-        }
-    }
-
-	//void PlantSeed (Crop c, PlayerInteraction player)
-	//{
-	//	if (c.state != CropState.Seed)
-	//	{
-	//		Debug.Log("Crop not seed, can't plan't.");
-	//		return;
-	//	}
-	//	Debug.Log("Planting " + c.GetName());
-	//	crop = c;
-	//	crop.state = CropState.Planted;
-
-	//	UpdateSprite();
-
-	//	player.SetCrop(new Crop(null));
-	//}
-
-	//void HarvestCrop (PlayerInteraction player)
-	//{
-	//	if (crop.state == CropState.Done || crop.state == CropState.Dead)
-	//	{
- //           player.SetCrop(crop);
- //           crop = new Crop(null);        
- //           needsPlowing = true;
-	//		AddDirt();
-	//	}   
-	//}
-
-	//public void BirdEatsCrop()
-	//{
-	//	crop = new Crop(null);
-	//	needsPlowing = true;
-	//	AddDirt();
-	//}
 
 	public void AddDirt()
 	{

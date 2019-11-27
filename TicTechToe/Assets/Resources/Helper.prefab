@@ -206,6 +206,18 @@ MonoBehaviour:
   speed: 5
   iconBoxAnim: {fileID: 8463977637662304975}
   textDisplay: {fileID: 1552076923601319910}
+  slotPanel: {fileID: 0}
+  hotKeySlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Highlights: {fileID: 902465479694967852, guid: 160a9313787bf3945b6b12a5ec0e9ec2,
+    type: 3}
+  hoeHighlights: 0
+  waterHighlights: 0
+  fishRodHighlights: 0
+  seedHighlights: 0
 --- !u!1 &2167637546465508584
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,8 +351,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.7, y: 23.3}
-  m_SizeDelta: {x: 196.6, y: 130.75}
+  m_AnchoredPosition: {x: 1, y: 28.9}
+  m_SizeDelta: {x: 246.7, y: 168.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8764048886566853284
 CanvasRenderer:
@@ -370,7 +382,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Hey There
+  m_text: Hey There!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -436,10 +448,10 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 9.354605, w: 0}
+  m_margin: {x: 14.349734, y: 22.39684, z: 5.254653, w: -7.1587677}
   m_textInfo:
     textComponent: {fileID: 1552076923601319910}
-    characterCount: 9
+    characterCount: 10
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -499,8 +511,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 85}
-  m_SizeDelta: {x: 300, y: 250}
+  m_AnchoredPosition: {x: -0.9, y: 98.4}
+  m_SizeDelta: {x: 332, y: 283.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7020748263465351176
 CanvasRenderer:

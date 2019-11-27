@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Fishing : MonoBehaviour
 {
@@ -29,8 +30,8 @@ public class Fishing : MonoBehaviour
     public bool success = false;
 
     //UI
-    public Text fishName;
-    public Text bucketCounter;
+    public TextMeshProUGUI fishNames;
+    public TextMeshProUGUI bucketCounters;
     public Text waterCounter;
 
     //script
@@ -90,9 +91,8 @@ public class Fishing : MonoBehaviour
         }
 
         FishingGame();
-
         //update fish counter
-        bucketCounter.text = "Bucket Hit : " + bucketHit.ToString() + " / " + hitBucketAmount.ToString();
+        bucketCounters.text = "Bucket Hit : " + bucketHit.ToString() + " / " + hitBucketAmount.ToString();
         waterCounter.text = "Water Hit : " + waterHit.ToString() + " / " + hitWaterAmount.ToString();
     }
 
@@ -119,7 +119,7 @@ public class Fishing : MonoBehaviour
                     hitWaterAmount = 3;
 
                     //set text
-                    fishName.text = FishTypeTest.Catfish.ToString();                
+                    fishNames.text = FishTypeTest.Catfish.ToString();                
                     break;
                 }
             case FishTypeTest.Salmon:
@@ -131,7 +131,7 @@ public class Fishing : MonoBehaviour
                     hitWaterAmount = 2;
 
                     //set UI
-                    fishName.text = FishTypeTest.Salmon.ToString();
+                    fishNames.text = FishTypeTest.Salmon.ToString();
                     break;
                 }
             case FishTypeTest.Sardine:
@@ -142,7 +142,7 @@ public class Fishing : MonoBehaviour
                     hitBucketAmount = 3;
                     hitWaterAmount = 4;
 
-                    fishName.text = FishTypeTest.Sardine.ToString();
+                    fishNames.text = FishTypeTest.Sardine.ToString();
                     break;
                 }
             case FishTypeTest.Tuna:
@@ -153,7 +153,7 @@ public class Fishing : MonoBehaviour
                     hitBucketAmount = 3;
                     hitWaterAmount = 3;
 
-                    fishName.text = FishTypeTest.Tuna.ToString();
+                    fishNames.text = FishTypeTest.Tuna.ToString();
                     break;
                 }
         }
@@ -185,10 +185,19 @@ public class Fishing : MonoBehaviour
             {
                 ni.questItemCheck(item);
                 inventory.AddItem(item.id);
+                foreach (NPCManager.QuestInfo q in player.GetComponent<NPCInteraction>().acceptedQuestLists)
+                {
+                    foreach (NPCManager.NPCItem it in q.requirement)
+                    {
+                        if ((it.objectName) == this.gameObject.name)
+                        {
+                            it.collected += 1;
+                        }
+                    }
+                }
                 break;
             }
         }
-        //GameObject.FindGameObjectWithTag("Fish").GetComponent<GetItems>().canGetFish = true;
     }
 
     public void FishingGame()

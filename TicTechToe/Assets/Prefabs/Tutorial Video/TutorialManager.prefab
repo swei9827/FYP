@@ -274,9 +274,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerAction: 0
   colliderObj:
   - {fileID: 99203052780396254}
   - {fileID: 99203053431960595}
   dialogueObj:
   - {fileID: 0}
   - {fileID: 0}
+  dialogueBox: {fileID: 0}
+  shop: {fileID: 0}
+  PlusButtonHighlights: {fileID: 8669162065838446212, guid: b77c69c96ad8e404b9ed246e412857e0,
+    type: 3}
+  BuyButtonHighlights: {fileID: 9100501604405353050, guid: 873e0e1d0aa61f84ea84f5d716f1f25b,
+    type: 3}

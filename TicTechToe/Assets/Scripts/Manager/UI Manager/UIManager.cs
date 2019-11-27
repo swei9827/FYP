@@ -8,10 +8,19 @@ public class UIManager : MonoBehaviour
     public Transform canvas;
 
     //Inventory
-    public Transform inventory;
+    //public Transform inventory;
 
     //Fishing QTE
-    public Transform fishingGame;
+   // public Transform fishingGame;
+
+    //Highlight
+    public GameObject highlights;
+    public GameObject slotPanel;
+    public GameObject Hotbar;
+    public GameObject[] hotkey;
+    GameObject temp;
+
+    public bool triggerHighlight;
 
     private void Awake()
     {
@@ -21,13 +30,19 @@ public class UIManager : MonoBehaviour
         }
 
         //Initialize Canvas
-        canvas = GameObject.Find("Canvas").transform;
+        canvas = GameObject.Find("Canvas").transform;   
+    }
 
-        //Initialize Inventory
-        //inventory = canvas.Find("Inventory");
+    private void Start()
+    {
+        highlights.GetComponent<ParticleSystem>().Stop();
 
-        //Initialize FishingGame
-        fishingGame = canvas.Find("FishingGame");
+        //Debug.Log(slotPanel);
+        //for (int i = 0; i <= 4; i++)
+        //{
+        //    hotkey[i] = slotPanel.transform.GetChild(i).gameObject;
+        //    //hotkey.Add(slotPanel.transform.GetChild(i).gameObject);
+        //}
     }
 
     public Vector2 WorldToCanvasPoint(Vector3 position)
@@ -50,30 +65,32 @@ public class UIManager : MonoBehaviour
         return (new Vector2(viewportPoint.x * canvasSize.x, viewportPoint.y * canvasSize.y) - (canvasSize / 2));
     }
 
-    public void ToggleInventory()
+    public void ToggleHighlight()
     {
-        inventory.gameObject.SetActive(!inventory.gameObject.activeInHierarchy);
+        triggerHighlight = !triggerHighlight;
 
-        if(!inventory.gameObject.activeSelf)
+        if (triggerHighlight)
         {
-            PlayerMovement.canMove = true;
+            if(!highlights.GetComponent<ParticleSystem>().isPlaying)
+            {
+                highlights.GetComponent<ParticleSystem>().Play();
+            }
         }
         else
         {
-            PlayerMovement.canMove = false;
-            //InventoryController.InventoryInstance.showToolTip(string.Empty,string.Empty);
+            highlights.GetComponent<ParticleSystem>().Stop();
         }
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-            //if didnt play fishing QTE
-            if(!fishingGame.gameObject.activeInHierarchy)
-            {
-                //ToggleInventory();
-            }            
-        }
+        //if(Input.GetKeyDown(KeyCode.I))
+        //{
+        //    //if didnt play fishing QTE
+        //    if(!fishingGame.gameObject.activeInHierarchy)
+        //    {
+        //        //ToggleInventory();
+        //    }            
+        //}
     }
 }

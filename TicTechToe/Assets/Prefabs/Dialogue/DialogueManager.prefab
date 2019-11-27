@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 0}
   nameBox: {fileID: 0}
+  continueButton: {fileID: 0}
   textDisplay: {fileID: 0}
   npcNameDisplay: {fileID: 0}
   dialogueActive: 0
@@ -57,6 +58,8 @@ MonoBehaviour:
   - Test 5
   - Test 6
   - Test 7
+  textSpeed: 0
   currentLine: 0
   currentName: 0
   NPCDone: 0
+  canInteract: 0

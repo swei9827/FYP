@@ -5,28 +5,38 @@ using UnityEngine.UI;
 
 public class ShopSystem : MonoBehaviour
 {
-    int moneyAmount;
+    [SerializeField]
+    private int moneyAmount;
+
+    int finalCount;
+
+    public GameObject shopSlot;
+    public GameObject contentListPanel;
 
     public Text currentMoney;
-    public List<Image> itemIcon;
-    public List<Text> itemPrice;
-    public List<Text> itemCount;
-    public List<Button> buyButton;
-    public List<Item> itemObject;
+
+    public List<Item> itemObject = new List<Item>();
+    public List<GameObject> slots = new List<GameObject>();
+
+    public List<ShopItem> shopItemList;
+
+    private int slotAmount;
 
     void Start()
     {
-        moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getMoney();
+        moneyAmount = Player.LocalPlayerInstance.GetComponent<Player>().getMoney();
+        slotAmount = shopItemList.Capacity;
+        InstantiateShop();
     }
 
-    private void OnEnable()
+    private void onenable()
     {
-        moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getMoney();
+        moneyAmount = Player.LocalPlayerInstance.GetComponent<Player>().getMoney();
     }
 
     private void OnDisable()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().setMoney(moneyAmount);
+        Player.LocalPlayerInstance.GetComponent<Player>().setMoney(moneyAmount);
     }
 
     void Update()
@@ -34,37 +44,41 @@ public class ShopSystem : MonoBehaviour
         currentMoney.text = moneyAmount.ToString();
     }
 
-    public void buyItem(int itemN)
+    void InstantiateShop()
     {
-        //int finalCost = count * cost;
-
-        //if (moneyAmount >= finalCost)
-        //{
-        //    moneyAmount -= finalCost;
-        //    //GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().AddCropsItem(itemObject, CropsTypeTest,)
-        //}
-        //else
+        for(int i = 0; i < slotAmount; i++)
         {
-            Debug.Log("Not Enough Money");
+            itemObject.Add(new Item());
+            GameObject go = Instantiate(shopSlot);
+            go.GetComponent<ShopRenderer>().Initialize(
+                /*sprite*/shopItemList[i].itemSprite,
+                /*name*/shopItemList[i].itemName,
+                /*name*/shopItemList[i].itemPrice,
+                /*starting count*/1);
+            slots.Add(go);
+            slots[i].transform.SetParent(contentListPanel.transform,false);
         }
     }
 
-    public void buyItem(int count, int cost, int slot)
+    public void buyItem(ShopRenderer shopRenderer)
     {
-        List<GameObject> itemSlot;
-        //int finalCost = itemSlot[slot].count * itemSlot[slot].cost;
+        int finalCost = int.Parse(shopRenderer.itemCount.text) * int.Parse(shopRenderer.itemPrice.text);
 
-        //int 
-
-        //if (moneyAmount >= finalCost)
-        //{
-        //    moneyAmount -= finalCost;
-        //    //GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().AddCropsItem(itemObject, CropsTypeTest,)
-        //}
-        //else
-        //{
-        //    Debug.Log("Not Enough Money");
-        //}
+        if (moneyAmount >= finalCost)
+        {
+            moneyAmount -= finalCost;
+            foreach(Seed sd in Player.LocalPlayerInstance.GetComponent<Tool>().seeds)
+            {
+                if (sd.seedName == shopRenderer.itemName.text)
+                {
+                    sd.amount += int.Parse(shopRenderer.itemCount.text);
+                }
+            }            
+        }
+        else
+        {
+            Debug.Log("Not Enough Money");
+        }
     }
 
     public void closeShop()

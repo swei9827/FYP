@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class NPCInteraction : MonoBehaviour
 {
     public static bool interactable;
 
     NPCManager npcmanager;
+    GameObject questIcon;
 
     TextMeshProUGUI Title;
     TextMeshProUGUI Detail;
@@ -81,6 +83,7 @@ public class NPCInteraction : MonoBehaviour
         questUICompletion.SetActive(false);
         tradeUI.SetActive(false);
         questIndicator.SetActive(false);
+        questIcon = GameObject.Find("Quest Icon");
         npcmanager = GameObject.FindGameObjectWithTag("NPCManager").GetComponent<NPCManager>();
     }
 
@@ -96,7 +99,7 @@ public class NPCInteraction : MonoBehaviour
             tradeUIPrompt(currentTrader);
         }
 
-        if (interactable && Input.GetKeyDown(KeyCode.Mouse1) && npcmanager.currentNpc != null)
+        if (interactable && Input.GetKeyDown(KeyCode.Mouse0) && npcmanager.currentNpc != null)
         {
             resetIndicator();
 
@@ -124,28 +127,58 @@ public class NPCInteraction : MonoBehaviour
 
     void showQuestIndicator()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && !questIndicator.activeSelf && !interactable){
-            questIndicator.SetActive(true);
-            PlayerMovement.canMove = false;
-            foreach(NPCManager.QuestInfo q in acceptedQuestLists)
-            {
-                GameObject temp = Instantiate(questIndicatorContentPrefab, questIndicatorContent.transform.position, Quaternion.identity);
-                temp.transform.SetParent(questIndicatorContent.transform);
-                temp.GetComponent<TextMeshProUGUI>().text = q.name;
-                temp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = q.detail;
-                spawnedIndicator.Add(temp);
-            }
-        }
-        else if(Input.GetKeyDown(KeyCode.Tab) && questIndicator.activeSelf)
+        if (Input.GetMouseButtonDown(0))
         {
-            questIndicator.SetActive(false);
-            foreach(GameObject go in spawnedIndicator)
+            if (questIcon == EventSystem.current.currentSelectedGameObject)
             {
-                Destroy(go);
+                if (questIndicator.activeSelf)
+                {
+                    questIndicator.SetActive(false);
+                    foreach (GameObject go in spawnedIndicator)
+                    {
+                        Destroy(go);
+                    }
+                    spawnedIndicator.Clear();
+                    PlayerMovement.canMove = true;
+                }
+                else if (!questIndicator.activeSelf && !interactable)
+                {
+                    questIndicator.SetActive(true);
+                    PlayerMovement.canMove = false;
+                    foreach (NPCManager.QuestInfo q in acceptedQuestLists)
+                    {
+                        GameObject temp = Instantiate(questIndicatorContentPrefab, questIndicatorContent.transform.position, Quaternion.identity);
+                        temp.transform.SetParent(questIndicatorContent.transform);
+                        temp.GetComponent<TextMeshProUGUI>().text = q.name;
+                        temp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = q.detail;
+                        spawnedIndicator.Add(temp);
+                    }
+                }
             }
-            spawnedIndicator.Clear();
-            PlayerMovement.canMove = true;
         }
+
+        //if (!questIndicator.activeSelf && !interactable){
+        //    questIndicator.SetActive(true);
+        //    PlayerMovement.canMove = false;
+        //    foreach(NPCManager.QuestInfo q in acceptedQuestLists)
+        //    {
+        //        GameObject temp = Instantiate(questIndicatorContentPrefab, questIndicatorContent.transform.position, Quaternion.identity);
+        //        temp.transform.SetParent(questIndicatorContent.transform);
+        //        temp.GetComponent<TextMeshProUGUI>().text = q.name;
+        //        temp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = q.detail;
+        //        spawnedIndicator.Add(temp);
+        //    }
+        //}
+        //else if(questIndicator.activeSelf)
+        //{
+        //    questIndicator.SetActive(false);
+        //    foreach(GameObject go in spawnedIndicator)
+        //    {
+        //        Destroy(go);
+        //    }
+        //    spawnedIndicator.Clear();
+        //    PlayerMovement.canMove = true;
+        //}
     }
 
     public void accept()

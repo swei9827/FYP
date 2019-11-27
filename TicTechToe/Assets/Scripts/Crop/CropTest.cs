@@ -30,11 +30,13 @@ public class CropTest : ItemTest
     NPCInteraction ni;
 
     private GameObject temp;
+    GameObject player;
 
     private void Awake()
     {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         itemDatabase = GameObject.Find("Inventory").GetComponent<ItemDatabase>();
+        dirtTile = GameObject.FindGameObjectWithTag("DirtTile").GetComponent<DirtTile>();
     }
     void Start()
     {
@@ -44,6 +46,7 @@ public class CropTest : ItemTest
         growPercentage = 0;
         sr = GetComponent<SpriteRenderer>();
         canInteract = false;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
  
     void Update()
@@ -70,7 +73,7 @@ public class CropTest : ItemTest
     {
         if (canInteract && cropState == CropStateTest.Delayed)
         {
-            if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space)) && PlayerInteraction.canUse)
+            if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && HotKey.canUse && HotKey.canWater)
             {
                 WaterCan.curFill -= 1;
                 waterIndicator.SetActive(false);
@@ -88,7 +91,7 @@ public class CropTest : ItemTest
        if(planted && cropState == CropStateTest.Seed)
         {
             cropState = CropStateTest.Planted;
-            planted = false;
+            //planted = false;
         }
 
        if(cropState == CropStateTest.Planted)
@@ -137,7 +140,7 @@ public class CropTest : ItemTest
     {
         if (canInteract && cropState == CropStateTest.Done)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
             {
                 foreach (Item item in itemDatabase.database)
                 {
@@ -145,6 +148,15 @@ public class CropTest : ItemTest
                     {
                         ni.questItemCheck(item);
                         inventory.AddItem(item.id);
+                        foreach(NPCManager.QuestInfo q in player.GetComponent<NPCInteraction>().acceptedQuestLists)
+                        {
+                            foreach(NPCManager.NPCItem it in q.requirement)
+                            {
+                                if ((it.objectName + "(Clone)") == this.gameObject.name){
+                                    it.collected += 1;
+                                }
+                            }
+                        }
                         Destroy(this.gameObject);
                         break;
                     }

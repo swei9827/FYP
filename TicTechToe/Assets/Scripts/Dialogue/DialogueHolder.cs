@@ -7,19 +7,40 @@ public class DialogueHolder : MonoBehaviour
     public string name;
     private DialogueManager dialogueManager;
     private TutorialManager tutorialManager;
-    public string[] dialogueLines;
+    private OpenShop openShop;
 
+    [TextArea(3, 10)]
+    public string[] dialogueLines;
+    [TextArea(3, 10)]
+    public string[] dialogueLines2;
+    [TextArea(3, 10)]
+    public string[] dialogueLines3;
+    [TextArea(3, 10)]
+    public string[] dialogueLines4;
+
+    //for NPC Uncle Joseph
     public bool interactNPCJoseph = true;
+
+    //for NPC Jane
     public bool interactNPCJane = true;
+    public bool interactNPCJane2 = false;
+    public bool interactNPCJane3 = false;
 
     bool updateNPC = false;
+    bool interacting = true;
 
-    string temp;
+    public bool option1 = true;
+    public bool option2 = false;
+    public bool option3 = false;
+    public bool option4 = false;
+
+    public string temp;
 
     private void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
         tutorialManager = FindObjectOfType<TutorialManager>();
+        openShop = FindObjectOfType<OpenShop>();
     }
 
     public void Update()
@@ -27,24 +48,60 @@ public class DialogueHolder : MonoBehaviour
 
     }
 
+    void changeDialogue()
+    {
+        if(option1)
+        {
+            dialogueManager.sentences = dialogueLines;
+            //option2 = false;
+            //option3 = false;
+            //option4 = false;
+        }
+        else if(option2)
+        {
+            dialogueManager.sentences = dialogueLines2;
+            //option1 = false;
+            //option3 = false;
+            //option4 = false;
+        }
+        else if(option3)
+        {
+            dialogueManager.sentences = dialogueLines3;
+            //option1 = false;
+            //option2 = false;
+            //option4 = false;
+        }
+        if(option4)
+        {
+            dialogueManager.sentences = dialogueLines4;
+            //option1 = false;
+            //option2 = false;
+            //option3 = false;
+        }
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if(dialogueManager.interactable)
             {
-                if (!dialogueManager.dialogueActive && !dialogueManager.canInteract)
+                if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    dialogueManager.npcName = name;
-                    dialogueManager.sentences = dialogueLines;
+                    if (!dialogueManager.dialogueActive && !dialogueManager.canInteract)
+                    {                     
+                        dialogueManager.npcName = name;
+                        changeDialogue();
 
-                    //set dialogue line to 0
-                    dialogueManager.currentLine = -1;
+                        //set dialogue line to 0
+                        dialogueManager.currentLine = -1;
 
-                    dialogueManager.showDialogue();
-                    dialogueManager.canInteract = true;
+                        dialogueManager.showDialogue();
+                        dialogueManager.canInteract = true;
+                                  
+                    }
                 }
-            }    
+            }          
         }
     }
 
@@ -67,13 +124,48 @@ public class DialogueHolder : MonoBehaviour
             {
                 if (dialogueManager.NPCDone)
                 {
-                    interactNPCJane = true;
-                    dialogueManager.NPCDone = false;
-                    temp = null;
+                    if(option1)
+                    {
+                        interactNPCJane = true;
+                        dialogueManager.NPCDone = false;
+                        temp = null;
+                        option1 = false;
+                        option4 = true;
+                    }
+                    else if (option2)
+                    {
+                        interactNPCJane2 = true;
+                        dialogueManager.NPCDone = false;
+                        temp = null;
+                        option2 = false;
+                        option4 = true;
+                    }
+                    else if(option3)
+                    {
+                        interactNPCJane3 = true;
+                        dialogueManager.NPCDone = false;
+                        temp = null;
+                        option3 = false;
+                        option4 = true;
+                    }
+                    else if(option4)
+                    {
+                        dialogueManager.NPCDone = false;
+                        temp = null;
+                    }
                 }
             }
+            else if (temp == "NPC Harry")
+            {
+                if (dialogueManager.NPCDone)
+                {
+                    dialogueManager.NPCDone = false;
+                    temp = null;
+                    dialogueManager.interactable = false;
+                }  
+            }
         }
-    }
+    }   
 }
 
 //public bool firstChat = false;
