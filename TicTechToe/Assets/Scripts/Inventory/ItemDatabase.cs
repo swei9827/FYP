@@ -7,7 +7,7 @@ using System.Linq;
 
 public class ItemDatabase : MonoBehaviour
 {
-    public static List<Item> database = new List<Item>();
+    public List<Item> database = new List<Item>();
     private JsonData itemData;
 
     void Awake()

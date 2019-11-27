@@ -17,14 +17,14 @@ public class Trading : MonoBehaviourPunCallbacks
     void ShowTradeItem(int i)
     {
         Sprite temp = null;
-        foreach (Item item in ItemDatabase.database)
-        {
-            if (item.id == i)
-            {
-                temp = item.sprite;
-            }
-        }
-        oppositeBox.sprite = temp;
+        //foreach (Item item in ItemDatabase.database)
+        //{
+        //    if (item.id == i)
+        //    {
+        //        temp = item.sprite;
+        //    }
+        //}
+        //oppositeBox.sprite = temp;
     }
 
     [PunRPC]

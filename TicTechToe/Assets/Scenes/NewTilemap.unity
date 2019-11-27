@@ -20236,6 +20236,16 @@ PrefabInstance:
       propertyPath: videoPlayer
       value: 
       objectReference: {fileID: 7090770888099410153}
+    - target: {fileID: 8080095805727583712, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080095805766574401, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 8080095805973638567, guid: 813eebd421111fc4cb098a529970b333,
         type: 3}
       propertyPath: videoPlayer
@@ -20251,6 +20261,40 @@ PrefabInstance:
       propertyPath: videoPlayer
       value: 
       objectReference: {fileID: 1927015522}
+    - target: {fileID: 8080095806853048569, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080095805109371989, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080095805053075828, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527547467, guid: 813eebd421111fc4cb098a529970b333, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872151364010316924, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577837534464212741, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845059737534838433, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 238765681, guid: 813eebd421111fc4cb098a529970b333, type: 3}
       propertyPath: videoPlayer
       value: 
@@ -36754,6 +36798,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: VideoPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2151167392196870850, guid: e5fef7b368059254e83207b804dc6de5,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 8dd3505099963a8489d70631384059f6,
+        type: 3}
     - target: {fileID: 7090770887012260802, guid: e5fef7b368059254e83207b804dc6de5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36809,6 +36859,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7771292279796479682, guid: e5fef7b368059254e83207b804dc6de5,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 8e90efebf8d6af140b94cceade80c5bf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5fef7b368059254e83207b804dc6de5, type: 3}
 --- !u!328 &7090770888099410153 stripped
