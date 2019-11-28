@@ -11,10 +11,6 @@ public class DataRecord : MonoBehaviour
     // Event Name
     static string eventName;
 
-    // Activities Data Collection
-    static public int HarvestCount;
-    static public int FishCount;
-
     void Awake()
     {
         if (instance == null)
@@ -62,23 +58,6 @@ public class DataRecord : MonoBehaviour
         writer.Close();
     } 
 
-    public void ActivitiesRecord(int eventid)
-    {
-        switch (eventid)
-        {
-            case 0:
-                HarvestCount += 1;
-                break;
-
-            case 1:
-                FishCount += 1;
-                break;
-
-            default:
-                break;
-        }
-    }
-
     static string EventAction(int eventID)
     {
         switch (eventID)
@@ -107,6 +86,26 @@ public class DataRecord : MonoBehaviour
                 eventName = " harvested ";
                 break;
 
+            case 6:
+                eventName = " started ";
+                break;
+
+            case 7:
+                eventName = " accepted ";
+                break;
+
+            case 8:
+                eventName = " declined ";
+                break;
+
+            case 9:
+                eventName = " interacted with ";
+                break;
+
+            case 10:
+                eventName = " completed ";
+                break;
+
             default:
                 eventName = "NULL";
                 break;
@@ -119,11 +118,6 @@ public class DataRecord : MonoBehaviour
     {
         ClearLogFile();
         LogFileGeneration();
-    }
-
-    void Update()
-    {
-        
     }
 }
 

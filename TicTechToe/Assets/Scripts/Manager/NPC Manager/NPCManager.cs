@@ -79,6 +79,7 @@ public class NPCManager : MonoBehaviour
     public class NPCPopUp
     {
         public GameObject NPC;
+        public string npcType;
         public float distance;
         public float offsetX;
         public float offsetY;

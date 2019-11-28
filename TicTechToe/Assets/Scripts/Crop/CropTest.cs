@@ -78,10 +78,13 @@ public class CropTest : ItemTest
                 WaterCan.curFill -= 1;
                 waterIndicator.SetActive(false);
                 Debug.Log("Interact");
-                DataRecord.AddEvents(4, this.name.ToString());
                 FxManager.PlayMusic("WaterFx");
                 watered = true;
                 canInteract = false;
+
+                //local data record
+
+                DataRecord.AddEvents(4, this.gameObject.name);
             }              
         }   
     }
@@ -92,6 +95,9 @@ public class CropTest : ItemTest
         {
             cropState = CropStateTest.Planted;
             //planted = false;
+
+            //local data record
+            DataRecord.AddEvents(3, this.gameObject.name);           
         }
 
        if(cropState == CropStateTest.Planted)
@@ -148,6 +154,8 @@ public class CropTest : ItemTest
                     {
                         ni.questItemCheck(item);
                         inventory.AddItem(item.id);
+
+                        // Quest item check
                         foreach(NPCManager.QuestInfo q in player.GetComponent<NPCInteraction>().acceptedQuestLists)
                         {
                             foreach(NPCManager.NPCItem it in q.requirement)
@@ -157,6 +165,13 @@ public class CropTest : ItemTest
                                 }
                             }
                         }
+
+                        // gsheet data record
+                        player.GetComponent<gsheet_data>().sendData(1,1);
+
+                        //local data record
+                        DataRecord.AddEvents(5, this.gameObject.name);
+
                         Destroy(this.gameObject);
                         break;
                     }

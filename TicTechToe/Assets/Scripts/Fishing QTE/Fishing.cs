@@ -53,7 +53,6 @@ public class Fishing : MonoBehaviour
         fishingGame.SetActive(false);
         spawnPos = new Vector2(fishImg.rectTransform.localPosition.x, fishImg.rectTransform.localPosition.y);
         spawnPos2 = new Vector2(bucketImg.rectTransform.localPosition.x, bucketImg.rectTransform.localPosition.y);
-
         bucketHit = 0;
         waterHit = -1;
     }
@@ -102,7 +101,10 @@ public class Fishing : MonoBehaviour
         canInteract = false;
         fishingGame.SetActive(true);
         PlayerMovement.canMove = false;
-        GetFishSprite();      
+        GetFishSprite();
+
+        //local data record
+        DataRecord.AddEvents(6, "Fishing");
     }
 
     public void GetFishSprite()
@@ -185,7 +187,9 @@ public class Fishing : MonoBehaviour
             {
                 ni.questItemCheck(item);
                 inventory.AddItem(item.id);
-                foreach (NPCManager.QuestInfo q in player.GetComponent<NPCInteraction>().acceptedQuestLists)
+
+                //Quest item check
+                foreach (NPCManager.QuestInfo q in GameObject.FindGameObjectWithTag("Player").GetComponent<NPCInteraction>().acceptedQuestLists)
                 {
                     foreach (NPCManager.NPCItem it in q.requirement)
                     {
@@ -195,6 +199,13 @@ public class Fishing : MonoBehaviour
                         }
                     }
                 }
+
+                //gsheet data record
+                GameObject.FindGameObjectWithTag("Player").GetComponent<gsheet_data>().sendData(0,1);
+                
+                //local data record
+                DataRecord.AddEvents(0, fishImg.sprite.name);
+
                 break;
             }
         }

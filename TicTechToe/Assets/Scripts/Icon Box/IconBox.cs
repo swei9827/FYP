@@ -24,7 +24,6 @@ public class IconBox : MonoBehaviour
 			iconBoxAnim.SetBool("Enable", true);
             if(!recorded && playerIconBox) {
                 FxManager.PlayMusic("PickUpFx");
-                DataRecord.AddEvents(0, s.name.ToString());
                 recorded = true;
             }
         }

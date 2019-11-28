@@ -16,6 +16,7 @@ public class NPCInteraction : MonoBehaviour
     TextMeshProUGUI Detail;
     TextMeshProUGUI Reward;
     bool Accepted;
+    bool recorded;
 
     // Quest system
     [Header("Quest System")]
@@ -120,6 +121,28 @@ public class NPCInteraction : MonoBehaviour
                 traderInfo = currentTrader;
                 tradeUIPrompt(currentTrader);
             }
+
+            //local data record
+            if(!recorded)
+            {
+                if (npcmanager.currentNpc.npcType == "Human")
+                {
+                    GetComponent<gsheet_data>().sendData(3, 1);
+                    
+                }else if(npcmanager.currentNpc.npcType == "Animal")
+                {
+                    GetComponent<gsheet_data>().sendData(4, 1);
+                }
+
+                //local data record
+                DataRecord.AddEvents(9, npcmanager.currentNpc.NPC.name);
+                recorded = true;
+            }
+        }
+
+        if(npcmanager.currentNpc == null)
+        {
+            recorded = false;
         }
 
         showQuestIndicator();
@@ -184,13 +207,27 @@ public class NPCInteraction : MonoBehaviour
     public void accept()
     {
         Accepted = true;
+
+        //local data record
+        if (currentQuest != null)
+        {
+            DataRecord.AddEvents(7, currentQuest.name + " Quest");
+        }
     }
 
     public void decline()
     {
         if(currentTrader != null)
         {
+            //local data record
+            DataRecord.AddEvents(8, "Trader " + currentTrader.name + "'s Trade");
             currentTrader.accepted = false;
+        }
+        
+        //local data record
+        if (currentQuest != null)
+        {
+            DataRecord.AddEvents(8, currentQuest.name + " Quest");
         }
         Accepted = false;
         questUI.SetActive(false);
@@ -286,7 +323,10 @@ public class NPCInteraction : MonoBehaviour
                 acceptedQuestLists.Remove(q);
 
                 questUICompletion.SetActive(true);
-                questUICompletion.GetComponentInChildren<Text>().text = "Quest Completed ! \n" + "Rewarded " + log.reward + " Gold";                
+                questUICompletion.GetComponentInChildren<Text>().text = "Quest Completed ! \n" + "Rewarded " + log.reward + " Gold";
+
+                //local data record
+                DataRecord.AddEvents(10, q.name + " Quest");
                
                 StartCoroutine(closeUI(2f));
             }

@@ -15,8 +15,6 @@ public class SceneControl : MonoBehaviour
     public void PlayButton()
     {
         SceneManager.LoadScene("New Login");
-        DataRecord.HarvestCount = 0;
-        DataRecord.FishCount = 0;
     }
 
     public void ExitButton()

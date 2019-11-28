@@ -1,27 +1,69 @@
-﻿using System.Collections;
+﻿using PlayFab;
+using PlayFab.ClientModels;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using PlayFab.DataModels;
+using PlayFab.ProfilesModels;
 
 public class gsheet_data : MonoBehaviour
 {
-    void Update()
+    public bool allowDataTransfer;
+
+    string playerName;
+
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            sendData();
-        }
+        GetAccountInfo();
+    }
+
+    void GetAccountInfo()
+    {
+        GetAccountInfoRequest request = new GetAccountInfoRequest();
+        PlayFabClientAPI.GetAccountInfo(request, Successs, fail);
     }
 
 
+    void Successs(GetAccountInfoResult result)
+    {
+        playerName = result.AccountInfo.Username;
+    }
 
-    IEnumerator PostData(string playername, int fishcount, int harvestcount, int tradecount)
+
+    void fail(PlayFabError error)
+    {
+        Debug.LogError(error.GenerateErrorReport());
+    }    
+
+    IEnumerator PostData(string playername, int dataType, int dataCount)
     {
         WWWForm form = new WWWForm();
+
         form.AddField("entry.1139227581", playername);
-        form.AddField("entry.78893016", fishcount);
-        form.AddField("entry.1611953632", harvestcount);
-        form.AddField("entry.1788300909", tradecount);
+
+        switch (dataType)
+        {
+            case 0: // fishcount
+                form.AddField("entry.78893016", dataCount);
+                break;
+
+            case 1: //harvestcount
+                form.AddField("entry.1611953632", dataCount);
+                break;
+
+            case 2://tradecount
+                form.AddField("entry.1788300909", dataCount);
+                break;
+
+            case 3://humannpc
+                form.AddField("entry.1265842569", dataCount);
+                break;
+
+            case 4://animalnpc
+                form.AddField("entry.1176598382", dataCount);
+                break;
+        }       
 
         byte[] rawData = form.data;;
 
@@ -30,8 +72,11 @@ public class gsheet_data : MonoBehaviour
         yield return www;
     }
 
-    public void sendData()
+    public void sendData(int dataType, int dataCount)
     {
-        StartCoroutine(PostData("labtest0",1,3,4));
+        if (allowDataTransfer)
+        {
+            StartCoroutine(PostData(playerName, dataType, dataCount));
+        }
     }
 }

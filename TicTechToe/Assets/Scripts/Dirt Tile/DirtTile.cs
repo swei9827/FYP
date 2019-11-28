@@ -47,7 +47,6 @@ public class DirtTile : MonoBehaviour
                 {
                     PlantCrop(c, player);
                     addPlant = false;
-                    DataRecord.AddEvents(3, c.GetName());
                 }
             }
 
@@ -98,9 +97,12 @@ public class DirtTile : MonoBehaviour
 	{
 		Debug.Log("Plowing...");
 		overlay.sprite = null;
-        DataRecord.AddEvents(2, this.name.ToString());
         FxManager.PlayMusic("PlowFx");
         needsPlowing = false;
+
+        //local data record
+
+        DataRecord.AddEvents(2, this.gameObject.name);
 	}
 
 	void UpdateSprite ()

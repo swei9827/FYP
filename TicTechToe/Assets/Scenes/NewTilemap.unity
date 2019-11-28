@@ -35351,23 +35351,23 @@ MonoBehaviour:
   updateFrequency: 0.5
   npcList:
   - NPC: {fileID: 1242481354}
+    npcType: Human
     distance: 2
     offsetX: -0.1
     offsetY: 1.1
   - NPC: {fileID: 66125909}
-    distance: 2
-    offsetX: -0.1
-    offsetY: 1.1
-  - NPC: {fileID: 0}
+    npcType: Human
     distance: 2
     offsetX: -0.1
     offsetY: 1.1
   - NPC: {fileID: 604703930}
+    npcType: Human
     distance: 2
     offsetX: -0.1
     offsetY: 1.1
   currentNpc:
     NPC: {fileID: 0}
+    npcType: 
     distance: 0
     offsetX: 0
     offsetY: 0

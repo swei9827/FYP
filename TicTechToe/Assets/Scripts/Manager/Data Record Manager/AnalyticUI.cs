@@ -12,14 +12,7 @@ public class AnalyticUI : MonoBehaviour
 
     void Start()
     {
-        if (FarmingData)
-        {
-            value = DataRecord.HarvestCount;
-        }
-        else if (FishingData)
-        {
-            value = DataRecord.FishCount;
-        }
+       
     }
 
     void Update()
