@@ -20269,6 +20269,30 @@ PrefabInstance:
       propertyPath: videoPlayer
       value: 
       objectReference: {fileID: 74311417}
+    - target: {fileID: 8080095805053075829, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080095805585737939, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -19.975098
+      objectReference: {fileID: 0}
+    - target: {fileID: 319288426, guid: 813eebd421111fc4cb098a529970b333, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 17.150146
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080095805305012174, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.8643036
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080095805305012174, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 813eebd421111fc4cb098a529970b333, type: 3}
 --- !u!1 &533754003 stripped

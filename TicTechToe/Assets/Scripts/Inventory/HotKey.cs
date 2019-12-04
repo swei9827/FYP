@@ -45,8 +45,8 @@ public class HotKey : MonoBehaviour
     void Start()
     {
         player= FindObjectOfType<PlayerInteraction>();
-        //tool = this.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Tool>();
-        tool = this.gameObject.GetComponent<Tool>();
+        tool = this.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Tool>();
+        //tool = this.gameObject.GetComponent<Tool>();
         waterBar.gameObject.SetActive(false);
     }
 
