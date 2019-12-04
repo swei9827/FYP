@@ -110,6 +110,29 @@ public class Inventory : MonoBehaviour
         }        
     }
 
+    // remove item, still working, might have errors
+    public void RemoveItem(int remove)
+    { 
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i].id == remove)
+            {
+                ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
+                if (data.amount > 1)
+                {
+                    data.amount--;
+                    data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                    break;
+                }
+                else
+                {
+                    items[i].id = -1;
+                    Destroy(slots[i].transform.GetChild(0).gameObject);
+                }                
+            }
+        }
+    }
+
     //check is there a same item in inven
     bool CheckIfItemIsInInventory(Item item)
     {
@@ -121,5 +144,5 @@ public class Inventory : MonoBehaviour
             }
         }
         return false;
-    }     
+    }
 }
