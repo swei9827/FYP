@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PlayFab.ClientModels;
 
-public class DataRecordExperimental : MonoBehaviour
+public class CloudData : MonoBehaviour
 {
     string MyPlayfabID;
     int currentDataVal;
@@ -14,8 +14,7 @@ public class DataRecordExperimental : MonoBehaviour
         GetAccountInfoRequest acc = new GetAccountInfoRequest();
         PlayFabClientAPI.GetAccountInfo(acc, success, fail);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
 
@@ -27,9 +26,13 @@ public class DataRecordExperimental : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            ClientSetUserPublisherData("HarvestCount", 0);
-            ClientSetUserPublisherData("FishCount", 0);
-            ClientSetUserPublisherData("TradeCount", 0);
+            ClientSetUserPublisherData("Coins", 0);
+            ClientSetUserPublisherData("Catfish", 0);
+            ClientSetUserPublisherData("Potato", 0);
+            ClientSetUserPublisherData("Pumpkin", 0);
+            ClientSetUserPublisherData("Salmon", 0);
+            ClientSetUserPublisherData("Strawberry", 0);
+            ClientSetUserPublisherData("Tuna", 0);
         }
     }
 
