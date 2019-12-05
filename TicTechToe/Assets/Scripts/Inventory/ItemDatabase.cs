@@ -15,7 +15,6 @@ public class ItemDatabase : MonoBehaviour
         Debug.Log("database");
         itemData = JsonMapper.ToObject(File.ReadAllText((Application.dataPath + "/StreamingAssets/Items.json")).Trim());
         ConstructItemDatabase();
-        Debug.Log(database[0].itemName);
     }
 
     public Item FetchItemById(int id)

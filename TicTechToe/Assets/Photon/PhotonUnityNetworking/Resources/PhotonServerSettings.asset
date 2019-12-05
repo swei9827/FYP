@@ -35,5 +35,7 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - DestroyHelper
+  - ShowTradeItem
+  - Trade
   DisableAutoOpenWizard: 1
   ShowSettings: 0
