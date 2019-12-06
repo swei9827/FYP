@@ -19,20 +19,28 @@ public class DialogueHolder : MonoBehaviour
     public string[] dialogueLines4;
 
     //for NPC Uncle Joseph
-    public bool interactNPCJoseph = true;
+    public bool interactNPCJoseph = false;
 
     //for NPC Jane
-    public bool interactNPCJane = true;
+    public bool interactNPCJane = false;
     public bool interactNPCJane2 = false;
     public bool interactNPCJane3 = false;
-
-    bool updateNPC = false;
-    bool interacting = true;
 
     public bool option1 = true;
     public bool option2 = false;
     public bool option3 = false;
     public bool option4 = false;
+
+    //for NPC Auntie Mary
+    public bool interactNPCMary = false;
+    public bool interactNPCMary2 = false;
+
+    bool updateNPC = false;
+    bool interacting = true;
+
+    //public bool choice1 = true;
+    //public bool choice2 = false;
+    //public bool choice3 = false;
 
     public string temp;
 
@@ -53,30 +61,18 @@ public class DialogueHolder : MonoBehaviour
         if(option1)
         {
             dialogueManager.sentences = dialogueLines;
-            //option2 = false;
-            //option3 = false;
-            //option4 = false;
         }
         else if(option2)
         {
             dialogueManager.sentences = dialogueLines2;
-            //option1 = false;
-            //option3 = false;
-            //option4 = false;
         }
         else if(option3)
         {
             dialogueManager.sentences = dialogueLines3;
-            //option1 = false;
-            //option2 = false;
-            //option4 = false;
         }
-        if(option4)
+        else if(option4)
         {
             dialogueManager.sentences = dialogueLines4;
-            //option1 = false;
-            //option2 = false;
-            //option3 = false;
         }
     }
 
@@ -155,6 +151,7 @@ public class DialogueHolder : MonoBehaviour
                     }
                 }
             }
+
             else if (temp == "NPC Harry")
             {
                 if (dialogueManager.NPCDone)
@@ -164,6 +161,35 @@ public class DialogueHolder : MonoBehaviour
                     dialogueManager.interactable = false;
                 }  
             }
+
+            else if(temp == "NPC Auntie Mary")
+            {
+                if (dialogueManager.NPCDone)
+                {
+                    if (option1)
+                    {
+                        interactNPCMary = true;
+                        dialogueManager.NPCDone = false;
+                        temp = null;
+                        option1 = false;
+                        option3 = true;
+                    }
+                    else if (option2)
+                    {
+                        interactNPCMary2 = true;
+                        dialogueManager.NPCDone = false;
+                        temp = null;
+                        option2 = false;
+                        option3 = true;
+                    }
+                    else if (option3)
+                    {
+                        dialogueManager.NPCDone = false;
+                        temp = null;
+                    }
+                }
+            }
+
         }
     }   
 }

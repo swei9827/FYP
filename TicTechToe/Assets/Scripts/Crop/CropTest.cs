@@ -25,22 +25,26 @@ public class CropTest : ItemTest
     public bool goWater;
     public bool canInteract;
 
-    public DirtTile dirtTile;
-
     NPCInteraction ni;
+    Feedback feedback;
 
     private GameObject temp;
+
     GameObject player;
+
+    TutorialManager tutorial;
 
     private void Awake()
     {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         itemDatabase = GameObject.Find("Inventory").GetComponent<ItemDatabase>();
-        dirtTile = GameObject.FindGameObjectWithTag("DirtTile").GetComponent<DirtTile>();
+        tutorial = GameObject.Find("TutorialManager").GetComponent<TutorialManager>();
+
     }
     void Start()
     {
         ni = GameObject.FindGameObjectWithTag("Player").GetComponent<NPCInteraction>();
+        feedback = GameObject.FindGameObjectWithTag("Player").GetComponent<Feedback>();
         waterIndicator.SetActive(false);
         cropState = CropStateTest.Seed;
         growPercentage = 0;
@@ -144,7 +148,7 @@ public class CropTest : ItemTest
 
     void Harvest()
     {
-        if (canInteract && cropState == CropStateTest.Done)
+        if (canInteract && cropState == CropStateTest.Done && !feedback.harvested)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
             {
@@ -171,6 +175,14 @@ public class CropTest : ItemTest
 
                         //local data record
                         DataRecord.AddEvents(5, this.gameObject.name);
+
+                        //set harvested for feedback
+                        feedback.harvested = true;
+                        feedback.itemImage.sprite = sr.sprite;
+                        feedback.itemText.text = item.itemName;
+
+                        //For tutorial purpose
+                        tutorial.harvestCount += 1;
 
                         Destroy(this.gameObject);
                         break;

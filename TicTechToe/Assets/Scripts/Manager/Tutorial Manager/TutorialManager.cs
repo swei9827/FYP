@@ -31,10 +31,16 @@ public class TutorialManager : MonoBehaviour
     [Header("Dirtile Settings")]
     public GameObject[] dirtTile;
 
+    private Fishing fishing;
+
+    public int harvestCount = 0;
+    public int waterCount = 0;
+
     void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
         dialogueHolder = FindObjectOfType<DialogueHolder>();
+        fishing = FindObjectOfType<Fishing>();
     }
 
     // Update is called once per frame
@@ -168,9 +174,9 @@ public class TutorialManager : MonoBehaviour
                     dialogueBox.SetActive(false);
                     playerAction = false;
                     popUpIndex++;
-                  
+
                     //make sure doesnt interact NPC2
-                    dialogueManager.canInteract = false;                              
+                    dialogueManager.canInteract = false;
                 }
             }
         }
@@ -191,7 +197,7 @@ public class TutorialManager : MonoBehaviour
                     temphighlights.transform.SetSiblingIndex(3);
 
                     playerAction = false;
-                    popUpIndex++;                   
+                    popUpIndex++;
                 }
             }
         }
@@ -254,7 +260,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     playerAction = false;
                     popUpIndex++;
-                  
+
                 }
             }
         }
@@ -274,7 +280,7 @@ public class TutorialManager : MonoBehaviour
                 if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane2)
                 {
                     playerAction = false;
-                    popUpIndex++;                 
+                    popUpIndex++;
                 }
             }
         }
@@ -293,12 +299,12 @@ public class TutorialManager : MonoBehaviour
                 //Pop out Plant
                 int counter = 0;
 
-                for(int i = 0; i <= 5; i ++)
+                for (int i = 0; i <= 5; i++)
                 {
-                    if(!dirtTile[i].GetComponent<DirtTile>().needsPlowing)
+                    if (!dirtTile[i].GetComponent<DirtTile>().needsPlowing)
                     {
-                        counter++;                       
-                    }                  
+                        counter++;
+                    }
                 }
 
                 if (counter == 5)
@@ -319,11 +325,11 @@ public class TutorialManager : MonoBehaviour
 
                 int counter = 0;
                 for (int i = 0; i <= 5; i++)
-                {                  
+                {
                     if (!dirtTile[i].GetComponent<DirtTile>().addPlant)
                     {
-                        counter++;                     
-                    }                  
+                        counter++;
+                    }
                 }
 
                 if (counter == 5)
@@ -345,6 +351,7 @@ public class TutorialManager : MonoBehaviour
                 dialogueObj[1].GetComponent<DialogueHolder>().option3 = true;
                 dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
 
+                //Pop out go find back Jane
                 if (GameObject.FindGameObjectWithTag("Crops").GetComponent<CropTest>().watered)
                 {
                     playerAction = false;
@@ -353,13 +360,122 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        //Tutorial 14 - Done Tutorial
+        //Tutorial 14 - Go Find Back Jane
         else if (popUpIndex == 14)
         {
             if (playerAction)
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
-                Time.timeScale = 1;          
+                Time.timeScale = 1;
+
+                //Pop Out Go Find Fishing NPC
+                if (dialogueObj[1].GetComponent<DialogueHolder>().option4)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        //Tutorial 15 - Go Find Fishing NPC
+        else if (popUpIndex == 15)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                // Pop Out Go to Fishing Spot
+                if (dialogueObj[2].GetComponent<DialogueHolder>().interactNPCMary)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        //Tutorial 16 - Go to Fishing Spot
+        else if (popUpIndex == 16)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                Debug.Log(fishing.fishingGame.activeSelf);
+
+                //Pop Out Fishing Tutorial
+                if (fishing.fishingGame.activeSelf)
+                {
+                    Debug.Log(fishing.fishingGame.activeSelf);
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        //Tutorial 17 - Fishing Tutorial
+        else if (popUpIndex == 17)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                //Pop Out Go Find Auntie Mary
+                if (fishing.success)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        //Tutorial 18 - Go Find Back Auntie Mary
+        else if (popUpIndex == 18)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                dialogueObj[2].GetComponent<DialogueHolder>().option2 = true;
+                dialogueObj[2].GetComponent<DialogueHolder>().option3 = false;
+
+                //Pop Out Go harvest
+                if (dialogueObj[2].GetComponent<DialogueHolder>().interactNPCMary2)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+                }
+
+            }
+        }
+
+        //Tutorial 19 - Go Harvest
+        else if (popUpIndex == 19)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                //Pop out End Tutorial
+                if (harvestCount >= 5)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        //End Tutorial
+        else if (popUpIndex == 20)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
             }
         }
 
