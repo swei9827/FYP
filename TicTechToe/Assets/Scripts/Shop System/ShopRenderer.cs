@@ -11,6 +11,7 @@ public class ShopRenderer : MonoBehaviour
     public Button itemAdd;
     public Button itemRemove;
     public Text itemCount;
+    public Button BuyOrSell;
 
     public void Initialize(Sprite img, string name, int price, int count)
     {

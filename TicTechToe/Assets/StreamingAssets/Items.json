@@ -32,7 +32,7 @@
     "itemDescription": "A fish that look like cat"
   },
   {
-    "id": 11,
+    "id": 4,
     "itemName": "Strawberry",
     "stackable": true,
     "marketable": true,
@@ -40,7 +40,7 @@
     "itemDescription": "sberry"
   },
   {
-    "id": 12,
+    "id": 5,
     "itemName": "Potato",
     "stackable": true,
     "marketable": true,
@@ -48,7 +48,7 @@
     "itemDescription": "ubisoft"
   },
   {
-    "id": 13,
+    "id": 6,
     "itemName": "Pumpkin",
     "stackable": true,
     "marketable": true,
@@ -56,7 +56,7 @@
     "itemDescription": "Pumpkin"
   },
   {
-    "id": 21,
+    "id": 7,
     "itemName": "Strawberry Seed",
     "stackable": true,
     "marketable": true,
@@ -64,7 +64,7 @@
     "itemDescription": "sberry Seed"
   },
   {
-    "id": 22,
+    "id": 8,
     "itemName": "Potato Seed",
     "stackable": true,
     "marketable": true,
@@ -72,7 +72,7 @@
     "itemDescription": "Potato Seed"
   },
   {
-    "id": 23,
+    "id": 9,
     "itemName": "Pumpkin Seed",
     "stackable": true,
     "marketable": true,

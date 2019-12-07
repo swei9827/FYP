@@ -20,6 +20,10 @@ public class Player : Character
         {
             LocalPlayerInstance = gameObject;
         }
+        inventory =this.gameObject.transform.GetChild(1).GetComponent<Inventory>();
+        anm = this.gameObject.GetComponent<Animator>();
+        spriteRdr = this.gameObject.GetComponent<SpriteRenderer>();
+
     }
 
     public int getMoney()

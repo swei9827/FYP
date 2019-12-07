@@ -54,7 +54,7 @@ public class DataRecord : MonoBehaviour
         StreamWriter writer = new StreamWriter(path, true);
 
         writer.WriteLine(System.DateTime.Now + " Player" + EventAction(eventid) + eventObj);
-
+        GameObject.FindGameObjectWithTag("Player").GetComponent<UpdateDataRecord>().sendData(System.DateTime.Now + " Player" + EventAction(eventid) + eventObj);
         writer.Close();
     } 
 

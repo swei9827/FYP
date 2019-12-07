@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     GameObject inventoryIcon;
     GameObject slotPanel;
     ItemDatabase database;
+    public ItemDatabase databaseRef;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
     private GameObject tooltip;
@@ -29,6 +30,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         database = GetComponent<ItemDatabase>();   //Reference to the database 
+        databaseRef = GetComponent<ItemDatabase>();   //Reference to the database 
         Debug.Log("Construct Itemdatabase");
         slotAmount = 24;  //Inventory size        
         inventoryPanel.SetActive(false);
@@ -86,6 +88,10 @@ public class Inventory : MonoBehaviour
                     ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
                     data.amount++;
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+
+                    // write to cloud
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<CloudData>().writeToCloud(items[i].id.ToString(), 1);
+                    Debug.Log("ItemToCloud : " + items[i].itemName);
                     break;
                 }
             }
@@ -104,31 +110,41 @@ public class Inventory : MonoBehaviour
                     itemObj.transform.SetParent(slots[i].transform,false);
                     itemObj.GetComponent<Image>().sprite = itemToAdd.sprite;
                     itemObj.name = itemToAdd.itemName;
+
+                    // write to cloud
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<CloudData>().writeToCloud(items[i].id.ToString(), 1);
+                    Debug.Log("ItemToCloud : " + items[i].itemName);
                     break;
                 }
             }
         }        
     }
 
-    // remove item, still working, might have errors
-    public void RemoveItem(int remove)
-    { 
+    public void AddItemFromCloud(int id, int amount)
+    {
+        Item itemToAdd = database.FetchItemById(id);
+
         for (int i = 0; i < items.Count; i++)
         {
-            if (items[i].id == remove)
+            if (items[i].id == -1)
             {
-                ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
-                if (data.amount > 1)
+                items[i] = itemToAdd;
+                //instantiate canvas GO and change sprite
+                GameObject itemObj = Instantiate(inventoryItem);
+                itemObj.GetComponent<ItemData>().item = itemToAdd;
+                itemObj.GetComponent<ItemData>().slot = i;
+                itemObj.transform.SetParent(slots[i].transform, false);
+                itemObj.GetComponent<Image>().sprite = itemToAdd.sprite;
+                itemObj.name = itemToAdd.itemName;
+                if (items[i].id == id)
                 {
-                    data.amount--;
+                    ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
+                    data.amount = amount;
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
-                    break;
                 }
-                else
-                {
-                    items[i].id = -1;
-                    Destroy(slots[i].transform.GetChild(0).gameObject);
-                }                
+
+                Debug.Log("ItemFromCloud : " + items[i].itemName);
+                break;
             }
         }
     }
