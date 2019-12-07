@@ -9,9 +9,18 @@ public class Trading : MonoBehaviourPunCallbacks
     public GameObject tradingUI;
 
     [SerializeField]
-    private Image playerBox;
+    private Image playerBox; // items to trade show in the box
     [SerializeField]
-    private Image oppositeBox;
+    private Image oppositeBox; // items to trade show in the box
+
+    public bool isTrading; //if player accept the trade offer, both player isTrading = true, if is Trading == true, open trading UI
+
+
+    private void Start()
+    {
+        isTrading = false;
+        tradingUI.SetActive(false);
+    }
 
     [PunRPC]
     void ShowTradeItem(int i)
@@ -25,6 +34,11 @@ public class Trading : MonoBehaviourPunCallbacks
         //    }
         //}
         //oppositeBox.sprite = temp;
+    }
+
+    void SelectItem()
+    {
+
     }
 
     [PunRPC]
