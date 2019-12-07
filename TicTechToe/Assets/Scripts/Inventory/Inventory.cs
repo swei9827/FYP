@@ -150,7 +150,7 @@ public class Inventory : MonoBehaviour
     }
 
     // remove item, still working, might have errors
-    public void RemoveItem(int remove)
+    public int RemoveItem(int remove)
     {
         for (int i = 0; i < items.Count; i++)
         {
@@ -170,6 +170,38 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
+        return 0;
+    }
+
+    public int RemoveItem(int remove, int amount)
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i].id == remove)
+            {
+                ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
+                if (data.amount > amount)
+                {
+                    data.amount-= amount;
+                    data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                    return data.amount;
+                    //break;
+                }
+                else if(data.amount == amount)
+                {
+                    items[i] = new Item();
+                    Destroy(slots[i].transform.GetChild(0).gameObject);
+                    return 0;
+                }
+                else
+                {
+                    Debug.Log("Over remove");
+                    //items[i].id = -1;
+                    //Destroy(slots[i].transform.GetChild(0).gameObject);
+                }
+            }
+        }
+        return 0;
     }
 
     //check is there a same item in inven

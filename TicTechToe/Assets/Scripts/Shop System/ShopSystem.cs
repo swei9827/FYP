@@ -85,8 +85,25 @@ public class ShopSystem : MonoBehaviour
     {
         int finalEarn = int.Parse(shopRenderer.itemCount.text) * int.Parse(shopRenderer.itemPrice.text);
         moneyAmount += finalEarn;
-        Player.LocalPlayerInstance.GetComponent<Player>().inventory.RemoveItem(1);           
-        
+        int id = -1;
+        for(int i = 0; i< Player.LocalPlayerInstance.GetComponent<Player>().inventory.databaseRef.database.Count; i++)
+        {
+            if (Player.LocalPlayerInstance.GetComponent<Player>().inventory.databaseRef.database[i].itemName == shopRenderer.itemName.text)
+            {
+                id = Player.LocalPlayerInstance.GetComponent<Player>().inventory.databaseRef.database[i].id;
+            }
+        }
+
+        int left = Player.LocalPlayerInstance.GetComponent<Player>().inventory.RemoveItem(id, int.Parse(shopRenderer.itemCount.text));
+        if ( left == 0)
+        {
+            Destroy(shopRenderer.gameObject);
+        }
+        else
+        {
+            shopRenderer.itemCount.text = "1";
+            shopRenderer.itemCount.gameObject.GetComponent<UpdatableInt>().max = left;
+        }
     }
 
     public void closeShop()

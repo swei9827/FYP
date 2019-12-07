@@ -198,7 +198,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1622641121579908980}
-        m_MethodName: BuyEvent
+        m_MethodName: SellEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 2363158672133543002}
   - component: {fileID: 1622641121579908980}
   m_Layer: 5
-  m_Name: ItemBox 1
+  m_Name: ItemBoxSell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temp: 0
+  max: 100
 --- !u!1 &2363158672307346640
 GameObject:
   m_ObjectHideFlags: 0

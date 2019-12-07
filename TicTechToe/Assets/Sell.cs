@@ -16,19 +16,9 @@ public class Sell : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {   
-        if(content.Capacity >= 0)
-        {
-            foreach (GameObject go in content)
-            {
-                Destroy(go);                
-            }
-        }
-        content.Clear();
-        Debug.Log("Clear List");
-
-        for(int i = 0; i< inventory.items.Capacity; i++)
+        for(int i = 0; i< inventory.items.Count; i++)
         {
             if (inventory.items[i].id >= 0)
             {
@@ -47,5 +37,18 @@ public class Sell : MonoBehaviour
                 Debug.Log("Create Item");
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        if (content.Count >= 0)
+        {
+            foreach (GameObject go in content)
+            {
+                Destroy(go);
+            }
+        }
+        content.Clear();
+        Debug.Log("Clear List");
     }
 }
