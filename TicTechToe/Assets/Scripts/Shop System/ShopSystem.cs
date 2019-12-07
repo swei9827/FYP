@@ -73,6 +73,7 @@ public class ShopSystem : MonoBehaviour
                 {
                     sd.amount += int.Parse(shopRenderer.itemCount.text);
                 }
+                shopRenderer.itemCount.text = "1";
             }            
         }
         else
