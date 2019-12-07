@@ -43,14 +43,23 @@ public class BucketMovement: MonoBehaviour
     {
         clickDirection = new Vector2(1, 0);
 
-        if (Input.GetKey(KeyCode.Mouse0))
+        if(Input.GetAxis("Mouse X") < 0)
         {
             transform.Translate(-clickDirection * 50 * speed * Time.deltaTime);
         }
-        else if (Input.GetKey(KeyCode.Mouse1))
+        else if(Input.GetAxis("Mouse X") > 0)
         {
             transform.Translate(clickDirection * 50 * speed * Time.deltaTime);
         }
+
+        //if (Input.GetKey(KeyCode.Mouse0))
+        //{
+        //    transform.Translate(-clickDirection * 50 * speed * Time.deltaTime);
+        //}
+        //else if (Input.GetKey(KeyCode.Mouse1))
+        //{
+        //    transform.Translate(clickDirection * 50 * speed * Time.deltaTime);
+        //}
     }
 
     void bucketMovementLimit()

@@ -1,22 +1,25 @@
-2019-12-07 PM 1:42:34 Log Started
-2019-12-07 PM 1:43:17 Player plowed DirtTile
-2019-12-07 PM 1:43:17 Player plowed DirtTile (1)
-2019-12-07 PM 1:43:18 Player plowed DirtTile (7)
-2019-12-07 PM 1:43:20 Player planted Pumpkin(Clone)
-2019-12-07 PM 1:43:20 Player planted Pumpkin(Clone)
-2019-12-07 PM 1:43:26 Player watered Pumpkin(Clone)
-2019-12-07 PM 1:43:26 Player watered Pumpkin(Clone)
-2019-12-07 PM 1:43:41 Player harvested Pumpkin(Clone)
-2019-12-07 PM 1:43:42 Player harvested Pumpkin(Clone)
-2019-12-07 PM 1:44:09 Player plowed DirtTile
-2019-12-07 PM 1:44:09 Player plowed DirtTile (2)
-2019-12-07 PM 1:44:09 Player plowed DirtTile (1)
-2019-12-07 PM 1:44:12 Player planted Strawberry(Clone)
-2019-12-07 PM 1:44:14 Player planted Potato(Clone)
-2019-12-07 PM 1:44:15 Player planted Potato(Clone)
-2019-12-07 PM 1:44:21 Player watered Strawberry(Clone)
-2019-12-07 PM 1:44:21 Player watered Potato(Clone)
-2019-12-07 PM 1:44:22 Player watered Potato(Clone)
-2019-12-07 PM 1:44:27 Player harvested Strawberry(Clone)
-2019-12-07 PM 1:44:27 Player harvested Potato(Clone)
-2019-12-07 PM 1:44:28 Player harvested Potato(Clone)
+7/12/2019 2:30:38 AM Log Started
+7/12/2019 2:31:26 AM Player plowed DirtTile
+7/12/2019 2:31:26 AM Player plowed DirtTile (1)
+7/12/2019 2:31:29 AM Player plowed DirtTile (3)
+7/12/2019 2:31:31 AM Player plowed DirtTile (2)
+7/12/2019 2:31:33 AM Player plowed DirtTile (4)
+7/12/2019 2:31:38 AM Player planted Strawberry(Clone)
+7/12/2019 2:31:39 AM Player planted Strawberry(Clone)
+7/12/2019 2:31:39 AM Player planted Strawberry(Clone)
+7/12/2019 2:31:40 AM Player planted Strawberry(Clone)
+7/12/2019 2:31:42 AM Player planted Strawberry(Clone)
+7/12/2019 2:31:45 AM Player watered Strawberry(Clone)
+7/12/2019 2:32:01 AM Player started Fishing
+7/12/2019 2:32:06 AM Player obtained Catfish
+7/12/2019 2:32:10 AM Player started Fishing
+7/12/2019 2:32:16 AM Player obtained Sardine
+7/12/2019 2:32:50 AM Player watered Strawberry(Clone)
+7/12/2019 2:32:50 AM Player watered Strawberry(Clone)
+7/12/2019 2:32:56 AM Player harvested Strawberry(Clone)
+7/12/2019 2:32:56 AM Player watered Strawberry(Clone)
+7/12/2019 2:32:56 AM Player watered Strawberry(Clone)
+7/12/2019 2:33:00 AM Player harvested Strawberry(Clone)
+7/12/2019 2:33:03 AM Player harvested Strawberry(Clone)
+7/12/2019 2:33:07 AM Player harvested Strawberry(Clone)
+7/12/2019 2:33:10 AM Player harvested Strawberry(Clone)

@@ -277,11 +277,24 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   playerAction: 0
   colliderObj:
   - {fileID: 99203052780396254}
   - {fileID: 99203053431960595}
   dialogueObj:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   dialogueBox: {fileID: 0}
@@ -290,3 +303,11 @@ MonoBehaviour:
     type: 3}
   BuyButtonHighlights: {fileID: 9100501604405353050, guid: 873e0e1d0aa61f84ea84f5d716f1f25b,
     type: 3}
+  dirtTile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
