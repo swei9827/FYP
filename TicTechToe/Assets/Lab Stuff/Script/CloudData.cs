@@ -12,6 +12,8 @@ public class CloudData : MonoBehaviour
     int itemAmount;
     bool playerDataReady = false;
 
+    public bool allowdDataTransfer = false;
+
     Inventory inv;
 
     void Start()
@@ -89,7 +91,10 @@ public class CloudData : MonoBehaviour
 
     public void writeToCloud(string dataID, int incre)
     {
-        StartCoroutine(waitAndWriteData(dataID, incre));
+        if (allowdDataTransfer)
+        {
+            StartCoroutine(waitAndWriteData(dataID, incre));
+        }
     }
 
     IEnumerator waitAndWriteData(string dataID, int incre)
