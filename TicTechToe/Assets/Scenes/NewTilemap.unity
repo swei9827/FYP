@@ -20334,6 +20334,11 @@ PrefabInstance:
       propertyPath: videoPlayer
       value: 
       objectReference: {fileID: 74311417}
+    - target: {fileID: 7507280841813915375, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.300049
+      objectReference: {fileID: 0}
     - target: {fileID: 436059275, guid: 813eebd421111fc4cb098a529970b333, type: 3}
       propertyPath: videoPlayer
       value: 
@@ -20431,6 +20436,12 @@ GameObject:
 --- !u!1 &533754014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1259783413, guid: 813eebd421111fc4cb098a529970b333,
+    type: 3}
+  m_PrefabInstance: {fileID: 533754002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &533754015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1956287388706551556, guid: 813eebd421111fc4cb098a529970b333,
     type: 3}
   m_PrefabInstance: {fileID: 533754002}
   m_PrefabAsset: {fileID: 0}
@@ -23782,7 +23793,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2222123432388925376}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2222123432388925377}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d5196b426565b24b9afd0252cea3202, type: 3}
@@ -30274,7 +30285,22 @@ PrefabInstance:
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.size
-      value: 21
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: hotKeySlots.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: seedKeySlots.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dialogueObj.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
@@ -30350,27 +30376,27 @@ PrefabInstance:
         type: 3}
       propertyPath: TutorialPopOut.Array.data[14]
       value: 
-      objectReference: {fileID: 936197664}
+      objectReference: {fileID: 533754015}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.data[15]
       value: 
-      objectReference: {fileID: 2039963872}
+      objectReference: {fileID: 936197664}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.data[16]
       value: 
-      objectReference: {fileID: 533754012}
+      objectReference: {fileID: 2039963872}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.data[17]
       value: 
-      objectReference: {fileID: 533754014}
+      objectReference: {fileID: 533754012}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.data[18]
       value: 
-      objectReference: {fileID: 533754013}
+      objectReference: {fileID: 533754014}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: dialogueObj.Array.data[0]
@@ -30385,7 +30411,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueObj.Array.data[2]
       value: 
-      objectReference: {fileID: 27654840938750204}
+      objectReference: {fileID: 2222123432388925377}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: dialogueBox
@@ -30435,12 +30461,28 @@ PrefabInstance:
         type: 3}
       propertyPath: TutorialPopOut.Array.data[19]
       value: 
-      objectReference: {fileID: 699584935}
+      objectReference: {fileID: 533754013}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.data[20]
       value: 
+      objectReference: {fileID: 699584935}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: TutorialPopOut.Array.data[21]
+      value: 
       objectReference: {fileID: 5536524041251660217}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: hotKeyHighlight
+      value: 
+      objectReference: {fileID: 902465479694967852, guid: 160a9313787bf3945b6b12a5ec0e9ec2,
+        type: 3}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dialogueObj.Array.data[3]
+      value: 
+      objectReference: {fileID: 27654840938750204}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26dae03ccaa04e2439e5b21d2dc38f6e, type: 3}
 --- !u!1001 &1438470529
@@ -36827,6 +36869,12 @@ PrefabInstance:
       objectReference: {fileID: 1445350150}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c90dab87961ee34c85aba2fc8b9f635, type: 3}
+--- !u!1 &2222123432388925377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2222123433259879628, guid: 2c90dab87961ee34c85aba2fc8b9f635,
+    type: 3}
+  m_PrefabInstance: {fileID: 2222123432388925376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2498748017749268022 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2498748017749268022, guid: 594c73a47a5282541ab1ce4595dddf03,

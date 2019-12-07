@@ -78,7 +78,7 @@ public class DialogueHolder : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.gameObject == Player.LocalPlayerInstance)
         {
             if(dialogueManager.interactable)
             {
@@ -105,7 +105,7 @@ public class DialogueHolder : MonoBehaviour
     {
         temp = this.gameObject.name;
 
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject == Player.LocalPlayerInstance)
         {
             if (temp == "NPC Uncle Joseph")
             {

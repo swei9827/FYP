@@ -86,8 +86,10 @@ public class CropTest : ItemTest
                 watered = true;
                 canInteract = false;
 
-                //local data record
+                //For tutorial
+                tutorial.waterCount += 1;
 
+                //local data record
                 DataRecord.AddEvents(4, this.gameObject.name);
             }              
         }   

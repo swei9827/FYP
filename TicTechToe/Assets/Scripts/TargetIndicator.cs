@@ -20,7 +20,8 @@ public class TargetIndicator : MonoBehaviour
         Jane = GameObject.Find("NPC Jane").transform;
         Harry = GameObject.Find("NPC Harry").transform;
 
-        target = Jane;
+        //target = Jane;
+        //SetChildrenActive(false);
     }
 
     // Update is called once per frame
@@ -50,7 +51,7 @@ public class TargetIndicator : MonoBehaviour
 
     }
 
-    void SetChildrenActive(bool value)
+    public void SetChildrenActive(bool value)
     {
         foreach(Transform child in transform)
         {
