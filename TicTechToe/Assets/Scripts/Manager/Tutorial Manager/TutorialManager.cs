@@ -63,6 +63,10 @@ public class TutorialManager : MonoBehaviour
         dialogueHolder = FindObjectOfType<DialogueHolder>();
         fishing = FindObjectOfType<Fishing>();
 
+        //set NPC dialogue to non tutorial dialogue
+        dialogueObj[1].GetComponent<DialogueHolder>().option4 = true;
+        dialogueObj[3].GetComponent<DialogueHolder>().option3 = true;
+
         loaded = true;
     }
 
@@ -130,7 +134,7 @@ public class TutorialManager : MonoBehaviour
         }
 
         //Tutorial 1 - player movement
-        if (popUpIndex == 1)
+        else if (popUpIndex == 1)
         {
             if (playerAction)
             {
@@ -146,9 +150,6 @@ public class TutorialManager : MonoBehaviour
                     }
                     popUpIndex++;
                     playerAction = false;
-
-                    //Set indicator active
-                    targetIndicator.SetChildrenActive(true);
                 }
             }
         }
@@ -161,6 +162,12 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Set indicator active
+                targetIndicator.SetChildrenActive(true);
+
+                //Set NPC1 Pop Out
+                dialogueObj[0].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
                 //Pop Out Interact with NPC2
                 if (dialogueObj[0].GetComponent<DialogueHolder>().interactNPCJoseph)
                 {
@@ -168,11 +175,7 @@ public class TutorialManager : MonoBehaviour
                     popUpIndex++;
 
                     //make sure doesnt interact NPC1
-                    dialogueManager.canInteract = false;
-
-                    //Change indicator target
-                    targetIndicator.SetChildrenActive(true);
-                    targetIndicator.target = dialogueObj[1].transform;
+                    dialogueManager.canInteract = false;           
                 }
             }
         }
@@ -185,8 +188,20 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Change indicator target
+                targetIndicator.SetChildrenActive(true);
+                targetIndicator.target = dialogueObj[1].transform;
+
+                //Set dialogue conversation
+                dialogueObj[1].GetComponent<DialogueHolder>().option1 = true;
+                dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
+
+                //Set NPC2 Pop Out
+                dialogueObj[1].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
                 //Pop Out GoldUI
-                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 4)
+                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 4 && dialogueObj[1].GetComponent<DialogueHolder>().option1 && 
+                    dialogueObj[1].GetComponent<DialogueHolder>().temp == "NPC Jane")
                 {
                     playerAction = false;
                     popUpIndex++;
@@ -205,7 +220,7 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
 
                 //Pop out received money
-                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 7)
+                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 7 && dialogueObj[1].GetComponent<DialogueHolder>().option1)
                 {
                     playerAction = false;
                     dialogueBox.SetActive(false);
@@ -269,6 +284,9 @@ public class TutorialManager : MonoBehaviour
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
+
+                //Set NPC3 Pop Out
+                dialogueObj[2].GetComponent<DialogueHolder>().PopOut.SetActive(true);
 
                 //pop out click buy button
                 if (shop.GetComponent<ShopSystem>().slots[0].GetComponent<ShopRenderer>().itemCount.text == 5.ToString())
@@ -360,8 +378,12 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Set dialogue Conversation
                 dialogueObj[1].GetComponent<DialogueHolder>().option4 = true;
                 dialogueObj[1].GetComponent<DialogueHolder>().option2 = false;
+
+                //Set NPC3 Pop Out
+                dialogueObj[2].GetComponent<DialogueHolder>().PopOut.SetActive(true);
 
                 //delete hotkey plow highlights
                 if (Hotkey.scrollPosition == 0)
@@ -372,7 +394,7 @@ public class TutorialManager : MonoBehaviour
                 //Pop out Plant
                 int counter = 0;
 
-                for (int i = 0; i <= 5; i++)
+                for (int i = 0; i <= 13; i++)
                 {
                     if (!dirtTile[i].GetComponent<DirtTile>().needsPlowing)
                     {
@@ -418,7 +440,7 @@ public class TutorialManager : MonoBehaviour
                 }
 
                 //Set counter for player to plant
-                for (int i = 0; i <= 5; i++)
+                for (int i = 0; i <= 13; i++)
                 {
                     if (!dirtTile[i].GetComponent<DirtTile>().addPlant)
                     {
@@ -496,15 +518,14 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Set NPC3 Pop Out
+                dialogueObj[2].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
                 //Pop Out Go Find Fishing NPC
                 if (dialogueObj[1].GetComponent<DialogueHolder>().option4)
                 {
                     playerAction = false;
-                    popUpIndex++;
-
-                    //Change indicator target
-                    targetIndicator.SetChildrenActive(true);
-                    targetIndicator.target = dialogueObj[3].transform;
+                    popUpIndex++;                
                 }
             }
         }
@@ -516,6 +537,17 @@ public class TutorialManager : MonoBehaviour
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
+
+                //Change indicator target
+                targetIndicator.SetChildrenActive(true);
+                targetIndicator.target = dialogueObj[3].transform;
+
+                //Set Dialogue Conversation
+                dialogueObj[3].GetComponent<DialogueHolder>().option1 = true;
+                dialogueObj[3].GetComponent<DialogueHolder>().option3 = false;
+
+                //Set NPC4 Pop Out
+                dialogueObj[3].GetComponent<DialogueHolder>().PopOut.SetActive(true);
 
                 // Pop Out Go to Fishing Spot
                 if (dialogueObj[3].GetComponent<DialogueHolder>().interactNPCMary)
@@ -554,13 +586,10 @@ public class TutorialManager : MonoBehaviour
                 //Pop Out Go Find Auntie Mary
                 if (fishing.success)
                 {
+                    //set player not to fish for a moment
                     GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
                     playerAction = false;
-                    popUpIndex++;
-
-                    //Change indicator target
-                    targetIndicator.SetChildrenActive(true);
-                    targetIndicator.target = dialogueObj[3].transform;
+                    popUpIndex++;               
                 }
             }
         }
@@ -573,17 +602,24 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Change indicator target
+                targetIndicator.SetChildrenActive(true);
+                targetIndicator.target = dialogueObj[3].transform;
+
                 dialogueObj[3].GetComponent<DialogueHolder>().option2 = true;
                 dialogueObj[3].GetComponent<DialogueHolder>().option3 = false;
 
+                //Set NPC4 Pop Out
+                dialogueObj[3].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
                 //Pop Out Go harvest
-                if (dialogueObj[2].GetComponent<DialogueHolder>().interactNPCMary2)
+                if (dialogueObj[3].GetComponent<DialogueHolder>().interactNPCMary2)
                 {
+                    //Set player able to fish as normal
                     GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
                     playerAction = false;
                     popUpIndex++;
                 }
-
             }
         }
 
@@ -594,6 +630,9 @@ public class TutorialManager : MonoBehaviour
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
+
+                dialogueObj[3].GetComponent<DialogueHolder>().option3 = true;
+                dialogueObj[3].GetComponent<DialogueHolder>().option2 = false;
 
                 //Pop out End Tutorial
                 if (harvestCount >= 5)

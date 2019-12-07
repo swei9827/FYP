@@ -197,7 +197,7 @@ public class CropTest : ItemTest
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject == Player.LocalPlayerInstance)
         {
             if (cropState == CropStateTest.Delayed)
             {
@@ -213,7 +213,7 @@ public class CropTest : ItemTest
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject == Player.LocalPlayerInstance)
         {
             if (cropState == CropStateTest.Delayed)
             {
