@@ -85,8 +85,8 @@ public class Fishing : MonoBehaviour
         if(RoomController.playerSpawned && !variableObtained)
         {
             ni = GameObject.FindGameObjectWithTag("Player").GetComponent<NPCInteraction>();
-            inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-            itemDatabase = GameObject.Find("Inventory").GetComponent<ItemDatabase>();
+            inventory = Player.LocalPlayerInstance.GetComponent<Player>().inventory;
+            itemDatabase = Player.LocalPlayerInstance.transform.GetChild(1).gameObject.GetComponent<ItemDatabase>();
             variableObtained = true;
         }
 

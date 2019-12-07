@@ -15,7 +15,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     void Start()
     {
-        inv = GameObject.Find("Inventory").GetComponent<Inventory>();
+        inv = Player.LocalPlayerInstance.GetComponent<Player>().inventory;
         tooltip = inv.GetComponent<ToolTip>();
     }
 

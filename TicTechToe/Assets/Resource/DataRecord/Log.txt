@@ -1,1 +1,5 @@
-7/12/2019 11:52:25 PM Log Started
+8/12/2019 4:00:43 AM Log Started
+8/12/2019 4:18:20 AM Player started Fishing
+8/12/2019 4:18:28 AM Player obtained Salmon
+8/12/2019 4:18:34 AM Player started Fishing
+8/12/2019 4:18:38 AM Player obtained Catfish
