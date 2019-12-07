@@ -1,6 +1,22 @@
-<<<<<<< HEAD
-5/12/2019 1:47:06 AM Log Started
-=======
-27/11/2019 9:04:08 AM Log Started
-27/11/2019 9:04:32 AM Player obtained Hoe_AddedStroke
->>>>>>> origin/SW'sLab
+2019-12-07 PM 1:42:34 Log Started
+2019-12-07 PM 1:43:17 Player plowed DirtTile
+2019-12-07 PM 1:43:17 Player plowed DirtTile (1)
+2019-12-07 PM 1:43:18 Player plowed DirtTile (7)
+2019-12-07 PM 1:43:20 Player planted Pumpkin(Clone)
+2019-12-07 PM 1:43:20 Player planted Pumpkin(Clone)
+2019-12-07 PM 1:43:26 Player watered Pumpkin(Clone)
+2019-12-07 PM 1:43:26 Player watered Pumpkin(Clone)
+2019-12-07 PM 1:43:41 Player harvested Pumpkin(Clone)
+2019-12-07 PM 1:43:42 Player harvested Pumpkin(Clone)
+2019-12-07 PM 1:44:09 Player plowed DirtTile
+2019-12-07 PM 1:44:09 Player plowed DirtTile (2)
+2019-12-07 PM 1:44:09 Player plowed DirtTile (1)
+2019-12-07 PM 1:44:12 Player planted Strawberry(Clone)
+2019-12-07 PM 1:44:14 Player planted Potato(Clone)
+2019-12-07 PM 1:44:15 Player planted Potato(Clone)
+2019-12-07 PM 1:44:21 Player watered Strawberry(Clone)
+2019-12-07 PM 1:44:21 Player watered Potato(Clone)
+2019-12-07 PM 1:44:22 Player watered Potato(Clone)
+2019-12-07 PM 1:44:27 Player harvested Strawberry(Clone)
+2019-12-07 PM 1:44:27 Player harvested Potato(Clone)
+2019-12-07 PM 1:44:28 Player harvested Potato(Clone)
