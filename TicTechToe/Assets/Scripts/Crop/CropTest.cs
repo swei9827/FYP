@@ -36,8 +36,8 @@ public class CropTest : ItemTest
 
     private void Awake()
     {
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-        itemDatabase = GameObject.Find("Inventory").GetComponent<ItemDatabase>();
+        inventory = Player.LocalPlayerInstance.GetComponent<Player>().inventory;
+        itemDatabase = Player.LocalPlayerInstance.transform.GetChild(1).gameObject.GetComponent<ItemDatabase>();
         tutorial = GameObject.Find("TutorialManager").GetComponent<TutorialManager>();
 
     }

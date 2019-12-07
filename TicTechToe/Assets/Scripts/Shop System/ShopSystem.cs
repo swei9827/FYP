@@ -81,6 +81,14 @@ public class ShopSystem : MonoBehaviour
         }
     }
 
+    public void sellItem(ShopRenderer shopRenderer)
+    {
+        int finalEarn = int.Parse(shopRenderer.itemCount.text) * int.Parse(shopRenderer.itemPrice.text);
+        moneyAmount += finalEarn;
+        Player.LocalPlayerInstance.GetComponent<Player>().inventory.RemoveItem(1);           
+        
+    }
+
     public void closeShop()
     {
         moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getMoney();
