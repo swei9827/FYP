@@ -41,6 +41,12 @@ public class HotKey : MonoBehaviour
     public static bool canUse = false;
     public static bool canWater = false;
 
+    bool isClick = false;
+    bool plowClick = false;
+    bool waterClick = false;
+    bool fishingRodClick = false;
+    bool seedClick = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,8 +76,6 @@ public class HotKey : MonoBehaviour
         SeedBar.SetActive(false);
         waterBar.gameObject.SetActive(false);
         canUse = false;
-
-        //EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void SetItem()
@@ -83,9 +87,9 @@ public class HotKey : MonoBehaviour
             scrollPosition--;
             ResetToogle();
             EventSystem.current.SetSelectedGameObject(null);
-            if (scrollPosition <= 0)
+            if (scrollPosition <= -1)
             {
-                scrollPosition = 0;
+                scrollPosition = -1;
             }
         }
 
@@ -102,56 +106,127 @@ public class HotKey : MonoBehaviour
 
         //===================== MouseClick =============================//
         if (slots[0].gameObject == EventSystem.current.currentSelectedGameObject)
-        {
+        {            
+            plowClick = !plowClick;
+
             scrollPosition = 0;
             ResetToogle();
-            //EventSystem.current.SetSelectedGameObject(null);
+
+            EventSystem.current.SetSelectedGameObject(null);
         }
 
         else if (slots[1].gameObject == EventSystem.current.currentSelectedGameObject)
         {
+            waterClick = !waterClick;
+
             scrollPosition = 1;
             ResetToogle();
-            //EventSystem.current.SetSelectedGameObject(null);
+
+            EventSystem.current.SetSelectedGameObject(null);          
         }
 
         else if (slots[2].gameObject == EventSystem.current.currentSelectedGameObject)
         {
+            fishingRodClick = !fishingRodClick;
+
             scrollPosition = 2;
             ResetToogle();
-           // EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(null);
         }
 
         else if (slots[3].gameObject == EventSystem.current.currentSelectedGameObject)
         {
+            seedClick = !seedClick;
+
             scrollPosition = 3;
             ResetToogle();
-            //EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(null);
         }
-       
+
+        if (!plowClick && !waterClick && !fishingRodClick && !seedClick && !isClick)
+        {
+            scrollPosition = -1;
+            ResetToogle();
+        }
+
+        if (scrollPosition == -1)
+        {
+            isClick = true;
+
+            if(isClick)
+            {
+                iconBox.Close();
+                ResetToogle();
+            }
+          
+            plowClick = false;
+            waterClick = false;
+            fishingRodClick = false;
+            seedClick = false;
+        }
 
         if (scrollPosition == 0)
         {
-            tool.isPlow = true;
-            iconBox.SetIcon(tool.sprite[1]);
+            plowClick = true;
+
+            if(plowClick)
+            {
+                tool.isPlow = true;
+                iconBox.SetIcon(tool.sprite[1]);
+            }
+
+            isClick = false;
+            waterClick = false;
+            fishingRodClick = false;
+            seedClick = false;
         }
 
         if (scrollPosition == 1)
         {
-            tool.isWaterCan = true;
-            iconBox.SetIcon(tool.sprite[2]);
+            waterClick = true;
+
+            if(waterClick)
+            {
+                tool.isWaterCan = true;
+                iconBox.SetIcon(tool.sprite[2]);
+            }
+
+            isClick = false;
+            plowClick = false;
+            fishingRodClick = false;
+            seedClick = false;
         }
 
         if (scrollPosition == 2)
         {
-            tool.isFishingRod = true;
-            iconBox.SetIcon(tool.sprite[3]);
+            fishingRodClick = true;
+
+            if(fishingRodClick)
+            {
+                tool.isFishingRod = true;
+                iconBox.SetIcon(tool.sprite[3]);
+            }
+
+            isClick = false;
+            plowClick = false;
+            waterClick = false;
+            seedClick = false;
         }
 
         if (scrollPosition == 3)
         {
-            tool.isSeed = true;
-            SeedBar.SetActive(true);
+            seedClick = true;
+
+            if(seedClick)
+            {
+                tool.isSeed = true;
+                SeedBar.SetActive(true);
+            }
+
+            isClick = false;
+            plowClick = false;
+            waterClick = false;
+            fishingRodClick = false;         
         }
 
         if (button[0].gameObject == EventSystem.current.currentSelectedGameObject)
@@ -185,8 +260,7 @@ public class HotKey : MonoBehaviour
             seedSelectButton();
         }
 
-        //select item
-        SelectButton();      
+        SelectButton();
     }
 
     void CheckWaterStatus()
@@ -214,7 +288,7 @@ public class HotKey : MonoBehaviour
 
     void SelectButton()
     {
-        for(int i=0; i<slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].name == "Slots (" + scrollPosition + ")")
             {
@@ -223,8 +297,8 @@ public class HotKey : MonoBehaviour
             else
             {
                 slots[i].GetComponent<Button>().image.sprite = disableSprite;
-            }
-        }        
+            }    
+        } 
     }
 
     void seedSelectButton()

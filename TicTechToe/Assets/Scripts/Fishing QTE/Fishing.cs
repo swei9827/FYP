@@ -26,8 +26,9 @@ public class Fishing : MonoBehaviour
     private float hitBucketAmount;
     private float hitWaterAmount;
 
-    bool canInteract = true;
+    public bool canInteract = true;
     public bool success = false;
+    public bool fail = false;
 
     //UI
     public TextMeshProUGUI fishNames;
@@ -182,7 +183,6 @@ public class Fishing : MonoBehaviour
 
         foreach (Item item in itemDatabase.database)
         {
-            Debug.Log(item.itemName);
             if ((item.itemName) == fishImg.sprite.name)
             {
                 ni.questItemCheck(item);
@@ -218,7 +218,7 @@ public class Fishing : MonoBehaviour
             if (bucketHit >= hitBucketAmount)
             {
                 spawnFish();
-                Debug.Log("Success!");
+
                 //set everything to 0
                 bucketHit = 0;
                 waterHit = -1;
@@ -234,8 +234,6 @@ public class Fishing : MonoBehaviour
 
             else if (waterHit >= hitWaterAmount)
             {
-                Debug.Log("Fail");
-
                 //set everything to 0
                 bucketHit = 0;
                 waterHit = -1;
@@ -247,6 +245,7 @@ public class Fishing : MonoBehaviour
                 fishingGame.SetActive(false);
                 PlayerMovement.canMove = true;
                 canInteract = true;
+                fail = true;
             }
         }      
     }

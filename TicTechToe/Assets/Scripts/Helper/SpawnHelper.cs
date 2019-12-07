@@ -12,6 +12,10 @@ public class SpawnHelper : MonoBehaviour
     GameObject playerInstance;
 
     public bool inScene = false;
+    bool canSpawn = true;
+
+    private float setTimer;
+    private float maxTimer = 3f;
 
     // Update is called once per frame
     void Update()
@@ -29,7 +33,8 @@ public class SpawnHelper : MonoBehaviour
             helperController.StartCoroutine(helperController.TriggerTextBox());
             helperController.textDisplay.text = "Hello! Looks like you need my help";
         }
-        else if(Input.GetKeyDown(KeyCode.H) && inScene)
+
+        else if (Input.GetKeyDown(KeyCode.H) && inScene)
         {
             //pop out textBox
             helperController = FindObjectOfType<HelperController>();
@@ -37,6 +42,7 @@ public class SpawnHelper : MonoBehaviour
             helperController.textDisplay.text = "GoodBye!";
 
             SetHelperActive();
+
             inScene = false;
         }   
     }
@@ -49,7 +55,7 @@ public class SpawnHelper : MonoBehaviour
             playerInstance = Instantiate(helper, spawnPos, Quaternion.identity);
         }
         else
-        {           
+        {
             Destroy(playerInstance, 3f);
         }
     }
