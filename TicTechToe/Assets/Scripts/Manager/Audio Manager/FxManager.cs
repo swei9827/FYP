@@ -37,6 +37,8 @@ public class FxManager : MonoBehaviour
         public bool isLooping;
 
         public bool playOnAwake;
+
+        public AudioMixerGroup audioGroup;
     }
 
     // Use this for initialization
@@ -57,6 +59,7 @@ public class FxManager : MonoBehaviour
         foreach (var s in audioFiles)
         {
             s.source = gameObject.AddComponent<AudioSource>();
+            s.source.outputAudioMixerGroup = s.audioGroup;
             s.source.clip = s.audioClip;
             s.source.volume = s.volume;
             s.source.loop = s.isLooping;
