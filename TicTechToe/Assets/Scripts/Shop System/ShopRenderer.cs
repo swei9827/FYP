@@ -11,6 +11,7 @@ public class ShopRenderer : MonoBehaviour
     public Button itemAdd;
     public Button itemRemove;
     public Text itemCount;
+    public Button BuyOrSell;
 
     public void Initialize(Sprite img, string name, int price, int count)
     {
@@ -23,5 +24,10 @@ public class ShopRenderer : MonoBehaviour
     public void BuyEvent()
     {
         this.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<ShopSystem>().buyItem(this);
+    }
+
+    public void SellEvent()
+    {
+        this.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<ShopSystem>().sellItem(this);
     }
 }

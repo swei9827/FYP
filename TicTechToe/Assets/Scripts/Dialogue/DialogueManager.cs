@@ -9,7 +9,6 @@ public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue Prefab")]
     public GameObject dialogueBox;
-    public GameObject nameBox;
     public GameObject continueButton;
 
     [Header("Dialogue Text")]

@@ -8,6 +8,7 @@ public class UpdatableInt : MonoBehaviour
     private Text textComponent;
     private string content;
     public int temp;
+    public int max = 100;
 
     private void Start()
     {
@@ -17,7 +18,10 @@ public class UpdatableInt : MonoBehaviour
     public void Plus()
     {
         temp = int.Parse(textComponent.text);
-        temp++;
+        if(temp < max)
+        {
+            temp++;
+        }        
         textComponent.text = temp.ToString();
     }
 

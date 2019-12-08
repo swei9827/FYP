@@ -1434,16 +1434,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2768586353306940913, guid: 9b0746cf8049b4f41b9c313e23927326,
-        type: 3}
-      propertyPath: dialogueBox
-      value: 
-      objectReference: {fileID: 1445350150}
-    - target: {fileID: 2768586353306940913, guid: 9b0746cf8049b4f41b9c313e23927326,
-        type: 3}
-      propertyPath: interactNPCHenry
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b0746cf8049b4f41b9c313e23927326, type: 3}
 --- !u!224 &107285139 stripped
@@ -15311,86 +15301,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines2.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines3.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines4.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueBox
-      value: 
-      objectReference: {fileID: 1445350150}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: interactNPCHenry
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines2.Array.data[0]
-      value: "Wow that\u2019s quick!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines2.Array.data[1]
-      value: Seems like you already got the seeds
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines2.Array.data[2]
-      value: "Well, let\u2019s start shall we?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines2.Array.data[3]
-      value: First, we need to plow the soil with that garden hoe of you!
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines3.Array.data[0]
-      value: Well done!
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines3.Array.data[1]
-      value: Planted seeds take some time to grow
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines3.Array.data[2]
-      value: Also, the amount of time for each type of seeds may be different
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines3.Array.data[3]
-      value: "For now, let\u2019s just have a good rest and call it a day!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines4.Array.data[0]
-      value: Hey there!
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines4.Array.data[1]
-      value: I am wondering....
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469221083081293373, guid: 383cfe81789733e46814d007535f6e7c,
-        type: 3}
-      propertyPath: dialogueLines4.Array.data[2]
-      value: Whether you had completed the task i asked you to do
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 383cfe81789733e46814d007535f6e7c, type: 3}
 --- !u!1 &207504464
@@ -20334,6 +20244,11 @@ PrefabInstance:
       propertyPath: videoPlayer
       value: 
       objectReference: {fileID: 74311417}
+    - target: {fileID: 7507280841813915375, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.300049
+      objectReference: {fileID: 0}
     - target: {fileID: 436059275, guid: 813eebd421111fc4cb098a529970b333, type: 3}
       propertyPath: videoPlayer
       value: 
@@ -20431,6 +20346,12 @@ GameObject:
 --- !u!1 &533754014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1259783413, guid: 813eebd421111fc4cb098a529970b333,
+    type: 3}
+  m_PrefabInstance: {fileID: 533754002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &533754015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1956287388706551556, guid: 813eebd421111fc4cb098a529970b333,
     type: 3}
   m_PrefabInstance: {fileID: 533754002}
   m_PrefabAsset: {fileID: 0}
@@ -22030,6 +21951,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116a35d4ccf128e489c7b8487d8ae045, type: 3}
+--- !u!1 &575473518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2539705720589047734, guid: 116a35d4ccf128e489c7b8487d8ae045,
+    type: 3}
+  m_PrefabInstance: {fileID: 575473517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &604703929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22603,6 +22530,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116a35d4ccf128e489c7b8487d8ae045, type: 3}
+--- !u!1 &646431949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2539705720589047734, guid: 116a35d4ccf128e489c7b8487d8ae045,
+    type: 3}
+  m_PrefabInstance: {fileID: 646431948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &657366697
 GameObject:
   m_ObjectHideFlags: 0
@@ -23279,6 +23212,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116a35d4ccf128e489c7b8487d8ae045, type: 3}
+--- !u!1 &728121419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2539705720589047734, guid: 116a35d4ccf128e489c7b8487d8ae045,
+    type: 3}
+  m_PrefabInstance: {fileID: 728121418}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &772544816
 GameObject:
   m_ObjectHideFlags: 0
@@ -23782,7 +23721,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2222123432388925376}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2222123432388925377}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d5196b426565b24b9afd0252cea3202, type: 3}
@@ -24005,6 +23944,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116a35d4ccf128e489c7b8487d8ae045, type: 3}
+--- !u!1 &930769358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2539705720589047734, guid: 116a35d4ccf128e489c7b8487d8ae045,
+    type: 3}
+  m_PrefabInstance: {fileID: 930769357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &931508066
 GameObject:
   m_ObjectHideFlags: 0
@@ -30274,7 +30219,27 @@ PrefabInstance:
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.size
-      value: 21
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: hotKeySlots.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: seedKeySlots.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dialogueObj.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dirtTile.Array.size
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
@@ -30350,27 +30315,27 @@ PrefabInstance:
         type: 3}
       propertyPath: TutorialPopOut.Array.data[14]
       value: 
-      objectReference: {fileID: 936197664}
+      objectReference: {fileID: 533754015}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.data[15]
       value: 
-      objectReference: {fileID: 2039963872}
+      objectReference: {fileID: 936197664}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.data[16]
       value: 
-      objectReference: {fileID: 533754012}
+      objectReference: {fileID: 2039963872}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.data[17]
       value: 
-      objectReference: {fileID: 533754014}
+      objectReference: {fileID: 533754012}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.data[18]
       value: 
-      objectReference: {fileID: 533754013}
+      objectReference: {fileID: 533754014}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: dialogueObj.Array.data[0]
@@ -30385,7 +30350,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueObj.Array.data[2]
       value: 
-      objectReference: {fileID: 27654840938750204}
+      objectReference: {fileID: 2222123432388925377}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: dialogueBox
@@ -30435,12 +30400,63 @@ PrefabInstance:
         type: 3}
       propertyPath: TutorialPopOut.Array.data[19]
       value: 
-      objectReference: {fileID: 699584935}
+      objectReference: {fileID: 533754013}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
       propertyPath: TutorialPopOut.Array.data[20]
       value: 
+      objectReference: {fileID: 699584935}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: TutorialPopOut.Array.data[21]
+      value: 
       objectReference: {fileID: 5536524041251660217}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: hotKeyHighlight
+      value: 
+      objectReference: {fileID: 902465479694967852, guid: 160a9313787bf3945b6b12a5ec0e9ec2,
+        type: 3}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dialogueObj.Array.data[3]
+      value: 
+      objectReference: {fileID: 27654840938750204}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dirtTile.Array.data[7]
+      value: 
+      objectReference: {fileID: 575473518}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dirtTile.Array.data[8]
+      value: 
+      objectReference: {fileID: 930769358}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dirtTile.Array.data[9]
+      value: 
+      objectReference: {fileID: 1728793189}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dirtTile.Array.data[10]
+      value: 
+      objectReference: {fileID: 728121419}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dirtTile.Array.data[11]
+      value: 
+      objectReference: {fileID: 1452620008}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dirtTile.Array.data[12]
+      value: 
+      objectReference: {fileID: 646431949}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: dirtTile.Array.data[13]
+      value: 
+      objectReference: {fileID: 1438470530}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26dae03ccaa04e2439e5b21d2dc38f6e, type: 3}
 --- !u!1001 &1438470529
@@ -30544,6 +30560,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116a35d4ccf128e489c7b8487d8ae045, type: 3}
+--- !u!1 &1438470530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2539705720589047734, guid: 116a35d4ccf128e489c7b8487d8ae045,
+    type: 3}
+  m_PrefabInstance: {fileID: 1438470529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1445350150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 685094445342182827, guid: c6dfb835f2371f441b9f3ddad803b7b4,
@@ -30812,6 +30834,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116a35d4ccf128e489c7b8487d8ae045, type: 3}
+--- !u!1 &1452620008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2539705720589047734, guid: 116a35d4ccf128e489c7b8487d8ae045,
+    type: 3}
+  m_PrefabInstance: {fileID: 1452620007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!328 &1465603583 stripped
 VideoPlayer:
   m_CorrespondingSourceObject: {fileID: 1545212135363109954, guid: e5fef7b368059254e83207b804dc6de5,
@@ -34881,6 +34909,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116a35d4ccf128e489c7b8487d8ae045, type: 3}
+--- !u!1 &1728793189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2539705720589047734, guid: 116a35d4ccf128e489c7b8487d8ae045,
+    type: 3}
+  m_PrefabInstance: {fileID: 1728793188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1809947029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2539705720589047731, guid: 116a35d4ccf128e489c7b8487d8ae045,
@@ -36755,11 +36789,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC Harry
       objectReference: {fileID: 0}
-    - target: {fileID: 2222123433259879628, guid: 2c90dab87961ee34c85aba2fc8b9f635,
-        type: 3}
-      propertyPath: m_TagString
-      value: NPC
-      objectReference: {fileID: 0}
     - target: {fileID: 2222123433259879629, guid: 2c90dab87961ee34c85aba2fc8b9f635,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36827,6 +36856,12 @@ PrefabInstance:
       objectReference: {fileID: 1445350150}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c90dab87961ee34c85aba2fc8b9f635, type: 3}
+--- !u!1 &2222123432388925377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2222123433259879628, guid: 2c90dab87961ee34c85aba2fc8b9f635,
+    type: 3}
+  m_PrefabInstance: {fileID: 2222123432388925376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2498748017749268022 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2498748017749268022, guid: 594c73a47a5282541ab1ce4595dddf03,
@@ -37070,6 +37105,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1145204178, guid: 9417a680143492d47b7f41a9802a897b, type: 3}
+      propertyPath: itemGO
+      value: 
+      objectReference: {fileID: 2363158672133543004, guid: 08bf5a1b123ccef4090035cc83345125,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9417a680143492d47b7f41a9802a897b, type: 3}
 --- !u!1 &5183455150812797517 stripped

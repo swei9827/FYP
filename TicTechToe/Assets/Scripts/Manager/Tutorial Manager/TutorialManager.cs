@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.EventSystems;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -18,40 +18,91 @@ public class TutorialManager : MonoBehaviour
 
     [Header("Dialogue Character Settings")]
     public GameObject[] dialogueObj;
-    private DialogueManager dialogueManager;
-    private DialogueHolder dialogueHolder;
     public GameObject dialogueBox;
 
     [Header("Shop Settings")]
     public GameObject shop;
     public GameObject PlusButtonHighlights;
     public GameObject BuyButtonHighlights;
-    GameObject temphighlights;
 
     [Header("Dirtile Settings")]
     public GameObject[] dirtTile;
 
-    private Fishing fishing;
+    [Header("Level Complete")]
+    public bool level1 = false;
+    public bool level2 = false;
+    public bool level3 = false;
+    public bool level4 = false;
 
+    [Header("HotKey Settings")]
+    public GameObject[] hotKeySlots;
+    public GameObject hotKeyHighlight;
+    public GameObject slotPanel;
+    private GameObject seedPanel;
+    private GameObject seedKeySlot;
+
+    //temp store for highlights
+    GameObject temphighlights;
+
+    //Get scripts variable
+    private Fishing fishing;
+    private DialogueManager dialogueManager;
+    private DialogueHolder dialogueHolder;
+    private HotKey Hotkey;
+    private TargetIndicator targetIndicator;
+
+    // For harvest and water plant
     public int harvestCount = 0;
     public int waterCount = 0;
+
+    bool loaded;
 
     void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
         dialogueHolder = FindObjectOfType<DialogueHolder>();
         fishing = FindObjectOfType<Fishing>();
+
+        //set NPC dialogue to non tutorial dialogue
+        dialogueObj[1].GetComponent<DialogueHolder>().option4 = true;
+        dialogueObj[3].GetComponent<DialogueHolder>().option3 = true;
+
+        loaded = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        setInstatiatePlayer();
+     
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             playerAction = true;
         }
 
         ChangeTutorial();
+    }
+
+    void setInstatiatePlayer()
+    {
+        if (loaded)
+        {
+            //For target indicator
+            targetIndicator = FindObjectOfType<TargetIndicator>();
+            targetIndicator.target = dialogueObj[0].transform;
+            targetIndicator.SetChildrenActive(false);
+         
+            //for Hotkey
+            Hotkey = FindObjectOfType<HotKey>();
+            slotPanel = GameObject.Find("SlotPanel");
+          
+            for (int i = 0; i < 4; i++)
+            {
+                hotKeySlots[i] = slotPanel.transform.GetChild(i).gameObject;
+            }
+
+            loaded = false;
+        }
     }
 
     void ChangeTutorial()
@@ -73,6 +124,7 @@ public class TutorialManager : MonoBehaviour
                 timer -= Time.deltaTime;
                 Time.timeScale = 1;
                 TutorialPopOut[popUpIndex].SetActive(false);
+           
                 if (timer <= 0)
                 {
                     popUpIndex++;
@@ -82,13 +134,14 @@ public class TutorialManager : MonoBehaviour
         }
 
         //Tutorial 1 - player movement
-        if (popUpIndex == 1)
+        else if (popUpIndex == 1)
         {
             if (playerAction)
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Pop Out Interact with NPC1
                 if (colliderObj[0].GetComponent<SpriteRenderer>().color == Color.red && colliderObj[1].GetComponent<SpriteRenderer>().color == Color.red)
                 {
                     for (int i = 0; i < colliderObj.Length; i++)
@@ -109,14 +162,20 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                //NPC Uncle Joseph
+                //Set indicator active
+                targetIndicator.SetChildrenActive(true);
+
+                //Set NPC1 Pop Out
+                dialogueObj[0].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
+                //Pop Out Interact with NPC2
                 if (dialogueObj[0].GetComponent<DialogueHolder>().interactNPCJoseph)
                 {
                     playerAction = false;
                     popUpIndex++;
 
                     //make sure doesnt interact NPC1
-                    dialogueManager.canInteract = false;
+                    dialogueManager.canInteract = false;           
                 }
             }
         }
@@ -129,8 +188,20 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Change indicator target
+                targetIndicator.SetChildrenActive(true);
+                targetIndicator.target = dialogueObj[1].transform;
+
+                //Set dialogue conversation
+                dialogueObj[1].GetComponent<DialogueHolder>().option1 = true;
+                dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
+
+                //Set NPC2 Pop Out
+                dialogueObj[1].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
                 //Pop Out GoldUI
-                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 4)
+                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 4 && dialogueObj[1].GetComponent<DialogueHolder>().option1 && 
+                    dialogueObj[1].GetComponent<DialogueHolder>().temp == "NPC Jane")
                 {
                     playerAction = false;
                     popUpIndex++;
@@ -149,7 +220,7 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
 
                 //Pop out received money
-                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 7)
+                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 7 && dialogueObj[1].GetComponent<DialogueHolder>().option1)
                 {
                     playerAction = false;
                     dialogueBox.SetActive(false);
@@ -177,11 +248,15 @@ public class TutorialManager : MonoBehaviour
 
                     //make sure doesnt interact NPC2
                     dialogueManager.canInteract = false;
+
+                    //Change indicator target
+                    targetIndicator.SetChildrenActive(true);
+                    targetIndicator.target = dialogueObj[2].transform;
                 }
             }
         }
 
-        // Tutorial 5- Pop Out direction To Shop
+        // Tutorial 6- Pop Out direction To Shop
         else if (popUpIndex == 6)
         {
             if (playerAction)
@@ -209,6 +284,9 @@ public class TutorialManager : MonoBehaviour
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
+
+                //Set NPC3 Pop Out
+                dialogueObj[2].GetComponent<DialogueHolder>().PopOut.SetActive(true);
 
                 //pop out click buy button
                 if (shop.GetComponent<ShopSystem>().slots[0].GetComponent<ShopRenderer>().itemCount.text == 5.ToString())
@@ -261,6 +339,9 @@ public class TutorialManager : MonoBehaviour
                     playerAction = false;
                     popUpIndex++;
 
+                    //Change indicator target
+                    targetIndicator.SetChildrenActive(true);
+                    targetIndicator.target = dialogueObj[1].transform;
                 }
             }
         }
@@ -281,6 +362,10 @@ public class TutorialManager : MonoBehaviour
                 {
                     playerAction = false;
                     popUpIndex++;
+
+                    //Instantiate hotkey plow highlights
+                    temphighlights = Instantiate(hotKeyHighlight, hotKeySlots[0].transform);
+                    temphighlights.transform.SetAsFirstSibling();
                 }
             }
         }
@@ -293,13 +378,23 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Set dialogue Conversation
                 dialogueObj[1].GetComponent<DialogueHolder>().option4 = true;
                 dialogueObj[1].GetComponent<DialogueHolder>().option2 = false;
+
+                //Set NPC3 Pop Out
+                dialogueObj[2].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
+                //delete hotkey plow highlights
+                if (Hotkey.scrollPosition == 0)
+                {
+                    Destroy(temphighlights);
+                }
 
                 //Pop out Plant
                 int counter = 0;
 
-                for (int i = 0; i <= 5; i++)
+                for (int i = 0; i <= 13; i++)
                 {
                     if (!dirtTile[i].GetComponent<DirtTile>().needsPlowing)
                     {
@@ -311,6 +406,10 @@ public class TutorialManager : MonoBehaviour
                 {
                     playerAction = false;
                     popUpIndex++;
+
+                    //Instantiate hotkey seed highlights
+                    temphighlights = Instantiate(hotKeyHighlight, hotKeySlots[3].transform);
+                    temphighlights.transform.SetAsFirstSibling();
                 }
             }
         }
@@ -324,7 +423,24 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
 
                 int counter = 0;
-                for (int i = 0; i <= 5; i++)
+
+                //delete hotkey plow highlights
+                if (Hotkey.scrollPosition == 3)
+                {
+                    Destroy(temphighlights);
+
+                    //seedPanel = GameObject.Find("SeedBackground");
+                    //seedKeySlot = seedPanel.transform.GetChild(0).GetChild(0).gameObject;
+                    //temphighlights = Instantiate(hotKeyHighlight, seedKeySlot.transform);
+
+                    //if (Hotkey.button[0].gameObject == EventSystem.current.currentSelectedGameObject)
+                    //{
+                    //    Destroy(temphighlights);
+                    //}
+                }
+
+                //Set counter for player to plant
+                for (int i = 0; i <= 13; i++)
                 {
                     if (!dirtTile[i].GetComponent<DirtTile>().addPlant)
                     {
@@ -336,6 +452,10 @@ public class TutorialManager : MonoBehaviour
                 {
                     playerAction = false;
                     popUpIndex++;
+
+                    //Instantiate hotkey seed highlights
+                    temphighlights = Instantiate(hotKeyHighlight, hotKeySlots[1].transform);
+                    temphighlights.transform.SetAsFirstSibling();
                 }
             }
         }
@@ -348,11 +468,17 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //delete hotkey plow highlights
+                if (Hotkey.scrollPosition == 1)
+                {
+                    Destroy(temphighlights);
+                }
+
                 dialogueObj[1].GetComponent<DialogueHolder>().option3 = true;
                 dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
 
-                //Pop out go find back Jane
-                if (GameObject.FindGameObjectWithTag("Crops").GetComponent<CropTest>().watered)
+                //Pop out Refill Water
+                if (WaterCan.curFill <=0)
                 {
                     playerAction = false;
                     popUpIndex++;
@@ -360,24 +486,31 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        //Tutorial 14 - Go Find Back Jane
-        else if (popUpIndex == 14)
+        //Tutorial 14 - Pop Out refill water
+        else if(popUpIndex == 14)
         {
             if (playerAction)
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                //Pop Out Go Find Fishing NPC
-                if (dialogueObj[1].GetComponent<DialogueHolder>().option4)
+                dialogueObj[1].GetComponent<DialogueHolder>().option3 = true;
+                dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
+
+                //Pop out go find back Jane
+                if (waterCount >= 5)
                 {
                     playerAction = false;
                     popUpIndex++;
+
+                    //Change indicator target
+                    targetIndicator.SetChildrenActive(true);
+                    targetIndicator.target = dialogueObj[1].transform;
                 }
             }
         }
 
-        //Tutorial 15 - Go Find Fishing NPC
+        //Tutorial 14 - Go Find Back Jane
         else if (popUpIndex == 15)
         {
             if (playerAction)
@@ -385,8 +518,39 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Set NPC3 Pop Out
+                dialogueObj[2].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
+                //Pop Out Go Find Fishing NPC
+                if (dialogueObj[1].GetComponent<DialogueHolder>().option4)
+                {
+                    playerAction = false;
+                    popUpIndex++;                
+                }
+            }
+        }
+
+        //Tutorial 15 - Go Find Fishing NPC
+        else if (popUpIndex == 16)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                //Change indicator target
+                targetIndicator.SetChildrenActive(true);
+                targetIndicator.target = dialogueObj[3].transform;
+
+                //Set Dialogue Conversation
+                dialogueObj[3].GetComponent<DialogueHolder>().option1 = true;
+                dialogueObj[3].GetComponent<DialogueHolder>().option3 = false;
+
+                //Set NPC4 Pop Out
+                dialogueObj[3].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
                 // Pop Out Go to Fishing Spot
-                if (dialogueObj[2].GetComponent<DialogueHolder>().interactNPCMary)
+                if (dialogueObj[3].GetComponent<DialogueHolder>().interactNPCMary)
                 {
                     playerAction = false;
                     popUpIndex++;
@@ -395,19 +559,16 @@ public class TutorialManager : MonoBehaviour
         }
 
         //Tutorial 16 - Go to Fishing Spot
-        else if (popUpIndex == 16)
+        else if (popUpIndex == 17)
         {
             if (playerAction)
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
-                Debug.Log(fishing.fishingGame.activeSelf);
-
                 //Pop Out Fishing Tutorial
                 if (fishing.fishingGame.activeSelf)
                 {
-                    Debug.Log(fishing.fishingGame.activeSelf);
                     playerAction = false;
                     popUpIndex++;
                 }
@@ -415,7 +576,7 @@ public class TutorialManager : MonoBehaviour
         }
 
         //Tutorial 17 - Fishing Tutorial
-        else if (popUpIndex == 17)
+        else if (popUpIndex == 18)
         {
             if (playerAction)
             {
@@ -425,40 +586,53 @@ public class TutorialManager : MonoBehaviour
                 //Pop Out Go Find Auntie Mary
                 if (fishing.success)
                 {
+                    //set player not to fish for a moment
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
                     playerAction = false;
-                    popUpIndex++;
+                    popUpIndex++;               
                 }
             }
         }
 
         //Tutorial 18 - Go Find Back Auntie Mary
-        else if (popUpIndex == 18)
-        {
-            if (playerAction)
-            {
-                TutorialPopOut[popUpIndex].SetActive(false);
-                Time.timeScale = 1;
-
-                dialogueObj[2].GetComponent<DialogueHolder>().option2 = true;
-                dialogueObj[2].GetComponent<DialogueHolder>().option3 = false;
-
-                //Pop Out Go harvest
-                if (dialogueObj[2].GetComponent<DialogueHolder>().interactNPCMary2)
-                {
-                    playerAction = false;
-                    popUpIndex++;
-                }
-
-            }
-        }
-
-        //Tutorial 19 - Go Harvest
         else if (popUpIndex == 19)
         {
             if (playerAction)
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
+
+                //Change indicator target
+                targetIndicator.SetChildrenActive(true);
+                targetIndicator.target = dialogueObj[3].transform;
+
+                dialogueObj[3].GetComponent<DialogueHolder>().option2 = true;
+                dialogueObj[3].GetComponent<DialogueHolder>().option3 = false;
+
+                //Set NPC4 Pop Out
+                dialogueObj[3].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
+                //Pop Out Go harvest
+                if (dialogueObj[3].GetComponent<DialogueHolder>().interactNPCMary2)
+                {
+                    //Set player able to fish as normal
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        //Tutorial 19 - Go Harvest
+        else if (popUpIndex == 20)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                dialogueObj[3].GetComponent<DialogueHolder>().option3 = true;
+                dialogueObj[3].GetComponent<DialogueHolder>().option2 = false;
 
                 //Pop out End Tutorial
                 if (harvestCount >= 5)
@@ -470,7 +644,7 @@ public class TutorialManager : MonoBehaviour
         }
 
         //End Tutorial
-        else if (popUpIndex == 20)
+        else if (popUpIndex == 21)
         {
             if (playerAction)
             {
@@ -478,65 +652,6 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
-
-        //// harvest
-        //else if (popUpIndex == 15)
-        //{
-        //    if (playerAction)
-        //    {
-        //        TutorialPopOut[popUpIndex].SetActive(false);
-        //        Time.timeScale = 1;
-
-        //        //if (GameObject.FindGameObjectWithTag("Crops").GetComponent<GetItems>().canGetCrops)
-        //        //{                   
-        //        //    playerAction = false;
-        //        //    popUpIndex++;
-        //        //}
-        //        foreach (Item item in inventory.items)
-        //        {
-        //            if (item.id >= 10)
-        //            {
-        //                playerAction = false;
-        //                popUpIndex++;
-        //                break;
-        //            }
-        //        }
-        //    }
-        //}
-
-        ////fishing
-        //else if (popUpIndex == 6)
-        //{
-        //    if (playerAction)
-        //    {
-        //        TutorialPopOut[popUpIndex].SetActive(false);
-        //        Time.timeScale = 1;
-
-        //        if (GameObject.Find("Tilemap_River").GetComponent<Fishing>().success)
-        //        {
-        //            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
-        //            playerAction = false;
-        //            popUpIndex++;
-        //        }
-        //    }
-        //}
-
-        //else if (popUpIndex == 7)
-        //{
-        //    if (playerAction)
-        //    {
-        //        TutorialPopOut[popUpIndex].SetActive(false);
-        //        Time.timeScale = 1;
-
-        //        timer -= Time.deltaTime;
-        //        if (Input.GetKeyDown(KeyCode.Space) && timer <= 0)
-        //        {
-        //            playerAction = false;
-        //            popUpIndex++;
-        //            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
-        //        }
-        //    }
-        //}
     }
 }
 

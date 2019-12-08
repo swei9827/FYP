@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d002a6713c47f41b721b43083dc7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PopOut: {fileID: 4022346243569528088}
   name: Jane
   dialogueLines:
   - Hey, you must be the new kid in town I heard from Grandpa!
@@ -135,11 +136,32 @@ MonoBehaviour:
   - Uncle Jason said this might come in handy for you.
   - "Now you can go over to Harry\u2019s Store and buy some seeds."
   - If you take a walk down the road from here, you will see it fairly soon.
-  dialogueLines2: []
+  dialogueLines2:
+  - "Wow that\u2019s quick!"
+  - Seems like you already got the seeds
+  - "Well, let\u2019s start shall we?"
+  - First, we need to plow the soil with that garden hoe of you!
+  dialogueLines3:
+  - Well done!
+  - Planted seeds take some time to grow
+  - Also, the amount of time for each type of seeds may be different
+  - Perhaps you can look for Auntie Mary near the river
+  - Maybe after that you can come back to harvest
+  dialogueLines4:
+  - Hey there!
+  - I am wondering....
+  - Whether you had completed the task
   interactNPCJoseph: 0
   interactNPCJane: 0
-  option1: 1
+  interactNPCJane2: 0
+  interactNPCJane3: 0
+  option1: 0
   option2: 0
+  option3: 0
+  option4: 0
+  interactNPCMary: 0
+  interactNPCMary2: 0
+  temp: 
 --- !u!210 &8932371
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -193,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4022346243569528089
 Transform:
   m_ObjectHideFlags: 0
@@ -202,7 +224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4022346243569528088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 1.45, z: -0.44377613}
+  m_LocalPosition: {x: -0.01, y: 1.9, z: -0.44377613}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 4022346243171249771}
@@ -245,7 +267,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: dd5b73ff9dbd5354d8abb1aeeb7ff3f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62b6f010a45440a418b7645f9ad32302, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

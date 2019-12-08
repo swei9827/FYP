@@ -36,8 +36,8 @@ public class CropTest : ItemTest
 
     private void Awake()
     {
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-        itemDatabase = GameObject.Find("Inventory").GetComponent<ItemDatabase>();
+        inventory = Player.LocalPlayerInstance.GetComponent<Player>().inventory;
+        itemDatabase = Player.LocalPlayerInstance.transform.GetChild(1).gameObject.GetComponent<ItemDatabase>();
         tutorial = GameObject.Find("TutorialManager").GetComponent<TutorialManager>();
 
     }
@@ -86,8 +86,10 @@ public class CropTest : ItemTest
                 watered = true;
                 canInteract = false;
 
-                //local data record
+                //For tutorial
+                tutorial.waterCount += 1;
 
+                //local data record
                 DataRecord.AddEvents(4, this.gameObject.name);
             }              
         }   
@@ -195,7 +197,7 @@ public class CropTest : ItemTest
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject == Player.LocalPlayerInstance)
         {
             if (cropState == CropStateTest.Delayed)
             {
@@ -211,7 +213,7 @@ public class CropTest : ItemTest
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject == Player.LocalPlayerInstance)
         {
             if (cropState == CropStateTest.Delayed)
             {

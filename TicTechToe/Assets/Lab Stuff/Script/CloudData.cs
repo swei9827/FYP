@@ -20,7 +20,7 @@ public class CloudData : MonoBehaviour
     {
         GetAccountInfoRequest acc = new GetAccountInfoRequest();
         PlayFabClientAPI.GetAccountInfo(acc, success, fail);
-        inv = GameObject.Find("Inventory").GetComponent<Inventory>();
+        inv = Player.LocalPlayerInstance.GetComponent<Player>().inventory;
         StartCoroutine(InitializeInventory());
     }
 

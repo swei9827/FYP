@@ -49,8 +49,7 @@ public class Fishing : MonoBehaviour
     bool variableObtained;
     
     public void Start()
-    {
-       
+    {      
         fishingGame.SetActive(false);
         spawnPos = new Vector2(fishImg.rectTransform.localPosition.x, fishImg.rectTransform.localPosition.y);
         spawnPos2 = new Vector2(bucketImg.rectTransform.localPosition.x, bucketImg.rectTransform.localPosition.y);
@@ -85,8 +84,8 @@ public class Fishing : MonoBehaviour
         if(RoomController.playerSpawned && !variableObtained)
         {
             ni = GameObject.FindGameObjectWithTag("Player").GetComponent<NPCInteraction>();
-            inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-            itemDatabase = GameObject.Find("Inventory").GetComponent<ItemDatabase>();
+            inventory = Player.LocalPlayerInstance.GetComponent<Player>().inventory;
+            itemDatabase = Player.LocalPlayerInstance.transform.GetChild(1).gameObject.GetComponent<ItemDatabase>();
             variableObtained = true;
         }
 
@@ -217,8 +216,9 @@ public class Fishing : MonoBehaviour
         {
             if (bucketHit >= hitBucketAmount)
             {
+                //Add Fish to Inventory
                 spawnFish();
-
+               
                 //set everything to 0
                 bucketHit = 0;
                 waterHit = -1;
@@ -229,7 +229,7 @@ public class Fishing : MonoBehaviour
                 fishingGame.SetActive(false);
                 PlayerMovement.canMove = true;
                 canInteract = true;
-                success = true;            
+                success = true;
             }
 
             else if (waterHit >= hitWaterAmount)
@@ -237,16 +237,16 @@ public class Fishing : MonoBehaviour
                 //set everything to 0
                 bucketHit = 0;
                 waterHit = -1;
-                Destroy(temp);
-
-                //active back
                 fishImg.rectTransform.localPosition = spawnPos;
                 bucketImg.rectTransform.localPosition = spawnPos2;
+
+                //active back
                 fishingGame.SetActive(false);
                 PlayerMovement.canMove = true;
                 canInteract = true;
                 fail = true;
             }
+
         }      
     }
 

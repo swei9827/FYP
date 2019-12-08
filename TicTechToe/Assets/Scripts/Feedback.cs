@@ -44,6 +44,7 @@ public class Feedback : MonoBehaviour
     {
         if (fishingGame.success)
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
             feedbackPanel.SetActive(true);
 
             //start countdown
@@ -60,11 +61,13 @@ public class Feedback : MonoBehaviour
                 activeTime = 0;
                 fishingGame.success = false;
                 feedbackPanel.SetActive(false);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
             }
         }
 
         else if(fishingGame.fail)
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
             feedbackPanel.SetActive(true);
 
             //start countdown
@@ -80,6 +83,7 @@ public class Feedback : MonoBehaviour
                 activeTime = 0;
                 fishingGame.fail = false;
                 feedbackPanel.SetActive(false);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
             }
         }
 

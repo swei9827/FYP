@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d002a6713c47f41b721b43083dc7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PopOut: {fileID: 421782333568263892}
   name: Uncle Joseph
   dialogueLines:
   - Hey there, welcome to La Farmilia.
@@ -132,10 +133,22 @@ MonoBehaviour:
   - If you need any help, feel free to ask for help!
   - "It\u2019s a lovely town filled with kind and wonderful people! Everyone will
     be glad to meet a new friend like you"
-  - But first, I think you can perhaps talk to my daughter. She is about the same
-    age as you.
+  - But first, I think you can perhaps talk to my daughter. She has a blonde hair,
+    try to look for her.
+  dialogueLines2: []
+  dialogueLines3: []
+  dialogueLines4: []
   interactNPCJoseph: 0
   interactNPCJane: 0
+  interactNPCJane2: 0
+  interactNPCJane3: 0
+  option1: 1
+  option2: 0
+  option3: 0
+  option4: 0
+  interactNPCMary: 0
+  interactNPCMary2: 0
+  temp: 
 --- !u!61 &561590236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,7 +202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &421782333568263893
 Transform:
   m_ObjectHideFlags: 0
@@ -198,7 +211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421782333568263892}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 1.45, z: -0.44377613}
+  m_LocalPosition: {x: -0.01, y: 1.9, z: -0.44377613}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 421782333160482215}
@@ -241,7 +254,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: dd5b73ff9dbd5354d8abb1aeeb7ff3f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62b6f010a45440a418b7645f9ad32302, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
