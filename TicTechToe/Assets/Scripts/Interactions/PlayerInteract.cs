@@ -8,7 +8,7 @@ public class PlayerInteract : MonoBehaviour
     {
         if(col.gameObject.tag == "Player" && col.gameObject != Player.LocalPlayerInstance)
         {
-            col.gameObject.transform.GetChild(5).gameObject.SetActive(true);
+            col.gameObject.transform.GetChild(7).gameObject.SetActive(true);
             Debug.Log("Open UI");
         }
     }
@@ -17,7 +17,7 @@ public class PlayerInteract : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.transform.GetChild(5).gameObject.SetActive(false);
+            other.gameObject.transform.GetChild(7).gameObject.SetActive(false);
             Debug.Log("Close UI");
         }
     }
