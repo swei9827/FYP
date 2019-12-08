@@ -113,8 +113,12 @@ MonoBehaviour:
   growPercentage: 0
   waterIndicator: {fileID: 6359990665757192766}
   tool: {fileID: 11400000, guid: 951543bd7a79b7c48a92286713eb2777, type: 2}
+  goWater: 0
   canInteract: 0
-  dirtTile: {fileID: 0}
+  canAddDirt: 0
+  distance: 2
+  offSetX: -0.1
+  offSetY: 1.1
 --- !u!61 &7379912915436053542
 BoxCollider2D:
   m_ObjectHideFlags: 0

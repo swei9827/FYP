@@ -8,19 +8,27 @@ public class UIManager : MonoBehaviour
     public Transform canvas;
 
     //Inventory
-    //public Transform inventory;
+    public Transform inventory;
 
     //Fishing QTE
-   // public Transform fishingGame;
+    public Transform fishingGame;
 
-    //Highlight
-    public GameObject highlights;
-    public GameObject slotPanel;
-    public GameObject Hotbar;
-    public GameObject[] hotkey;
-    GameObject temp;
+    //Pause
+    public Transform pause;
 
-    public bool triggerHighlight;
+    //Quests
+    public Transform quests;
+
+    //dialogue
+    public Transform dialogue;
+
+    //NPC Quests
+    public Transform NPCQuests;
+
+    //Player interaction
+    private GameObject player;
+
+    public bool loaded = false;
 
     private void Awake()
     {
@@ -30,19 +38,76 @@ public class UIManager : MonoBehaviour
         }
 
         //Initialize Canvas
-        canvas = GameObject.Find("Canvas").transform;   
+        canvas = GameObject.Find("Canvas").transform;
+
+        fishingGame = canvas.GetChild(2);
+        inventory = canvas.GetChild(3);
+        pause = canvas.GetChild(8);
     }
 
     private void Start()
     {
-        highlights.GetComponent<ParticleSystem>().Stop();
+        loaded = true;
+    }
 
-        //Debug.Log(slotPanel);
-        //for (int i = 0; i <= 4; i++)
-        //{
-        //    hotkey[i] = slotPanel.transform.GetChild(i).gameObject;
-        //    //hotkey.Add(slotPanel.transform.GetChild(i).gameObject);
-        //}
+    void Update()
+    {
+        setComponent();
+        UICheck();
+    }
+
+    void setComponent()
+    {
+        if(loaded)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            quests = player.transform.GetChild(5).GetChild(2);
+            NPCQuests = player.transform.GetChild(5).GetChild(0);
+            loaded = false;
+        }
+    }
+
+    void UICheck()
+    {
+        if (fishingGame.gameObject.activeInHierarchy)
+        {
+            inventory.gameObject.SetActive(false);
+            pause.gameObject.SetActive(false);
+            quests.gameObject.SetActive(false);
+            NPCQuests.gameObject.SetActive(false);
+        }
+
+        else if (inventory.gameObject.activeInHierarchy)
+        {
+            fishingGame.gameObject.SetActive(false);
+            pause.gameObject.SetActive(false);
+            quests.gameObject.SetActive(false);
+            NPCQuests.gameObject.SetActive(false);
+        }
+
+        else if(pause.gameObject.activeInHierarchy)
+        {
+            fishingGame.gameObject.SetActive(false);
+            inventory.gameObject.SetActive(false);
+            quests.gameObject.SetActive(false);
+            NPCQuests.gameObject.SetActive(false);
+        }
+
+        else if(quests.gameObject.activeInHierarchy)
+        {
+            fishingGame.gameObject.SetActive(false);
+            inventory.gameObject.SetActive(false);
+            pause.gameObject.SetActive(false);
+            NPCQuests.gameObject.SetActive(false);
+        }
+
+        else if (NPCQuests.gameObject.activeInHierarchy)
+        {
+            fishingGame.gameObject.SetActive(false);
+            pause.gameObject.SetActive(false);
+            inventory.gameObject.SetActive(false);
+            quests.gameObject.SetActive(false);
+        }
     }
 
     public Vector2 WorldToCanvasPoint(Vector3 position)
@@ -65,32 +130,5 @@ public class UIManager : MonoBehaviour
         return (new Vector2(viewportPoint.x * canvasSize.x, viewportPoint.y * canvasSize.y) - (canvasSize / 2));
     }
 
-    public void ToggleHighlight()
-    {
-        triggerHighlight = !triggerHighlight;
-
-        if (triggerHighlight)
-        {
-            if(!highlights.GetComponent<ParticleSystem>().isPlaying)
-            {
-                highlights.GetComponent<ParticleSystem>().Play();
-            }
-        }
-        else
-        {
-            highlights.GetComponent<ParticleSystem>().Stop();
-        }
-    }
-
-    void Update()
-    {
-        //if(Input.GetKeyDown(KeyCode.I))
-        //{
-        //    //if didnt play fishing QTE
-        //    if(!fishingGame.gameObject.activeInHierarchy)
-        //    {
-        //        //ToggleInventory();
-        //    }            
-        //}
-    }
+  
 }

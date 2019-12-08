@@ -11,7 +11,7 @@ public class DirtTile : MonoBehaviour
 
 	public bool needsPlowing = true;
     public bool addPlant = true;
-    public static bool isEmpty = false;
+    public static bool canAddDirt = true;
 	public Sprite extraDirt;
 	public GameObject waterIndicator;
 
@@ -28,7 +28,7 @@ public class DirtTile : MonoBehaviour
 		if (needsPlowing)
 		{
 			AddDirt();
-		}
+        }
 	}
 
 	public void Interact (Crop c, Tool t, PlayerInteraction player)
@@ -36,6 +36,7 @@ public class DirtTile : MonoBehaviour
         if (t.isPlow && needsPlowing)
         {
             Plow();
+            canAddDirt = false;
             return;
         }
 
@@ -66,7 +67,6 @@ public class DirtTile : MonoBehaviour
             temp.transform.SetParent(this.transform);
             temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
             temp.GetComponent<CropTest>().planted = true;
-            //player.SetCrop(new Crop(null));
         }
         else if (c.asset.cropsType == CropsType.Potatoes)
         {
@@ -74,7 +74,7 @@ public class DirtTile : MonoBehaviour
             temp.transform.SetParent(this.transform);
             temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
             temp.GetComponent<CropTest>().planted = true;
-            //player.SetCrop(new Crop(null));
+
         }
         else if (c.asset.cropsType == CropsType.Pumpkins)
         {
@@ -82,16 +82,15 @@ public class DirtTile : MonoBehaviour
             temp.transform.SetParent(this.transform);
             temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
             temp.GetComponent<CropTest>().planted = true;
-            //player.SetCrop(new Crop(null));
         }
         FxManager.PlayMusic("PlantFx");
     }
 
 	public void AddDirt()
 	{
-		overlay.sprite = extraDirt;
-		overlay.sortingLayerName = onGroundLayer;
-	}
+        overlay.sprite = extraDirt;
+        overlay.sortingLayerName = onGroundLayer;
+    }
 
 	void Plow ()
 	{

@@ -289,6 +289,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   playerAction: 0
   colliderObj:
   - {fileID: 99203052780396254}
@@ -297,11 +303,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   dialogueBox: {fileID: 0}
   shop: {fileID: 0}
+  sellMenu: {fileID: 0}
   PlusButtonHighlights: {fileID: 8669162065838446212, guid: b77c69c96ad8e404b9ed246e412857e0,
     type: 3}
   BuyButtonHighlights: {fileID: 9100501604405353050, guid: 873e0e1d0aa61f84ea84f5d716f1f25b,
+    type: 3}
+  sellButtonHighlights: {fileID: 1978601633623348862, guid: 3e80ebd46cc9a27419aee6750d66649c,
     type: 3}
   dirtTile:
   - {fileID: 0}
@@ -311,3 +321,24 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  level1: 0
+  level2: 0
+  level3: 0
+  level4: 0
+  hotKeySlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hotKeyHighlight: {fileID: 902465479694967852, guid: 160a9313787bf3945b6b12a5ec0e9ec2,
+    type: 3}
+  slotPanel: {fileID: 0}
+  harvestCount: 0
+  waterCount: 0

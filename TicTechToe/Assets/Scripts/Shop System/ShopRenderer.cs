@@ -23,11 +23,11 @@ public class ShopRenderer : MonoBehaviour
 
     public void BuyEvent()
     {
-        this.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<ShopSystem>().buyItem(this);
+        this.transform.parent.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<ShopSystem>().buyItem(this);
     }
 
     public void SellEvent()
     {
-        this.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<ShopSystem>().sellItem(this);
+        this.transform.parent.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<ShopSystem>().sellItem(this);
     }
 }

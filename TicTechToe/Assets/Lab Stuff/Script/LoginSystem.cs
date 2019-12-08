@@ -14,13 +14,18 @@ public class LoginSystem : MonoBehaviour
     public InputField email;
     public InputField pass;
 
+    public bool isSignup = false;
+
     private string playFabPlayerIdCache;
 
     void Start()
     {
         //developer use login
-        email.text = "labtest0@unity.com";
-        pass.text = "labtest0";
+        if (!isSignup)
+        {
+            email.text = "labtest0@unity.com";
+            pass.text = "labtest0";
+        }
     }
 
     private void OnLoginSuccess(LoginResult result)
