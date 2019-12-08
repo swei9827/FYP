@@ -22,8 +22,10 @@ public class TutorialManager : MonoBehaviour
 
     [Header("Shop Settings")]
     public GameObject shop;
+    public GameObject sellMenu;
     public GameObject PlusButtonHighlights;
     public GameObject BuyButtonHighlights;
+    public GameObject sellButtonHighlights;
 
     [Header("Dirtile Settings")]
     public GameObject[] dirtTile;
@@ -50,6 +52,7 @@ public class TutorialManager : MonoBehaviour
     private DialogueHolder dialogueHolder;
     private HotKey Hotkey;
     private TargetIndicator targetIndicator;
+    //private GameObject[] crops;
 
     // For harvest and water plant
     public int harvestCount = 0;
@@ -124,7 +127,7 @@ public class TutorialManager : MonoBehaviour
                 timer -= Time.deltaTime;
                 Time.timeScale = 1;
                 TutorialPopOut[popUpIndex].SetActive(false);
-           
+
                 if (timer <= 0)
                 {
                     popUpIndex++;
@@ -175,7 +178,7 @@ public class TutorialManager : MonoBehaviour
                     popUpIndex++;
 
                     //make sure doesnt interact NPC1
-                    dialogueManager.canInteract = false;           
+                    dialogueManager.canInteract = false;
                 }
             }
         }
@@ -200,7 +203,7 @@ public class TutorialManager : MonoBehaviour
                 dialogueObj[1].GetComponent<DialogueHolder>().PopOut.SetActive(true);
 
                 //Pop Out GoldUI
-                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 4 && dialogueObj[1].GetComponent<DialogueHolder>().option1 && 
+                if (dialogueManager.GetComponent<DialogueManager>().currentLine == 4 && dialogueObj[1].GetComponent<DialogueHolder>().option1 &&
                     dialogueObj[1].GetComponent<DialogueHolder>().temp == "NPC Jane")
                 {
                     playerAction = false;
@@ -268,7 +271,7 @@ public class TutorialManager : MonoBehaviour
                 if (shop.activeInHierarchy)
                 {
                     //Instantiate highlights
-                    temphighlights = Instantiate(PlusButtonHighlights, shop.transform.GetChild(0).GetChild(3).GetChild(0).GetChild(0));
+                    temphighlights = Instantiate(PlusButtonHighlights, shop.transform.GetChild(0).GetChild(3).GetChild(0).GetChild(0).GetChild(0));
                     temphighlights.transform.SetSiblingIndex(3);
 
                     playerAction = false;
@@ -295,7 +298,7 @@ public class TutorialManager : MonoBehaviour
                     Destroy(temphighlights);
 
                     //Instantiate buy button highlights
-                    temphighlights = Instantiate(BuyButtonHighlights, shop.transform.GetChild(0).GetChild(3).GetChild(0).GetChild(0));
+                    temphighlights = Instantiate(BuyButtonHighlights, shop.transform.GetChild(0).GetChild(3).GetChild(0).GetChild(0).GetChild(0));
                     temphighlights.transform.SetSiblingIndex(6);
 
                     playerAction = false;
@@ -428,15 +431,6 @@ public class TutorialManager : MonoBehaviour
                 if (Hotkey.scrollPosition == 3)
                 {
                     Destroy(temphighlights);
-
-                    //seedPanel = GameObject.Find("SeedBackground");
-                    //seedKeySlot = seedPanel.transform.GetChild(0).GetChild(0).gameObject;
-                    //temphighlights = Instantiate(hotKeyHighlight, seedKeySlot.transform);
-
-                    //if (Hotkey.button[0].gameObject == EventSystem.current.currentSelectedGameObject)
-                    //{
-                    //    Destroy(temphighlights);
-                    //}
                 }
 
                 //Set counter for player to plant
@@ -468,6 +462,16 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Set crops rate
+                GameObject[] crops = GameObject.FindGameObjectsWithTag("Crops");
+                foreach (GameObject StrawberryCrops in crops)
+                {
+                    if(StrawberryCrops.GetComponent<CropTest>().cropState == CropStateTest.Delayed)
+                    {
+                        StrawberryCrops.GetComponent<CropTest>().growthRate = 2;
+                    }                  
+                }
+
                 //delete hotkey plow highlights
                 if (Hotkey.scrollPosition == 1)
                 {
@@ -478,7 +482,7 @@ public class TutorialManager : MonoBehaviour
                 dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
 
                 //Pop out Refill Water
-                if (WaterCan.curFill <=0)
+                if (WaterCan.curFill <= 0)
                 {
                     playerAction = false;
                     popUpIndex++;
@@ -487,7 +491,7 @@ public class TutorialManager : MonoBehaviour
         }
 
         //Tutorial 14 - Pop Out refill water
-        else if(popUpIndex == 14)
+        else if (popUpIndex == 14)
         {
             if (playerAction)
             {
@@ -525,7 +529,7 @@ public class TutorialManager : MonoBehaviour
                 if (dialogueObj[1].GetComponent<DialogueHolder>().option4)
                 {
                     playerAction = false;
-                    popUpIndex++;                
+                    popUpIndex++;
                 }
             }
         }
@@ -554,6 +558,10 @@ public class TutorialManager : MonoBehaviour
                 {
                     playerAction = false;
                     popUpIndex++;
+
+                    //Instantiate hotkey seed highlights
+                    temphighlights = Instantiate(hotKeyHighlight, hotKeySlots[2].transform);
+                    temphighlights.transform.SetAsFirstSibling();
                 }
             }
         }
@@ -565,6 +573,16 @@ public class TutorialManager : MonoBehaviour
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
+
+                //Set Dialogue Conversation
+                dialogueObj[3].GetComponent<DialogueHolder>().option3 = true;
+                dialogueObj[3].GetComponent<DialogueHolder>().option1 = false;
+
+                //delete hotkey plow highlights
+                if (Hotkey.scrollPosition == 2)
+                {
+                    Destroy(temphighlights);
+                }
 
                 //Pop Out Fishing Tutorial
                 if (fishing.fishingGame.activeSelf)
@@ -583,13 +601,16 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                dialogueObj[3].GetComponent<DialogueHolder>().option2 = true;
+                dialogueObj[3].GetComponent<DialogueHolder>().option3 = false;
+
                 //Pop Out Go Find Auntie Mary
                 if (fishing.success)
                 {
                     //set player not to fish for a moment
                     GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
                     playerAction = false;
-                    popUpIndex++;               
+                    popUpIndex++;
                 }
             }
         }
@@ -605,9 +626,6 @@ public class TutorialManager : MonoBehaviour
                 //Change indicator target
                 targetIndicator.SetChildrenActive(true);
                 targetIndicator.target = dialogueObj[3].transform;
-
-                dialogueObj[3].GetComponent<DialogueHolder>().option2 = true;
-                dialogueObj[3].GetComponent<DialogueHolder>().option3 = false;
 
                 //Set NPC4 Pop Out
                 dialogueObj[3].GetComponent<DialogueHolder>().PopOut.SetActive(true);
@@ -634,7 +652,7 @@ public class TutorialManager : MonoBehaviour
                 dialogueObj[3].GetComponent<DialogueHolder>().option3 = true;
                 dialogueObj[3].GetComponent<DialogueHolder>().option2 = false;
 
-                //Pop out End Tutorial
+                //Pop out Go sell item
                 if (harvestCount >= 5)
                 {
                     playerAction = false;
@@ -643,8 +661,130 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        //End Tutorial
+        //Go Shop Sell Item
         else if (popUpIndex == 21)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                //Change indicator target
+                targetIndicator.SetChildrenActive(true);
+                targetIndicator.target = dialogueObj[2].transform;
+
+                //Pop Out sell highlight
+                if (shop.activeInHierarchy)
+                {
+                    //Instantiate highlights
+                    temphighlights = Instantiate(sellButtonHighlights, shop.transform.GetChild(0));
+                    temphighlights.transform.SetSiblingIndex(1);
+
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        //click Sell button
+        else if (popUpIndex == 22)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                //Pop Out sell highlight
+                if (sellMenu.activeSelf)
+                {
+                    //destroy button highlight
+                    Destroy(temphighlights);
+
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        // Straight Sell fish
+        else if (popUpIndex == 23)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                if (!TutorialPopOut[22].activeSelf)
+                {
+                    //Instantiate buy button highlights
+                    temphighlights = Instantiate(BuyButtonHighlights, shop.transform.GetChild(0).GetChild(5).GetChild(0).GetChild(0).GetChild(0));
+                    temphighlights.transform.SetSiblingIndex(5);
+                }
+    
+                int moneyAmount = int.Parse(shop.GetComponent<ShopSystem>().currentMoney.text);
+
+                if (moneyAmount > 750)
+                {
+                    playerAction = false;
+                    popUpIndex++;
+
+                    //destroy button highlight
+                    Destroy(temphighlights);
+
+                    //Instantiate highlights
+                    temphighlights = Instantiate(PlusButtonHighlights, shop.transform.GetChild(0).GetChild(5).GetChild(0).GetChild(0).GetChild(0));
+                    temphighlights.transform.SetSiblingIndex(3);
+                }            
+            }
+        }
+
+        // click add button for sell strawberry
+        else if (popUpIndex == 24)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                ShopRenderer sr = shop.transform.GetChild(0).GetChild(5).GetComponent<Sell>().content[1].GetComponent<ShopRenderer>();
+
+                if (int.Parse(sr.itemCount.text) == sr.itemCount.gameObject.GetComponent<UpdatableInt>().max)
+                {
+                    //destroy button highlight
+                    Destroy(temphighlights);
+
+                    //Instantiate buy button highlights
+                    temphighlights = Instantiate(BuyButtonHighlights, shop.transform.GetChild(0).GetChild(5).GetChild(0).GetChild(0).GetChild(0));
+                    temphighlights.transform.SetSiblingIndex(5);
+
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        //click sell button to sell strawberry
+        else if (popUpIndex == 25)
+        {
+            if (playerAction)
+            {
+                TutorialPopOut[popUpIndex].SetActive(false);
+                Time.timeScale = 1;
+
+                int moneyAmount = int.Parse(shop.GetComponent<ShopSystem>().currentMoney.text);
+
+                if (moneyAmount >= 1000)
+                {
+                    //destroy button highlight
+                    Destroy(temphighlights);
+
+                    playerAction = false;
+                    popUpIndex++;
+                }
+            }
+        }
+
+        else if(popUpIndex == 26)
         {
             if (playerAction)
             {

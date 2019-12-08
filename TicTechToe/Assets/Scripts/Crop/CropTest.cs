@@ -12,8 +12,11 @@ public class CropTest : ItemTest
     public float waterRate;
     public Inventory inventory;
     public ItemDatabase itemDatabase;
-    [SerializeField]
-    CropStateTest cropState;
+    //[SerializeField]
+    //CropStateTest cropState;
+
+    public CropStateTest cropState;
+
     [SerializeField]
     float growPercentage;
     float duration;
@@ -39,7 +42,6 @@ public class CropTest : ItemTest
         inventory = Player.LocalPlayerInstance.GetComponent<Player>().inventory;
         itemDatabase = Player.LocalPlayerInstance.transform.GetChild(1).gameObject.GetComponent<ItemDatabase>();
         tutorial = GameObject.Find("TutorialManager").GetComponent<TutorialManager>();
-
     }
     void Start()
     {
@@ -58,7 +60,7 @@ public class CropTest : ItemTest
         CropStateChange();
         UpdateSprite();
         WaterCrops();
-        Harvest();
+        Harvest();     
     }
    
     void UpdateSprite()
@@ -77,7 +79,7 @@ public class CropTest : ItemTest
     {
         if (canInteract && cropState == CropStateTest.Delayed)
         {
-            if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && HotKey.canUse && HotKey.canWater)
+            if ((Input.GetKeyDown(KeyCode.Mouse0)) && HotKey.canUse && HotKey.canWater)
             {
                 WaterCan.curFill -= 1;
                 waterIndicator.SetActive(false);
@@ -99,7 +101,7 @@ public class CropTest : ItemTest
     {
        if(planted && cropState == CropStateTest.Seed)
         {
-            cropState = CropStateTest.Planted;
+            cropState = CropStateTest.Planted;           
             //planted = false;
 
             //local data record
@@ -142,7 +144,7 @@ public class CropTest : ItemTest
             watered = false;
         }
 
-       if(growPercentage == 100)
+       if(growPercentage >= 100)
         {
             cropState = CropStateTest.Done;
         }      
@@ -152,7 +154,7 @@ public class CropTest : ItemTest
     {
         if (canInteract && cropState == CropStateTest.Done && !feedback.harvested)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 foreach (Item item in itemDatabase.database)
                 {
@@ -162,7 +164,7 @@ public class CropTest : ItemTest
                         inventory.AddItem(item.id);
 
                         // Quest item check
-                        foreach(NPCManager.QuestInfo q in player.GetComponent<NPCInteraction>().acceptedQuestLists)
+                        foreach (NPCManager.QuestInfo q in player.GetComponent<NPCInteraction>().acceptedQuestLists)
                         {
                             foreach(NPCManager.NPCItem it in q.requirement)
                             {
@@ -195,6 +197,36 @@ public class CropTest : ItemTest
         }
     }
 
+    //void CheckDistance()
+    //{
+    //    if(Vector2.Distance(this.transform.position, player.transform.position) > this.distance)
+    //    {
+    //        if (cropState == CropStateTest.Delayed || cropState == CropStateTest.Done)
+    //        {
+    //            canInteract = false;
+    //        }
+    //    }
+    //}
+
+    //IEnumerator DistanceCheck(float time)
+    //{
+    //    while(true)
+    //    {
+    //        float dis = Vector2.Distance(this.transform.position, player.transform.position);
+    //        Vector2 cropDistance = this.transform.position;
+    //        cropDistance.x += offSetX;
+    //        cropDistance.y += offSetY;
+
+    //        if(dis <= this.distance)
+    //        {
+    //            if (cropState == CropStateTest.Delayed || cropState == CropStateTest.Done)
+    //            {
+    //                canInteract = true;
+    //            }
+    //        }
+    //    }
+    //}
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject == Player.LocalPlayerInstance)
@@ -204,9 +236,9 @@ public class CropTest : ItemTest
                 canInteract = true;
             }
 
-            else if(cropState == CropStateTest.Done)
-            {               
-                canInteract = true;                
+            else if (cropState == CropStateTest.Done)
+            {
+                canInteract = true;
             }
         }
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MouseSprite : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class MouseSprite : MonoBehaviour
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
 
-    bool onCollision = false;
+    public bool onCollision = false;
 
     // Start is called before the first frame update
     void Start()

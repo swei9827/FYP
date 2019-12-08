@@ -56,7 +56,7 @@ public class ShopSystem : MonoBehaviour
                 /*name*/shopItemList[i].itemPrice,
                 /*starting count*/1);
             slots.Add(go);
-            slots[i].transform.SetParent(contentListPanel.transform,false);
+            slots[i].transform.SetParent(contentListPanel.transform, false);
         }
     }
 

@@ -32,7 +32,7 @@ public class Sell : MonoBehaviour
 
                 //set the max to the amount of item in your inventory so you can't over sell your items 
                 shopRdr.itemCount.gameObject.GetComponent<UpdatableInt>().max = inventory.slots[i].transform.GetChild(0).GetComponent<ItemData>().amount;
-                go.transform.SetParent(this.gameObject.transform.GetChild(0).transform, false);
+                go.transform.SetParent(this.gameObject.transform.GetChild(0).transform.GetChild(0).transform, false);
                 content.Add(go);
                 Debug.Log("Create Item");
             }

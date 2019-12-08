@@ -7,8 +7,6 @@ using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool pauseGame = false;
-
     public GameObject pauseMenu;
     public GameObject pause;
     public GameObject settings;
@@ -20,14 +18,11 @@ public class PauseMenu : MonoBehaviour
         settings.SetActive(false);
         PlayerMovement.canMove = true;
         Time.timeScale = 1;
-        pauseGame = false;
     }
 
     public void Pause()
     {
-        pauseGame = !pauseGame;
-
-        if (pauseGame)
+        if (!pauseMenu.activeSelf)
         {
             pauseMenu.SetActive(true);
             pause.SetActive(true);
