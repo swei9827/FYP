@@ -27,6 +27,11 @@ public class SceneControl : MonoBehaviour
         analyticCanvas.gameObject.SetActive(true);
     }
 
+    public void signUpButton()
+    {
+        SceneManager.LoadScene("Sign Up");
+    }
+
     void Start()
     {
         if (isMainMenu)

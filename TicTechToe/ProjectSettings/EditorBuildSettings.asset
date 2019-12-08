@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/New Lobby.unity
     guid: 293b70d62be2473449b21136bea55ed0
+  - enabled: 1
+    path: Assets/Scenes/Sign up.unity
+    guid: fb01f50ab9362504fa0ea0f16ed25d90
   m_configObjects: {}
