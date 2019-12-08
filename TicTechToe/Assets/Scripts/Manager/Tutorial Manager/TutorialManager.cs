@@ -700,6 +700,10 @@ public class TutorialManager : MonoBehaviour
                     //destroy button highlight
                     Destroy(temphighlights);
 
+                    //Instantiate buy button highlights
+                    temphighlights = Instantiate(BuyButtonHighlights, shop.transform.GetChild(0).GetChild(5).GetChild(0).GetChild(0).GetChild(0));
+                    temphighlights.transform.SetSiblingIndex(5);
+
                     playerAction = false;
                     popUpIndex++;
                 }
@@ -709,17 +713,12 @@ public class TutorialManager : MonoBehaviour
         // Straight Sell fish
         else if (popUpIndex == 23)
         {
+            
+
             if (playerAction)
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
-
-                if (!TutorialPopOut[22].activeSelf)
-                {
-                    //Instantiate buy button highlights
-                    temphighlights = Instantiate(BuyButtonHighlights, shop.transform.GetChild(0).GetChild(5).GetChild(0).GetChild(0).GetChild(0));
-                    temphighlights.transform.SetSiblingIndex(5);
-                }
     
                 int moneyAmount = int.Parse(shop.GetComponent<ShopSystem>().currentMoney.text);
 

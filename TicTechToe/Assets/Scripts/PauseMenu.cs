@@ -4,18 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject pause;
-    public GameObject settings;
+
+    public AudioMixer audioMixer;
 
     public void Resume()
     {
         pauseMenu.SetActive(false);
         pause.SetActive(true);
-        settings.SetActive(false);
         PlayerMovement.canMove = true;
         Time.timeScale = 1;
     }
@@ -26,7 +27,6 @@ public class PauseMenu : MonoBehaviour
         {
             pauseMenu.SetActive(true);
             pause.SetActive(true);
-            settings.SetActive(false);
             PlayerMovement.canMove = false;
             Time.timeScale = 0;
         }
@@ -34,26 +34,40 @@ public class PauseMenu : MonoBehaviour
         {
             pauseMenu.SetActive(false);
             pause.SetActive(true);
-            settings.SetActive(false);
             PlayerMovement.canMove = true;
             Time.timeScale = 1;
         }
     }
 
-    public void Settings()
-    {
-        pause.SetActive(false);
-        settings.SetActive(true);
-    }
-
     public void Back()
     {
         pause.SetActive(true);
-        settings.SetActive(false);
     }
 
     public void QuitGame()
     {
         SceneManager.LoadScene("New Lobby");
+    }
+
+    //set audio
+    public void setVolume(float volume)
+    {
+        audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
+    }
+
+    public void setBGM(float volume)
+    {
+        audioMixer.SetFloat("BGM", Mathf.Log10(volume) * 20);
+    }
+
+    public void setSFX(float volume)
+    {
+        audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+    }
+
+    //set brightness
+    public void setBrightness(float value)
+    {
+
     }
 }
