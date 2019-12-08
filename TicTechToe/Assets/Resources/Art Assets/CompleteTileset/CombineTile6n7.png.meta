@@ -1,559 +1,415 @@
 fileFormatVersion: 2
-guid: e6dfa0374f1faf442a1fb726b6b9849a
+guid: 7c3c4e391551ec54882e061791c99fee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1063276081713548184
-    second: CompleteTileset6_0
+      213: -8098517029644097384
+    second: CombineTile6n7_0
   - first:
-      213: -5162069427186016003
-    second: CompleteTileset6_1
+      213: 7241890612821625620
+    second: CombineTile6n7_1
   - first:
-      213: -7505369374945334333
-    second: CompleteTileset6_2
+      213: -950153881047457944
+    second: CombineTile6n7_2
   - first:
-      213: 5201605492744552566
-    second: CompleteTileset6_3
+      213: -8645402642637418001
+    second: CombineTile6n7_3
   - first:
-      213: -1470769353392945717
-    second: CompleteTileset6_4
+      213: -3778247293708052330
+    second: CombineTile6n7_4
   - first:
-      213: 1408181260457067540
-    second: CompleteTileset6_5
+      213: -8768496776820163545
+    second: CombineTile6n7_5
   - first:
-      213: 1713802243533108611
-    second: CompleteTileset6_6
+      213: 1282676680485229411
+    second: CombineTile6n7_6
   - first:
-      213: -5248327263289774130
-    second: CompleteTileset6_7
+      213: 5226049191512923796
+    second: CombineTile6n7_7
   - first:
-      213: -1873716129345009169
-    second: CompleteTileset6_8
+      213: -7209816663600950227
+    second: CombineTile6n7_8
   - first:
-      213: 4008934753135387274
-    second: CompleteTileset6_9
+      213: -7981122990401304772
+    second: CombineTile6n7_9
   - first:
-      213: -3560277220537897119
-    second: CompleteTileset6_10
+      213: 2472901087198093678
+    second: CombineTile6n7_10
   - first:
-      213: 2157356892965931528
-    second: CompleteTileset6_11
+      213: 6478912562907578292
+    second: CombineTile6n7_11
   - first:
-      213: 5153345553947974636
-    second: CompleteTileset6_12
+      213: -7481053883042721866
+    second: CombineTile6n7_12
   - first:
-      213: 3923514929298207199
-    second: CompleteTileset6_13
+      213: -6110016586467214309
+    second: CombineTile6n7_13
   - first:
-      213: -5847512027985892563
-    second: CompleteTileset6_14
+      213: -7547792567844699010
+    second: CombineTile6n7_14
   - first:
-      213: -2678349759639731896
-    second: CompleteTileset6_15
+      213: 4053141752057485955
+    second: CombineTile6n7_15
   - first:
-      213: 1094736180621932346
-    second: CompleteTileset6_16
+      213: 7260201277492869714
+    second: CombineTile6n7_16
   - first:
-      213: 3314196781336821833
-    second: CompleteTileset6_17
+      213: -5084950625902701910
+    second: CombineTile6n7_17
   - first:
-      213: -4047395572625409185
-    second: CompleteTileset6_18
+      213: 3206339412943738485
+    second: CombineTile6n7_18
   - first:
-      213: 3100366930373935635
-    second: CompleteTileset6_19
+      213: -7517762526908339472
+    second: CombineTile6n7_19
   - first:
-      213: 2983354518895784847
-    second: CompleteTileset6_TV1
+      213: -1597458574668482079
+    second: CombineTile6n7_20
   - first:
-      213: -4486079116388676129
-    second: CompleteTileset6_21
+      213: -5599121315694912549
+    second: CombineTile6n7_21
   - first:
-      213: -1655445392626952912
-    second: CompleteTileset6_TV2
+      213: -9066329131568975738
+    second: CombineTile6n7_22
   - first:
-      213: -1177401908557733089
-    second: CompleteTileset6_23
+      213: 6542653779446297830
+    second: CombineTile6n7_23
   - first:
-      213: -3097588498360483687
-    second: CompleteTileset6_24
+      213: -5209942500435694703
+    second: CombineTile6n7_24
   - first:
-      213: 5208909818863014883
-    second: CompleteTileset6_25
+      213: -2529486525992270096
+    second: CombineTile6n7_25
   - first:
-      213: -5925048569144506008
-    second: CompleteTileset6_26
+      213: 6438825770976887002
+    second: CombineTile6n7_26
   - first:
-      213: 550857803248875100
-    second: CompleteTileset6_Pot2
+      213: 7173697473243455879
+    second: CombineTile6n7_27
   - first:
-      213: 7889077743009566525
-    second: CompleteTileset6_28
+      213: -4310520618482775998
+    second: CombineTile6n7_28
   - first:
-      213: -5253108997301481790
-    second: CompleteTileset6_29
+      213: -4211373162351497986
+    second: CombineTile6n7_29
   - first:
-      213: -6589572721863185678
-    second: CompleteTileset6_30
+      213: -2611758726308907388
+    second: CombineTile6n7_30
   - first:
-      213: 2407139466847670966
-    second: CompleteTileset6_31
+      213: -1457326779206410832
+    second: CombineTile6n7_31
   - first:
-      213: -4117190413254774062
-    second: CompleteTileset6_32
+      213: -445499254929571659
+    second: CombineTile6n7_32
   - first:
-      213: 3160985426663126673
-    second: CompleteTileset6_33
+      213: 4122710689367943316
+    second: CombineTile6n7_33
   - first:
-      213: 7358831081773733524
-    second: CompleteTileset6_Pot
+      213: 5879069294993258464
+    second: CombineTile6n7_34
   - first:
-      213: 6773174707810215030
-    second: CompleteTileset6_Pot3
+      213: -5044576550712704015
+    second: CombineTile6n7_35
   - first:
-      213: -3579021871767432574
-    second: CompleteTileset6_36
+      213: -4810312826904315598
+    second: CombineTile6n7_36
   - first:
-      213: -5998992083661087431
-    second: CompleteTileset6_37
+      213: -6055891304121750070
+    second: CombineTile6n7_37
   - first:
-      213: 8011400433124993882
-    second: CompleteTileset6_38
+      213: 8915719912433153991
+    second: CombineTile6n7_38
   - first:
-      213: -3943272871308110664
-    second: CompleteTileset6_39
+      213: -6404977612689131431
+    second: CombineTile6n7_39
   - first:
-      213: -7196178358837422208
-    second: CompleteTileset6_40
+      213: 4258309159842483297
+    second: CombineTile6n7_40
   - first:
-      213: -7612976765354284827
-    second: CompleteTileset6_41
+      213: -7339841635301679019
+    second: CombineTile6n7_41
   - first:
-      213: 6868593382753662391
-    second: CompleteTileset6_42
+      213: 7313529067526255079
+    second: CombineTile6n7_42
   - first:
-      213: 8521085358237447766
-    second: CompleteTileset6_43
+      213: 6089822805815208242
+    second: CombineTile6n7_43
   - first:
-      213: -1635287450501904423
-    second: CompleteTileset6_44
+      213: 1144109711901163551
+    second: CombineTile6n7_44
   - first:
-      213: 6433136114459236263
-    second: CompleteTileset6_45
+      213: -6539998733243406901
+    second: CombineTile6n7_45
   - first:
-      213: 3561029869759713012
-    second: CompleteTileset6_46
+      213: 2470742753708772850
+    second: CombineTile6n7_46
   - first:
-      213: 4723918680812460128
-    second: CompleteTileset6_47
+      213: 6485367276524639589
+    second: CombineTile6n7_47
   - first:
-      213: -7312115667121947702
-    second: CompleteTileset6_48
+      213: -8354470406298238946
+    second: CombineTile6n7_48
   - first:
-      213: -937916806485785835
-    second: CompleteTileset6_49
+      213: 3888621210094729944
+    second: CombineTile6n7_49
   - first:
-      213: -1774514599224940564
-    second: CompleteTileset6_50
+      213: 8424838971205242603
+    second: CombineTile6n7_50
   - first:
-      213: -6261330580737974167
-    second: CompleteTileset6_51
+      213: -1258893517118901285
+    second: CombineTile6n7_51
   - first:
-      213: -418641410501492476
-    second: CompleteTileset6_52
+      213: 3983653545618778303
+    second: CombineTile6n7_52
   - first:
-      213: 9174513704935773022
-    second: CompleteTileset6_53
+      213: -4165934227821731373
+    second: CombineTile6n7_53
   - first:
-      213: 8978687388899758932
-    second: CompleteTileset6_54
+      213: 3653155441963832854
+    second: CombineTile6n7_54
   - first:
-      213: 4716683556282411188
-    second: CompleteTileset6_55
+      213: -6355968437005493705
+    second: CombineTile6n7_55
   - first:
-      213: -7271743086360843385
-    second: CompleteTileset6_56
+      213: 3307800320657543795
+    second: CombineTile6n7_56
   - first:
-      213: 476073868251209556
-    second: CompleteTileset6_57
+      213: -789588820608596952
+    second: CombineTile6n7_57
   - first:
-      213: 7017017310510663440
-    second: CompleteTileset6_58
+      213: -8350165710223676140
+    second: CombineTile6n7_58
   - first:
-      213: 4201890092073743718
-    second: CompleteTileset6_59
+      213: -2832850360225463313
+    second: CombineTile6n7_59
   - first:
-      213: 2724111886314609338
-    second: CompleteTileset6_60
+      213: 2001063056797045337
+    second: CombineTile6n7_60
   - first:
-      213: -4985752170172744177
-    second: CompleteTileset6_61
+      213: -3938382046524895518
+    second: CombineTile6n7_61
   - first:
-      213: -4017317156026392773
-    second: CompleteTileset6_62
+      213: 1161645762221430678
+    second: CombineTile6n7_62
   - first:
-      213: -3668490474669557853
-    second: CompleteTileset6_63
+      213: -1300198587844362583
+    second: CombineTile6n7_63
   - first:
-      213: 5209278955529583894
-    second: CompleteTileset6_64
+      213: 2408704537020727041
+    second: CombineTile6n7_64
   - first:
-      213: 679234685588585417
-    second: CompleteTileset6_65
+      213: 8139056688798111275
+    second: CombineTile6n7_65
   - first:
-      213: -7994396487206630184
-    second: CompleteTileset6_66
+      213: 7924066512581802020
+    second: CombineTile6n7_66
   - first:
-      213: 2740716782515041420
-    second: CompleteTileset6_67
+      213: -5648895609688684728
+    second: CombineTile6n7_67
   - first:
-      213: -685065862935495844
-    second: CompleteTileset6_68
+      213: -1750688046894275894
+    second: CombineTile6n7_68
   - first:
-      213: -2630227626849640569
-    second: CompleteTileset6_69
+      213: -8902028414536773934
+    second: CombineTile6n7_69
   - first:
-      213: 6855307778479962230
-    second: CompleteTileset6_70
+      213: 9149804163906483108
+    second: CombineTile6n7_70
   - first:
-      213: 8791460175706870147
-    second: CompleteTileset6_71
+      213: 6066565321982639405
+    second: CombineTile6n7_71
   - first:
-      213: -6073029326588340352
-    second: CompleteTileset6_Fridge
+      213: -3193227366635859203
+    second: CombineTile6n7_72
   - first:
-      213: -357157660220162705
-    second: CompleteTileset6_73
+      213: 3993906636962758715
+    second: CombineTile6n7_73
   - first:
-      213: 4837205701998699666
-    second: CompleteTileset6_74
+      213: 2582671426642295868
+    second: CombineTile6n7_74
   - first:
-      213: 1581432738516003418
-    second: CompleteTileset6_75
+      213: 8459343628740383850
+    second: CombineTile6n7_75
   - first:
-      213: -5793713299760832631
-    second: CompleteTileset6_76
+      213: -3595167780367551619
+    second: CombineTile6n7_76
   - first:
-      213: 4970383918497676847
-    second: CompleteTileset6_77
+      213: -5401954676218203983
+    second: CombineTile6n7_77
   - first:
-      213: 8390282579547187339
-    second: CompleteTileset6_78
+      213: -3190010964543847594
+    second: CombineTile6n7_78
   - first:
-      213: -7027944388040136694
-    second: CompleteTileset6_79
+      213: -4249789734713218122
+    second: CombineTile6n7_79
   - first:
-      213: -4555482064534090753
-    second: CompleteTileset6_80
+      213: 3922079140207949543
+    second: CombineTile6n7_80
   - first:
-      213: 7568615696643399251
-    second: CompleteTileset6_81
+      213: 5224178868746030997
+    second: CombineTile6n7_81
   - first:
-      213: 5599360404946756997
-    second: CompleteTileset6_82
+      213: -805559874059490454
+    second: CombineTile6n7_82
   - first:
-      213: 4898254487126241324
-    second: CompleteTileset6_83
+      213: 8378894552665172833
+    second: CombineTile6n7_83
   - first:
-      213: -7688263282947073506
-    second: CompleteTileset6_84
+      213: 1227351692268833391
+    second: CombineTile6n7_84
   - first:
-      213: 3901614884739654026
-    second: CompleteTileset6_85
+      213: 8552123954476497075
+    second: CombineTile6n7_85
   - first:
-      213: 3159615526847284778
-    second: CompleteTileset6_86
+      213: 2816827474795956140
+    second: CombineTile6n7_86
   - first:
-      213: 5794309915667943488
-    second: CompleteTileset6_87
+      213: 6501723905315352826
+    second: CombineTile6n7_87
   - first:
-      213: -4735814012195251920
-    second: CompleteTileset6_88
+      213: -2981277289498531570
+    second: CombineTile6n7_88
   - first:
-      213: -7301923805249752294
-    second: CompleteTileset6_89
+      213: 7827686006604901003
+    second: CombineTile6n7_89
   - first:
-      213: -4850511911150894722
-    second: CompleteTileset6_90
+      213: -4145305111181879889
+    second: CombineTile6n7_90
   - first:
-      213: -6702728240300969923
-    second: CompleteTileset6_91
+      213: -895253950132015765
+    second: CombineTile6n7_91
   - first:
-      213: -3482261728919665145
-    second: CompleteTileset6_92
+      213: 8767834889334404618
+    second: CombineTile6n7_92
   - first:
-      213: 2324140294887827693
-    second: CompleteTileset6_93
+      213: -6133241287841716871
+    second: CombineTile6n7_93
   - first:
-      213: -861367816968927550
-    second: CompleteTileset6_94
+      213: 1579390291224617044
+    second: CombineTile6n7_94
   - first:
-      213: -4448097562651010753
-    second: CompleteTileset6_95
+      213: -7467243943628381142
+    second: CombineTile6n7_95
   - first:
-      213: -5950173722015785533
-    second: CompleteTileset6_96
+      213: -1843892238538114468
+    second: CombineTile6n7_96
   - first:
-      213: -6733424261431210309
-    second: CompleteTileset6_97
+      213: 1369882338859333694
+    second: CombineTile6n7_97
   - first:
-      213: 3233331912949191319
-    second: CompleteTileset6_98
+      213: 2030598816010645196
+    second: CombineTile6n7_98
   - first:
-      213: -2817860198511363064
-    second: CompleteTileset6_99
+      213: -5083866436091792623
+    second: CombineTile6n7_99
   - first:
-      213: -1126811466568924214
-    second: CompleteTileset6_100
+      213: -2460366013251225273
+    second: CombineTile6n7_100
   - first:
-      213: -2866389402041359868
-    second: CompleteTileset6_101
+      213: -2924424381557059058
+    second: CombineTile6n7_101
   - first:
-      213: -9049077067051828806
-    second: CompleteTileset6_102
+      213: 3159066869767328578
+    second: CombineTile6n7_102
   - first:
-      213: 3861003416181868922
-    second: CompleteTileset6_103
+      213: 7618692435919004650
+    second: CombineTile6n7_103
   - first:
-      213: 4126844737607027072
-    second: CompleteTileset6_Table1
+      213: -1935311610451393900
+    second: CombineTile6n7_104
   - first:
-      213: -8933159257321092825
-    second: CompleteTileset6_105
+      213: 1038079496253663520
+    second: CombineTile6n7_105
   - first:
-      213: -5805369639490430547
-    second: CompleteTileset6_Table2
+      213: 1558381904022260347
+    second: CombineTile6n7_106
   - first:
-      213: -9987324825282788
-    second: CompleteTileset6_107
+      213: -271571591535349673
+    second: CombineTile6n7_107
   - first:
-      213: -6085432151332110553
-    second: CompleteTileset6_108
+      213: -3440847126320371790
+    second: CombineTile6n7_108
   - first:
-      213: 3662259668955502617
-    second: CompleteTileset6_109
+      213: 3473683983947751365
+    second: CombineTile6n7_109
   - first:
-      213: 1844392336114472613
-    second: CompleteTileset6_110
+      213: 3377508794052310143
+    second: CombineTile6n7_110
   - first:
-      213: -8364473125937244830
-    second: CompleteTileset6_111
+      213: -4906573671852751268
+    second: CombineTile6n7_111
   - first:
-      213: -988347120692740382
-    second: CompleteTileset6_112
+      213: 4232986832224884923
+    second: CombineTile6n7_112
   - first:
-      213: -7652337585364194418
-    second: CompleteTileset6_113
+      213: 459666721631209028
+    second: CombineTile6n7_113
   - first:
-      213: -7100529680400558996
-    second: CompleteTileset6_114
+      213: 8123090942013272295
+    second: CombineTile6n7_114
   - first:
-      213: -1391251194360559796
-    second: CompleteTileset6_115
+      213: -4526935562821048079
+    second: CombineTile6n7_115
   - first:
-      213: 1716161114400567843
-    second: CompleteTileset6_116
+      213: -833073480895003113
+    second: CombineTile6n7_116
   - first:
-      213: 3557812603256624114
-    second: CompleteTileset6_117
+      213: 6960561782844637903
+    second: CombineTile6n7_117
   - first:
-      213: 5910093616243998676
-    second: CompleteTileset6_118
+      213: 6363706582336304310
+    second: CombineTile6n7_118
   - first:
-      213: -4382759628297086189
-    second: CompleteTileset6_119
+      213: -6509107373070626474
+    second: CombineTile6n7_119
   - first:
-      213: -5758821267153168464
-    second: CompleteTileset6_120
+      213: 1038960377498167704
+    second: CombineTile6n7_120
   - first:
-      213: -6716462000147570179
-    second: CompleteTileset6_121
+      213: 897424973583276684
+    second: CombineTile6n7_121
   - first:
-      213: -5648835407437830170
-    second: CompleteTileset6_122
+      213: -7221128693735513720
+    second: CombineTile6n7_122
   - first:
-      213: 3581066459611631051
-    second: CompleteTileset6_123
+      213: -6672079114292486371
+    second: CombineTile6n7_123
   - first:
-      213: 2360600708397389194
-    second: CompleteTileset6_124
+      213: 229049206935976393
+    second: CombineTile6n7_124
   - first:
-      213: 4514998286479957652
-    second: CompleteTileset6_125
+      213: 7970329249160833986
+    second: CombineTile6n7_125
   - first:
-      213: -5165825994845186191
-    second: CompleteTileset6_126
+      213: 2764406681258718526
+    second: CombineTile6n7_126
   - first:
-      213: 3350884528995732455
-    second: CompleteTileset6_127
+      213: -2552286316331288519
+    second: CombineTile6n7_127
   - first:
-      213: 7892026308626852109
-    second: CompleteTileset6_PC1
+      213: -6126357915346274068
+    second: CombineTile6n7_128
   - first:
-      213: 1743467620887985116
-    second: CompleteTileset6_129
+      213: -6969393374210043311
+    second: CombineTile6n7_129
   - first:
-      213: -5712633540188206895
-    second: CompleteTileset6_PC2
+      213: -5532503023006459650
+    second: CombineTile6n7_130
   - first:
-      213: 8538140460090734954
-    second: CompleteTileset6_131
+      213: -2796123893700958718
+    second: CombineTile6n7_131
   - first:
-      213: 2202931121073417549
-    second: CompleteTileset6_Drawer2
+      213: 4804462397506508142
+    second: CombineTile6n7_132
   - first:
-      213: -8924837400727012293
-    second: CompleteTileset6_Drawer1
+      213: -2248946456607994855
+    second: CombineTile6n7_133
   - first:
-      213: 6645795892426460529
-    second: CompleteTileset6_134
+      213: -3577202155821450750
+    second: CombineTile6n7_134
   - first:
-      213: 5605826108974867043
-    second: CompleteTileset6_Book3
-  - first:
-      213: -8306284230480867134
-    second: CompleteTileset6_136
-  - first:
-      213: -1504338924411989424
-    second: CompleteTileset6_137
-  - first:
-      213: -3003425982337425793
-    second: CompleteTileset6_138
-  - first:
-      213: 1201666844150900586
-    second: CompleteTileset6_139
-  - first:
-      213: -5064008392501012320
-    second: CompleteTileset6_140
-  - first:
-      213: -3035807354704497088
-    second: CompleteTileset6_141
-  - first:
-      213: -1664109616992575523
-    second: CompleteTileset6_142
-  - first:
-      213: -5887113488915520722
-    second: CompleteTileset6_143
-  - first:
-      213: -6505548793421960182
-    second: CompleteTileset6_144
-  - first:
-      213: -3419393105727399019
-    second: CompleteTileset6_145
-  - first:
-      213: -1419580953622075958
-    second: CompleteTileset6_146
-  - first:
-      213: 8723545905792824233
-    second: CompleteTileset6_147
-  - first:
-      213: 7695875549951844678
-    second: CompleteTileset6_148
-  - first:
-      213: -1371043932686685297
-    second: CompleteTileset6_149
-  - first:
-      213: -3212387108755053273
-    second: CompleteTileset6_Book
-  - first:
-      213: -116553606907945050
-    second: CompleteTileset6_151
-  - first:
-      213: 2029346015351570442
-    second: CompleteTileset6_152
-  - first:
-      213: 1160473198449659876
-    second: CompleteTileset6_153
-  - first:
-      213: 1192504077273547661
-    second: CompleteTileset6_154
-  - first:
-      213: -7143428647882822173
-    second: CompleteTileset6_155
-  - first:
-      213: -2170168941462222712
-    second: CompleteTileset6_156
-  - first:
-      213: 3055783857283801644
-    second: CompleteTileset6_157
-  - first:
-      213: -2072434754605131289
-    second: CompleteTileset6_158
-  - first:
-      213: 7935709726081831690
-    second: CompleteTileset6_159
-  - first:
-      213: -9094730084555811783
-    second: CompleteTileset6_160
-  - first:
-      213: 8555425915717729678
-    second: CompleteTileset6_161
-  - first:
-      213: -7054505764169003603
-    second: CompleteTileset6_162
-  - first:
-      213: -5773553410961816889
-    second: CompleteTileset6_163
-  - first:
-      213: 6134057769306599741
-    second: CompleteTileset6_164
-  - first:
-      213: 1876029918502909838
-    second: CompleteTileset6_165
-  - first:
-      213: 2844813367503534414
-    second: CompleteTileset6_Book2
-  - first:
-      213: -7411373858047476462
-    second: CompleteTileset6_167
-  - first:
-      213: 1237135662644147217
-    second: CompleteTileset6_Shelf3
-  - first:
-      213: -449377204349442001
-    second: CompleteTileset6_Shelf2
-  - first:
-      213: -2334793538985252625
-    second: CompleteTileset6_170
-  - first:
-      213: 5311141547070063575
-    second: CompleteTileset6_Book4
-  - first:
-      213: 4941736808926273307
-    second: CompleteTileset6_Shelf
-  - first:
-      213: -953624483621972022
-    second: CompleteTileset6_173
-  - first:
-      213: -8563073031369636124
-    second: CompleteTileset6_174
-  - first:
-      213: 4665640594403300655
-    second: CompleteTileset6_175
-  - first:
-      213: 2122182180722124090
-    second: CompleteTileset6_176
-  - first:
-      213: -6437488108252895383
-    second: CompleteTileset6_177
-  - first:
-      213: 3925146893167246921
-    second: CompleteTileset6_178
-  - first:
-      213: 4226679813915270408
-    second: CompleteTileset6_179
-  - first:
-      213: 3556435594078589437
-    second: CompleteTileset6_180
-  - first:
-      213: -1261407408661027721
-    second: CompleteTileset6_181
-  - first:
-      213: 2468961394660229709
-    second: CompleteTileset6_182
-  - first:
-      213: 5931867204103851853
-    second: CompleteTileset6_183
+      213: 8094725930516395737
+    second: CombineTile6n7_135
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -636,910 +492,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CompleteTileset6_0
+      name: CombineTile6n7_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1056
+        y: 720
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38f5698aa66f0684a809916f4645c96b
-      internalID: -1063276081713548184
+      spriteID: f876ca9f6016fd64d84f43a16f517733
+      internalID: -8098517029644097384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 1056
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2339a51864e4ad44938f610bfe7a03f
-      internalID: -5162069427186016003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 1056
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2de8a5173366fc24ea71af6836155a4a
-      internalID: -7505369374945334333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 1056
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b7edd4053f908049b9f2451d016aded
-      internalID: 5201605492744552566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 1008
-        width: 48
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81c8544bf5ba74f429d098676cd74e59
-      internalID: -1470769353392945717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 1008
-        width: 48
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6649e5b391abf7e4c9ee234edc020984
-      internalID: 1408181260457067540
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_6
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 1008
-        width: 48
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c43825d970fd9e64593356ecba5d3fc9
-      internalID: 1713802243533108611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_7
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 1008
-        width: 48
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 140206e49bfa92c419f264ea53168216
-      internalID: -5248327263289774130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1008
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f802ed60648497a4ea0a69d9f2965bda
-      internalID: -1873716129345009169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_9
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 1008
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 936a1a66117523e4a85070a984a565ba
-      internalID: 4008934753135387274
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_10
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 1008
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4949b4c009a71546b7a3ad1e1819962
-      internalID: -3560277220537897119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_11
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 1008
-        width: 48
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 129791d5f67c6a34fa6d154999853aca
-      internalID: 2157356892965931528
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_16
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 960
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 050937456e4e34f4db870dc711f001f3
-      internalID: 1094736180621932346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_17
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 960
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c297fced4615f14085252348b75f881
-      internalID: 3314196781336821833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_18
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 960
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5377753bb120d3408f0dac41f49fbc6
-      internalID: -4047395572625409185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_19
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 960
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ffec9b76faa82c499cfdd801a8a3f1f
-      internalID: 3100366930373935635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_TV1
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 864
-        width: 96
-        height: 144
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d468fb45149832499fe13efe127fd01
-      internalID: 2983354518895784847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_TV2
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 864
-        width: 96
-        height: 144
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c87a3c6d5d834d44a98999ce9660cc98
-      internalID: -1655445392626952912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_24
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 912
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f21649dc0acacb34dadcf4e7d8dc5a1f
-      internalID: -3097588498360483687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_25
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 912
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 105f68c63e2ce684e8351a0310345416
-      internalID: 5208909818863014883
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_26
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 912
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea7899c6c329f9e4c829989bf713755e
-      internalID: -5925048569144506008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_Pot2
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 912
-        width: 48
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a045e3a1b2d15e4ba6683a7a8093f4d
-      internalID: 550857803248875100
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_32
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 864
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6190966a35f76074dadcf60ddb768308
-      internalID: -4117190413254774062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_33
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 864
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 045d208895af91d4d9b0c2dface3ced9
-      internalID: 3160985426663126673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_Pot
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 865
-        width: 48
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2106eb5d969a64f4fba44d25c7e97ff1
-      internalID: 7358831081773733524
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_Pot3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 864
-        width: 48
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29d4401eb7ab7fb40be80192f63d4efe
-      internalID: 6773174707810215030
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_40
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 816
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c861e7e6a6558f74e9b88cb3c66d3efc
-      internalID: -7196178358837422208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_41
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 817
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0310d257ab5a8824ca813e4937cee04d
-      internalID: -7612976765354284827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_42
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 816
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c639a19af8cfd74f8a870cce7146e23
-      internalID: 6868593382753662391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_43
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 816
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d301df2afdb51fc4caa24f5e42d9d6f8
-      internalID: 8521085358237447766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_44
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 816
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 085c3290e27da0c498f17625936b637d
-      internalID: -1635287450501904423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_45
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 816
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c5293154109a97468d80878ea91c20d
-      internalID: 6433136114459236263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_46
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 816
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23a04131f978c004f9e5dcc295258609
-      internalID: 3561029869759713012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_47
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 816
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1c1749e08fda1c469bf8918ac77d618
-      internalID: 4723918680812460128
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_48
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 768
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dfaf018575cf9f448aa50f4374012cb4
-      internalID: -7312115667121947702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_49
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 768
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d60166dd91c56de4b8e38f6cd7b1e328
-      internalID: -937916806485785835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_50
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 768
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f3565c5458bb174bb208a5e0c7c30a4
-      internalID: -1774514599224940564
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_51
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 768
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7dfe89d9430442b46a532523ad1a5e99
-      internalID: -6261330580737974167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_52
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 768
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea0d26052e15595419bc622cb247807b
-      internalID: -418641410501492476
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_53
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 768
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5396428de5ee064bac0f9c05d058166
-      internalID: 9174513704935773022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_54
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 768
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8b5e045757615a4ba5c73a8bfb140a8
-      internalID: 8978687388899758932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_55
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 768
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d97d5078857b8041ab44c7862ec5538
-      internalID: 4716683556282411188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_56
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 672
-        width: 48
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edeb46727b98fb44b8c7fe9318c477c6
-      internalID: -7271743086360843385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_57
+      name: CombineTile6n7_1
       rect:
         serializedVersion: 2
         x: 48
@@ -1547,20 +521,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8352fdf7ff3872349a0a6786929e44f2
-      internalID: 476073868251209556
+      spriteID: 21bf4655a9f32b642baa3b578942b60e
+      internalID: 7241890612821625620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_58
+      name: CombineTile6n7_2
       rect:
         serializedVersion: 2
         x: 96
@@ -1568,20 +542,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0cb71daf798e6c4e8a3737b4524f98f
-      internalID: 7017017310510663440
+      spriteID: 1078edb3cf41987428f241723b5f2eb3
+      internalID: -950153881047457944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_59
+      name: CombineTile6n7_3
       rect:
         serializedVersion: 2
         x: 144
@@ -1589,20 +563,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cb8c3733193f4843a29d59ad027261a
-      internalID: 4201890092073743718
+      spriteID: 1d756bf7d7a47b042b906f17c42aa922
+      internalID: -8645402642637418001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_60
+      name: CombineTile6n7_4
       rect:
         serializedVersion: 2
         x: 192
@@ -1610,20 +584,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42e21fe2d2e128b4cb8f7ea2c89ffa20
-      internalID: 2724111886314609338
+      spriteID: 64adbd1f6fa0dae4e8b19c1f3b701d03
+      internalID: -3778247293708052330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_61
+      name: CombineTile6n7_5
       rect:
         serializedVersion: 2
         x: 240
@@ -1631,20 +605,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 960f47dd77a8d5b4db3e017c11981ffe
-      internalID: -4985752170172744177
+      spriteID: 084e8601a7d6ef34388f5ee183c490a2
+      internalID: -8768496776820163545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_62
+      name: CombineTile6n7_6
       rect:
         serializedVersion: 2
         x: 288
@@ -1652,20 +626,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a2e8eb4cf0cf1140ad176fbe9448b67
-      internalID: -4017317156026392773
+      spriteID: 412b294d0a61a2946b0ae472030cb75b
+      internalID: 1282676680485229411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_63
+      name: CombineTile6n7_7
       rect:
         serializedVersion: 2
         x: 336
@@ -1673,20 +647,83 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c9a2e664ac8f2b4196e78d9b01e422b
-      internalID: -3668490474669557853
+      spriteID: d8b2f9d7c86ccf543883421b4f32c485
+      internalID: 5226049191512923796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_65
+      name: CombineTile6n7_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 720
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f878a44571fc5d745b26f476c3c582fc
+      internalID: -7209816663600950227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 720
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c451f51459fc84c937a9a7563e3093
+      internalID: -7981122990401304772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2378222018afa42bebec27785d8e69
+      internalID: 2472901087198093678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_11
       rect:
         serializedVersion: 2
         x: 48
@@ -1694,20 +731,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4970e6bbe3327b4d8c8af40be21567e
-      internalID: 679234685588585417
+      spriteID: 2e4396c5bfe8cbc459997b24de83978e
+      internalID: 6478912562907578292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_66
+      name: CombineTile6n7_12
       rect:
         serializedVersion: 2
         x: 96
@@ -1715,20 +752,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bf12614ac70a0f4cb7a8d0d51dc020a
-      internalID: -7994396487206630184
+      spriteID: c241ac25b1e9f314cb07859e353bc08d
+      internalID: -7481053883042721866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_67
+      name: CombineTile6n7_13
       rect:
         serializedVersion: 2
         x: 144
@@ -1736,20 +773,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df5c2b77b8b524846829d2b9f2ef2512
-      internalID: 2740716782515041420
+      spriteID: 13986ded2b5182548a013fcfd49987f6
+      internalID: -6110016586467214309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_68
+      name: CombineTile6n7_14
       rect:
         serializedVersion: 2
         x: 192
@@ -1757,20 +794,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aaca19b4738b2644abb3aeec4db8088
-      internalID: -685065862935495844
+      spriteID: 9c5aa24e6202bc047ba3ac09c7bcd427
+      internalID: -7547792567844699010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_69
+      name: CombineTile6n7_15
       rect:
         serializedVersion: 2
         x: 240
@@ -1778,20 +815,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98a45c55ed8023d45a1bdc4b49c81627
-      internalID: -2630227626849640569
+      spriteID: 65d4628ca85387043a25ed0353f75662
+      internalID: 4053141752057485955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_70
+      name: CombineTile6n7_16
       rect:
         serializedVersion: 2
         x: 288
@@ -1799,20 +836,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a08f67639de7a64bbb611dcad1838f4
-      internalID: 6855307778479962230
+      spriteID: 1d67fad8c97f07743b331a74eb581267
+      internalID: 7260201277492869714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_71
+      name: CombineTile6n7_17
       rect:
         serializedVersion: 2
         x: 336
@@ -1820,41 +857,104 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a765548b357a9a847ba6953d31412806
-      internalID: 8791460175706870147
+      spriteID: d1ae669b02010284195f7182751f8e6f
+      internalID: -5084950625902701910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_Fridge
+      name: CombineTile6n7_18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 672
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607d333bc7e19194f9cf6a7085f1b1ca
+      internalID: 3206339412943738485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_19
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 672
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c51a464d3a18340a347d3ce00b4a95
+      internalID: -7517762526908339472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_20
       rect:
         serializedVersion: 2
         x: 0
-        y: 528
-        width: 96
-        height: 144
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 624
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49d9196e2d4d4254ba17c12cc9e2f214
-      internalID: -6073029326588340352
+      spriteID: 2fe20a8624ce4b14a91114a9999fddf4
+      internalID: -1597458574668482079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_74
+      name: CombineTile6n7_21
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 624
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c997b1ba76036479a6a1cbf8700d10
+      internalID: -5599121315694912549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_22
       rect:
         serializedVersion: 2
         x: 96
@@ -1862,20 +962,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4465fa669885d314d9885c9b7c3f28cf
-      internalID: 4837205701998699666
+      spriteID: 0ad5ec2a48a3ce143ba19d0008782aa0
+      internalID: -9066329131568975738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_75
+      name: CombineTile6n7_23
       rect:
         serializedVersion: 2
         x: 144
@@ -1883,20 +983,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93463cb8618ded94481f67a9e391034d
-      internalID: 1581432738516003418
+      spriteID: 18bf17f4746a90f4d83d16b88e3eb860
+      internalID: 6542653779446297830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_76
+      name: CombineTile6n7_24
       rect:
         serializedVersion: 2
         x: 192
@@ -1904,20 +1004,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16a3038694370f64fa9da9a25ddee122
-      internalID: -5793713299760832631
+      spriteID: 8c6ae26212071ac4d999137165e50e92
+      internalID: -5209942500435694703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_77
+      name: CombineTile6n7_25
       rect:
         serializedVersion: 2
         x: 240
@@ -1925,20 +1025,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee81e0426a3c93a4fae1830388b44aa4
-      internalID: 4970383918497676847
+      spriteID: 2eccf2b87f638e84a8e869c4a125b5bd
+      internalID: -2529486525992270096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_78
+      name: CombineTile6n7_26
       rect:
         serializedVersion: 2
         x: 288
@@ -1946,20 +1046,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2841e55e02cf11249808aee970ac83b5
-      internalID: 8390282579547187339
+      spriteID: 8cf22c9f813f0914f84bd17479d3ec8a
+      internalID: 6438825770976887002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_79
+      name: CombineTile6n7_27
       rect:
         serializedVersion: 2
         x: 336
@@ -1967,20 +1067,104 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6703cfb44fdc80b4f80a8fc2acd01534
-      internalID: -7027944388040136694
+      spriteID: 470a3011ada2a8b4d8cc1edb0bb70eaf
+      internalID: 7173697473243455879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_82
+      name: CombineTile6n7_28
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 624
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864ddf778c8b922478bbc5e712bf736c
+      internalID: -4310520618482775998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_29
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 624
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a359c311f1968459dee475a4139cbf
+      internalID: -4211373162351497986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35226811e7d0b44484c16d1099a2663
+      internalID: -2611758726308907388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_31
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 576
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c217d0d0009a0dc42ba246110ec7190b
+      internalID: -1457326779206410832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_32
       rect:
         serializedVersion: 2
         x: 96
@@ -1988,83 +1172,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2addfcc0174be724f820bf8688cc94f6
-      internalID: 5599360404946756997
+      spriteID: 81bf5247575000940997ae3af95f8754
+      internalID: -445499254929571659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_83
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 576
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8f00ae10f0cc584cb2ab81df82f1807
-      internalID: 4898254487126241324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_84
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 576
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02386fc5a7ea3334ea2ff0e3726c08a6
-      internalID: -7688263282947073506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_85
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 576
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e840f6300c83cbd43a8185e74934c721
-      internalID: 3901614884739654026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_86
+      name: CombineTile6n7_33
       rect:
         serializedVersion: 2
         x: 288
@@ -2072,20 +1193,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 582e1fd3c7b31394eacc2d4b3f92c212
-      internalID: 3159615526847284778
+      spriteID: f212cb2fe557b6e43acea376ac5286fb
+      internalID: 4122710689367943316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_87
+      name: CombineTile6n7_34
       rect:
         serializedVersion: 2
         x: 336
@@ -2093,20 +1214,104 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9576ebca4a44c594693625ae5de22b69
-      internalID: 5794309915667943488
+      spriteID: 173d42b27e17860418fd279bf5c4f75b
+      internalID: 5879069294993258464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_90
+      name: CombineTile6n7_35
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41108a77708dc8f45bf5c45dfafc7663
+      internalID: -5044576550712704015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_36
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 576
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4030509559cd944d91d0edb9c78ab8f
+      internalID: -4810312826904315598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c0fadecbc4374040a86e722cc209aa3
+      internalID: -6055891304121750070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_38
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919ce964f1c8d454f87982ea284c7abc
+      internalID: 8915719912433153991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_39
       rect:
         serializedVersion: 2
         x: 96
@@ -2114,20 +1319,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 313affc4dd489c14bb365c33c15d52c1
-      internalID: -4850511911150894722
+      spriteID: fe7a38d8a7748e14f9a7e4bfeeb5b758
+      internalID: -6404977612689131431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_91
+      name: CombineTile6n7_40
       rect:
         serializedVersion: 2
         x: 144
@@ -2135,20 +1340,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 902a1f8d88cdb8b4e99e0203716032d5
-      internalID: -6702728240300969923
+      spriteID: 758c47aa735eb0642b58ade6c7bbe503
+      internalID: 4258309159842483297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_92
+      name: CombineTile6n7_41
       rect:
         serializedVersion: 2
         x: 192
@@ -2156,20 +1361,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3ed70b715c85754f807fb0d1406b0b7
-      internalID: -3482261728919665145
+      spriteID: ab01ba5eaa894f74a8c403bf806376d4
+      internalID: -7339841635301679019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_93
+      name: CombineTile6n7_42
       rect:
         serializedVersion: 2
         x: 240
@@ -2177,20 +1382,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f32e77abac7204db493b72fe14491d
-      internalID: 2324140294887827693
+      spriteID: 2379ab8e14d109a48abc307139e8c619
+      internalID: 7313529067526255079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_94
+      name: CombineTile6n7_43
       rect:
         serializedVersion: 2
         x: 288
@@ -2198,20 +1403,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef684a26a1d30ba4eab3402787b5e2b8
-      internalID: -861367816968927550
+      spriteID: 7b1f579f8b652424f8d8faaf658b986b
+      internalID: 6089822805815208242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_95
+      name: CombineTile6n7_44
       rect:
         serializedVersion: 2
         x: 336
@@ -2219,20 +1424,62 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27142a2b505922d48929d8d95b76c3db
-      internalID: -4448097562651010753
+      spriteID: 2e786428627e62b49bd0307ed084fd85
+      internalID: 1144109711901163551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_96
+      name: CombineTile6n7_45
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ad0bf47a73d4b408f42eeda5c1bab2
+      internalID: -6539998733243406901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_46
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e5ce73cc9181b44a9e0db8985ce78c
+      internalID: 2470742753708772850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_47
       rect:
         serializedVersion: 2
         x: 0
@@ -2240,20 +1487,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e94ebe36775f70c44b37c618455a3f34
-      internalID: -5950173722015785533
+      spriteID: 0f9a101b662f9a644afcf99fdbbd3d04
+      internalID: 6485367276524639589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_97
+      name: CombineTile6n7_48
       rect:
         serializedVersion: 2
         x: 48
@@ -2261,41 +1508,83 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45508158262157546b1c591f36baebeb
-      internalID: -6733424261431210309
+      spriteID: 3818e3013ec2a934f9419d4e85ab0563
+      internalID: -8354470406298238946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_100
+      name: CombineTile6n7_49
       rect:
         serializedVersion: 2
         x: 96
         y: 480
-        width: 144
+        width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfb18803fee227e47bb6ca457d76eecf
-      internalID: -1126811466568924214
+      spriteID: 36310f32f251d464b803df81bb090386
+      internalID: 3888621210094729944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_101
+      name: CombineTile6n7_50
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4aa5a522562b44fa028c7687b2cd41
+      internalID: 8424838971205242603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_51
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec048bf260024e46a5d6d0b7d618470
+      internalID: -1258893517118901285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_52
       rect:
         serializedVersion: 2
         x: 240
@@ -2303,20 +1592,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fab8af7f53d5d344b4dfa5b6d8d4d0e
-      internalID: -2866389402041359868
+      spriteID: 57a7f05bebadfa7469a09ed995ef5ebf
+      internalID: 3983653545618778303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_102
+      name: CombineTile6n7_53
       rect:
         serializedVersion: 2
         x: 288
@@ -2324,20 +1613,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b999cf4fc4fd38d4eacf7dbc954643df
-      internalID: -9049077067051828806
+      spriteID: 5a588431ec256b84eb0520c9f0361283
+      internalID: -4165934227821731373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_103
+      name: CombineTile6n7_54
       rect:
         serializedVersion: 2
         x: 336
@@ -2345,83 +1634,167 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7534838728e57dc49a918c98e21f0055
-      internalID: 3861003416181868922
+      spriteID: f8407c180040c9e418f0eb3d3bb6c629
+      internalID: 3653155441963832854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_Table1
+      name: CombineTile6n7_55
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8efb0720ce038cb41b520db1a9944f99
+      internalID: -6355968437005493705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_56
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271b4c988bbd2f644bef9fb673061f49
+      internalID: 3307800320657543795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_57
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccf165cac87a4d2478411d8180a735c1
-      internalID: 4126844737607027072
+      spriteID: 28a51aea81deb41419f709e4ce40d102
+      internalID: -789588820608596952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_Table2
+      name: CombineTile6n7_58
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bac1ce2ddd4b20408e87e256bd3f2a2
+      internalID: -8350165710223676140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_59
       rect:
         serializedVersion: 2
         x: 96
-        y: 384
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4849fa51af760d344ac6d56befd47589
-      internalID: -5805369639490430547
+      spriteID: aaddd38970ba7674ca027b60309c928b
+      internalID: -2832850360225463313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_108
+      name: CombineTile6n7_60
       rect:
         serializedVersion: 2
-        x: 193
-        y: 384
+        x: 144
+        y: 432
         width: 48
-        height: 96
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c7f4a6c0fddb7545a7f1e6e9e41248b
-      internalID: -6085432151332110553
+      spriteID: 269643933bf059c4fbd34bddace02fdf
+      internalID: 2001063056797045337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_109
+      name: CombineTile6n7_61
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67306726eff5c854bb2e241f35e298ac
+      internalID: -3938382046524895518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_62
       rect:
         serializedVersion: 2
         x: 240
@@ -2429,20 +1802,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f20702b97bfad2942a24a1e3200c7807
-      internalID: 3662259668955502617
+      spriteID: e8d710d44c5e19c4192f61414e96d276
+      internalID: 1161645762221430678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_110
+      name: CombineTile6n7_63
       rect:
         serializedVersion: 2
         x: 288
@@ -2450,20 +1823,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d1621e5a9dea934a90c31e88c439c72
-      internalID: 1844392336114472613
+      spriteID: b11a61a8d65dfd446924e85b6d857034
+      internalID: -1300198587844362583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_111
+      name: CombineTile6n7_64
       rect:
         serializedVersion: 2
         x: 336
@@ -2471,20 +1844,125 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bb96eeafdbf7f047aeb1dbb940af86b
-      internalID: -8364473125937244830
+      spriteID: 9207f8a262d13c34b90cef74783a2bb6
+      internalID: 2408704537020727041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_117
+      name: CombineTile6n7_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7402701e04056524da0f54635432dc75
+      internalID: 8139056688798111275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_66
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96140101a1e7014ea8204607255114e
+      internalID: 7924066512581802020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_67
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f94960bcdda1e6479f3060c034c7d4c
+      internalID: -5648895609688684728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_68
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d525ef4a6a2a9ef418f0d4993e2f8172
+      internalID: -1750688046894275894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_69
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbaf85276fb91148b68d4104911381f
+      internalID: -8902028414536773934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_70
       rect:
         serializedVersion: 2
         x: 240
@@ -2492,20 +1970,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a491d86670c8f894eb53fcad41b3bcbb
-      internalID: 3557812603256624114
+      spriteID: e4e8ff2fc663c09459e55719f9a74e46
+      internalID: 9149804163906483108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_118
+      name: CombineTile6n7_71
       rect:
         serializedVersion: 2
         x: 288
@@ -2513,20 +1991,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1325d0589ea41ff4f8f1f5747cd3b9ab
-      internalID: 5910093616243998676
+      spriteID: d2bbad1e397dc344e8d6e551014dd133
+      internalID: 6066565321982639405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_119
+      name: CombineTile6n7_72
       rect:
         serializedVersion: 2
         x: 336
@@ -2534,20 +2012,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 164e9986d5f17d042a69b2422566e892
-      internalID: -4382759628297086189
+      spriteID: c5afe3a36331ddb44908fd52512970fe
+      internalID: -3193227366635859203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_120
+      name: CombineTile6n7_73
       rect:
         serializedVersion: 2
         x: 0
@@ -2555,20 +2033,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 014229925bd7f874d8674bd93b577fdd
-      internalID: -5758821267153168464
+      spriteID: 385b1b58a6672894faa2c7d8eb86a0b6
+      internalID: 3993906636962758715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_121
+      name: CombineTile6n7_74
       rect:
         serializedVersion: 2
         x: 48
@@ -2576,20 +2054,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c48c4fb8a05851244a852024e7787ca1
-      internalID: -6716462000147570179
+      spriteID: b1d5ed43bf3f7094c8efabd122c1d3b9
+      internalID: 2582671426642295868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_122
+      name: CombineTile6n7_75
       rect:
         serializedVersion: 2
         x: 96
@@ -2597,20 +2075,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb242d81e06727a459bfb54b50221060
-      internalID: -5648835407437830170
+      spriteID: c4e3e25c1e8307e47b511c784b255220
+      internalID: 8459343628740383850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_123
+      name: CombineTile6n7_76
       rect:
         serializedVersion: 2
         x: 144
@@ -2618,20 +2096,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbf5fd98397cdef48a66e8f87fc73799
-      internalID: 3581066459611631051
+      spriteID: 962dc98ea2b1e4c4ba58596aa4204fad
+      internalID: -3595167780367551619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_124
+      name: CombineTile6n7_77
       rect:
         serializedVersion: 2
         x: 192
@@ -2639,20 +2117,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0b8b548c8a273e40b65916c2518e323
-      internalID: 2360600708397389194
+      spriteID: cda4c458f17fd174e845233b0542edda
+      internalID: -5401954676218203983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_125
+      name: CombineTile6n7_78
       rect:
         serializedVersion: 2
         x: 240
@@ -2660,20 +2138,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c48547bfc0cf6c141a72ad47a7a63637
-      internalID: 4514998286479957652
+      spriteID: 1dcc760163bd466499e8bea70a7f5076
+      internalID: -3190010964543847594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_126
+      name: CombineTile6n7_79
       rect:
         serializedVersion: 2
         x: 288
@@ -2681,20 +2159,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcf24af49af57cc45b324e352cc9886a
-      internalID: -5165825994845186191
+      spriteID: 63e451b243934d54eaaee9f8409f30ec
+      internalID: -4249789734713218122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_127
+      name: CombineTile6n7_80
       rect:
         serializedVersion: 2
         x: 336
@@ -2702,125 +2180,440 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfd3738e2fa2c89499e70a6c8fc18e41
-      internalID: 3350884528995732455
+      spriteID: b0e94015830fe4c4e9384ca0e204f617
+      internalID: 3922079140207949543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_PC1
+      name: CombineTile6n7_81
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f88f5efd1399304896f32540e38afc6
+      internalID: 5224178868746030997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_82
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 336
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6517d806510fb3641bb2846ea4d8d7ef
+      internalID: -805559874059490454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_83
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f404293e44c12b441afdfc96aefa5c3a
+      internalID: 8378894552665172833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_84
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e867c0c5cce3f474b88d1b6ac4b347e1
+      internalID: 1227351692268833391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_85
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 428f059cbdd7263459dc780dc399a79d
+      internalID: 8552123954476497075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_86
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2f528524a4de74ebafd34ca2816cd9
+      internalID: 2816827474795956140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_87
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ccb416dbb848e41afa88e60f9c40ec
+      internalID: 6501723905315352826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_88
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83cf3e954d8d3a4c81dbacc2b1285d9
+      internalID: -2981277289498531570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_89
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4466733212a995c43a2b36022ccf16e1
+      internalID: 7827686006604901003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_90
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0afcca68776c344b9d59a47cd111d8
+      internalID: -4145305111181879889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_91
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abaf397399b2b7b40a9806c31ad34a3d
+      internalID: -895253950132015765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_92
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73800e8ca99ca73449eae4d7982bd4de
+      internalID: 8767834889334404618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_93
       rect:
         serializedVersion: 2
         x: 0
         y: 240
-        width: 96
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1879406}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba1eb09a5a7c21a4c832600ccfcb61c8
-      internalID: 7892026308626852109
+      spriteID: 7816e9940922fcf428c7fabaecda1911
+      internalID: -6133241287841716871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_PC2
+      name: CombineTile6n7_94
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8d5753a14ee534f958b89a693f6601
+      internalID: 1579390291224617044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_95
       rect:
         serializedVersion: 2
         x: 96
         y: 240
-        width: 96
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16985004}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdd08063cd4be3c47865e9e2610eaa35
-      internalID: -5712633540188206895
+      spriteID: 08afb338706a62e488868192280afd68
+      internalID: -7467243943628381142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_Drawer2
+      name: CombineTile6n7_96
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bddba8ac40d9c584d904f0a72d76fc67
+      internalID: -1843892238538114468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_97
       rect:
         serializedVersion: 2
         x: 192
         y: 240
         width: 48
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31e47d39ccf76aa4598c04b06b9f619e
-      internalID: 2202931121073417549
+      spriteID: b0a8b99bdc9ce4a418bdda097006a179
+      internalID: 1369882338859333694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_Drawer1
+      name: CombineTile6n7_98
       rect:
         serializedVersion: 2
         x: 240
         y: 240
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cdecaef6a7d0b1428e27fa477d69148
-      internalID: -8924837400727012293
+      spriteID: 9aa23646636c7cb47a2459514e24eb5d
+      internalID: 2030598816010645196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_Book3
+      name: CombineTile6n7_99
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba0ab7bbb64b34c42b0e6f61f31d5a20
+      internalID: -5083866436091792623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_100
       rect:
         serializedVersion: 2
         x: 336
         y: 240
         width: 48
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07d3729a64d095744bca200c81e384ef
-      internalID: 5605826108974867043
+      spriteID: 0d2dfa3f38c0deb41a9b178c4210df9b
+      internalID: -2460366013251225273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_144
+      name: CombineTile6n7_101
       rect:
         serializedVersion: 2
         x: 0
@@ -2828,20 +2621,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43ec569b3ca7ef6408d8a64d9313d6c2
-      internalID: -6505548793421960182
+      spriteID: 4321997458973944babdedf4eb8d52c7
+      internalID: -2924424381557059058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_145
+      name: CombineTile6n7_102
       rect:
         serializedVersion: 2
         x: 48
@@ -2849,308 +2642,707 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3268aabd61564c488a722d413a636a3
-      internalID: -3419393105727399019
+      spriteID: 98adfe08f9c892148914148c57738cca
+      internalID: 3159066869767328578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_146
+      name: CombineTile6n7_103
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb541bd60a48b34ead28e116ec703f8
+      internalID: 7618692435919004650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_104
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b769f55600c25741aba0cb17cfa6d77
+      internalID: -1935311610451393900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_105
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd29009f2a92074e888267f22a6b486
+      internalID: 1038079496253663520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_106
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b428b27aa2da44da1bb9f9f5c3735f
+      internalID: 1558381904022260347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_107
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8915400c933fd4ca254a327b21ad65
+      internalID: -271571591535349673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_108
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73ccbe3beed8fd94cb5208a8eb786f16
+      internalID: -3440847126320371790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_109
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9526e5c6893105f49800985a76c78f1c
+      internalID: 3473683983947751365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_110
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c21fc2ddf9fd44d9578cbc2dec19cb
+      internalID: 3377508794052310143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_111
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e97719526cfa7b4397d683cab864f89
+      internalID: -4906573671852751268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_112
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44768955a4d31bc40b4246d13eb16868
+      internalID: 4232986832224884923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_113
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9fd46032a26094db571fb008ff60bb
+      internalID: 459666721631209028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_114
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a57f8db9336b84bb46643355d3543a
+      internalID: 8123090942013272295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_115
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d6ec7b113fc504a89e38c16423d199
+      internalID: -4526935562821048079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_116
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a411afc49e23c4db1545542551f66c
+      internalID: -833073480895003113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_117
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510912c8b3149ad49946d9dddf710c21
+      internalID: 6960561782844637903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_118
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 511c1566318558a4ba2bb5eb9d631c94
+      internalID: 6363706582336304310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_119
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a02edad18e95248bf1ba1daf14df79
+      internalID: -6509107373070626474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_120
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1adc685909124d498dde043bd9e150a
+      internalID: 1038960377498167704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_121
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294baaf02d96b174db8f8ce8738e9f00
+      internalID: 897424973583276684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_122
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c246b0ba9e63c9c4fac8bbbe3f01f7fe
+      internalID: -7221128693735513720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_123
       rect:
         serializedVersion: 2
         x: 96
         y: 96
-        width: 96
-        height: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 275867fef36b5b94992adf82041a45a2
-      internalID: -1419580953622075958
+      spriteID: 2fb3e7979c52d6a429f096ecb9e4ddf3
+      internalID: -6672079114292486371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_148
+      name: CombineTile6n7_124
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ebe09979df3f643acd0e3e30c27a41
+      internalID: 229049206935976393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_125
       rect:
         serializedVersion: 2
         x: 192
         y: 96
-        width: 96
-        height: 144
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e18de12fa187b9f488b3b295104fc7df
-      internalID: 7695875549951844678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_Book
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 145
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae80d8f6c748a2940ab8f2d75ff83b57
-      internalID: -3212387108755053273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_152
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 144
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4055585579883bc42975602abf6ed27b
-      internalID: 2029346015351570442
+      spriteID: f43b132c46ebd7d4dbd6cb0cccf3cbf0
+      internalID: 7970329249160833986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_153
+      name: CombineTile6n7_126
       rect:
         serializedVersion: 2
-        x: 48
-        y: 144
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb185555c9e2c8f4d87f62699bb82a01
-      internalID: 1160473198449659876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_160
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 240
         y: 96
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8012f70ef79ccd54396e551419f56325
-      internalID: -9094730084555811783
+      spriteID: 7992b55bfc113a645b540354decf48fb
+      internalID: 2764406681258718526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_161
+      name: CombineTile6n7_127
       rect:
         serializedVersion: 2
-        x: 48
+        x: 288
         y: 96
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c47b1f1653533b488c5f1788a20660a
-      internalID: 8555425915717729678
+      spriteID: 52e99c75e1ba96c458192e661f4269db
+      internalID: -2552286316331288519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_Book2
+      name: CombineTile6n7_128
       rect:
         serializedVersion: 2
-        x: 288
+        x: 336
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c2de5148c71c74e904191160c7b171
+      internalID: -6126357915346274068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_129
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 48
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e99f676378b6db74aa32d695690622f5
-      internalID: 2844813367503534414
+      spriteID: 0da6259f89ea5dd4f8ffb07e56c920d4
+      internalID: -6969393374210043311
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_Shelf3
+      name: CombineTile6n7_130
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68f5ea76154d9f40b558f4de3d265d9
+      internalID: -5532503023006459650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_131
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73426835e01835f4d86b78ccaaf6ef40
+      internalID: -2796123893700958718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_132
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641a64552cb196144ba18599e1421807
+      internalID: 4804462397506508142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombineTile6n7_133
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 48
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad82fe80093d48f49ada00e886193feb
-      internalID: 1237135662644147217
+      spriteID: f150e03a0c6876141abede603383d553
+      internalID: -2248946456607994855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_Shelf2
+      name: CombineTile6n7_134
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa2a357b9b5e25d45a5d0d7581c7b11f
-      internalID: -449377204349442001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_Book4
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb980e4a79bf7a34997651cf12817b51
-      internalID: 5311141547070063575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_Shelf
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 96
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c634b48aa559f441afcbfe71e05f6e4
-      internalID: 4941736808926273307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CompleteTileset6_182
-      rect:
-        serializedVersion: 2
-        x: 288
+        x: 384
         y: 0
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5a9637758ba5634d82eacb40a3c4c60
-      internalID: 2468961394660229709
+      spriteID: 3fb14f78265d6a948b5038690a0d308b
+      internalID: -3577202155821450750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CompleteTileset6_183
+      name: CombineTile6n7_135
       rect:
         serializedVersion: 2
-        x: 336
+        x: 432
         y: 0
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8f2a84f78deb1a4abbc14920db0724e
-      internalID: 5931867204103851853
+      spriteID: 13395deabe8d3594a942cc2e7f1568bb
+      internalID: 8094725930516395737
       vertices: []
       indices: 
       edges: []
@@ -3158,7 +3350,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3d7f6626894a9b247998e0bf833d6ddd
+    spriteID: 7afaf635507964a4088f3af9b74edff7
     internalID: 0
     vertices: []
     indices: 
