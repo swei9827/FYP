@@ -26,8 +26,8 @@ public class CloudData : MonoBehaviour
 
     public void ClientSetUserPublisherData(string dataName, int incre)
     {
-        int dataToSet = currentDataVal + incre;        
-
+        Debug.Log(dataName + " " + incre + " " + currentDataVal);
+        int dataToSet = currentDataVal + incre;
         PlayFabClientAPI.UpdateUserPublisherData(new UpdateUserDataRequest()
         {
             Data = new Dictionary<string, string>() {

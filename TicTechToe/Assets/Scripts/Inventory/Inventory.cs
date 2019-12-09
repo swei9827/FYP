@@ -126,7 +126,7 @@ public class Inventory : MonoBehaviour
 
         for (int i = 0; i < items.Count; i++)
         {
-            if (items[i].id == -1)
+            if (items[i].id == -1 && amount > 0)
             {
                 items[i] = itemToAdd;
                 //instantiate canvas GO and change sprite
@@ -161,6 +161,9 @@ public class Inventory : MonoBehaviour
                 {
                     data.amount--;
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+
+                    //write to cloud
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<CloudData>().writeToCloud(items[i].id.ToString(), -1);
                     break;
                 }
                 else
@@ -184,6 +187,9 @@ public class Inventory : MonoBehaviour
                 {
                     data.amount-= amount;
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+
+                    //write to cloud
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<CloudData>().writeToCloud(items[i].id.ToString(), -amount);
                     return data.amount;
                     //break;
                 }
@@ -191,6 +197,8 @@ public class Inventory : MonoBehaviour
                 {
                     items[i] = new Item();
                     Destroy(slots[i].transform.GetChild(0).gameObject);
+                    //write to cloud
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<CloudData>().writeToCloud(remove.ToString(), -amount);
                     return 0;
                 }
                 else
