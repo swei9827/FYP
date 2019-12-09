@@ -25124,6 +25124,7 @@ GameObject:
   - component: {fileID: 1030460925}
   - component: {fileID: 1030460926}
   - component: {fileID: 1030460927}
+  - component: {fileID: 1030460928}
   m_Layer: 5
   m_Name: Brightness
   m_TagString: Untagged
@@ -25196,13 +25197,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 1521584419}
   m_HandleRect: {fileID: 364506409}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.7
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.466
+  m_Value: 0.85
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 928608612}
+        m_MethodName: getBrightness
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1030460927
@@ -25252,6 +25264,18 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &1030460928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030460924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12580040e92148d46a2f33c491285b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1049303452
 GameObject:
   m_ObjectHideFlags: 0

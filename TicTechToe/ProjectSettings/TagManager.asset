@@ -26,6 +26,7 @@ TagManager:
   - NPCManager
   - QuestIndicator
   - QuestIndicatorContent
+  - Brightness
   layers:
   - Default
   - TransparentFX
