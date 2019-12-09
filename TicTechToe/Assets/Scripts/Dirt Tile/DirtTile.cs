@@ -63,25 +63,48 @@ public class DirtTile : MonoBehaviour
     {
         if (c.asset.cropsType == CropsType.Strawberries)
         {
-            temp = Instantiate(crops[0], this.transform.position, Quaternion.identity);
-            temp.transform.SetParent(this.transform);
-            temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
-            temp.GetComponent<CropTest>().planted = true;
+            if(Player.LocalPlayerInstance.GetComponent<Tool>().seeds[0].amount > 0)
+            {
+                temp = Instantiate(crops[0], this.transform.position, Quaternion.identity);
+                temp.transform.SetParent(this.transform);
+                temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
+                temp.GetComponent<CropTest>().planted = true;
+                Player.LocalPlayerInstance.GetComponent<Tool>().seeds[0].amount--;
+            }
+            else
+            {
+                Debug.Log("Not enough seed");
+            }            
         }
         else if (c.asset.cropsType == CropsType.Potatoes)
         {
-            temp = Instantiate(crops[1], this.transform.position, Quaternion.identity);
-            temp.transform.SetParent(this.transform);
-            temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
-            temp.GetComponent<CropTest>().planted = true;
-
+            if (Player.LocalPlayerInstance.GetComponent<Tool>().seeds[1].amount > 0)
+            {
+                temp = Instantiate(crops[1], this.transform.position, Quaternion.identity);
+                temp.transform.SetParent(this.transform);
+                temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
+                temp.GetComponent<CropTest>().planted = true;
+                Player.LocalPlayerInstance.GetComponent<Tool>().seeds[1].amount--;
+            }
+            else
+            {
+                Debug.Log("Not enough seed");
+            }
         }
         else if (c.asset.cropsType == CropsType.Pumpkins)
         {
-            temp = Instantiate(crops[2], this.transform.position, Quaternion.identity);
-            temp.transform.SetParent(this.transform);
-            temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
-            temp.GetComponent<CropTest>().planted = true;
+            if (Player.LocalPlayerInstance.GetComponent<Tool>().seeds[2].amount > 0)
+            {
+                temp = Instantiate(crops[2], this.transform.position, Quaternion.identity);
+                temp.transform.SetParent(this.transform);
+                temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
+                temp.GetComponent<CropTest>().planted = true;
+                Player.LocalPlayerInstance.GetComponent<Tool>().seeds[2].amount--;
+            }
+            else
+            {
+                Debug.Log("Not enough seed");
+            }
         }
         FxManager.PlayMusic("PlantFx");
     }
