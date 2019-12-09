@@ -66,8 +66,8 @@ public class PauseMenu : MonoBehaviour
     }
 
     //set brightness
-    public void setBrightness(float value)
+    public void getBrightness(float value)
     {
-
+        BrightnessSetting.instance.setBrightness(value);
     }
 }
