@@ -67,35 +67,25 @@ public class ShopSystem : MonoBehaviour
         if (moneyAmount >= finalCost)
         {
             moneyAmount -= finalCost;
-            int i = 0;
             foreach(Seed sd in Player.LocalPlayerInstance.GetComponent<Tool>().seeds)
             {
                 if (sd.seedName == shopRenderer.itemName.text)
                 {
                     sd.amount += int.Parse(shopRenderer.itemCount.text);
-                    int temp = int.Parse(Player.LocalPlayerInstance.transform.GetChild(6)./*Hotkey Canvas*/
-                                                transform.GetChild(0)./*Hotkey*/
-                                                transform.GetChild(1)./*Seed BACKGROUND*/
-                                                transform.GetChild(0)./*Seed Panel*/
-                                                transform.GetChild(i)./*the seed slot*/
-                                                transform.GetChild(0).gameObject.GetComponent<Text>().text);
-                    temp += int.Parse(shopRenderer.itemCount.text);
-                    Player.LocalPlayerInstance.transform.GetChild(6)./*Hotkey Canvas*/
-                                                transform.GetChild(0)./*Hotkey*/
-                                                transform.GetChild(1)./*Seed BACKGROUND*/
-                                                transform.GetChild(0)./*Seed Panel*/
-                                                transform.GetChild(i)./*the seed slot*/
-                                                transform.GetChild(0).gameObject.GetComponent<Text>().text = temp.ToString();
+                    //int temp = int.Parse(Player.LocalPlayerInstance.transform.GetChild(6)./*Hotkey Canvas*/
+                    //                            transform.GetChild(0)./*Hotkey*/
+                    //                            transform.GetChild(1)./*Seed BACKGROUND*/
+                    //                            transform.GetChild(0)./*Seed Panel*/
+                    //                            transform.GetChild(i)./*the seed slot*/
+                    //                            transform.GetChild(0).gameObject.GetComponent<Text>().text);
                 }
-                shopRenderer.itemCount.text = "1";
-                i++;
             }
-            i = 0;
         }
         else
         {
             Debug.Log("Not Enough Money");
         }
+        shopRenderer.itemCount.text = "1";
     }
 
     public void sellItem(ShopRenderer shopRenderer)
