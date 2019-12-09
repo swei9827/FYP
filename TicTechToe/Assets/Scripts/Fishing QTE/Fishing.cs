@@ -33,7 +33,7 @@ public class Fishing : MonoBehaviour
     //UI
     public TextMeshProUGUI fishNames;
     public TextMeshProUGUI bucketCounters;
-    public Text waterCounter;
+    //public Text waterCounter;
 
     //script
     private FishMovement fish;
@@ -91,8 +91,8 @@ public class Fishing : MonoBehaviour
 
         FishingGame();
         //update fish counter
-        bucketCounters.text = "Bucket Hit : " + bucketHit.ToString() + " / " + hitBucketAmount.ToString();
-        waterCounter.text = "Water Hit : " + waterHit.ToString() + " / " + hitWaterAmount.ToString();
+        bucketCounters.text = "Bucket Hit : " + bucketHit.ToString() + "/" + hitBucketAmount.ToString();
+        //waterCounter.text = "Water Hit : " + waterHit.ToString() + "/" + hitWaterAmount.ToString();
     }
 
     public void PopFishingGame()

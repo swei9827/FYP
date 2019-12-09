@@ -13,10 +13,9 @@ public class StreamVideo : MonoBehaviour
     void Update()
     {
         StartCoroutine(PlayVideo());
-        //PlayTutorialVideo();
     }
   
-    IEnumerator PlayVideo()
+    public IEnumerator PlayVideo()
     {
         videoPlayer.Prepare();
         WaitForSeconds waitforSeconds = new WaitForSeconds(0.2f);
@@ -28,6 +27,7 @@ public class StreamVideo : MonoBehaviour
 
         rawImage.texture = videoPlayer.texture;
         videoPlayer.Play();
+        videoPlayer.EnableAudioTrack(0, false);
     }
 
     //void PlayTutorialVideo()

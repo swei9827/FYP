@@ -16863,7 +16863,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e6ce3c6561491e44187a6019d7badcba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20371,6 +20371,16 @@ PrefabInstance:
       propertyPath: videoPlayer
       value: 
       objectReference: {fileID: 74311417}
+    - target: {fileID: 1623848574496913336, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495954819479574747, guid: 813eebd421111fc4cb098a529970b333,
+        type: 3}
+      propertyPath: m_Text
+      value: Click the X Button
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 813eebd421111fc4cb098a529970b333, type: 3}
 --- !u!1 &533754003 stripped
@@ -21967,10 +21977,10 @@ MonoBehaviour:
   - {fileID: 6091871722068485103, guid: 3228765db67911d4cb9d4cfc7220fd9d, type: 3}
   inventory: {fileID: 0}
   fishImage:
-  - {fileID: 21300000, guid: 8152849875f806d4bacf5f6547c5b2e9, type: 3}
-  - {fileID: 21300000, guid: 19cbac3695630b64693284ad7acd4bf6, type: 3}
-  - {fileID: 21300000, guid: bd9f7150d0be3fc4aa521b4aa6c4d925, type: 3}
-  - {fileID: 21300000, guid: b2bc26730b0c8fc4a925cdebac1ddca4, type: 3}
+  - {fileID: 21300000, guid: 721b7cc4929e65b4bb71c14c7b755b95, type: 3}
+  - {fileID: 21300000, guid: d8277b664402764438a6b393bd2d7607, type: 3}
+  - {fileID: 21300000, guid: 9ab3ff65d7c9e7c4e9bb08e8ff9e19d6, type: 3}
+  - {fileID: 21300000, guid: 1d7a1e3daf05d9b4ca8b4c98b69f83ef, type: 3}
   fishImg: {fileID: 1289483046}
   bucketImg: {fileID: 1289483045}
   bucketHit: 0
@@ -21980,7 +21990,6 @@ MonoBehaviour:
   fail: 0
   fishNames: {fileID: 7896920708890898297}
   bucketCounters: {fileID: 2498748017749268022}
-  waterCounter: {fileID: 1289483042}
   item: {fileID: 0}
   fishType: 0
 --- !u!114 &558053056
@@ -23300,8 +23309,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 4b24e4c269dc9e94b8f17536a5ace4a3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -25055,8 +25064,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 4b24e4c269dc9e94b8f17536a5ace4a3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -26197,7 +26206,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e6ce3c6561491e44187a6019d7badcba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26631,12 +26640,12 @@ PrefabInstance:
     - target: {fileID: 8797645978049003481, guid: 594c73a47a5282541ab1ce4595dddf03,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1338.4
+      value: 1340
       objectReference: {fileID: 0}
     - target: {fileID: 8797645978049003481, guid: 594c73a47a5282541ab1ce4595dddf03,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 759.6
+      value: 760
       objectReference: {fileID: 0}
     - target: {fileID: 8797645978049003481, guid: 594c73a47a5282541ab1ce4595dddf03,
         type: 3}
@@ -26668,20 +26677,18 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8797645977502846681, guid: 594c73a47a5282541ab1ce4595dddf03,
+        type: 3}
+      propertyPath: bucket
+      value: 
+      objectReference: {fileID: 8797645977282825468}
+    - target: {fileID: 8797645977502846681, guid: 594c73a47a5282541ab1ce4595dddf03,
+        type: 3}
+      propertyPath: water
+      value: 
+      objectReference: {fileID: 1474785001996736730}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 594c73a47a5282541ab1ce4595dddf03, type: 3}
---- !u!114 &1289483042 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9122677185536306647, guid: 594c73a47a5282541ab1ce4595dddf03,
-    type: 3}
-  m_PrefabInstance: {fileID: 1289483041}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1289483045 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8797645977282825471, guid: 594c73a47a5282541ab1ce4595dddf03,
@@ -30466,8 +30473,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5a255d3934a54a942a10a90e2b01166d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -30549,11 +30556,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
-        type: 3}
-      propertyPath: TutorialPopOut.Array.size
-      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
@@ -30682,6 +30684,16 @@ PrefabInstance:
       objectReference: {fileID: 533754018}
     - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
         type: 3}
+      propertyPath: TutorialPopOut.Array.data[25]
+      value: 
+      objectReference: {fileID: 533754020}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
+      propertyPath: TutorialPopOut.Array.data[26]
+      value: 
+      objectReference: {fileID: 533754019}
+    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
+        type: 3}
       propertyPath: dialogueObj.Array.data[0]
       value: 
       objectReference: {fileID: 561590233}
@@ -30785,16 +30797,6 @@ PrefabInstance:
       propertyPath: dirtTile.Array.data[13]
       value: 
       objectReference: {fileID: 1438470530}
-    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
-        type: 3}
-      propertyPath: TutorialPopOut.Array.data[25]
-      value: 
-      objectReference: {fileID: 533754020}
-    - target: {fileID: 99203053492945979, guid: 26dae03ccaa04e2439e5b21d2dc38f6e,
-        type: 3}
-      propertyPath: TutorialPopOut.Array.data[26]
-      value: 
-      objectReference: {fileID: 533754019}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26dae03ccaa04e2439e5b21d2dc38f6e, type: 3}
 --- !u!1001 &1438470529
@@ -31958,8 +31960,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5a255d3934a54a942a10a90e2b01166d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -32169,7 +32171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1600604891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37438,6 +37440,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3117763756743737958}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1474785001996736730 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1474785001996736730, guid: 594c73a47a5282541ab1ce4595dddf03,
+    type: 3}
+  m_PrefabInstance: {fileID: 1289483041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2222123432388925376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37869,3 +37877,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &8797645977282825468 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8797645977282825468, guid: 594c73a47a5282541ab1ce4595dddf03,
+    type: 3}
+  m_PrefabInstance: {fileID: 1289483041}
+  m_PrefabAsset: {fileID: 0}

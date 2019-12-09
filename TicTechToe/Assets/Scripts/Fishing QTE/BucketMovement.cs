@@ -14,9 +14,10 @@ public class BucketMovement: MonoBehaviour
     private float minX = -600;
     private float maxX = 600;
 
+ 
     void Start()
     {
-        bucket = gameObject.GetComponent<RectTransform>();
+        bucket = GetComponent<RectTransform>();
         panel = GameObject.Find("FishingGame").GetComponent<RectTransform>();
     }
 
@@ -43,14 +44,7 @@ public class BucketMovement: MonoBehaviour
     {
         clickDirection = new Vector2(1, 0);
 
-        if(Input.GetAxis("Mouse X") < 0)
-        {
-            transform.Translate(-clickDirection * 50 * speed * Time.deltaTime);
-        }
-        else if(Input.GetAxis("Mouse X") > 0)
-        {
-            transform.Translate(clickDirection * 50 * speed * Time.deltaTime);
-        }
+        //Vector2 position = bucket.anchoredPosition;
 
         //if (Input.GetKey(KeyCode.Mouse0))
         //{
@@ -60,17 +54,58 @@ public class BucketMovement: MonoBehaviour
         //{
         //    transform.Translate(clickDirection * 50 * speed * Time.deltaTime);
         //}
+
+        //if (Input.GetAxis("Mouse X") < 0)
+        //{
+        //    //transform.Translate(-clickDirection * 50 * speed * Time.deltaTime);
+        //}
+        //else if(Input.GetAxis("Mouse X") > 0)
+        //{
+        //    //transform.Translate(clickDirection * 50 * speed * Time.deltaTime);
+        //}
+
+        float width = Screen.width * bucket.anchorMin.x;
+
+        float xoffset = 0;
+
+        if(Screen.width > 1920)
+        {
+            float difference = Screen.width - 1920;
+            float percentage = (Input.mousePosition.x / (float)Screen.width) * 50;
+            xoffset = (percentage * difference) / 100.0f;
+        }
+
+        if (Screen.width < 1920)
+        {
+            float difference = 1920 - Screen.width;
+            float percentage = (Input.mousePosition.x / (float)Screen.width) * 50;
+            xoffset = -(percentage * difference) / 100.0f;
+        }
+
+        bucket.anchoredPosition = new Vector2(Input.mousePosition.x - width - xoffset, 0);
+
     }
 
     void bucketMovementLimit()
     {
-        if (bucket.transform.localPosition.x <= minX)
+        Vector2 position = bucket.anchoredPosition;
+
+        if(bucket.anchoredPosition.x >= maxX)
         {
-            transform.localPosition = new Vector2(minX, transform.localPosition.y);
+            bucket.anchoredPosition = new Vector2(maxX,0);
         }
-        else if (bucket.transform.localPosition.x >= maxX)
+        else if(bucket.anchoredPosition.x <= minX)
         {
-            transform.localPosition = new Vector2(maxX, transform.localPosition.y);
+            bucket.anchoredPosition = new Vector2(minX, 0);
         }
+
+        //if (bucket.transform.localPosition.x <= minX)
+        //{
+        //    transform.localPosition = new Vector2(minX, transform.localPosition.y);
+        //}
+        //else if (bucket.transform.localPosition.x >= maxX)
+        //{
+        //    transform.localPosition = new Vector2(maxX, transform.localPosition.y);
+        //}
     }
 }

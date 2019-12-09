@@ -145,7 +145,8 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
 
                 //Pop Out Interact with NPC1
-                if (colliderObj[0].GetComponent<SpriteRenderer>().color == Color.red && colliderObj[1].GetComponent<SpriteRenderer>().color == Color.red)
+                if (colliderObj[0].GetComponent<SpriteRenderer>().sprite == colliderObj[0].GetComponent<SpawnMovementCollision>().collidedSprite &&
+                    colliderObj[1].GetComponent<SpriteRenderer>().sprite == colliderObj[1].GetComponent<SpawnMovementCollision>().collidedSprite)
                 {
                     for (int i = 0; i < colliderObj.Length; i++)
                     {
