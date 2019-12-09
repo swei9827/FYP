@@ -6,6 +6,9 @@ public class SpawnMovementCollision : MonoBehaviour
 {
     public static SpawnMovementCollision instance;
     public GameObject collisionObj;
+    public GameObject indicator;
+
+    public Sprite collidedSprite;
 
     public bool collided = false;
     public bool completeCollision = false;
@@ -20,7 +23,8 @@ public class SpawnMovementCollision : MonoBehaviour
     {
         if(collided)
         {
-            collisionObj.GetComponent<SpriteRenderer>().color = Color.red;
+            collisionObj.GetComponent<SpriteRenderer>().sprite = collidedSprite;
+            Destroy(indicator);
         }     
     }
 
