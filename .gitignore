@@ -37,3 +37,6 @@ sysinfo.txt
 TicTechToe/.collabignore
 TicTechToe/Assets/StreamingAssets.meta
 TicTechToe\Assets\Resource\DataRecord\Log.txt
+TicTechToe/Assets/Mirror.meta
+TicTechToe/Assets/Mirror/Editor.meta
+TicTechToe/Assets/Mirror/Editor/Weaver.meta
