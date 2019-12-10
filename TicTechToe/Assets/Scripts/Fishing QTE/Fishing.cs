@@ -182,7 +182,7 @@ public class Fishing : MonoBehaviour
 
         foreach (Item item in itemDatabase.database)
         {
-            if ((item.itemName) == fishImg.sprite.name)
+            if ((item.itemName) == fishNames.text)
             {
                 ni.questItemCheck(item);
                 inventory.AddItem(item.id);
@@ -200,7 +200,7 @@ public class Fishing : MonoBehaviour
                 }
 
                 //gsheet data record
-                GameObject.FindGameObjectWithTag("Player").GetComponent<gsheet_data>().sendData(0,1);
+                Player.LocalPlayerInstance.GetComponent<gsheet_data>().sendData(0,1);
                 
                 //local data record
                 DataRecord.AddEvents(0, fishImg.sprite.name);
