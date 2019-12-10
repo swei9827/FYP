@@ -27,8 +27,12 @@ public class TargetIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetObject();
+        if(!TutorialManager.doneTutorial)
+        {
+            targetObject();
+        }
     }
+    
 
     void targetObject()
     {
@@ -44,11 +48,6 @@ public class TargetIndicator : MonoBehaviour
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-    }
-
-    void setTarget()
-    {
-
     }
 
     public void SetChildrenActive(bool value)

@@ -22,9 +22,6 @@ public class DialogueManager : MonoBehaviour
     [TextArea (3,10)]
     public string[] sentences;
 
-    [TextArea(3, 10)]
-    public string[] sentences2;
-
     public float textSpeed;
     public int currentLine;
     public int currentName;

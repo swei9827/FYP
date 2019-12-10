@@ -24,7 +24,6 @@ public class CropTest : ItemTest
     [Header("Other Settings")]
     public GameObject waterIndicator;
     public Tool tool;
-    bool tempCanInteract;
     public bool goWater;
     public bool canInteract;
 
