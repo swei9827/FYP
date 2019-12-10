@@ -8,7 +8,7 @@ public class ShopSystem : MonoBehaviour
     [SerializeField]
     private int moneyAmount;
 
-    int finalCount;
+    private int finalCount;
 
     public GameObject shopSlot;
     public GameObject contentListPanel;
@@ -29,7 +29,7 @@ public class ShopSystem : MonoBehaviour
         InstantiateShop();
     }
 
-    private void onenable()
+    private void OnEnable()
     {
         moneyAmount = Player.LocalPlayerInstance.GetComponent<Player>().getMoney();
     }
@@ -111,10 +111,5 @@ public class ShopSystem : MonoBehaviour
             shopRenderer.itemCount.text = "1";
             shopRenderer.itemCount.gameObject.GetComponent<UpdatableInt>().max = left;
         }
-    }
-
-    public void closeShop()
-    {
-        moneyAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getMoney();
     }
 }

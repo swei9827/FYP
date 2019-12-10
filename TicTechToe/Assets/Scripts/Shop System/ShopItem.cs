@@ -25,9 +25,3 @@ public class ShopItem : ScriptableObject, IComparable<ShopItem>
         return sItems.id - this.id;
     }
 }
-
-[Serializable]
-public struct ShopItemList
-{
-    public List<ShopItem> shopList;
-}

@@ -19,8 +19,6 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
 
-    private RaycastHit raycastHit;
-
     private void Awake()
     {
         inventoryPanel = GameObject.Find("Inventory Panel");
