@@ -18,9 +18,6 @@ public class HelperController : MonoBehaviour
     private Vector3 target;
     private Vector2 direction;
 
-    Rigidbody2D rb;
-    RaycastHit2D hit;
-
     //Animation
     private Animator animator;
     public Animator iconBoxAnim;
@@ -50,7 +47,6 @@ public class HelperController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
         //Inventory Icon
@@ -88,28 +84,28 @@ public class HelperController : MonoBehaviour
         UpdateSFX();
     }
 
-    void ClickMove()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            direction = new Vector2(target.x - transform.position.x, target.y - transform.position.y);
-            isMoving = true;
-        }
-        else
-        {
-            direction = Vector2.zero;
-            isMoving = false;
-        }
+    //void ClickMove()
+    //{
+    //    if (Input.GetMouseButton(0))
+    //    {
+    //        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //        direction = new Vector2(target.x - transform.position.x, target.y - transform.position.y);
+    //        isMoving = true;
+    //    }
+    //    else
+    //    {
+    //        direction = Vector2.zero;
+    //        isMoving = false;
+    //    }
 
-        if (isMoving)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        }
+    //    if (isMoving)
+    //    {
+    //        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+    //    }
 
-        UpdateAnimation();
-        UpdateSFX();
-    }
+    //    UpdateAnimation();
+    //    UpdateSFX();
+    //}
 
     void Interaction()
     {

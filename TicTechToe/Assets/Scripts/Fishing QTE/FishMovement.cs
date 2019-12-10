@@ -37,6 +37,7 @@ public class FishMovement : MonoBehaviour
     void Update()
     {
         CheckCollision();
+        BounceOutBorder();
     }
 
     void WaterBounceMove()
@@ -110,9 +111,14 @@ public class FishMovement : MonoBehaviour
             countTime = 0;
             bucket.GetComponent<BoxCollider2D>().enabled = true;
         }
+    }
 
-        Debug.Log(countTime);
-        Debug.Log(bucket.GetComponent<BoxCollider2D>().enabled);
+    void BounceOutBorder()
+    {
+        if (transform.localPosition.y < -300 || transform.localPosition.y > 500)
+        {
+            fishGame.waterHit = fishGame.hitWaterAmount;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -125,8 +131,7 @@ public class FishMovement : MonoBehaviour
         else if(other.collider.CompareTag("Player"))
         {
             BounceMove();
-            fishGame.bucketHit += 1;
-            
+            fishGame.bucketHit += 1;           
         }
     }
 }

@@ -39,7 +39,7 @@ public class MouseSprite : MonoBehaviour
         }
     }
 
-    void GameObjectMouseExit()
+    public void GameObjectMouseExit()
     {
         Cursor.SetCursor(defaultCursor, hotSpot, cursorMode);
     }

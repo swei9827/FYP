@@ -35,6 +35,7 @@ public class TutorialManager : MonoBehaviour
     public bool level2 = false;
     public bool level3 = false;
     public bool level4 = false;
+    public static bool doneTutorial = false;
 
     [Header("HotKey Settings")]
     public GameObject[] hotKeySlots;
@@ -76,14 +77,21 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        setInstatiatePlayer();
-     
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if(!doneTutorial)
         {
-            playerAction = true;
-        }
+            setInstatiatePlayer();
 
-        ChangeTutorial();
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                playerAction = true;
+            }
+
+            ChangeTutorial();
+        }     
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     void setInstatiatePlayer()
@@ -382,6 +390,10 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Change indicator target
+                targetIndicator.SetChildrenActive(true);
+                targetIndicator.target = dirtTile[0].transform;
+
                 //Set dialogue Conversation
                 dialogueObj[1].GetComponent<DialogueHolder>().option4 = true;
                 dialogueObj[1].GetComponent<DialogueHolder>().option2 = false;
@@ -403,6 +415,7 @@ public class TutorialManager : MonoBehaviour
                     if (!dirtTile[i].GetComponent<DirtTile>().needsPlowing)
                     {
                         counter++;
+                        targetIndicator.SetChildrenActive(false);
                     }
                 }
 
@@ -790,6 +803,7 @@ public class TutorialManager : MonoBehaviour
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
+                doneTutorial = true;
             }
         }
     }

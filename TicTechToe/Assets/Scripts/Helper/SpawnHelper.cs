@@ -14,9 +14,6 @@ public class SpawnHelper : MonoBehaviour
     public bool inScene = false;
     bool canSpawn = true;
 
-    private float setTimer;
-    private float maxTimer = 3f;
-
     // Update is called once per frame
     void Update()
     {

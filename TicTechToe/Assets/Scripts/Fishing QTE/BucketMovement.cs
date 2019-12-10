@@ -9,7 +9,7 @@ public class BucketMovement: MonoBehaviour
     public RectTransform bucket;
     public float speed;
     private Vector2 direction;
-    private Vector2 clickDirection;
+    //private Vector2 clickDirection;
 
     private float minX = -600;
     private float maxX = 600;
@@ -24,25 +24,25 @@ public class BucketMovement: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        keyboardBucketMove();
+        //keyboardBucketMove();
         mouseBucketMovement();
         bucketMovementLimit();
     }
 
-    void keyboardBucketMove()
-    {
-        direction = Vector2.zero;
-        direction.x = Input.GetAxisRaw("Horizontal");
+    //void keyboardBucketMove()
+    //{
+    //    direction = Vector2.zero;
+    //    direction.x = Input.GetAxisRaw("Horizontal");
    
-        if (direction != Vector2.zero)
-        {
-            transform.Translate(direction * 50 * speed * Time.deltaTime);
-        }   
-    }
+    //    if (direction != Vector2.zero)
+    //    {
+    //        transform.Translate(direction * 50 * speed * Time.deltaTime);
+    //    }   
+    //}
 
     void mouseBucketMovement()
     {
-        clickDirection = new Vector2(1, 0);
+        //clickDirection = new Vector2(1, 0);
 
         //Vector2 position = bucket.anchoredPosition;
 

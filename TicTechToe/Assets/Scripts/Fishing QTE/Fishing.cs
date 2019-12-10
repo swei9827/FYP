@@ -24,7 +24,7 @@ public class Fishing : MonoBehaviour
     public float waterHit = -1;
 
     private float hitBucketAmount;
-    private float hitWaterAmount;
+    public float hitWaterAmount;
 
     public bool canInteract = true;
     public bool success = false;
