@@ -29,7 +29,6 @@ public class Inventory : MonoBehaviour
     {
         database = GetComponent<ItemDatabase>();   //Reference to the database 
         databaseRef = GetComponent<ItemDatabase>();   //Reference to the database 
-        Debug.Log("Construct Itemdatabase");
         slotAmount = 24;  //Inventory size        
         inventoryPanel.SetActive(false);
         tooltip.SetActive(false);
@@ -89,7 +88,6 @@ public class Inventory : MonoBehaviour
 
                     // write to cloud
                     GameObject.FindGameObjectWithTag("Player").GetComponent<CloudData>().writeToCloud(items[i].id.ToString(), 1);
-                    Debug.Log("ItemToCloud : " + items[i].itemName);
                     break;
                 }
             }
@@ -111,7 +109,7 @@ public class Inventory : MonoBehaviour
 
                     // write to cloud
                     GameObject.FindGameObjectWithTag("Player").GetComponent<CloudData>().writeToCloud(items[i].id.ToString(), 1);
-                    Debug.Log("ItemToCloud : " + items[i].itemName);
+                    //Debug.Log("ItemToCloud : " + items[i].itemName);
                     break;
                 }
             }

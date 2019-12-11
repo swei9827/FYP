@@ -24,21 +24,11 @@ public class StreamVideo : MonoBehaviour
 
         while (!videoPlayer.isPrepared)
         {
-            Debug.Log("Preparing Video");
             yield return waitforSeconds;
             break;
         }
 
         rawImage.texture = videoPlayer.texture;
         videoPlayer.Play();
-
-        Debug.Log("Playing Video");
-
-        while (videoPlayer.isPlaying)
-        {
-            Debug.Log("Is Playing");
-            yield return null;
-        }
-        Debug.Log("Done Playing!");
     }
 }

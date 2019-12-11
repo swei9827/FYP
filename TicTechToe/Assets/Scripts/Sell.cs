@@ -34,7 +34,6 @@ public class Sell : MonoBehaviour
                 shopRdr.itemCount.gameObject.GetComponent<UpdatableInt>().max = inventory.slots[i].transform.GetChild(0).GetComponent<ItemData>().amount;
                 go.transform.SetParent(this.gameObject.transform.GetChild(0).transform.GetChild(0).transform, false);
                 content.Add(go);
-                Debug.Log("Create Item");
             }
         }
     }
@@ -49,6 +48,5 @@ public class Sell : MonoBehaviour
             }
         }
         content.Clear();
-        Debug.Log("Clear List");
     }
 }

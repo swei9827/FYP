@@ -117,7 +117,6 @@ public class DirtTile : MonoBehaviour
 
 	void Plow ()
 	{
-		Debug.Log("Plowing...");
 		overlay.sprite = null;
         FxManager.PlayMusic("PlowFx");
         needsPlowing = false;

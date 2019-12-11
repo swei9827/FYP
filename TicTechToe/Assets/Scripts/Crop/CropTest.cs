@@ -82,7 +82,6 @@ public class CropTest : ItemTest
             {
                 WaterCan.curFill -= 1;
                 waterIndicator.SetActive(false);
-                Debug.Log("Interact");
                 FxManager.PlayMusic("WaterFx");
                 watered = true;
                 canInteract = false;

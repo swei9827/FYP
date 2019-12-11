@@ -9,6 +9,7 @@ public class TutorialManager : MonoBehaviour
 {
     [Header("Tutorial Settings")]
     public GameObject[] TutorialPopOut;
+    public GameObject river;
     private int popUpIndex;
     private float timer = 1f;     //set timer for player to move
     public bool playerAction = false;    //Set player interact
@@ -276,6 +277,9 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Set NPC2 Pop Out
+                dialogueObj[2].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
                 //pop out Add event
                 if (shop.activeInHierarchy)
                 {
@@ -369,6 +373,9 @@ public class TutorialManager : MonoBehaviour
                 dialogueObj[1].GetComponent<DialogueHolder>().option2 = true;
                 dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
 
+                //Set NPC2 Pop Out
+                dialogueObj[1].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
                 //Pop Out Plow
                 if (dialogueObj[1].GetComponent<DialogueHolder>().interactNPCJane2)
                 {
@@ -410,7 +417,7 @@ public class TutorialManager : MonoBehaviour
                 //Pop out Plant
                 int counter = 0;
 
-                for (int i = 0; i <= 13; i++)
+                for (int i = 0; i <= 48; i++)
                 {
                     if (!dirtTile[i].GetComponent<DirtTile>().needsPlowing)
                     {
@@ -448,7 +455,7 @@ public class TutorialManager : MonoBehaviour
                 }
 
                 //Set counter for player to plant
-                for (int i = 0; i <= 13; i++)
+                for (int i = 0; i <= 48; i++)
                 {
                     if (!dirtTile[i].GetComponent<DirtTile>().addPlant)
                     {
@@ -514,6 +521,15 @@ public class TutorialManager : MonoBehaviour
 
                 dialogueObj[1].GetComponent<DialogueHolder>().option3 = true;
                 dialogueObj[1].GetComponent<DialogueHolder>().option4 = false;
+
+                //Change indicator target
+                targetIndicator.SetChildrenActive(true);
+                targetIndicator.target = river.transform;
+
+                if(WaterCan.curFill == 3)
+                {
+                    targetIndicator.SetChildrenActive(false);
+                }
 
                 //Pop out go find back Jane
                 if (waterCount >= 5)
@@ -592,6 +608,10 @@ public class TutorialManager : MonoBehaviour
                 dialogueObj[3].GetComponent<DialogueHolder>().option3 = true;
                 dialogueObj[3].GetComponent<DialogueHolder>().option1 = false;
 
+                //Change indicator target
+                targetIndicator.SetChildrenActive(true);
+                targetIndicator.target = river.transform;
+
                 //delete hotkey plow highlights
                 if (Hotkey.scrollPosition == 2)
                 {
@@ -601,6 +621,7 @@ public class TutorialManager : MonoBehaviour
                 //Pop Out Fishing Tutorial
                 if (fishing.fishingGame.activeSelf)
                 {
+                    targetIndicator.SetChildrenActive(false);
                     playerAction = false;
                     popUpIndex++;
                 }
@@ -687,6 +708,9 @@ public class TutorialManager : MonoBehaviour
                 targetIndicator.SetChildrenActive(true);
                 targetIndicator.target = dialogueObj[2].transform;
 
+                //Set NPC3 Pop Out
+                dialogueObj[2].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
                 //Pop Out sell highlight
                 if (shop.activeInHierarchy)
                 {
@@ -726,9 +750,7 @@ public class TutorialManager : MonoBehaviour
 
         // Straight Sell fish
         else if (popUpIndex == 23)
-        {
-            
-
+        {          
             if (playerAction)
             {
                 TutorialPopOut[popUpIndex].SetActive(false);

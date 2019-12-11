@@ -16,7 +16,6 @@ public class RefillWater : MonoBehaviour
             if (t.isWaterCan)
             {              
                 fillWater();
-                Debug.Log("Full!");
             }
             else
             {

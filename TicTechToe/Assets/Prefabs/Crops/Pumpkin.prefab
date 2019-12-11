@@ -99,7 +99,7 @@ MonoBehaviour:
   id: 0
   sprites:
   - {fileID: 21300000, guid: a82c48fe259710c4890057037787ac61, type: 3}
-  - {fileID: 21300000, guid: 52b915e0ab38f444ea250745cd7711b9, type: 3}
+  - {fileID: 21300000, guid: cec0bf9cd858a834d863883b0e0412ae, type: 3}
   details: Pumpkins
   pickUp: 0
   sr: {fileID: 8743303805744511105}
@@ -113,8 +113,8 @@ MonoBehaviour:
   growPercentage: 0
   waterIndicator: {fileID: 555042939893419914}
   tool: {fileID: 0}
+  goWater: 0
   canInteract: 0
-  dirtTile: {fileID: 0}
 --- !u!61 &8596219176860808531
 BoxCollider2D:
   m_ObjectHideFlags: 0

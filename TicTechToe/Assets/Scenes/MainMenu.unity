@@ -2794,7 +2794,7 @@ GameObject:
   - component: {fileID: 1105993650}
   - component: {fileID: 1105993653}
   m_Layer: 5
-  m_Name: Quit
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2895,7 +2895,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 74bce9b3a9d691c43a0bd25adcbb79de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc6262fb9c694594fbc4d3d56b00e33a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
