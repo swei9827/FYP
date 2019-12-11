@@ -1,1 +1,29 @@
-11/12/2019 5:04:57 AM Log Started
+11/12/2019 11:35:41 PM Log Started
+11/12/2019 11:37:07 PM Player plowed DirtTile (24)
+11/12/2019 11:37:09 PM Player plowed DirtTile (30)
+11/12/2019 11:37:11 PM Player plowed DirtTile (16)
+11/12/2019 11:37:13 PM Player plowed DirtTile (31)
+11/12/2019 11:37:15 PM Player plowed DirtTile (17)
+11/12/2019 11:37:17 PM Player plowed DirtTile (18)
+11/12/2019 11:37:20 PM Player plowed DirtTile (33)
+11/12/2019 11:37:22 PM Player plowed DirtTile (26)
+11/12/2019 11:38:25 PM Player plowed DirtTile (23)
+11/12/2019 11:38:27 PM Player plowed DirtTile (22)
+11/12/2019 11:38:28 PM Player plowed DirtTile (29)
+11/12/2019 11:38:29 PM Player plowed DirtTile (35)
+11/12/2019 11:38:31 PM Player plowed DirtTile (42)
+11/12/2019 11:38:32 PM Player plowed DirtTile (43)
+11/12/2019 11:38:32 PM Player plowed DirtTile (37)
+11/12/2019 11:40:29 PM Player plowed DirtTile
+11/12/2019 11:40:30 PM Player plowed DirtTile (1)
+11/12/2019 11:40:31 PM Player plowed DirtTile (2)
+11/12/2019 11:40:43 PM Player started Fishing
+11/12/2019 11:40:48 PM Player obtained Sardine_New
+11/12/2019 11:40:57 PM Player plowed DirtTile (3)
+11/12/2019 11:41:00 PM Player plowed DirtTile (4)
+11/12/2019 11:41:02 PM Player plowed DirtTile (5)
+11/12/2019 11:41:03 PM Player plowed DirtTile (6)
+11/12/2019 11:41:06 PM Player planted Strawberry(Clone)
+11/12/2019 11:41:07 PM Player planted Strawberry(Clone)
+11/12/2019 11:41:28 PM Player started Fishing
+11/12/2019 11:41:34 PM Player obtained Tuna_New
