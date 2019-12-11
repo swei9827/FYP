@@ -17,24 +17,28 @@ public class StreamVideo : MonoBehaviour
   
     public IEnumerator PlayVideo()
     {
+        videoPlayer.EnableAudioTrack(0, false);
+
         videoPlayer.Prepare();
         WaitForSeconds waitforSeconds = new WaitForSeconds(0.2f);
+
         while (!videoPlayer.isPrepared)
         {
+            Debug.Log("Preparing Video");
             yield return waitforSeconds;
             break;
         }
 
         rawImage.texture = videoPlayer.texture;
         videoPlayer.Play();
-        videoPlayer.EnableAudioTrack(0, false);
+
+        Debug.Log("Playing Video");
+
+        while (videoPlayer.isPlaying)
+        {
+            Debug.Log("Is Playing");
+            yield return null;
+        }
+        Debug.Log("Done Playing!");
     }
-
-    //void PlayTutorialVideo()
-    //{
-    //    videoPlayer.Prepare();
-    //    rawImage.texture = videoPlayer.texture;
-    //    videoPlayer.Play();
-    //}
-
 }
