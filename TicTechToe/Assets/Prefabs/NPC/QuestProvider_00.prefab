@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4805912503770170485}
   - component: {fileID: 4805912503770170484}
   - component: {fileID: 4805912503770170487}
+  - component: {fileID: 8040103524277324098}
   m_Layer: 0
   m_Name: QuestProvider_00
   m_TagString: NPC
@@ -95,7 +96,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.084974766, y: 0.0047535896}
+  m_Offset: {x: 0.036352158, y: -0.6823478}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -106,8 +107,19 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6697178, y: 1.751235}
+  m_Size: {x: 1.3259583, y: 0.5387039}
   m_EdgeRadius: 0
+--- !u!210 &8040103524277324098
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4805912503770170483}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -300
 --- !u!1 &4805912504169105158
 GameObject:
   m_ObjectHideFlags: 0

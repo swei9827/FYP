@@ -526,7 +526,7 @@ public class TutorialManager : MonoBehaviour
                 targetIndicator.SetChildrenActive(true);
                 targetIndicator.target = river.transform;
 
-                if(WaterCan.curFill == 3)
+                if(WaterCan.curFill >= 0)
                 {
                     GameObject crops = GameObject.FindGameObjectWithTag("Crops");
                     //Change indicator target
@@ -689,7 +689,7 @@ public class TutorialManager : MonoBehaviour
                 
                 //Change indicator target
                 targetIndicator.SetChildrenActive(true);
-                targetIndicator.target = dirtTile[0].transform;
+                targetIndicator.target = dirtTile[3].transform;
 
 
                 dialogueObj[3].GetComponent<DialogueHolder>().option3 = true;

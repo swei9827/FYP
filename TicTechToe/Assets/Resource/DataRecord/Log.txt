@@ -1,4 +1,1 @@
-2019-12-12 PM 9:44:49 Log Started
-2019-12-12 PM 9:44:53 Player interacted with QuestProvider_01
-2019-12-12 PM 9:44:55 Player accepted Fishing Basic Quest
-2019-12-12 PM 9:45:24 Player completed Fishing Basic Quest
+13/12/2019 3:28:20 AM Log Started

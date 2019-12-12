@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8927718872093922131}
   - component: {fileID: 8927718872093922130}
   - component: {fileID: 8927718872093922129}
+  - component: {fileID: 2063814495771934113}
   m_Layer: 0
   m_Name: QuestProvider_01
   m_TagString: NPC
@@ -95,7 +96,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.084974766, y: 0.0047535896}
+  m_Offset: {x: -0.0020382404, y: -0.65833664}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -106,8 +107,19 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6697178, y: 1.751235}
+  m_Size: {x: 0.91144085, y: 0.42505455}
   m_EdgeRadius: 0
+--- !u!210 &2063814495771934113
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8927718872093922133}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -300
 --- !u!1 &8927718872501080096
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,12 +131,12 @@ GameObject:
   - component: {fileID: 8927718872501080097}
   - component: {fileID: 8927718872501080126}
   m_Layer: 0
-  m_Name: Warn
+  m_Name: Name Signboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8927718872501080097
 Transform:
   m_ObjectHideFlags: 0
@@ -133,8 +145,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8927718872501080096}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 1.45, z: -0.44377613}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: -0.57, y: -0.77, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8927718872093922131}
   m_RootOrder: 0
@@ -176,7 +188,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: dd5b73ff9dbd5354d8abb1aeeb7ff3f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36ff1499a727b6b4a90b9dcde0c2f8ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -18,7 +18,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         pause.SetActive(true);
         PlayerMovement.canMove = true;
-        Time.timeScale = 1;
     }
 
     public void Pause()
@@ -28,14 +27,12 @@ public class PauseMenu : MonoBehaviour
             pauseMenu.SetActive(true);
             pause.SetActive(true);
             PlayerMovement.canMove = false;
-            Time.timeScale = 0;
         }
         else
         {
             pauseMenu.SetActive(false);
             pause.SetActive(true);
             PlayerMovement.canMove = true;
-            Time.timeScale = 1;
         }
     }
 
