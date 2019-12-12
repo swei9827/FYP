@@ -55,6 +55,7 @@ public class CloudData : MonoBehaviour
             else
             {
                 //Debug.Log(dataName + " : " + result.Data[dataName].Value);
+                currentDataVal = 0;
                 currentDataVal = int.Parse(result.Data[dataName].Value);
             }
         },

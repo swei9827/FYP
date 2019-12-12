@@ -172,8 +172,7 @@ public class CropTest : ItemTest
                             }
                         }
 
-                        // gsheet data record
-                        player.GetComponent<gsheet_data>().sendData(1,1);
+                        
 
                         //local data record
                         DataRecord.AddEvents(5, this.gameObject.name);
@@ -186,6 +185,8 @@ public class CropTest : ItemTest
                         //For tutorial purpose
                         tutorial.harvestCount += 1;
 
+                        // gsheet data record
+                        player.GetComponent<gsheet_data>().sendData(1, 1);
                         Destroy(this.gameObject);
                         break;
                     }

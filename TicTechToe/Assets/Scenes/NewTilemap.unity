@@ -27679,7 +27679,6 @@ MonoBehaviour:
   isTutorial: 0
   isGame: 1
   isMainMenu: 0
-  analyticCanvas: {fileID: 0}
 --- !u!114 &482577961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32398,7 +32397,6 @@ MonoBehaviour:
   isTutorial: 0
   isGame: 1
   isMainMenu: 0
-  analyticCanvas: {fileID: 0}
 --- !u!1 &706174432
 GameObject:
   m_ObjectHideFlags: 0
@@ -34089,7 +34087,7 @@ GameObject:
   - component: {fileID: 928608613}
   - component: {fileID: 928608612}
   m_Layer: 5
-  m_Name: Pause Menu
+  m_Name: Settings Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56625,17 +56623,17 @@ MonoBehaviour:
     npcType: Human
     distance: 2
     offsetX: -0.1
-    offsetY: 1.1
+    offsetY: 1.8
   - NPC: {fileID: 2571984552402156689}
     npcType: Human
     distance: 2
     offsetX: -0.1
-    offsetY: 1.1
+    offsetY: 1.8
   - NPC: {fileID: 2571984552880959611}
     npcType: Human
     distance: 2
     offsetX: -0.1
-    offsetY: 1.1
+    offsetY: 1.8
   currentNpc:
     NPC: {fileID: 0}
     npcType: 
@@ -59309,6 +59307,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8927718872501080097, guid: fc38b2e4492e4654d8be2f49a8643ad7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927718872501080097, guid: fc38b2e4492e4654d8be2f49a8643ad7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927718872501080097, guid: fc38b2e4492e4654d8be2f49a8643ad7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927718872501080097, guid: fc38b2e4492e4654d8be2f49a8643ad7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927718872501080097, guid: fc38b2e4492e4654d8be2f49a8643ad7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927718872501080096, guid: fc38b2e4492e4654d8be2f49a8643ad7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927718872501080096, guid: fc38b2e4492e4654d8be2f49a8643ad7,
+        type: 3}
+      propertyPath: m_Name
+      value: Name Signboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927718872501080126, guid: fc38b2e4492e4654d8be2f49a8643ad7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 36ff1499a727b6b4a90b9dcde0c2f8ea,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc38b2e4492e4654d8be2f49a8643ad7, type: 3}
 --- !u!1001 &6990573601348090489

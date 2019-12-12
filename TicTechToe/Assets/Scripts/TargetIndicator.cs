@@ -21,7 +21,7 @@ public class TargetIndicator : MonoBehaviour
         Harry = GameObject.Find("NPC Harry").transform;
 
         //target = Jane;
-        //SetChildrenActive(false);
+        SetChildrenActive(false);
     }
 
     // Update is called once per frame

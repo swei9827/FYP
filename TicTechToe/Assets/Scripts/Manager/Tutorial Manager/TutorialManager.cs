@@ -528,7 +528,10 @@ public class TutorialManager : MonoBehaviour
 
                 if(WaterCan.curFill == 3)
                 {
-                    targetIndicator.SetChildrenActive(false);
+                    GameObject crops = GameObject.FindGameObjectWithTag("Crops");
+                    //Change indicator target
+                    targetIndicator.SetChildrenActive(true);
+                    targetIndicator.target = crops.transform;
                 }
 
                 //Pop out go find back Jane
@@ -572,6 +575,9 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Set NPC4 Pop Out
+                dialogueObj[3].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
                 //Change indicator target
                 targetIndicator.SetChildrenActive(true);
                 targetIndicator.target = dialogueObj[3].transform;
@@ -579,9 +585,6 @@ public class TutorialManager : MonoBehaviour
                 //Set Dialogue Conversation
                 dialogueObj[3].GetComponent<DialogueHolder>().option1 = true;
                 dialogueObj[3].GetComponent<DialogueHolder>().option3 = false;
-
-                //Set NPC4 Pop Out
-                dialogueObj[3].GetComponent<DialogueHolder>().PopOut.SetActive(true);
 
                 // Pop Out Go to Fishing Spot
                 if (dialogueObj[3].GetComponent<DialogueHolder>().interactNPCMary)
@@ -658,12 +661,12 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
 
+                //Set NPC4 Pop Out
+                dialogueObj[3].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+
                 //Change indicator target
                 targetIndicator.SetChildrenActive(true);
                 targetIndicator.target = dialogueObj[3].transform;
-
-                //Set NPC4 Pop Out
-                dialogueObj[3].GetComponent<DialogueHolder>().PopOut.SetActive(true);
 
                 //Pop Out Go harvest
                 if (dialogueObj[3].GetComponent<DialogueHolder>().interactNPCMary2)
@@ -683,6 +686,11 @@ public class TutorialManager : MonoBehaviour
             {
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
+                
+                //Change indicator target
+                targetIndicator.SetChildrenActive(true);
+                targetIndicator.target = dirtTile[0].transform;
+
 
                 dialogueObj[3].GetComponent<DialogueHolder>().option3 = true;
                 dialogueObj[3].GetComponent<DialogueHolder>().option2 = false;

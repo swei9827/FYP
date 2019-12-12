@@ -34,7 +34,7 @@ public class Player : Character
     public void setMoney(int m)
     {
         money = m;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CloudData>().writeToCloud("money", m);
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<CloudData>().writeToCloud("money", m);
         //MoneyChange();
     }
 }

@@ -44,11 +44,6 @@ public class PauseMenu : MonoBehaviour
         pause.SetActive(true);
     }
 
-    public void QuitGame()
-    {
-        SceneManager.LoadScene("New Lobby");
-    }
-
     //set audio
     public void setVolume(float volume)
     {

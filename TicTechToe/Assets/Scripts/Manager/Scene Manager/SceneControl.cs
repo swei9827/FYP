@@ -10,7 +10,7 @@ public class SceneControl : MonoBehaviour
     public bool isGame;
     public bool isMainMenu;
     public static  bool completeAllTasks;
-    public Canvas analyticCanvas;
+
 
     public void PlayButton()
     {
@@ -22,10 +22,6 @@ public class SceneControl : MonoBehaviour
         Application.Quit();
     }
 
-    public void AnalyticButton()
-    {
-        analyticCanvas.gameObject.SetActive(true);
-    }
 
     public void signUpButton()
     {
@@ -51,14 +47,7 @@ public class SceneControl : MonoBehaviour
 
     public void Update()
     {
-        if (isMainMenu)
-        {
-            if(Input.anyKey && analyticCanvas.isActiveAndEnabled)
-            {
-                analyticCanvas.gameObject.SetActive(false);
-            }
-        }
-
+ 
         if (isTutorial)
         {
             if(Input.anyKey)

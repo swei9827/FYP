@@ -109,7 +109,6 @@ public class Inventory : MonoBehaviour
 
                     // write to cloud
                     GameObject.FindGameObjectWithTag("Player").GetComponent<CloudData>().writeToCloud(items[i].id.ToString(), 1);
-                    //Debug.Log("ItemToCloud : " + items[i].itemName);
                     break;
                 }
             }
