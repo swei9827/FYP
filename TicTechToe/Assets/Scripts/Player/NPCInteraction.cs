@@ -323,7 +323,7 @@ public class NPCInteraction : MonoBehaviour
                 acceptedQuestLists.Remove(q);
 
                 questUICompletion.SetActive(true);
-                questUICompletion.GetComponentInChildren<Text>().text = "Quest Completed ! \n" + "Rewarded " + log.reward + " Gold";
+                //questUICompletion.GetComponentInChildren<Text>().text = "Quest Completed ! \n" + "Rewarded " + log.reward + " Gold";
 
                 //local data record
                 DataRecord.AddEvents(10, q.name + " Quest");
@@ -387,7 +387,7 @@ public class NPCInteraction : MonoBehaviour
     IEnumerator closeUI(float time)
     {
         yield return new WaitForSeconds(time);
-        questUICompletion.GetComponentInChildren<Text>().text = "";
+        //questUICompletion.GetComponentInChildren<Text>().text = "";
         questUICompletion.SetActive(false);
     }
 }

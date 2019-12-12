@@ -1,15 +1,4 @@
-12/12/2019 8:15:29 PM Log Started
-12/12/2019 8:16:51 PM Player interacted with QuestProvider_01
-12/12/2019 8:16:52 PM Player accepted Fishing Basic Quest
-12/12/2019 8:16:55 PM Player started Fishing
-12/12/2019 8:16:59 PM Player obtained CatFish_New
-12/12/2019 8:17:04 PM Player started Fishing
-12/12/2019 8:17:10 PM Player obtained Sardine_New
-12/12/2019 8:17:16 PM Player started Fishing
-12/12/2019 8:17:21 PM Player obtained Sardine_New
-12/12/2019 8:17:27 PM Player started Fishing
-12/12/2019 8:17:31 PM Player obtained CatFish_New
-12/12/2019 8:17:36 PM Player started Fishing
-12/12/2019 8:17:42 PM Player obtained Sardine_New
-12/12/2019 8:17:47 PM Player started Fishing
-12/12/2019 8:17:55 PM Player obtained Salmon_New
+2019-12-12 PM 9:44:49 Log Started
+2019-12-12 PM 9:44:53 Player interacted with QuestProvider_01
+2019-12-12 PM 9:44:55 Player accepted Fishing Basic Quest
+2019-12-12 PM 9:45:24 Player completed Fishing Basic Quest
