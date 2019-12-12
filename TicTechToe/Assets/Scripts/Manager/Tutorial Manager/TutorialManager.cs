@@ -826,6 +826,7 @@ public class TutorialManager : MonoBehaviour
                 TutorialPopOut[popUpIndex].SetActive(false);
                 Time.timeScale = 1;
                 doneTutorial = true;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<CloudData>().writeToCloud("tdone", 0);
             }
         }
     }

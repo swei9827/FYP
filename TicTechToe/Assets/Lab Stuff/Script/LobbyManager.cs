@@ -1,15 +1,20 @@
-﻿using System.Collections;
+﻿using PlayFab;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using PlayFab.ClientModels;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {   
     List<RoomInfo> createdRooms = new List<RoomInfo>();
     List<GameObject> buttons = new List<GameObject>();
+
+    string MyPlayfabID;
+    int tutorialStatus = -1;
 
     string gameVersion = "1.0";    
     bool roomListCreated = false;
@@ -32,11 +37,44 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         PhotonNetwork.AutomaticallySyncScene = true;
         playerName = PlayerPrefs.GetString("Email");
         roomName.text = "abc";
+
+        GetAccountInfoRequest acc = new GetAccountInfoRequest();
+        PlayFabClientAPI.GetAccountInfo(acc, success, fail);
     }
 
     void Update()
     {
         roomListUpdate();
+        if (tutorialStatus == -1)
+        {
+            ClientGetUserPublisherData("tdone");
+        }
+    }
+
+    public void ClientGetUserPublisherData(string dataName)
+    {
+        PlayFabClientAPI.GetUserPublisherData(new GetUserDataRequest()
+        {
+            PlayFabId = MyPlayfabID
+        }, result => {
+            if (result.Data == null || !result.Data.ContainsKey(dataName))
+            {
+                //Debug.Log("No " + dataName);
+                tutorialStatus = 0;
+                Debug.Log("Tutorial NOT Done");
+            }
+            else
+            {
+                //Debug.Log(dataName + " : " + result.Data[dataName].Value);
+                tutorialStatus = 1;
+                TutorialManager.doneTutorial = true;
+                Debug.Log("Tutorial Done");
+            }
+        },
+        error => {
+            Debug.Log("Got error getting Regular Publisher Data:");
+            Debug.Log(error.GenerateErrorReport());
+        });
     }
 
     void roomListUpdate()
@@ -138,5 +176,17 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("OnJoinedRoom");
+    }
+
+    void success(GetAccountInfoResult result)
+    {
+        MyPlayfabID = result.AccountInfo.PlayFabId;
+        Debug.Log("Successfully obtain PlayFabID");
+    }
+
+
+    void fail(PlayFabError error)
+    {
+        Debug.LogError(error.GenerateErrorReport());
     }
 }
