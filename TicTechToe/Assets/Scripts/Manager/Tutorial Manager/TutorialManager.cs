@@ -526,7 +526,7 @@ public class TutorialManager : MonoBehaviour
                 targetIndicator.SetChildrenActive(true);
                 targetIndicator.target = river.transform;
 
-                if(WaterCan.curFill >= 0)
+                if(WaterCan.curFill > 0)
                 {
                     GameObject crops = GameObject.FindGameObjectWithTag("Crops");
                     //Change indicator target
@@ -556,7 +556,7 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
 
                 //Set NPC3 Pop Out
-                dialogueObj[2].GetComponent<DialogueHolder>().PopOut.SetActive(true);
+                dialogueObj[1].GetComponent<DialogueHolder>().PopOut.SetActive(true);
 
                 //Pop Out Go Find Fishing NPC
                 if (dialogueObj[1].GetComponent<DialogueHolder>().option4)

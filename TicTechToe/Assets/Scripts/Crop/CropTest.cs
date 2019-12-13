@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class CropTest : ItemTest
 {
@@ -39,8 +40,7 @@ public class CropTest : ItemTest
     private void Awake()
     {
         inventory = Player.LocalPlayerInstance.GetComponent<Player>().inventory;
-        itemDatabase = Player.LocalPlayerInstance.transform.GetChild(1).gameObject.GetComponent<ItemDatabase>();
-        tutorial = GameObject.Find("TutorialManager").GetComponent<TutorialManager>();
+        itemDatabase = Player.LocalPlayerInstance.transform.GetChild(1).gameObject.GetComponent<ItemDatabase>();    
     }
     void Start()
     {
@@ -52,6 +52,11 @@ public class CropTest : ItemTest
         sr = GetComponent<SpriteRenderer>();
         canInteract = false;
         player = GameObject.FindGameObjectWithTag("Player");
+
+        if(!TutorialManager.doneTutorial)
+        {
+            tutorial = GameObject.Find("TutorialManager").GetComponent<TutorialManager>();
+        }   
     }
  
     void Update()
@@ -87,7 +92,11 @@ public class CropTest : ItemTest
                 canInteract = false;
 
                 //For tutorial
-                tutorial.waterCount += 1;
+                if(!TutorialManager.doneTutorial)
+                {
+                    tutorial.waterCount += 1;
+                }
+              
 
                 //local data record
                 DataRecord.AddEvents(4, this.gameObject.name);
@@ -172,7 +181,8 @@ public class CropTest : ItemTest
                             }
                         }
 
-                        
+                        this.gameObject.transform.parent.GetComponent<DirtTile>().needsPlowing = true;
+                        this.gameObject.transform.parent.GetComponent<DirtTile>().AddDirt();
 
                         //local data record
                         DataRecord.AddEvents(5, this.gameObject.name);
@@ -183,8 +193,11 @@ public class CropTest : ItemTest
                         feedback.itemText.text = item.itemName;
 
                         //For tutorial purpose
-                        tutorial.harvestCount += 1;
-
+                        if (!TutorialManager.doneTutorial)
+                        {
+                            tutorial.harvestCount += 1;
+                        }
+                   
                         // gsheet data record
                         player.GetComponent<gsheet_data>().sendData(1, 1);
                         Destroy(this.gameObject);

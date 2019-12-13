@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class DirtTile : MonoBehaviour
 {
@@ -65,6 +66,8 @@ public class DirtTile : MonoBehaviour
         {
             if(Player.LocalPlayerInstance.GetComponent<Tool>().seeds[0].amount > 0)
             {
+                //string name = crops[0].gameObject.name;
+                //temp = PhotonNetwork.InstantiateSceneObject(name, this.transform.position, Quaternion.identity);
                 temp = Instantiate(crops[0], this.transform.position, Quaternion.identity);
                 temp.transform.SetParent(this.transform);
                 temp.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);

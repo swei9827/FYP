@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using Photon.Pun;
 
 public enum CropsTypeTest
 {
@@ -22,7 +23,7 @@ public enum FishTypeTest
     Max
 }
 
-public class ItemTest : MonoBehaviour {
+public class ItemTest : MonoBehaviourPun {
 
     public CropsTypeTest CropType;
     public FishTypeTest FishType;

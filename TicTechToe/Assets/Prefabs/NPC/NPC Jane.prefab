@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011339664, y: -0.7427232}
+  m_Offset: {x: 0.03639555, y: -0.7427232}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0568085, y: 0.3531685}
+  m_Size: {x: 1.5829821, y: 0.3531685}
   m_EdgeRadius: 0
 --- !u!114 &1469221083081293373
 MonoBehaviour:
@@ -134,7 +134,7 @@ MonoBehaviour:
   - Oh...before we begin, I think we might need to get some seeds
   - Uncle Jason asked me to hand you this before he left
   - Uncle Jason said this might come in handy for you.
-  - "Now you can go over to Harry\u2019s Store and buy some seeds."
+  - "Now you can go over to Harry\u2019s Merchant and buy some seeds."
   - If you take a walk down the road from here, you will see it fairly soon.
   dialogueLines2:
   - "Wow that\u2019s quick!"
