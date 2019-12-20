@@ -1017,6 +1017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1342122956}
   - component: {fileID: 1342122957}
+  - component: {fileID: 1342122955}
   m_Layer: 0
   m_Name: PlayFabAuth
   m_TagString: Untagged
@@ -1024,6 +1025,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1342122955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342122954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806f63dfccb02f9459ed193fb1c29244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTutorial: 0
+  isGame: 0
+  isMainMenu: 0
+  isSignUp: 1
 --- !u!4 &1342122956
 Transform:
   m_ObjectHideFlags: 0
@@ -1053,6 +1070,7 @@ MonoBehaviour:
   user: {fileID: 0}
   email: {fileID: 635099123}
   pass: {fileID: 1433829263}
+  isSignup: 0
 --- !u!1 &1433829261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,3 +1724,4 @@ MonoBehaviour:
   hoverCursor: {fileID: 2800000, guid: d3c2ff96b81a76f4386c1dcd27f773d4, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
+  onCollision: 0

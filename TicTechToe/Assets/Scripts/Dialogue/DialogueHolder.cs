@@ -79,7 +79,7 @@ public class DialogueHolder : MonoBehaviour
     {
         if (dialogueManager.interactable)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetMouseButtonDown(0))
             {            
                 if (!dialogueManager.dialogueActive && !dialogueManager.canInteract)
                 {
@@ -101,7 +101,7 @@ public class DialogueHolder : MonoBehaviour
         temp = this.gameObject.name;
 
         //set player interaction to false
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = false;
+        Player.LocalPlayerInstance.GetComponent<PlayerInteraction>().canInteract = false;
 
         if (temp == "NPC Uncle Joseph")
         {
@@ -187,7 +187,19 @@ public class DialogueHolder : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    //private void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject == Player.LocalPlayerInstance)
+    //    {
+    //        PopOut.SetActive(true);
+
+    //        //Star dialogue
+    //        UpdateDialogue();
+    //        SetNPC();
+    //    }
+    //}
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject == Player.LocalPlayerInstance)
         {
@@ -199,12 +211,33 @@ public class DialogueHolder : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject == Player.LocalPlayerInstance)
         {
             PopOut.SetActive(false);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
+            Player.LocalPlayerInstance.GetComponent<PlayerInteraction>().canInteract = true;
         }
     }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject == Player.LocalPlayerInstance)
+    //    {
+    //        PopOut.SetActive(true);
+
+    //        //Star dialogue
+    //        UpdateDialogue();
+    //        SetNPC();
+    //    }
+    //}
+
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject == Player.LocalPlayerInstance)
+    //    {
+    //        PopOut.SetActive(false);
+    //        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().canInteract = true;
+    //    }
+    //}
 }

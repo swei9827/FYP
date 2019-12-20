@@ -53,6 +53,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TalkWithUncleVideo
       objectReference: {fileID: 0}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: a9394fa06e186814e8ce677e5d76825a,
+        type: 3}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9204515229069772669, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -108,12 +124,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
-        type: 3}
-      propertyPath: m_VideoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: a9394fa06e186814e8ce677e5d76825a,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aeac85e2cc9b8a4c945688eca53a65c, type: 3}
 --- !u!4 &7771292279796479683 stripped
@@ -133,6 +143,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fishing Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 3f178bc39fc6fed449699a6a2c3a918f,
+        type: 3}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9204515229069772669, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
         type: 3}
@@ -189,12 +215,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
-        type: 3}
-      propertyPath: m_VideoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: 3f178bc39fc6fed449699a6a2c3a918f,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aeac85e2cc9b8a4c945688eca53a65c, type: 3}
 --- !u!4 &7250598517386449820 stripped
@@ -214,6 +234,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Refill water
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 0a3f3ff1a171e874b83eec45cd38d72f,
+        type: 3}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9204515229069772669, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
         type: 3}
@@ -270,12 +306,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
-        type: 3}
-      propertyPath: m_VideoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: 0a3f3ff1a171e874b83eec45cd38d72f,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aeac85e2cc9b8a4c945688eca53a65c, type: 3}
 --- !u!4 &6987564156985233582 stripped
@@ -295,6 +325,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShopVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: acf767b9aef907543ace6e8e11b4b730,
+        type: 3}
+    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
+        type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6092130278344419138, guid: 28c20eb6b5996774688c616fa26368dc,
         type: 3}
@@ -351,12 +397,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
-        type: 3}
-      propertyPath: m_VideoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: acf767b9aef907543ace6e8e11b4b730,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c20eb6b5996774688c616fa26368dc, type: 3}
 --- !u!4 &8231922822625726162 stripped
@@ -376,6 +416,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TalkWithJaneVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 9dcc009aeeee7c545a95a0931b5f6ba9,
+        type: 3}
+    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
+        type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6092130278344419138, guid: 28c20eb6b5996774688c616fa26368dc,
         type: 3}
@@ -432,12 +488,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
-        type: 3}
-      propertyPath: m_VideoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: 9dcc009aeeee7c545a95a0931b5f6ba9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c20eb6b5996774688c616fa26368dc, type: 3}
 --- !u!4 &9011566241305008411 stripped
@@ -457,6 +507,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FishingVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: e150f6f3d0c413246bfb250a40d916b4,
+        type: 3}
+    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
+        type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6092130278344419138, guid: 28c20eb6b5996774688c616fa26368dc,
         type: 3}
@@ -513,12 +579,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6092130278344419139, guid: 28c20eb6b5996774688c616fa26368dc,
-        type: 3}
-      propertyPath: m_VideoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: e150f6f3d0c413246bfb250a40d916b4,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c20eb6b5996774688c616fa26368dc, type: 3}
 --- !u!4 &8696273887477935054 stripped
@@ -538,6 +598,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WaterVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937452773555499099, guid: 7da3b5e1f025fc846a8cdabe5024bd1d,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: ea67ebb3fbe39ed40aa7f528b5da5d96,
+        type: 3}
+    - target: {fileID: 6937452773555499099, guid: 7da3b5e1f025fc846a8cdabe5024bd1d,
+        type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937452773555499099, guid: 7da3b5e1f025fc846a8cdabe5024bd1d,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6937452773555499098, guid: 7da3b5e1f025fc846a8cdabe5024bd1d,
         type: 3}
@@ -594,12 +670,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6937452773555499099, guid: 7da3b5e1f025fc846a8cdabe5024bd1d,
-        type: 3}
-      propertyPath: m_VideoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: ea67ebb3fbe39ed40aa7f528b5da5d96,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7da3b5e1f025fc846a8cdabe5024bd1d, type: 3}
 --- !u!4 &5827039151222617778 stripped
@@ -619,6 +689,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TalkwithAuntieMary
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: b20d837025f481842ac708aae74be67c,
+        type: 3}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9204515229069772669, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
         type: 3}
@@ -675,12 +761,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
-        type: 3}
-      propertyPath: m_VideoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: b20d837025f481842ac708aae74be67c,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aeac85e2cc9b8a4c945688eca53a65c, type: 3}
 --- !u!4 &2151167393554467728 stripped
@@ -700,6 +780,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlantVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581266925487791831, guid: 9247e8d37fc6e5e4ab7f1c5e9c9eb044,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: a83d05a6c958e5f46882e13619818137,
+        type: 3}
+    - target: {fileID: 8581266925487791831, guid: 9247e8d37fc6e5e4ab7f1c5e9c9eb044,
+        type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8581266925487791830, guid: 9247e8d37fc6e5e4ab7f1c5e9c9eb044,
         type: 3}
@@ -756,12 +847,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8581266925487791831, guid: 9247e8d37fc6e5e4ab7f1c5e9c9eb044,
-        type: 3}
-      propertyPath: m_VideoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: a83d05a6c958e5f46882e13619818137,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9247e8d37fc6e5e4ab7f1c5e9c9eb044, type: 3}
 --- !u!4 &1545212135363109955 stripped
@@ -781,6 +866,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlowVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204515229069772668, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9204515229069772669, guid: 8aeac85e2cc9b8a4c945688eca53a65c,
         type: 3}
@@ -857,6 +952,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovementVideo
       objectReference: {fileID: 0}
+    - target: {fileID: 2411021045074390140, guid: 8a8e292810365f84a8af2420bde0a6c2,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 810517b4a2b1f234c8eac0e09fc203d9,
+        type: 3}
+    - target: {fileID: 2411021045074390140, guid: 8a8e292810365f84a8af2420bde0a6c2,
+        type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411021045074390140, guid: 8a8e292810365f84a8af2420bde0a6c2,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2411021045074390141, guid: 8a8e292810365f84a8af2420bde0a6c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -912,12 +1023,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2411021045074390140, guid: 8a8e292810365f84a8af2420bde0a6c2,
-        type: 3}
-      propertyPath: m_VideoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: 810517b4a2b1f234c8eac0e09fc203d9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a8e292810365f84a8af2420bde0a6c2, type: 3}
 --- !u!4 &4833154392708170815 stripped

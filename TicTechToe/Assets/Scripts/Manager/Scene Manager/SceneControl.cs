@@ -9,6 +9,7 @@ public class SceneControl : MonoBehaviour
     public bool isTutorial;
     public bool isGame;
     public bool isMainMenu;
+    public bool isSignUp;
     public static  bool completeAllTasks;
 
 
@@ -47,7 +48,6 @@ public class SceneControl : MonoBehaviour
 
     public void Update()
     {
- 
         if (isTutorial)
         {
             if(Input.anyKey)
@@ -65,6 +65,14 @@ public class SceneControl : MonoBehaviour
                 SceneManager.LoadScene("New Lobby");
                 RoomController.playerSpawned = false;
             }          
+        }
+
+        if(isSignUp)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
         }
 
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ActivitiesAnalytic"))

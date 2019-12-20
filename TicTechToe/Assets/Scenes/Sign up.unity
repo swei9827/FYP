@@ -155,6 +155,7 @@ MonoBehaviour:
   hoverCursor: {fileID: 2800000, guid: d3c2ff96b81a76f4386c1dcd27f773d4, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
+  onCollision: 0
 --- !u!114 &295257000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,14 +818,14 @@ MonoBehaviour:
     m_FontStyle: 2
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 30
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Password
+  m_Text: '*6 Characters and Above'
 --- !u!222 &767695705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1518,18 +1519,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 11
     m_FontStyle: 2
     m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 30
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Username
+  m_Text: '*3 Characters and Above'
 --- !u!222 &1548438024
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1904,6 +1905,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1766810934}
   - component: {fileID: 1766810933}
+  - component: {fileID: 1766810935}
   m_Layer: 0
   m_Name: PlayFabAuth
   m_TagString: Untagged
@@ -1941,6 +1943,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1766810935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766810932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806f63dfccb02f9459ed193fb1c29244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTutorial: 0
+  isGame: 0
+  isMainMenu: 0
+  isSignUp: 1
 --- !u!1 &1931885484
 GameObject:
   m_ObjectHideFlags: 0

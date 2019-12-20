@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &241928930
+--- !u!1 &60506691167864726
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 241928931}
-  - component: {fileID: 241928932}
+  - component: {fileID: 1611979651086963559}
+  - component: {fileID: 1110075789532498561}
   m_Layer: 0
   m_Name: Name Signboard
   m_TagString: Untagged
@@ -17,27 +17,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &241928931
+--- !u!4 &1611979651086963559
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241928930}
+  m_GameObject: {fileID: 60506691167864726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.729, y: -0.488, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3109377584357778075}
+  m_Father: {fileID: 2312436727482233056}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &241928932
+--- !u!212 &1110075789532498561
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241928930}
+  m_GameObject: {fileID: 60506691167864726}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &3109377584357778074
+--- !u!1 &2312436727482233057
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,11 +87,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3109377584357778075}
-  - component: {fileID: 3109377584357778055}
-  - component: {fileID: 3109377584357778054}
-  - component: {fileID: 2999693626631464267}
-  - component: {fileID: 3109377584357778052}
+  - component: {fileID: 2312436727482233056}
+  - component: {fileID: 4328750567554436272}
+  - component: {fileID: 6182435670644694997}
+  - component: {fileID: 2395367864519354682}
+  - component: {fileID: 1807877677466578539}
+  - component: {fileID: 2007669014088306732}
   m_Layer: 0
   m_Name: NPC Auntie Mary
   m_TagString: NPC
@@ -99,29 +100,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3109377584357778075
+--- !u!4 &2312436727482233056
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3109377584357778074}
+  m_GameObject: {fileID: 2312436727482233057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.23, y: -16.98, z: 0}
+  m_LocalPosition: {x: -5.67, y: -10.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 998923920185880126}
-  - {fileID: 241928931}
+  - {fileID: 6319711169462566585}
+  - {fileID: 1611979651086963559}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3109377584357778055
+--- !u!212 &4328750567554436272
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3109377584357778074}
+  m_GameObject: {fileID: 2312436727482233057}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -164,20 +165,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3109377584357778054
+--- !u!61 &6182435670644694997
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3109377584357778074}
+  m_GameObject: {fileID: 2312436727482233057}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00625968, y: -0.77571964}
+  m_Offset: {x: -0.09069362, y: -0.88069177}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -188,21 +189,21 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0109916, y: 0.37348938}
+  m_Size: {x: 1.2563567, y: 0.5834336}
   m_EdgeRadius: 0
---- !u!114 &2999693626631464267
+--- !u!114 &2395367864519354682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3109377584357778074}
+  m_GameObject: {fileID: 2312436727482233057}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3d002a6713c47f41b721b43083dc7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PopOut: {fileID: 6723463937022451510}
+  PopOut: {fileID: 7208752176363251893}
   name: Auntie Mary
   dialogueLines:
   - Oh! You must be here to learn how to fish
@@ -227,18 +228,44 @@ MonoBehaviour:
   interactNPCMary: 0
   interactNPCMary2: 0
   temp: 
---- !u!210 &3109377584357778052
+--- !u!210 &1807877677466578539
 SortingGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3109377584357778074}
+  m_GameObject: {fileID: 2312436727482233057}
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -300
---- !u!1 &6723463937022451510
+--- !u!61 &2007669014088306732
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2312436727482233057}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.045284986, y: -0.19466674}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 0.88, y: 0.91}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7764611, y: 2.3415387}
+  m_EdgeRadius: 0
+--- !u!1 &7208752176363251893
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,8 +273,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 998923920185880126}
-  - component: {fileID: 7305073111902621759}
+  - component: {fileID: 6319711169462566585}
+  - component: {fileID: 8923491123690415402}
   m_Layer: 0
   m_Name: Warn
   m_TagString: Untagged
@@ -255,27 +282,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &998923920185880126
+--- !u!4 &6319711169462566585
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6723463937022451510}
+  m_GameObject: {fileID: 7208752176363251893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.93, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
-  m_Father: {fileID: 3109377584357778075}
+  m_Father: {fileID: 2312436727482233056}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7305073111902621759
+--- !u!212 &8923491123690415402
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6723463937022451510}
+  m_GameObject: {fileID: 7208752176363251893}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
